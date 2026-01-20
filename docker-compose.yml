@@ -1,0 +1,39 @@
+# Gruppo Cestari - Database Services
+
+volumes:
+  postgres_data:
+  redis_data:
+
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: gruppo-cestari-postgres
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5442:5432"
+    environment:
+      POSTGRES_USER: cestari_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-cestari_secure_2025}
+      POSTGRES_DB: gruppo_cestari
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cestari_user -d gruppo_cestari"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:8-alpine
+    container_name: gruppo-cestari-redis
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6387:6379"
+    command: redis-server --appendonly yes --maxmemory 128mb --maxmemory-policy allkeys-lru --requirepass ${REDIS_PASSWORD:-cestari_redis_2025}
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-cestari_redis_2025}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5

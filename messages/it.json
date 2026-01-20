@@ -1,0 +1,1677 @@
+{
+  "metadata": {
+    "title": "Gruppo Cestari - Consulenza Finanziaria e Cooperazione Internazionale",
+    "description": "Holding multisettoriale specializzata in consulenza finanziaria, cooperazione internazionale ed energie rinnovabili. Oltre 40 anni di esperienza."
+  },
+  "common": {
+    "readMore": "Leggi di più",
+    "learnMore": "Scopri di più",
+    "contactUs": "Contattaci",
+    "viewAll": "Vedi tutti",
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "back": "Indietro",
+    "next": "Avanti",
+    "previous": "Precedente",
+    "submit": "Invia",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "download": "Scarica",
+    "upload": "Carica",
+    "close": "Chiudi",
+    "open": "Apri",
+    "yes": "Sì",
+    "no": "No",
+    "whatsapp": {
+      "title": "Hai bisogno di aiuto?",
+      "subtitle": "Scrivici su WhatsApp per una risposta immediata",
+      "startChat": "Avvia chat",
+      "defaultMessage": "Salve, vorrei maggiori informazioni sui vostri servizi."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "services": "Servizi",
+    "companies": "Le Società",
+    "sustainability": "Sostenibilità",
+    "projects": "Progetti",
+    "news": "News",
+    "grants": "Bandi",
+    "contact": "Contatti",
+    "consultation": "Richiedi Consulenza",
+    "login": "Accedi",
+    "portal": "Area Riservata",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "badge": "Dal 1980 al servizio delle imprese",
+      "title": "Partner privilegiato di un",
+      "titleHighlight": "futuro sostenibile",
+      "subtitle": "Consulenza finanziaria strategica, cooperazione internazionale e sviluppo sostenibile. Accompagniamo imprese, enti pubblici e territori nel loro percorso di crescita.",
+      "partners": "Partner e riconoscimenti",
+      "cta": "Scopri i nostri servizi",
+      "ctaSecondary": "Richiedi una consulenza"
+    },
+    "stats": {
+      "years": "Anni di esperienza",
+      "companies": "Società del Gruppo",
+      "offices": "Sedi nel mondo",
+      "continents": "Continenti"
+    },
+    "slider": {
+      "slide1": {
+        "title": "Partner privilegiato per un",
+        "highlight": "futuro sostenibile",
+        "description": "Consulenza finanziaria strategica, cooperazione internazionale e sviluppo sostenibile. Accompagniamo imprese, enti pubblici e comunità nel loro percorso di crescita.",
+        "cta": "Richiedi Consulenza"
+      },
+      "slide2": {
+        "title": "Leader nelle",
+        "highlight": "energie rinnovabili",
+        "description": "Progettiamo e realizziamo comunità energetiche rinnovabili e impianti fotovoltaici per la transizione energetica del territorio.",
+        "cta": "Scopri i servizi energia"
+      },
+      "slide3": {
+        "title": "Esperti in",
+        "highlight": "cooperazione internazionale",
+        "description": "Progetti di sviluppo in Africa, America Latina e Medio Oriente. Partnership strategiche con governi e organizzazioni internazionali.",
+        "cta": "I nostri progetti"
+      },
+      "slide4": {
+        "title": "Oltre 40 anni di",
+        "highlight": "eccellenza italiana",
+        "description": "Dal 1980 al fianco delle imprese italiane. 10 società, 20+ sedi in 4 continenti, un unico obiettivo: la tua crescita.",
+        "cta": "Scopri chi siamo"
+      }
+    },
+    "services": {
+      "title": "I Nostri Servizi",
+      "subtitle": "Soluzioni integrate per la crescita del tuo business",
+      "financial": {
+        "title": "Bandi e Agevolazioni",
+        "description": "Sezione dedicata a imprese, enti pubblici, cittadini e PMI che cercano sostegno finanziario."
+      },
+      "cooperation": {
+        "title": "Sud Polo Magnetico",
+        "description": "Progetto volto a contrastare lo spopolamento nel Mezzogiorno e promuovere la crescita economica."
+      },
+      "energy": {
+        "title": "Comunità Energetiche",
+        "description": "Produci e condividi energia rinnovabile con risparmio in bolletta dal 20% al 50%."
+      },
+      "planning": {
+        "title": "Studi di Fattibilità",
+        "description": "Analisi tecnico-economiche, business plan e ricerca finanziamenti per i tuoi investimenti."
+      }
+    },
+    "videoBackground": {
+      "badge": "Presenza Globale",
+      "title": "Un Gruppo che guarda al",
+      "titleHighlight": "Futuro",
+      "subtitle": "Dalla Campania al mondo: 40 anni di progetti internazionali, partnership strategiche e sviluppo sostenibile",
+      "videoTitle": "Presenza Globale",
+      "videoSubtitle": "Gruppo Cestari nel mondo",
+      "stat1": "Continenti",
+      "stat2": "Paesi",
+      "stat3": "Anni di storia"
+    },
+    "about": {
+      "badge": "Il Gruppo Cestari",
+      "title": "Chi",
+      "titleHighlight": "Siamo",
+      "subtitle": "Una realtà poliedrica nel panorama italiano, europeo ed extraeuropeo",
+      "stats": {
+        "offices": "Sedi",
+        "continents": "Continenti",
+        "years": "Anni",
+        "clients": "Clienti"
+      },
+      "description1": "Fondato negli anni Ottanta dall'Ing. Alfredo C. Cestari, che lo presiede con più di 20 sedi italiane ed estere, il Gruppo Cestari ha progressivamente ampliato la propria sfera di attività e rappresenta oggi una realtà poliedrica nell'ambito del panorama italiano, europeo ed extraeuropeo, grazie alla molteplicità di interessi e di settori nei quali opera.",
+      "description2": "Offriamo servizi di supporto a imprese ed Enti Pubblici in Italia, in Europa e fuori dal continente europeo, soprattutto in Africa e in America Latina, per valutare quale sia lo strumento finanziario più vantaggioso per realizzare un'idea progettuale e per partecipare direttamente ai bandi di gara locali, nazionali e internazionali.",
+      "mission": "Aiutiamo imprese, enti pubblici e territori a crescere in modo sostenibile in tutti i paesi del mondo. Le relazioni instaurate con organismi internazionali, oltre a decenni di esperienza nel rispondere alle esigenze dei clienti, sia pubblici che privati, fanno del Gruppo Cestari un partner strategico insostituibile.",
+      "vision": "Investire sempre di più sull'energia rinnovabile creando impianti ecosostenibili così da poter combattere il cambiamento climatico, preservando l'ambiente, il pianeta e le generazioni future.",
+      "cta": "Scopri la nostra storia",
+      "bottomText": "Leader in consulenza finanziaria, cooperazione internazionale ed energie rinnovabili",
+      "companiesLink": "Le nostre 10 società"
+    },
+    "news": {
+      "title": "Ultime News",
+      "subtitle": "Rimani aggiornato sulle nostre attività",
+      "noNews": "Nessuna news disponibile",
+      "viewAll": "Vedi tutte le news"
+    },
+    "cta": {
+      "badge": "Opportunità di Partnership",
+      "title": "Vuoi investire in Africa?",
+      "subtitle": "Il Gruppo Cestari è il partner istituzionale di riferimento per imprese e investitori che desiderano operare nei mercati emergenti. Siamo presenti dove nascono le opportunità.",
+      "button": "Entra in contatto"
+    },
+    "timeline": {
+      "badge": "La Nostra Storia",
+      "title": "Oltre",
+      "titleEnd": "di eccellenza",
+      "subtitle": "Dal 1980 accompagniamo imprese e territori nel loro percorso di crescita sostenibile",
+      "foundation": "Fondazione",
+      "foundationDesc": "Nasce il Gruppo Cestari a Salerno, fondato dall'Ing. Alfredo C. Cestari",
+      "expansion": "Espansione Nazionale",
+      "expansionDesc": "Apertura delle sedi di Roma, Milano e Napoli. Crescita nel settore della consulenza",
+      "international": "Cooperazione Internazionale",
+      "internationalDesc": "Primi progetti di sviluppo in Africa e avvio delle partnership internazionali",
+      "energy": "Energie Rinnovabili",
+      "energyDesc": "Nasce la divisione energie rinnovabili e sostenibilità ambientale",
+      "today": "Oggi",
+      "todayDesc": "10 società, 20+ sedi in 4 continenti, leader nella consulenza e sviluppo sostenibile",
+      "continue": "E la storia continua..."
+    },
+    "testimonials": {
+      "badge": "Cosa dicono di noi",
+      "title": "I nostri clienti parlano",
+      "subtitle": "Scopri le esperienze di chi ha scelto Gruppo Cestari come partner per la crescita",
+      "items": {
+        "testimonial1": {
+          "name": "Marco Rossi",
+          "role": "Amministratore Delegato",
+          "company": "Innovatech S.r.l.",
+          "quote": "Grazie al supporto del Gruppo Cestari siamo riusciti ad accedere a finanziamenti europei che ci hanno permesso di ampliare la nostra capacità produttiva del 40%. Professionalità e competenza al top."
+        },
+        "testimonial2": {
+          "name": "Laura Bianchi",
+          "role": "Direttore Generale",
+          "company": "Agroenergia Campania",
+          "quote": "La loro esperienza nelle energie rinnovabili ci ha guidato nella realizzazione della nostra comunità energetica. Un team che conosce davvero il settore e le normative."
+        },
+        "testimonial3": {
+          "name": "Giuseppe Ferrara",
+          "role": "Presidente",
+          "company": "Consorzio Export Sud",
+          "quote": "Collaboriamo con il Gruppo Cestari da oltre 10 anni per i nostri progetti di internazionalizzazione in Africa. Partner affidabile e risultati concreti."
+        },
+        "testimonial4": {
+          "name": "Francesca De Luca",
+          "role": "CFO",
+          "company": "Mediterranea Holding",
+          "quote": "La consulenza finanziaria ricevuta ci ha permesso di ottimizzare la struttura del nostro gruppo e accedere a linee di credito vantaggiose. Consiglio vivamente."
+        }
+      }
+    },
+    "partners": {
+      "badge": "I nostri partner istituzionali",
+      "certifications": "Certificazioni",
+      "international": "Presenza Internazionale",
+      "internationalSub": "20+ Paesi nel mondo",
+      "award": "Top 250",
+      "awardSub": "Creatori di Ricchezza"
+    },
+    "trust": {
+      "badge": "Perché sceglierci",
+      "title": "Numeri che parlano",
+      "subtitle": "Oltre 40 anni di esperienza al servizio delle imprese italiane e internazionali",
+      "yearsLabel": "Anni di esperienza",
+      "countriesLabel": "Paesi nel mondo",
+      "projectsLabel": "Progetti completati",
+      "clientsLabel": "Clienti soddisfatti",
+      "certificationsTitle": "Certificazioni e Riconoscimenti",
+      "certificationsSubtitle": "Qualità garantita da standard internazionali",
+      "iso9001": "ISO 9001:2015",
+      "iso14001": "ISO 14001:2015",
+      "top250": "Top 250 Italia"
+    },
+    "projects": {
+      "badge": "Portfolio",
+      "title": "I nostri",
+      "titleHighlight": "progetti",
+      "subtitle": "Scopri i progetti che testimoniano la nostra esperienza e competenza in diversi settori",
+      "filters": {
+        "all": "Tutti",
+        "energy": "Energia",
+        "cooperation": "Cooperazione",
+        "financial": "Finanza",
+        "training": "Formazione"
+      },
+      "readMore": "Scopri di più",
+      "viewAll": "Vedi tutti i progetti",
+      "sudpolo": {
+        "title": "Sud Polo Magnetico",
+        "excerpt": "Progetto strategico per lo sviluppo del Mezzogiorno presentato al Premier Conte",
+        "impact": "€200M+ investimenti"
+      },
+      "cer": {
+        "title": "CER Moliterno \"Energia Dal Sole\"",
+        "excerpt": "Prima Comunità Energetica Rinnovabile della Val d'Agri, modello esportato in tutta Italia",
+        "impact": "25+ CER avviate"
+      },
+      "congo": {
+        "title": "Missione Congo",
+        "excerpt": "Incontro strategico con il Ministro del Commercio Estero della RDC nel quadro del Piano Mattei",
+        "impact": "Piano Mattei"
+      },
+      "cop30": {
+        "title": "COP30 - Conferenza Clima",
+        "excerpt": "Partecipazione attiva a sostegno del 30% dei finanziamenti climatici per l'Africa",
+        "impact": "30% fondi Africa"
+      },
+      "italafrica": {
+        "title": "Cooperazione ItalAfrica",
+        "excerpt": "Camera di Commercio per la cooperazione Italia-Africa in 19 paesi del continente",
+        "impact": "19 paesi coinvolti"
+      },
+      "senegal": {
+        "title": "Cooperazione in Senegal",
+        "excerpt": "Progetto di sviluppo agricolo e formazione con il governo senegalese",
+        "impact": "10.000+ beneficiari"
+      },
+      "formazione": {
+        "title": "Formazione Professionale",
+        "excerpt": "Programmi di formazione e specializzazione per PMI ed enti pubblici",
+        "impact": "5.000+ formati"
+      },
+      "transizione": {
+        "title": "Transizione Energetica PMI",
+        "excerpt": "Supporto per efficienza energetica e produzione sostenibile",
+        "impact": "100+ aziende assistite"
+      }
+    }
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "hero": {
+      "badge": "Dagli anni '80",
+      "title": "La Nostra",
+      "titleHighlight": "Storia",
+      "subtitle": "Oltre quattro decenni di eccellenza al servizio di imprese, enti pubblici e territori. Una holding multisettoriale leader in consulenza finanziaria, cooperazione internazionale e sviluppo sostenibile."
+    },
+    "stats": {
+      "years": "Anni di esperienza",
+      "projects": "Progetti completati",
+      "offices": "Sedi nel mondo",
+      "countries": "Paesi serviti"
+    },
+    "founder": {
+      "badge": "Il Fondatore",
+      "name": "Ing. Alfredo C.",
+      "surname": "Cestari",
+      "paragraph1": "Negli <strong>anni Ottanta</strong>, l'Ing. Alfredo C. Cestari fonda a Salerno quella che sarebbe diventata una delle più importanti holding italiane nel settore della consulenza finanziaria e della cooperazione internazionale.",
+      "paragraph2": "Con una visione lungimirante e un forte impegno verso lo <strong>sviluppo sostenibile</strong>, il Gruppo Cestari è cresciuto fino a diventare un punto di riferimento per imprese, enti pubblici e territori che cercano un partner affidabile per la loro crescita.",
+      "paragraph3": "Oggi il gruppo conta <strong>10 società</strong>, <strong>15 sedi</strong> nel mondo e oltre <strong>500 professionisti</strong> dedicati a trasformare le sfide in opportunità.",
+      "since": "Dagli anni '80",
+      "award": "Top 250",
+      "awardSubtitle": "Creatori di Ricchezza"
+    },
+    "mission": {
+      "title": "La Nostra Mission",
+      "description": "Aiutare imprese, enti pubblici e territori a crescere in modo sostenibile, creando valore economico e sociale attraverso soluzioni innovative e un approccio multidisciplinare che combina competenze finanziarie, esperienza internazionale e visione strategica."
+    },
+    "vision": {
+      "title": "La Nostra Vision",
+      "description": "Essere il partner di riferimento per la crescita sostenibile a livello globale, investendo in energie rinnovabili, cooperazione internazionale e sviluppo territoriale per costruire un futuro migliore per le prossime generazioni."
+    },
+    "values": {
+      "badge": "I Nostri Valori",
+      "title": "I principi che ci guidano",
+      "subtitle": "Valori fondamentali che orientano ogni nostra decisione e relazione",
+      "items": {
+        "integrity": {
+          "title": "Integrità",
+          "description": "Agiamo con onestà e trasparenza in ogni relazione."
+        },
+        "innovation": {
+          "title": "Innovazione",
+          "description": "Cerchiamo costantemente nuove soluzioni per i nostri clienti."
+        },
+        "collaboration": {
+          "title": "Collaborazione",
+          "description": "Lavoriamo insieme ai nostri partner per obiettivi comuni."
+        },
+        "excellence": {
+          "title": "Eccellenza",
+          "description": "Puntiamo sempre alla massima qualità in tutto ciò che facciamo."
+        },
+        "sustainability": {
+          "title": "Sostenibilità",
+          "description": "Integriamo la responsabilità ambientale in ogni progetto."
+        },
+        "trust": {
+          "title": "Fiducia",
+          "description": "Costruiamo relazioni durature basate sulla fiducia reciproca."
+        }
+      }
+    },
+    "timeline": {
+      "badge": "La Nostra Storia",
+      "title": "40 anni di evoluzione",
+      "subtitle": "Le tappe fondamentali del nostro percorso di crescita",
+      "milestones": {
+        "origini": {
+          "year": "1980–1985",
+          "title": "Le origini",
+          "description": "Il Gruppo Cestari nasce a Salerno all'inizio degli anni Ottanta dall'iniziativa dell'ingegnere Alfredo Carmine Cestari. Le prime attività sono focalizzate sulla progettazione civile e sulla consulenza tecnica e finanziaria per enti pubblici e territori del Sud Italia, con particolare attenzione alla pianificazione e all'utilizzo dei fondi territoriali."
+        },
+        "espansione": {
+          "year": "1990",
+          "title": "Espansione nazionale",
+          "description": "Il Gruppo avvia una fase di crescita strutturata con l'apertura delle sedi di Roma, Milano e Napoli. Questa espansione consente di presidiare i principali snodi istituzionali italiani e di gestire progetti complessi di sviluppo industriale e territoriale su scala nazionale."
+        },
+        "consolidamento": {
+          "year": "1993",
+          "title": "Consolidamento societario",
+          "description": "Vengono formalizzate alcune realtà storiche del nucleo originario, tra cui Cestari S.r.l. In questi anni prende forma Futuro & Programmazione, società specializzata in pianificazione strategica, finanza agevolata e sviluppo territoriale, che diventerà uno degli asset centrali del Gruppo."
+        },
+        "rafforzamento": {
+          "year": "1997",
+          "title": "Rafforzamento delle competenze",
+          "description": "Alfredo Carmine Cestari consegue la laurea in Ingegneria Civile, Difesa del Suolo e Pianificazione Territoriale. Il Gruppo opera già su scala nazionale e inizia a guardare oltre i confini italiani."
+        },
+        "internazionalizzazione": {
+          "year": "2000",
+          "title": "Avvio dell'internazionalizzazione",
+          "description": "Il Gruppo avvia i primi progetti di cooperazione internazionale, con particolare attenzione all'Africa. Nasce la visione di esportare il know-how italiano nei settori infrastrutture, energia e sviluppo territoriale."
+        },
+        "africa": {
+          "year": "2002",
+          "title": "Africa e dimensione istituzionale",
+          "description": "La nomina di Alfredo Cestari a Console Onorario della Repubblica Democratica del Congo segna una svolta strategica. Il Gruppo rafforza la propria presenza nei Paesi africani e costruisce relazioni stabili con governi e istituzioni locali, ampliando l'operatività anche in Rwanda, Angola, Burundi, Kenya e Gabon."
+        },
+        "sistemaPaese": {
+          "year": "2004",
+          "title": "Sistema Paese e cooperazione strutturata",
+          "description": "Nasce ItalAfrica Centrale, Camera di Commercio Estera riconosciuta in Italia, fondata da Alfredo Carmine Cestari. Per il Gruppo rappresenta uno strumento strategico per accompagnare le imprese italiane nei mercati africani e consolidare il ruolo dell'Italia nei processi di cooperazione economica internazionale."
+        },
+        "energia": {
+          "year": "2005",
+          "title": "Energia e sostenibilità",
+          "description": "Viene fondata Strategic Energy Resources (S.E.R.), società dedicata alle energie rinnovabili e all'efficienza energetica. Il Gruppo realizza parchi eolici e fotovoltaici in Italia, tra cui Foiano di Val Fortore e Montesano sulla Marcellana, anticipando i temi della transizione energetica."
+        },
+        "logistica": {
+          "year": "2006",
+          "title": "Logistica e aviazione in Africa",
+          "description": "Nasce Emeraude S.a.r.l. a Pointe-Noire (Repubblica del Congo), con attività di aerotaxi e logistica aerea. L'esperienza pone le basi per lo sviluppo successivo del comparto aeronautico del Gruppo."
+        },
+        "sostenibilita": {
+          "year": "2010",
+          "title": "Sostenibilità e fotovoltaico internazionale",
+          "description": "Viene avviata la divisione dedicata esclusivamente alla sostenibilità. Nasce Midday Sun, focalizzata su grandi impianti fotovoltaici, con particolare attenzione ai progetti solari in Africa."
+        },
+        "aviazione": {
+          "year": "2012",
+          "title": "Aviazione civile e infrastrutture aeroportuali",
+          "description": "Consegue il COA la compagnia aerea Winfly, fondata da Alfredo Cestari. Winfly opera nel trasporto civile ed executive, nella manutenzione aeronautica e nella gestione di infrastrutture aeroportuali, tra cui l'aeroporto \"Enrico Mattei\" di Pisticci."
+        },
+        "expo": {
+          "year": "2013",
+          "title": "Expo e diplomazia economica",
+          "description": "Alfredo Cestari viene nominato Commissario Generale del Burundi per Expo Milano 2015. Il Gruppo svolge un ruolo chiave nel favorire la partecipazione di numerosi Paesi africani, rafforzando la dimensione istituzionale e internazionale del network."
+        },
+        "europa": {
+          "year": "2015",
+          "title": "Europa, Sud America ed Expo Milano 2015",
+          "description": "L'anno di Expo Milano 2015 rappresenta un momento di forte visibilità internazionale per il Gruppo Cestari. Viene aperta la sede di Bruxelles, in Rue Belliard, per il monitoraggio diretto dei fondi europei e dei programmi UE-Africa. Nasce Cestari Brasil, con sedi a Cuiabá e Belém, segnando l'ingresso strutturato del Gruppo in Sud America. Si sviluppano inoltre Newser1, dedicata all'innovazione digitale, e I.E.D., focalizzato sulla formazione professionalizzante e sullo sviluppo delle competenze nei Paesi in via di sviluppo."
+        },
+        "ecosistema": {
+          "year": "2019",
+          "title": "Ecosistema integrato",
+          "description": "Il Gruppo consolida il proprio modello come ecosistema imprenditoriale multisettoriale, attivo nella consulenza finanziaria, energia, logistica, formazione e cooperazione internazionale."
+        },
+        "sudPoloMagnetico": {
+          "year": "2020–2021",
+          "title": "Sud Polo Magnetico",
+          "description": "Viene lanciato il progetto Sud Polo Magnetico, che individua nel Mezzogiorno d'Italia l'hub naturale tra Europa e Africa. All'interno di questa visione, le Zone Economiche Speciali (ZES) vengono riconosciute come strumento operativo fondamentale per attrarre investimenti, favorire insediamenti produttivi e rafforzare la competitività dei territori del Sud."
+        },
+        "zes2022": {
+          "year": "2022",
+          "title": "ZES e attrazione degli investimenti",
+          "description": "Il Gruppo integra in modo strutturato le ZES nei propri modelli di sviluppo territoriale. Le ZES vengono utilizzate come leva per accompagnare imprese italiane e internazionali nei processi di localizzazione produttiva, accesso agli incentivi e sviluppo industriale nel Mezzogiorno."
+        },
+        "zesPianoMattei": {
+          "year": "2023–2024",
+          "title": "ZES, Piano Mattei e cooperazione internazionale",
+          "description": "Le ZES vengono lette in chiave sistemica e collegate agli obiettivi del Piano Mattei. Il Gruppo contribuisce a costruire modelli di cooperazione che mettono in relazione ZES italiane e filiere produttive africane, favorendo investimenti sostenibili, trasferimento di competenze e sviluppo industriale condiviso."
+        },
+        "zesOggi": {
+          "year": "2026 – Oggi",
+          "title": "ZES come infrastruttura strategica",
+          "description": "Le ZES rappresentano uno degli assi portanti del posizionamento del Gruppo. Il Mezzogiorno viene promosso come piattaforma produttiva, energetica e logistica avanzata, capace di dialogare con Europa e Africa in modo strutturato e competitivo."
+        }
+      }
+    },
+    "companies": {
+      "badge": "Le Società",
+      "title": "10 Società del Gruppo",
+      "subtitle": "Un ecosistema integrato di competenze specializzate",
+      "viewAll": "Scopri tutte le società",
+      "items": {
+        "winfly": { "name": "Winfly", "description": "Aviation e logistica" },
+        "ser": { "name": "Strategic Energy Resources", "description": "Energie rinnovabili" },
+        "ied": { "name": "I.E.D.", "description": "Sviluppo economico" },
+        "brasil": { "name": "Cestari Brasil", "description": "Operazioni Sud America" },
+        "newser1": { "name": "Newser1", "description": "Comunicazione" },
+        "futuro": { "name": "Futuro & Programmazione", "description": "Consulenza strategica" },
+        "sakti": { "name": "SAKTI", "description": "Tecnologie sostenibili" },
+        "wiremena": { "name": "Wiremena", "description": "Infrastrutture" },
+        "midday": { "name": "Midday Sun", "description": "Energie solari" },
+        "flywin": { "name": "Flywin", "description": "Servizi aeroportuali" }
+      }
+    },
+    "offices": {
+      "badge": "Le Nostre Sedi",
+      "title": "Presenti dove serve",
+      "subtitle": "15 sedi nel mondo per essere sempre vicini ai nostri clienti",
+      "headquarters": "Sede Centrale",
+      "office": "Ufficio",
+      "euOffice": "Ufficio UE"
+    },
+    "performance": {
+      "badge": "I Nostri Risultati",
+      "title": "Performance del Gruppo",
+      "subtitle": "Numeri che testimoniano la nostra affidabilità e competenza",
+      "completed": "Progetti Completati",
+      "ongoing": "Progetti in Corso",
+      "satisfaction": "Soddisfazione Clienti"
+    },
+    "video": {
+      "title": "Ascolta le parole del fondatore",
+      "subtitle": "L'Ing. Alfredo C. Cestari racconta la visione e i valori che guidano il Gruppo da oltre 40 anni"
+    },
+    "gallery": {
+      "badge": "Missioni Internazionali",
+      "title": "Presenti nel mondo",
+      "subtitle": "Momenti chiave delle nostre missioni con leader e istituzioni internazionali"
+    },
+    "cta": {
+      "title": "Inizia il tuo percorso con noi",
+      "subtitle": "Scopri come possiamo aiutarti a raggiungere i tuoi obiettivi di crescita sostenibile",
+      "contact": "Contattaci",
+      "services": "I Nostri Servizi"
+    }
+  },
+  "services": {
+    "financial": {
+      "title": "Bandi e Agevolazioni",
+      "description": "Sezione dedicata a imprese, enti pubblici, cittadini e PMI che cercano sostegno finanziario. Identifichiamo e gestiamo bandi e agevolazioni adatti alle vostre specifiche necessità.",
+      "shortDescription": "Finanziamenti per imprese, enti pubblici e PMI",
+      "highlights": ["Fondi europei", "Incentivi nazionali", "Credito d'imposta"]
+    },
+    "cooperation": {
+      "title": "Sud Polo Magnetico",
+      "description": "Grazie ai fondi europei e alle risorse nazionali, il Gruppo Cestari ha lanciato il progetto Sud Polo Magnetico, volto a contrastare lo spopolamento nel Mezzogiorno e a promuovere la crescita economica delle regioni meridionali.",
+      "shortDescription": "Sviluppo economico del Mezzogiorno",
+      "highlights": ["Fondi UE", "Contrasto spopolamento", "Crescita Sud Italia"]
+    },
+    "energy": {
+      "title": "Comunità Energetiche",
+      "description": "Il Gruppo Cestari è tra i primi a credere nel potenziale delle CER, promuovendone la creazione in tutto il territorio nazionale. Produci e condividi energia da fonti rinnovabili con risparmio in bolletta tra il 20% e il 50%.",
+      "shortDescription": "CER con risparmio dal 20% al 50%",
+      "highlights": ["Risparmio 20-50%", "Incentivi 20 anni", "Zero emissioni"]
+    },
+    "planning": {
+      "title": "Studi di Fattibilità",
+      "description": "Analisi tecnico-economiche complete per i tuoi investimenti. Progettazione dell'impianto, redazione del business plan, ricerca di finanziamenti e supporto per il raggiungimento degli obiettivi.",
+      "shortDescription": "Business plan e analisi investimenti",
+      "highlights": ["Analisi ROI", "Business plan", "Finanziamenti"]
+    },
+    "hero": {
+      "badge": "Dal 1980 al servizio delle imprese",
+      "title": "I Nostri Servizi",
+      "subtitle": "Soluzioni complete e personalizzate per ogni esigenza di business"
+    },
+    "items": {
+      "financial": {
+        "title": "Consulenza Finanziaria",
+        "description": "Supporto strategico per l'accesso a finanziamenti pubblici e privati, ottimizzazione fiscale e pianificazione finanziaria.",
+        "features": {
+          "analysis": "Analisi finanziaria approfondita",
+          "planning": "Pianificazione strategica",
+          "funding": "Accesso ai finanziamenti",
+          "management": "Gestione del credito"
+        }
+      },
+      "international": {
+        "title": "Cooperazione Internazionale",
+        "description": "Progetti di sviluppo in mercati emergenti, partnership internazionali e capacity building.",
+        "features": {
+          "projects": "Gestione progetti internazionali",
+          "partnerships": "Sviluppo partnership",
+          "development": "Programmi di sviluppo",
+          "training": "Formazione e capacity building"
+        }
+      },
+      "energy": {
+        "title": "Energie Rinnovabili",
+        "description": "Progettazione e realizzazione di impianti fotovoltaici, eolici e comunità energetiche rinnovabili.",
+        "features": {
+          "solar": "Impianti fotovoltaici",
+          "efficiency": "Efficientamento energetico",
+          "consulting": "Consulenza energetica",
+          "certification": "Certificazioni ambientali"
+        }
+      },
+      "grants": {
+        "title": "Bandi e Finanziamenti",
+        "description": "Ricerca, analisi e gestione di bandi europei, nazionali e regionali per la tua impresa.",
+        "features": {
+          "search": "Ricerca opportunità",
+          "writing": "Scrittura progetti",
+          "submission": "Presentazione candidature",
+          "reporting": "Rendicontazione"
+        }
+      },
+      "business": {
+        "title": "Consulenza Aziendale",
+        "description": "Supporto strategico per la crescita, ottimizzazione dei processi e trasformazione digitale.",
+        "features": {
+          "strategy": "Strategia aziendale",
+          "operations": "Ottimizzazione processi",
+          "digital": "Trasformazione digitale",
+          "growth": "Piani di crescita"
+        }
+      },
+      "training": {
+        "title": "Formazione",
+        "description": "Programmi formativi personalizzati per imprenditori, manager e team aziendali.",
+        "features": {
+          "corporate": "Formazione aziendale",
+          "specialized": "Corsi specialistici",
+          "workshops": "Workshop interattivi",
+          "coaching": "Business coaching"
+        }
+      }
+    },
+    "learnMore": "Richiedi informazioni",
+    "process": {
+      "title": "Il Nostro Metodo",
+      "subtitle": "Un approccio strutturato per garantire risultati concreti",
+      "step": "Step",
+      "steps": {
+        "analysis": {
+          "title": "Analisi",
+          "description": "Studiamo le tue esigenze e il contesto di mercato."
+        },
+        "strategy": {
+          "title": "Strategia",
+          "description": "Definiamo insieme gli obiettivi e il piano d'azione."
+        },
+        "implementation": {
+          "title": "Implementazione",
+          "description": "Realizziamo il progetto con supporto continuo."
+        },
+        "monitoring": {
+          "title": "Monitoraggio",
+          "description": "Misuriamo i risultati e ottimizziamo le performance."
+        }
+      }
+    },
+    "industries": {
+      "title": "Settori di Competenza",
+      "subtitle": "Esperienza consolidata in molteplici settori industriali",
+      "items": {
+        "manufacturing": "Manifatturiero",
+        "agriculture": "Agricoltura",
+        "tourism": "Turismo",
+        "healthcare": "Sanità",
+        "technology": "Tecnologia",
+        "construction": "Edilizia",
+        "retail": "Commercio",
+        "logistics": "Logistica"
+      }
+    },
+    "cta": {
+      "title": "Pronto a iniziare?",
+      "subtitle": "Contattaci per una consulenza personalizzata sulle tue esigenze.",
+      "consultation": "Richiedi Consulenza",
+      "contact": "Contattaci"
+    }
+  },
+  "sustainability": {
+    "hero": {
+      "badge": "Impegno Ambientale",
+      "title": "Sostenibilità al Centro",
+      "subtitle": "Crediamo in uno sviluppo che rispetti l'ambiente e crei valore per le generazioni future."
+    },
+    "pillars": {
+      "title": "I Pilastri ESG",
+      "subtitle": "Il nostro impegno su ambiente, sociale e governance",
+      "items": {
+        "environmental": {
+          "title": "Ambiente",
+          "description": "Riduzione dell'impatto ambientale e promozione delle energie rinnovabili.",
+          "point1": "Riduzione emissioni CO2",
+          "point2": "Energie rinnovabili",
+          "point3": "Economia circolare"
+        },
+        "social": {
+          "title": "Sociale",
+          "description": "Valorizzazione delle persone e delle comunità in cui operiamo.",
+          "point1": "Sviluppo comunità locali",
+          "point2": "Formazione e crescita",
+          "point3": "Diversità e inclusione"
+        },
+        "governance": {
+          "title": "Governance",
+          "description": "Gestione trasparente e responsabile delle attività aziendali.",
+          "point1": "Etica e trasparenza",
+          "point2": "Gestione del rischio",
+          "point3": "Compliance normativa"
+        }
+      }
+    },
+    "goals": {
+      "title": "I Nostri Obiettivi 2030",
+      "subtitle": "Traguardi ambiziosi per un futuro sostenibile",
+      "items": {
+        "emissions": "Riduzione emissioni",
+        "renewable": "Energia rinnovabile",
+        "waste": "Rifiuti in discarica",
+        "trees": "Alberi piantati"
+      }
+    },
+    "initiatives": {
+      "title": "Le Nostre Iniziative",
+      "subtitle": "Azioni concrete per la sostenibilità",
+      "items": {
+        "solar": {
+          "title": "Impianti Fotovoltaici",
+          "description": "Installazione di impianti solari per aziende e comunità."
+        },
+        "waste": {
+          "title": "Gestione Rifiuti",
+          "description": "Programmi di riduzione e riciclo dei rifiuti."
+        },
+        "reforestation": {
+          "title": "Riforestazione",
+          "description": "Progetti di piantumazione in aree degradate."
+        },
+        "water": {
+          "title": "Risorse Idriche",
+          "description": "Ottimizzazione dell'uso dell'acqua."
+        },
+        "emissions": {
+          "title": "Carbon Footprint",
+          "description": "Monitoraggio e riduzione delle emissioni."
+        },
+        "community": {
+          "title": "Comunità Locali",
+          "description": "Supporto alle comunità dei territori in cui operiamo."
+        }
+      }
+    },
+    "certifications": {
+      "title": "Certificazioni",
+      "subtitle": "Riconoscimenti del nostro impegno per la qualità e l'ambiente"
+    },
+    "report": {
+      "title": "Report di Sostenibilità",
+      "description": "Scarica il nostro report annuale per scoprire nel dettaglio le nostre attività e i risultati raggiunti.",
+      "download": "Scarica il Report"
+    },
+    "cta": {
+      "title": "Vuoi rendere la tua azienda più sostenibile?",
+      "subtitle": "Scopri come possiamo aiutarti nel percorso verso la sostenibilità.",
+      "button": "Contattaci"
+    }
+  },
+  "projects": {
+    "hero": {
+      "title": "I Nostri Progetti",
+      "subtitle": "Scopri le realizzazioni e i case study che testimoniano la nostra esperienza"
+    },
+    "stats": {
+      "totalProjects": "Progetti completati",
+      "countries": "Paesi coinvolti",
+      "investments": "Investimenti gestiti",
+      "beneficiaries": "Beneficiari"
+    },
+    "filters": {
+      "sector": "Settore",
+      "sectors": {
+        "all": "Tutti",
+        "financial": "Finanza",
+        "cooperation": "Cooperazione",
+        "energy": "Energia",
+        "training": "Formazione"
+      },
+      "country": "Area geografica",
+      "countries": {
+        "all": "Tutte",
+        "italy": "Italia",
+        "europe": "Europa",
+        "africa": "Africa",
+        "asia": "Asia",
+        "americas": "Americhe"
+      }
+    },
+    "status": {
+      "completed": "Completato",
+      "ongoing": "In corso"
+    },
+    "impact": "Impatto",
+    "viewProject": "Vedi progetto",
+    "noResults": "Nessun progetto trovato con i filtri selezionati.",
+    "cta": {
+      "title": "Hai un progetto in mente?",
+      "subtitle": "Contattaci per scoprire come possiamo aiutarti a realizzarlo.",
+      "consultation": "Richiedi Consulenza",
+      "contact": "Contattaci"
+    }
+  },
+  "news": {
+    "hero": {
+      "badge": "Aggiornamenti e approfondimenti",
+      "title": "News e Approfondimenti",
+      "subtitle": "Resta aggiornato sulle ultime novità dal mondo della finanza, cooperazione e sostenibilità"
+    },
+    "search": {
+      "placeholder": "Cerca articoli..."
+    },
+    "categories": {
+      "all": "Tutti gli articoli",
+      "energy": "Energia",
+      "international": "Internazionale",
+      "events": "Eventi",
+      "investment": "Investimenti"
+    },
+    "readTime": "min di lettura",
+    "readMore": "Leggi",
+    "empty": {
+      "title": "Nessun articolo trovato",
+      "message": "Prova a modificare i filtri o la ricerca per trovare gli articoli che cerchi.",
+      "resetFilters": "Rimuovi filtri"
+    },
+    "errors": {
+      "loading": "Errore nel caricamento delle news"
+    },
+    "newsletter": {
+      "title": "Rimani Aggiornato",
+      "subtitle": "Iscriviti alla newsletter per ricevere le ultime novità direttamente nella tua casella email.",
+      "placeholder": "La tua email",
+      "subscribe": "Iscriviti",
+      "subscribing": "Iscrizione...",
+      "success": {
+        "title": "Iscrizione completata!",
+        "message": "Grazie per esserti iscritto alla nostra newsletter.",
+        "another": "Iscrivi un altro indirizzo"
+      }
+    },
+    "detail": {
+      "loading": "Caricamento articolo...",
+      "author": "Pubblicato da",
+      "stayUpdated": "Rimani Aggiornato",
+      "stayUpdatedDesc": "Iscriviti alla newsletter per ricevere le ultime news direttamente nella tua email.",
+      "contactUs": "Contattaci",
+      "articleInfo": "Dettagli Articolo",
+      "category": "Categoria",
+      "publishDate": "Data pubblicazione",
+      "readingTime": "Tempo di lettura",
+      "minutes": "minuti",
+      "views": "Visualizzazioni",
+      "backToNews": "Torna alle News",
+      "relatedArticles": "Articoli Correlati",
+      "relatedArticlesDesc": "Altri articoli che potrebbero interessarti",
+      "viewAll": "Vedi tutte le news",
+      "copied": "Link copiato!",
+      "copyLink": "Copia link"
+    }
+  },
+  "grants": {
+    "hero": {
+      "badge": "Finanziamenti e opportunità",
+      "title": "Bandi e Finanziamenti",
+      "subtitle": "Scopri le opportunità di finanziamento attive per la tua impresa"
+    },
+    "search": {
+      "placeholder": "Cerca bandi..."
+    },
+    "notification": {
+      "text": "Attiva le notifiche per ricevere aggiornamenti sui nuovi bandi nel tuo settore.",
+      "button": "Attiva Notifiche"
+    },
+    "stats": {
+      "activeGrants": "Bandi attivi",
+      "availableFunds": "Fondi disponibili",
+      "expiringSoon": "In scadenza"
+    },
+    "types": {
+      "all": "Tutti i tipi",
+      "EUROPEAN": "Europeo",
+      "NATIONAL": "Nazionale",
+      "REGIONAL": "Regionale",
+      "PRIVATE": "Privato",
+      "europeans": "Europei",
+      "nationals": "Nazionali",
+      "regionals": "Regionali",
+      "privates": "Privati"
+    },
+    "sectors": {
+      "ENERGY": "Energia",
+      "ENVIRONMENT": "Ambiente",
+      "INNOVATION": "Innovazione",
+      "AGRICULTURE": "Agricoltura",
+      "SOCIAL": "Sociale",
+      "INFRASTRUCTURE": "Infrastrutture",
+      "DIGITAL": "Digitale",
+      "HEALTH": "Salute",
+      "EDUCATION": "Formazione",
+      "TOURISM": "Turismo",
+      "COOPERATION": "Cooperazione",
+      "RENEWABLE_ENERGY": "Energie Rinnovabili",
+      "DEVELOPMENT": "Sviluppo"
+    },
+    "filters": {
+      "label": "Filtri",
+      "active": "Attivi",
+      "activeFilters": "Filtri attivi:",
+      "clear": "Pulisci",
+      "removeAll": "Rimuovi tutti i filtri",
+      "allSectors": "Tutti i settori",
+      "sectors": {
+        "all": "Tutti i settori",
+        "innovation": "Innovazione",
+        "sustainability": "Sostenibilità",
+        "internationalization": "Internazionalizzazione",
+        "training": "Formazione",
+        "startups": "Startup"
+      },
+      "regions": {
+        "all": "Tutte le aree",
+        "national": "Nazionali",
+        "european": "Europei",
+        "regional": "Regionali"
+      },
+      "statuses": {
+        "all": "Tutti",
+        "open": "Aperti",
+        "closing": "In scadenza",
+        "upcoming": "Prossimi"
+      }
+    },
+    "status": {
+      "open": "Aperto",
+      "closing": "In scadenza",
+      "upcoming": "Prossimamente",
+      "closed": "Chiuso"
+    },
+    "featured": "In evidenza",
+    "featuredGrants": "Bandi in evidenza",
+    "amount": "Importo",
+    "toDefine": "Da definire",
+    "funding": "Copertura",
+    "fundingTypes": {
+      "grant": "a fondo perduto",
+      "loan": "finanziamento agevolato",
+      "reimbursement": "rimborso",
+      "tax_credit": "credito d'imposta"
+    },
+    "deadline": "Scadenza",
+    "daysRemaining": "giorni rimanenti",
+    "noDeadline": "Senza scadenza",
+    "viewDetails": "Vedi dettagli",
+    "grantsFound": "bandi trovati",
+    "noResults": "Nessun bando trovato",
+    "noResultsMessage": "Non ci sono bandi che corrispondono ai filtri selezionati. Prova a modificare i criteri di ricerca.",
+    "noResultsEmpty": "Al momento non sono presenti bandi attivi. Torna a trovarci presto!",
+    "loadingError": "Errore nel caricamento dei bandi",
+    "cta": {
+      "title": "Hai bisogno di assistenza?",
+      "subtitle": "I nostri esperti possono aiutarti a individuare i bandi più adatti e gestire la candidatura.",
+      "consultation": "Richiedi Consulenza",
+      "contact": "Contattaci"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contattaci",
+      "subtitle": "Siamo qui per rispondere a ogni tua domanda"
+    },
+    "form": {
+      "title": "Invia un messaggio",
+      "description": "Compila il form e ti risponderemo il prima possibile.",
+      "name": "Nome",
+      "namePlaceholder": "Il tuo nome",
+      "surname": "Cognome",
+      "surnamePlaceholder": "Il tuo cognome",
+      "email": "Email",
+      "emailPlaceholder": "email@esempio.com",
+      "phone": "Telefono",
+      "phonePlaceholder": "+39 123 456 7890",
+      "company": "Azienda / Ente",
+      "companyPlaceholder": "Nome azienda o ente",
+      "subject": "Argomento",
+      "subjectPlaceholder": "Seleziona un argomento",
+      "subjects": {
+        "default": "Seleziona un argomento",
+        "info": "Informazioni generali",
+        "consulting": "Richiesta consulenza",
+        "partnership": "Proposta di partnership",
+        "energy": "Progetti energetici",
+        "euGrants": "Bandi e finanziamenti",
+        "career": "Lavora con noi",
+        "other": "Altro"
+      },
+      "message": "Messaggio",
+      "messagePlaceholder": "Descrivi la tua richiesta...",
+      "privacy": "Ho letto e accetto la",
+      "privacyLink": "Privacy Policy",
+      "privacyEnd": "e acconsento al trattamento dei miei dati personali.",
+      "submit": "Invia messaggio",
+      "sending": "Invio in corso...",
+      "success": {
+        "title": "Messaggio inviato!",
+        "message": "Grazie per averci contattato. Ti risponderemo entro 24 ore lavorative.",
+        "button": "Invia un altro messaggio"
+      },
+      "error": "Si è verificato un errore"
+    },
+    "quickContact": {
+      "badge": "Siamo a vostra disposizione",
+      "phoneLabel": "Telefono",
+      "emailLabel": "Email",
+      "hoursLabel": "Orari",
+      "hoursValue": "Lun-Ven 8:30-17"
+    },
+    "sidebar": {
+      "whyTitle": "Perché contattarci?",
+      "reasons": {
+        "consultation": "Consulenza gratuita iniziale",
+        "response": "Risposta entro 24 ore",
+        "team": "Team di esperti multilingue",
+        "presence": "Presenza internazionale"
+      },
+      "followTitle": "Seguici",
+      "stats": {
+        "clients": "Clienti serviti",
+        "countries": "Paesi nel mondo"
+      }
+    },
+    "info": {
+      "title": "Informazioni di Contatto",
+      "description": "Scegli il canale che preferisci per metterti in contatto con noi.",
+      "phone": "Telefono",
+      "email": "Email",
+      "hours": "Orari",
+      "hoursValue": "Lun - Ven: 8:30 - 17:00",
+      "social": "Seguici su"
+    },
+    "offices": {
+      "badge": "Le nostre sedi",
+      "title": "Dove trovarci",
+      "subtitle": "Sedi strategiche in Italia e in Europa per essere sempre vicini ai nostri clienti.",
+      "hqBadge": "Sede Principale",
+      "types": {
+        "headquarters": "Sede Centrale",
+        "office": "Ufficio Operativo",
+        "institutional": "Relazioni Istituzionali",
+        "euAffairs": "EU Affairs"
+      }
+    },
+    "map": {
+      "placeholder": "Mappa interattiva delle nostre sedi",
+      "openMaps": "Apri in Google Maps"
+    },
+    "finalCta": {
+      "title": "Hai bisogno di supporto immediato?",
+      "subtitle": "Il nostro team è pronto ad assisterti.",
+      "button": "Chiama: +39 089 952889"
+    }
+  },
+  "consultation": {
+    "hero": {
+      "title": "Richiedi una Consulenza",
+      "subtitle": "Compila il form per essere ricontattato dal nostro team di esperti"
+    },
+    "steps": {
+      "company": {
+        "title": "Azienda",
+        "subtitle": "Parlaci della tua azienda"
+      },
+      "contact": {
+        "title": "Contatto",
+        "subtitle": "I tuoi dati di contatto"
+      },
+      "request": {
+        "title": "Richiesta",
+        "subtitle": "Di cosa hai bisogno?"
+      },
+      "details": {
+        "title": "Dettagli",
+        "subtitle": "Descrivi la tua richiesta"
+      }
+    },
+    "fields": {
+      "companyName": "Nome Azienda",
+      "companyType": "Tipo Società",
+      "sector": "Settore di Attività",
+      "employees": "Numero Dipendenti",
+      "revenue": "Fatturato Annuo (€)",
+      "vatNumber": "Partita IVA",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "email": "Email",
+      "phone": "Telefono",
+      "role": "Ruolo in Azienda",
+      "services": "Servizi di Interesse",
+      "budget": "Budget Indicativo",
+      "timeline": "Tempistiche",
+      "description": "Descrivi la tua richiesta",
+      "goals": "Obiettivi da raggiungere",
+      "documents": "Documenti di supporto",
+      "privacy": "Ho letto e accetto la Privacy Policy e autorizzo il trattamento dei dati personali.",
+      "newsletter": "Desidero ricevere aggiornamenti su bandi e opportunità di finanziamento."
+    },
+    "placeholders": {
+      "companyName": "Nome della tua azienda",
+      "select": "Seleziona...",
+      "vatNumber": "IT12345678901",
+      "firstName": "Il tuo nome",
+      "lastName": "Il tuo cognome",
+      "email": "nome@azienda.it",
+      "phone": "+39 333 1234567",
+      "role": "es. Amministratore, Direttore...",
+      "description": "Descrivi in dettaglio la tua richiesta e le tue esigenze...",
+      "goals": "Quali obiettivi vorresti raggiungere con il nostro supporto?",
+      "documents": "Trascina qui i file o clicca per selezionarli (max 10MB per file)"
+    },
+    "companyTypes": {
+      "srl": "S.r.l.",
+      "spa": "S.p.A.",
+      "snc": "S.n.c.",
+      "sas": "S.a.s.",
+      "individual": "Ditta Individuale",
+      "cooperative": "Cooperativa",
+      "other": "Altro"
+    },
+    "sectors": {
+      "manufacturing": "Manifatturiero",
+      "services": "Servizi",
+      "commerce": "Commercio",
+      "agriculture": "Agricoltura",
+      "technology": "Tecnologia",
+      "construction": "Edilizia",
+      "tourism": "Turismo",
+      "other": "Altro"
+    },
+    "serviceOptions": {
+      "financial": "Consulenza Finanziaria",
+      "grants": "Bandi e Finanziamenti",
+      "international": "Cooperazione Internazionale",
+      "energy": "Energie Rinnovabili",
+      "training": "Formazione",
+      "other": "Altro"
+    },
+    "budgetOptions": {
+      "under50k": "< €50.000",
+      "50k-100k": "€50.000 - €100.000",
+      "100k-500k": "€100.000 - €500.000",
+      "500k-1m": "€500.000 - €1M",
+      "over1m": "> €1.000.000",
+      "unknown": "Da definire"
+    },
+    "timelineOptions": {
+      "urgent": "Urgente",
+      "1-3months": "1-3 mesi",
+      "3-6months": "3-6 mesi",
+      "6-12months": "6-12 mesi",
+      "flexible": "Flessibile"
+    },
+    "buttons": {
+      "previous": "Indietro",
+      "next": "Avanti",
+      "submit": "Invia Richiesta",
+      "submitting": "Invio in corso...",
+      "selectFiles": "Seleziona file"
+    },
+    "success": {
+      "title": "Richiesta Inviata con Successo!",
+      "message": "Grazie per averci contattato. Un nostro consulente ti ricontatterà entro 24 ore lavorative.",
+      "nextSteps": "Nel frattempo, puoi esplorare il nostro sito per scoprire tutti i nostri servizi e progetti.",
+      "backHome": "Torna alla Home"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Accedi",
+      "subtitle": "Accedi alla tua area riservata",
+      "email": "Email",
+      "password": "Password",
+      "remember": "Ricordami",
+      "forgot": "Password dimenticata?",
+      "submit": "Accedi",
+      "noAccount": "Non hai un account?",
+      "register": "Registrati"
+    },
+    "register": {
+      "title": "Registrati",
+      "subtitle": "Crea il tuo account",
+      "name": "Nome completo",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Conferma Password",
+      "submit": "Registrati",
+      "hasAccount": "Hai già un account?",
+      "login": "Accedi"
+    },
+    "forgot": {
+      "title": "Recupera Password",
+      "subtitle": "Inserisci la tua email per recuperare la password",
+      "email": "Email",
+      "submit": "Invia Link",
+      "success": "Email inviata! Controlla la tua casella di posta.",
+      "back": "Torna al login"
+    },
+    "reset": {
+      "title": "Reimposta Password",
+      "subtitle": "Inserisci la tua nuova password",
+      "newPassword": "Nuova Password",
+      "confirmPassword": "Conferma Password",
+      "passwordHint": "Minimo 8 caratteri",
+      "submit": "Reimposta Password",
+      "submitting": "Reimpostazione in corso...",
+      "successTitle": "Password reimpostata!",
+      "successDescription": "La tua password è stata reimpostata con successo. Verrai reindirizzato alla pagina di login.",
+      "backToLogin": "Torna al login",
+      "invalidLink": "Link non valido",
+      "invalidLinkDescription": "Il link per reimpostare la password non è valido o è scaduto.",
+      "requestNewLink": "Richiedi un nuovo link",
+      "passwordMismatch": "Le password non corrispondono",
+      "passwordTooShort": "La password deve essere di almeno 8 caratteri",
+      "genericError": "Si è verificato un errore. Riprova più tardi."
+    }
+  },
+  "portal": {
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Bentornato, {name}!",
+      "subtitle": "Ecco un riepilogo delle tue attività",
+      "stats": {
+        "documents": "Documenti",
+        "applications": "Candidature",
+        "notifications": "Notifiche non lette"
+      },
+      "recentDocuments": "Documenti Recenti",
+      "recentApplications": "Candidature Recenti",
+      "viewAll": "Vedi tutti",
+      "notifications": "Notifiche",
+      "status": {
+        "pending": "In attesa",
+        "approved": "Approvata",
+        "review": "In revisione",
+        "rejected": "Rifiutata"
+      }
+    },
+    "documents": {
+      "title": "I Miei Documenti",
+      "subtitle": "Gestisci tutti i tuoi documenti in un unico posto",
+      "upload": "Carica Documento",
+      "search": "Cerca documenti...",
+      "noDocuments": "Nessun documento trovato",
+      "table": {
+        "name": "Nome",
+        "category": "Categoria",
+        "size": "Dimensione",
+        "date": "Data",
+        "actions": "Azioni"
+      },
+      "actions": {
+        "view": "Visualizza",
+        "download": "Scarica",
+        "delete": "Elimina"
+      },
+      "categories": {
+        "contracts": "Contratti",
+        "reports": "Report",
+        "invoices": "Fatture",
+        "certificates": "Certificati",
+        "presentations": "Presentazioni",
+        "spreadsheets": "Fogli di calcolo",
+        "other": "Altri"
+      }
+    },
+    "applications": {
+      "title": "Le Mie Candidature",
+      "subtitle": "Monitora lo stato delle tue candidature ai bandi",
+      "newApplication": "Esplora Bandi",
+      "search": "Cerca candidature...",
+      "noApplications": "Non hai ancora candidature",
+      "browseBandi": "Esplora i bandi disponibili",
+      "stats": {
+        "total": "Totali",
+        "pending": "In attesa",
+        "review": "In revisione",
+        "approved": "Approvate"
+      },
+      "details": {
+        "info": "Informazioni",
+        "deadline": "Scadenza bando",
+        "lastUpdate": "Ultimo aggiornamento",
+        "amount": "Importo richiesto",
+        "notes": "Note"
+      },
+      "actions": {
+        "viewBando": "Vedi bando",
+        "viewDocuments": "Vedi documenti"
+      }
+    },
+    "profile": {
+      "title": "Il Mio Profilo",
+      "subtitle": "Gestisci le tue informazioni personali e aziendali",
+      "tabs": {
+        "personal": "Dati Personali",
+        "company": "Dati Azienda",
+        "security": "Sicurezza",
+        "notifications": "Notifiche"
+      },
+      "role": {
+        "client": "Cliente",
+        "partner": "Partner"
+      },
+      "fields": {
+        "name": "Nome",
+        "email": "Email",
+        "phone": "Telefono",
+        "companyName": "Ragione Sociale",
+        "vatNumber": "Partita IVA",
+        "fiscalCode": "Codice Fiscale",
+        "pec": "PEC",
+        "address": "Indirizzo",
+        "city": "Città",
+        "postalCode": "CAP",
+        "country": "Paese",
+        "website": "Sito Web",
+        "sdiCode": "Codice SDI"
+      },
+      "security": {
+        "changePassword": "Cambia Password",
+        "changePasswordDesc": "Modifica la password del tuo account",
+        "changePasswordButton": "Modifica Password",
+        "twoFactor": "Autenticazione a Due Fattori",
+        "twoFactorDesc": "Aggiungi un ulteriore livello di sicurezza al tuo account",
+        "enable2FA": "Abilita 2FA",
+        "sessions": "Sessioni Attive",
+        "currentSession": "Sessione corrente",
+        "active": "Attiva"
+      },
+      "notifications": {
+        "emailNewBandi": "Notifiche Nuovi Bandi",
+        "emailNewBandiDesc": "Ricevi email quando vengono pubblicati nuovi bandi",
+        "emailApplicationUpdates": "Aggiornamenti Candidature",
+        "emailApplicationUpdatesDesc": "Ricevi email quando lo stato delle tue candidature cambia",
+        "emailNewDocuments": "Nuovi Documenti",
+        "emailNewDocumentsDesc": "Ricevi email quando vengono caricati nuovi documenti",
+        "emailNewsletter": "Newsletter",
+        "emailNewsletterDesc": "Ricevi la nostra newsletter periodica"
+      },
+      "save": "Salva Modifiche",
+      "saving": "Salvataggio...",
+      "saved": "Modifiche salvate con successo"
+    }
+  },
+  "admin": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "news": "News",
+      "bandi": "Bandi",
+      "progetti": "Progetti",
+      "candidature": "Candidature",
+      "users": "Utenti",
+      "contacts": "Contatti",
+      "settings": "Impostazioni"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Panoramica delle attività",
+      "stats": {
+        "users": "Utenti Registrati",
+        "news": "Articoli Pubblicati",
+        "bandi": "Bandi Attivi",
+        "contacts": "Messaggi Ricevuti"
+      },
+      "quickActions": "Azioni Rapide",
+      "recentActivity": "Attività Recente",
+      "pendingTasks": "Task in Sospeso",
+      "trafficOverview": "Panoramica Traffico"
+    },
+    "news": {
+      "title": "Gestione News",
+      "subtitle": "Gestisci gli articoli del blog",
+      "newArticle": "Nuovo Articolo",
+      "searchPlaceholder": "Cerca articoli...",
+      "editTitle": "Modifica News",
+      "editSubtitle": "Modifica i contenuti dell'articolo",
+      "newTitle": "Nuova News",
+      "newSubtitle": "Crea un nuovo articolo",
+      "createTitle": "Nuova News",
+      "createSubtitle": "Crea un nuovo articolo"
+    },
+    "bandi": {
+      "title": "Gestione Bandi",
+      "subtitle": "Gestisci i bandi e le opportunità di finanziamento",
+      "newBando": "Nuovo Bando",
+      "searchPlaceholder": "Cerca bandi...",
+      "editTitle": "Modifica Bando",
+      "editSubtitle": "Modifica i dettagli del bando",
+      "createTitle": "Nuovo Bando",
+      "createSubtitle": "Crea un nuovo bando di finanziamento"
+    },
+    "users": {
+      "title": "Gestione Utenti",
+      "subtitle": "Gestisci utenti e permessi",
+      "newUser": "Nuovo Utente",
+      "searchPlaceholder": "Cerca utenti...",
+      "inviteUser": "Invita Utente",
+      "exportUsers": "Esporta"
+    },
+    "contacts": {
+      "title": "Messaggi e Contatti",
+      "subtitle": "Gestisci i messaggi ricevuti dal sito",
+      "searchPlaceholder": "Cerca messaggi...",
+      "exportContacts": "Esporta"
+    },
+    "settings": {
+      "title": "Impostazioni",
+      "subtitle": "Configura le impostazioni del sito",
+      "tabs": {
+        "general": "Generali",
+        "seo": "SEO",
+        "email": "Email",
+        "integrations": "Integrazioni"
+      },
+      "general": {
+        "siteName": "Nome Sito",
+        "siteDescription": "Descrizione Sito",
+        "contactEmail": "Email di Contatto",
+        "supportPhone": "Telefono Supporto",
+        "address": "Indirizzo",
+        "socialLinks": "Link Social"
+      },
+      "seo": {
+        "title": "Impostazioni SEO",
+        "metaTitle": "Meta Title Default",
+        "metaDescription": "Meta Description Default",
+        "ogImage": "Immagine Open Graph",
+        "robotsTxt": "Robots.txt",
+        "sitemap": "Sitemap"
+      },
+      "email": {
+        "title": "Impostazioni Email",
+        "smtpHost": "Host SMTP",
+        "smtpPort": "Porta SMTP",
+        "smtpUser": "Utente SMTP",
+        "fromName": "Nome Mittente",
+        "fromEmail": "Email Mittente"
+      },
+      "save": "Salva Impostazioni",
+      "saved": "Impostazioni salvate con successo"
+    }
+  },
+  "companies": {
+    "hero": {
+      "badge": "Holding multisettoriale",
+      "title": "Le Società del Gruppo",
+      "subtitle": "Un network di aziende specializzate che operano in sinergia per offrire soluzioni complete nei settori della consulenza, energia, cooperazione internazionale e formazione."
+    },
+    "clickForDetails": "Scopri di più",
+    "stats": {
+      "activeCompanies": "Società attive",
+      "operatingSectors": "Settori operativi",
+      "countries": "Paesi nel mondo",
+      "yearsExperience": "Anni di esperienza"
+    },
+    "sectors": {
+      "consulting": "Consulenza",
+      "energy": "Energia",
+      "international": "Internazionale",
+      "aviation": "Aviazione"
+    },
+    "list": {
+      "winfly": {
+        "description": "Consulenza strategica e sviluppo aziendale",
+        "details": "Winfly è specializzata nella consulenza strategica per le imprese che vogliono crescere e innovare. Offriamo servizi di business development, pianificazione strategica e supporto manageriale per accompagnare le aziende nei loro percorsi di sviluppo, sia in Italia che all'estero."
+      },
+      "strategicEnergy": {
+        "description": "Energie rinnovabili e efficientamento energetico",
+        "details": "Strategic Energy Resources è leader nel settore delle energie rinnovabili. Progettiamo e realizziamo impianti fotovoltaici, eolici e comunità energetiche rinnovabili, offrendo consulenza per l'efficientamento energetico e la transizione verso un futuro sostenibile."
+      },
+      "ied": {
+        "description": "Istituto Europeo di Design e formazione",
+        "details": "I.E.D. (Istituto Europeo per lo Sviluppo) si occupa di formazione professionale e sviluppo delle competenze. Organizziamo corsi di formazione, workshop e programmi di capacity building per imprese, enti pubblici e professionisti."
+      },
+      "cestariBrasil": {
+        "description": "Consulenza e sviluppo progetti in Brasile",
+        "details": "Cestari Brasil è la nostra società operativa in Sud America. Con sede a San Paolo, supporta le imprese italiane che vogliono espandersi nel mercato brasiliano e latinoamericano, offrendo consulenza locale e gestione di progetti internazionali."
+      },
+      "newser1": {
+        "description": "Servizi digitali e innovazione tecnologica",
+        "details": "Newser1 è la società del gruppo dedicata all'innovazione digitale e alla comunicazione. Sviluppiamo soluzioni tecnologiche avanzate, piattaforme digitali e strategie di comunicazione per imprese e istituzioni."
+      },
+      "futuroProgrammazione": {
+        "description": "Pianificazione strategica e sviluppo territoriale",
+        "details": "Futuro & Programmazione si occupa di pianificazione strategica e sviluppo territoriale. Supportiamo enti pubblici e privati nella definizione di piani di sviluppo, gestione di fondi europei e progetti di cooperazione territoriale."
+      },
+      "sakti": {
+        "description": "Cooperazione internazionale e sviluppo",
+        "details": "SAKTI opera nel campo della cooperazione internazionale e dello sviluppo sostenibile. Gestiamo progetti in Africa, Asia e America Latina, promuovendo lo sviluppo economico e sociale delle comunità locali."
+      },
+      "wiremena": {
+        "description": "Infrastrutture e reti tecnologiche",
+        "details": "Wiremena è specializzata in infrastrutture e reti tecnologiche. Progettiamo e realizziamo reti di telecomunicazione, sistemi IT e infrastrutture digitali per imprese e pubblica amministrazione."
+      },
+      "italAfrica": {
+        "description": "Partnership Italia-Africa per lo sviluppo",
+        "details": "ItalAfrica promuove le relazioni economiche e commerciali tra Italia e Africa. Facilitiamo investimenti, partnership e progetti di sviluppo nei paesi africani, con particolare attenzione alle energie rinnovabili e all'agricoltura sostenibile."
+      },
+      "middaySun": {
+        "description": "Energie solari e progetti fotovoltaici in Africa",
+        "details": "Midday Sun è specializzata in progetti di energia solare in Africa. Sviluppiamo impianti fotovoltaici su larga scala e sistemi off-grid per elettrificazione rurale, contribuendo allo sviluppo sostenibile del continente africano."
+      },
+      "flywin": {
+        "description": "Servizi aeroportuali e logistica",
+        "details": "Flywin offre servizi aeroportuali e soluzioni logistiche integrate. Gestiamo servizi di handling, cargo e assistenza aeroportuale, supportando le operazioni di trasporto aereo nazionale e internazionale."
+      }
+    }
+  },
+  "footer": {
+    "about": "Dal 1980 partner privilegiato per consulenza finanziaria, cooperazione internazionale e sviluppo sostenibile.",
+    "quickLinks": "Link Rapidi",
+    "services": "Servizi",
+    "contact": "Contatti",
+    "location": "Fisciano (SA)",
+    "locations": {
+      "fisciano": "Fisciano (SA) - Sede Principale",
+      "milano": "Milano",
+      "roma": "Roma",
+      "bruxelles": "Bruxelles"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Termini e Condizioni",
+      "cookies": "Cookie Policy"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Iscriviti per ricevere le ultime novità",
+      "placeholder": "La tua email",
+      "submit": "Iscriviti",
+      "success": "Iscrizione completata!"
+    },
+    "copyright": "© {year} Tutti i diritti riservati",
+    "credits": "Realizzato da <a href=\"https://www.pieromuscari.it\" target=\"_blank\" rel=\"noopener noreferrer\">Piero Muscari Storytailor</a> in collaborazione con <a href=\"https://www.fodisrl.it\" target=\"_blank\" rel=\"noopener noreferrer\">Fodi S.r.l.</a>",
+    "owner": "Questo sito è di proprietà di: FUTURO & PROGRAMMAZIONE SRL - P. Iva 05749040654"
+  },
+  "legal": {
+    "privacy": {
+      "badge": "Informativa sulla Privacy",
+      "title": "Privacy Policy",
+      "subtitle": "Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR)",
+      "lastUpdate": "Ultimo aggiornamento: Gennaio 2026",
+      "content": "<h2>I. Identità e dati di contatto del Titolare del trattamento</h2><p>Il Titolare del trattamento è <strong>FUTURO & PROGRAMMAZIONE SRL</strong>, in persona del legale rappresentante pro-tempore, con sede legale in VIA Don Minzoni, 1 - 84084 FISCIANO (SA), e P.IVA 05749040654 (di seguito «Titolare»), che potete contattare al seguente indirizzo email: <a href=\"mailto:info@gruppocestari.it\">info@gruppocestari.it</a> o PEC: <a href=\"mailto:fururoeprogrammazione@pec.it\">fururoeprogrammazione@pec.it</a>.</p><p>In qualità di Titolare del trattamento, il «Titolare» garantisce e si assicura costantemente che i vostri dati personali siano sempre trattati nel rispetto delle prescrizioni previste dal Regolamento UE 2016/679 (\"GDPR\") in materia di protezione dei dati.</p><h2>II. Finalità del trattamento, base giuridica e legittimo interesse</h2><p>Il trattamento dei vostri dati personali da parte del «Titolare» può avvenire in base:</p><ul><li><strong>a)</strong> contatto diretto (ad esempio, contattando i nostri uffici per informazioni, ordini, etc.) a mezzo telefonico, e-mail, posta o anche attraverso eventuali form di contatto o chatbot presenti sul nostro sito;</li><li><strong>b)</strong> ad un contratto (qualora siate, ad esempio, nostri clienti o fornitori);</li><li><strong>c)</strong> ad un obbligo legale (quando vengono richiesti specifici adempimenti derivanti da norme di legge).</li></ul><h2>III. Protezione dei vostri dati e eventuali destinatari degli stessi</h2><p>I vostri dati personali saranno trattati esclusivamente da nostro personale, specificamente autorizzato e formato al trattamento di tali dati e, in ogni caso, sotto la responsabilità del «Titolare» del trattamento ed esclusivamente per le finalità in relazione alle quali i vostri dati sono stati raccolti.</p><p>I vostri dati personali sono conservati presso la suddetta sede e non saranno comunicati o trasmessi a terzi, fatta eccezione per quei dati connessi agli adempimenti fiscali che vengono gestiti da uno Studio o Professionista esterno che offre, in ogni caso, le medesime garanzie in materia di trattamento dei dati riportate in questo documento.</p><p>Il «Titolare» potrebbe, comunque, essere obbligato, in alcuni casi, a trasmettere i vostri dati personali, in tutto o in parte, a terzi in ragione di obblighi di legge, procedimenti giudiziari di qualsivoglia genere o specie e/o richieste da parte di autorità pubbliche.</p><h2>IV. Trasferimento dei dati in Paesi terzi</h2><p>Il «Titolare» non trasferisce i vostri dati presso Paesi terzi né ad Organizzazioni Internazionali senza il vostro preventivo ed espresso consenso.</p><h2>V. Periodo di conservazione dei dati</h2><p>I vostri dati personali sono conservati per il tempo strettamente necessario al conseguimento delle finalità in relazione alle quali sono stati raccolti.</p><p>In qualche occasione, il «Titolare» potrebbe conservare i vostri dati anche dopo tale periodo, nella misura strettamente necessaria ed indispensabile al rilascio di attestazioni e/o di documenti che potrebbero venire richiesti da privati o Enti pubblici, per il raggiungimento delle altre finalità per le quali sono stati raccolti i dati oppure per permettere al «Titolare» di esercitare e/o far valere un diritto o per difendersi in giudizio. In ogni caso i vostri dati non saranno conservati per un periodo di tempo superiore alla prescrizione di legge.</p><h2>VI. Diritti dell'interessato</h2><p>In riferimento ai vostri dati personali, potete esercitare i seguenti diritti:</p><ul><li><strong>1.</strong> diritto di accesso ai dati personali; diritto di ottenere la rettifica o la cancellazione degli stessi o la limitazione del trattamento che li riguardano (artt. 15 – 18 GDPR);</li><li><strong>2.</strong> diritto di opporsi al trattamento ex art. 21 GDPR;</li><li><strong>3.</strong> diritto alla portabilità dei dati, in relazione ai soli dati in formato elettronico, nei limiti stabiliti dall'art. 20 del GDPR.</li></ul><p>In relazione ai dati per i quali la base giuridica del trattamento è il vostro consenso, avete diritto di revocare tale consenso in qualsiasi momento, senza pregiudicare la liceità del trattamento effettuato dal Titolare e basata sul consenso da voi fornito prima della revoca.</p><h2>VII. Reclamo</h2><p>Vi informiamo che avete diritto, ricorrendone le condizioni, di proporre reclamo all'Autorità di controllo territorialmente competente, così come individuata dagli artt. 3, 55 e 56 GDPR.</p><p>Per approfondimenti e maggiori informazioni, vi invitiamo a visitare il sito istituzionale del Garante della protezione dei dati personali al seguente indirizzo web: <a href=\"https://www.garanteprivacy.it\" target=\"_blank\" rel=\"noopener noreferrer\">www.garanteprivacy.it</a></p><h2>VIII. Comunicazioni e conferimento dei dati</h2><p>È possibile che la comunicazione dei vostri dati personali possa costituire un obbligo legale e/o un obbligo contrattuale e, in ogni caso, un requisito necessario per la conclusione ed esecuzione degli impegni assunti dal «Titolare».</p><p>In questi casi, il mancato conferimento dei dati da parte vostra potrebbe comportare l'impossibilità per la nostra Società di dar seguito alle vostre richieste.</p><h2>IX. Profilazione</h2><p>Il «Titolare» non utilizza processi automatizzati finalizzati alla profilazione.</p><h2>X. Uso dei social network</h2><p>Dal momento che in questo sito sono presenti video ospitati su server esterni, pulsanti che rimandano alle nostre pagine social ufficiali ed altri strumenti per la comunicazione con il nostro team, riportiamo di seguito le privacy policy delle terze parti coinvolte:</p><ul><li><a href=\"https://vimeo.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">Vimeo Privacy Policy</a></li><li><a href=\"https://www.youtube.com/static?template=terms&gl=IT\" target=\"_blank\" rel=\"noopener noreferrer\">YouTube Terms</a></li><li><a href=\"https://policies.google.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Google Privacy Policy</a></li><li><a href=\"https://www.facebook.com/privacy/policy/\" target=\"_blank\" rel=\"noopener noreferrer\">Facebook Privacy Policy</a></li><li><a href=\"https://twitter.com/it/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">Twitter Privacy Policy</a></li><li><a href=\"https://www.linkedin.com/legal/privacy-policy\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn Privacy Policy</a></li><li><a href=\"https://help.instagram.com/155833707900388\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram Privacy Policy</a></li><li><a href=\"https://www.tidio.com/privacy-policy/\" target=\"_blank\" rel=\"noopener noreferrer\">Tidio Privacy Policy</a></li></ul><h2>XI. Uso dei cookie</h2><p>Questo sito web utilizza cookie di vario genere, che sono esposti nella tabella sottostante. In ogni caso, non vengono raccolti dati personali (es. indirizzo IP e ID tracciamento) per il riconoscimento degli utenti. I dati raccolti dal sito sono raggruppati e conservati anonimamente.</p><p>Le impostazioni per gestire o disattivare i cookies possono variare a seconda del browser internet utilizzato. Ad ogni modo, l'utente può gestire o richiedere la disattivazione generale o la cancellazione dei cookie, modificando le impostazioni del proprio browser internet. Tale disattivazione può rallentare o impedire l'accesso ad alcune parti del sito.</p><p>Per ulteriori informazioni e supporto è possibile anche visitare la pagina di aiuto specifica del web browser che si sta utilizzando:</p><ul><li><a href=\"http://windows.microsoft.com/en-us/windows-vista/block-or-allow-cookies\" target=\"_blank\" rel=\"noopener noreferrer\">Internet Explorer</a></li><li><a href=\"https://support.mozilla.org/en-us/kb/enable-and-disable-cookies-website-preferences\" target=\"_blank\" rel=\"noopener noreferrer\">Firefox</a></li><li><a href=\"https://support.apple.com/it-it/guide/safari/sfri40732/13.0/mac/10.15\" target=\"_blank\" rel=\"noopener noreferrer\">Safari</a></li><li><a href=\"https://support.google.com/accounts/answer/61416?hl=it\" target=\"_blank\" rel=\"noopener noreferrer\">Chrome</a></li><li><a href=\"http://www.opera.com/help/tutorials/security/cookies/\" target=\"_blank\" rel=\"noopener noreferrer\">Opera</a></li></ul><p>A scopo analitico, utilizziamo i servizi di Google Analytics 4 (GA4). I dati inviati sono raggruppati e anonimizzati, per impedirne il tracciamento. Per ulteriori informazioni visitate la pagina <a href=\"https://support.google.com/analytics/answer/2763052?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Google Analytics</a>.</p><h3>Tabella dei Cookie Analitici</h3><table><thead><tr><th>Nome</th><th>Tipo/Durata</th><th>Descrizione e Finalità</th></tr></thead><tbody><tr><td><code>_ga</code></td><td>Persistente - 2 anni</td><td>Utilizzato per distinguere utenti e sessioni. Viene aggiornato ogni volta che i dati vengono inviati a Google Analytics.</td></tr><tr><td><code>_ga_xxx</code></td><td>Persistente - 2 mesi</td><td>Memorizza la sorgente di traffico. Viene aggiornato ogni volta che i dati vengono inviati a Google Analytics.</td></tr></tbody></table><h3>Tabella dei Cookie Tecnici</h3><table><thead><tr><th>Nome</th><th>Tipo/Durata</th><th>Descrizione e Finalità</th></tr></thead><tbody><tr><td><code>cookie_notice_accepted</code></td><td>Persistente - 6 mesi</td><td>Verifica l'accettazione dei cookie.</td></tr><tr><td><code>pll_language</code></td><td>Persistente - 12 mesi</td><td>Conserva la preferenza di visualizzazione della lingua del sito.</td></tr><tr><td><code>PHPSESSID</code></td><td>Sessione</td><td>Conserva un numero identificativo sul server per contare le visualizzazioni in forma aggregata.</td></tr></tbody></table>"
+    },
+    "cookies": {
+      "badge": "Informativa sui Cookie",
+      "title": "Cookie Policy",
+      "subtitle": "Informativa sull'utilizzo dei cookie ai sensi del Regolamento UE 2016/679 (GDPR) e della Direttiva 2002/58/CE",
+      "lastUpdate": "Ultimo aggiornamento: Dicembre 2024",
+      "content": "<h2>Cosa sono i Cookie</h2><p>I cookie sono piccoli file di testo che i siti visitati inviano al browser dell'utente, dove vengono memorizzati, per poi essere ritrasmessi agli stessi siti alla visita successiva.</p><h2>Tipologie di Cookie Utilizzati</h2><h3>Cookie Tecnici (Necessari)</h3><p>Essenziali per il corretto funzionamento del sito. Includono cookie di sessione, autenticazione e preferenze dell'utente (come la lingua). Non richiedono consenso.</p><h3>Cookie Analitici</h3><p>Utilizzati per raccogliere informazioni aggregate sull'utilizzo del sito (pagine visitate, tempo di permanenza). Aiutano a migliorare l'esperienza utente.</p><h3>Cookie di Terze Parti</h3><p>Cookie installati da servizi esterni (es. Google Maps, social media). La gestione è regolata dalle rispettive privacy policy.</p><h2>Cookie Tecnici Utilizzati</h2><table><thead><tr><th>Nome</th><th>Scopo</th><th>Durata</th></tr></thead><tbody><tr><td><code>session</code></td><td>Gestione sessione utente</td><td>Sessione</td></tr><tr><td><code>locale</code></td><td>Preferenza lingua</td><td>1 anno</td></tr><tr><td><code>cookie-consent</code></td><td>Memorizza le preferenze cookie</td><td>1 anno</td></tr><tr><td><code>theme</code></td><td>Preferenza tema (chiaro/scuro)</td><td>1 anno</td></tr></tbody></table><h2>Come Gestire i Cookie</h2><p>L'utente può gestire le preferenze relative ai cookie direttamente all'interno del proprio browser ed impedire che terze parti possano installarne. Tramite le preferenze del browser è inoltre possibile eliminare i cookie installati in passato.</p><h3>Istruzioni per i principali browser:</h3><ul><li><strong>Chrome:</strong> Impostazioni → Privacy e sicurezza → Cookie e altri dati dei siti</li><li><strong>Firefox:</strong> Opzioni → Privacy e sicurezza → Cookie e dati dei siti web</li><li><strong>Safari:</strong> Preferenze → Privacy → Gestione dati siti web</li><li><strong>Edge:</strong> Impostazioni → Cookie e autorizzazioni sito → Cookie e dati del sito</li></ul><h2>Conseguenze della Disattivazione dei Cookie</h2><p>Disabilitando i cookie tecnici, alcune funzionalità del sito potrebbero non essere disponibili o non funzionare correttamente. L'utente potrebbe dover effettuare il login ad ogni visita e le preferenze non verranno salvate.</p><h2>Aggiornamenti</h2><p>La presente Cookie Policy può essere soggetta a modifiche. Si consiglia di consultare periodicamente questa pagina per verificare eventuali aggiornamenti.</p><h2>Contatti</h2><p>Per qualsiasi domanda relativa alla presente Cookie Policy, è possibile contattarci:</p><ul><li><strong>Email:</strong> privacy@gruppocestari.com</li><li><strong>Telefono:</strong> +39 089 952889</li></ul>"
+    }
+  },
+  "faq": {
+    "hero": {
+      "badge": "Domande frequenti",
+      "title": "Come possiamo aiutarti?",
+      "subtitle": "Trova le risposte alle domande più comuni sui nostri servizi"
+    },
+    "search": {
+      "placeholder": "Cerca nelle FAQ..."
+    },
+    "categories": {
+      "all": "Tutte",
+      "general": "Generali",
+      "services": "Servizi",
+      "grants": "Bandi",
+      "energy": "Energia",
+      "cooperation": "Cooperazione"
+    },
+    "items": {
+      "q1": {
+        "question": "Cos'è il Gruppo Cestari e di cosa si occupa?",
+        "answer": "Il Gruppo Cestari è una holding multisettoriale fondata nel 1980, specializzata in consulenza finanziaria, cooperazione internazionale, energie rinnovabili e studi di fattibilità. Con oltre 10 società e presenza in 4 continenti, supportiamo imprese, enti pubblici e territori nel loro percorso di crescita sostenibile."
+      },
+      "q2": {
+        "question": "In quali paesi operate?",
+        "answer": "Operiamo principalmente in Italia con sedi a Salerno, Roma, Milano e Napoli. A livello internazionale siamo presenti in Europa (Bruxelles), Africa (diverse nazioni tra cui Senegal, Kenya, Mozambico) e America Latina (Brasile). In totale serviamo clienti in oltre 20 paesi."
+      },
+      "q3": {
+        "question": "Come posso richiedere una consulenza?",
+        "answer": "Puoi richiedere una consulenza gratuita compilando il form nella pagina Contatti o Consulenza del nostro sito. Un nostro esperto ti contatterà entro 24 ore lavorative per discutere le tue esigenze e proporre le soluzioni più adatte."
+      },
+      "q4": {
+        "question": "Quali servizi di consulenza finanziaria offrite?",
+        "answer": "Offriamo consulenza per l'accesso a finanziamenti pubblici e privati, analisi di bancabilità, strutturazione di operazioni finanziarie, business planning e studi di fattibilità tecnico-economica. Supportiamo le imprese dall'identificazione dell'opportunità fino all'erogazione del finanziamento."
+      },
+      "q5": {
+        "question": "Offrite servizi di formazione?",
+        "answer": "Sì, attraverso le nostre società specializzate offriamo programmi di formazione su finanza agevolata, europrogettazione, gestione di progetti internazionali e sviluppo sostenibile. I corsi sono disponibili sia in presenza che online, personalizzabili sulle esigenze specifiche."
+      },
+      "q6": {
+        "question": "Come posso sapere se la mia azienda è idonea per un bando?",
+        "answer": "Ogni bando ha requisiti specifici che verifichiamo attentamente durante la fase di pre-analisi gratuita. Valutiamo dimensione aziendale, settore, localizzazione, situazione economico-finanziaria e tipologia di investimento previsto per determinare l'idoneità."
+      },
+      "q7": {
+        "question": "Quanto tempo serve per ottenere un finanziamento?",
+        "answer": "I tempi variano in base al tipo di bando: i contributi regionali richiedono generalmente 3-6 mesi, i bandi nazionali 6-12 mesi, i progetti europei 12-18 mesi. Durante tutto il processo vi teniamo costantemente aggiornati sullo stato della pratica."
+      },
+      "q8": {
+        "question": "Cosa sono le Comunità Energetiche Rinnovabili (CER)?",
+        "answer": "Le CER sono forme di aggregazione tra cittadini, imprese, enti pubblici e attività commerciali che decidono di unirsi per produrre, consumare e condividere energia da fonti rinnovabili. Offriamo supporto completo dalla costituzione alla gestione operativa."
+      },
+      "q9": {
+        "question": "Quali sono i vantaggi degli impianti fotovoltaici per le aziende?",
+        "answer": "Le aziende beneficiano di riduzione dei costi energetici fino al 70%, incentivi fiscali, miglioramento dell'immagine aziendale in ottica ESG, indipendenza energetica e valorizzazione degli immobili. Offriamo soluzioni chiavi in mano con finanziamento incluso."
+      },
+      "q10": {
+        "question": "Come funzionano i progetti di cooperazione internazionale?",
+        "answer": "I progetti di cooperazione prevedono partnership tra organizzazioni italiane e paesi in via di sviluppo, finanziati principalmente da fondi UE, AICS o organismi internazionali. Ci occupiamo di progettazione, ricerca partner, gestione e rendicontazione, con particolare focus su Africa e America Latina."
+      }
+    },
+    "noResults": "Nessuna domanda trovata. Prova a modificare la ricerca.",
+    "cta": {
+      "badge": "Non hai trovato risposta?",
+      "title": "Contattaci direttamente",
+      "subtitle": "Il nostro team è pronto a rispondere a tutte le tue domande specifiche.",
+      "contact": "Contattaci",
+      "consultation": "Richiedi consulenza"
+    }
+  },
+  "team": {
+    "hero": {
+      "badge": "Il nostro team",
+      "title": "Le persone dietro il successo",
+      "subtitle": "Professionisti con esperienza pluridecennale al servizio della tua crescita"
+    },
+    "stats": {
+      "employees": "50+",
+      "employeesLabel": "Professionisti",
+      "countries": "20+",
+      "countriesLabel": "Paesi serviti",
+      "experience": "40+",
+      "experienceLabel": "Anni di esperienza",
+      "companies": "10",
+      "companiesLabel": "Società del gruppo"
+    },
+    "grid": {
+      "title": "Leadership Team",
+      "subtitle": "I dirigenti che guidano la visione e la strategia del Gruppo Cestari"
+    },
+    "members": {
+      "member1": {
+        "name": "Ing. Alfredo C. Cestari",
+        "role": "Fondatore e Presidente",
+        "description": "Fondatore del Gruppo nel 1980, vanta oltre 40 anni di esperienza nella consulenza finanziaria e cooperazione internazionale. Ha guidato progetti in oltre 30 paesi."
+      },
+      "member2": {
+        "name": "Dr. Marco Cestari",
+        "role": "Amministratore Delegato",
+        "description": "Alla guida operativa del Gruppo, si occupa di strategia aziendale e sviluppo business. MBA presso SDA Bocconi con specializzazione in finanza d'impresa."
+      },
+      "member3": {
+        "name": "Dr.ssa Laura Esposito",
+        "role": "Chief Financial Officer",
+        "description": "Responsabile della gestione finanziaria del Gruppo, con esperienza ventennale in finanza aziendale e controllo di gestione presso multinazionali."
+      },
+      "member4": {
+        "name": "Ing. Paolo Russo",
+        "role": "Direttore Divisione Energia",
+        "description": "Ingegnere energetico con 15 anni di esperienza nel settore rinnovabili. Coordina tutti i progetti CER e impianti fotovoltaici del Gruppo."
+      },
+      "member5": {
+        "name": "Dr.ssa Francesca Moretti",
+        "role": "Direttore Cooperazione Internazionale",
+        "description": "Esperta di progetti internazionali con focus su Africa e America Latina. Ha gestito progetti per oltre 100 milioni di euro di finanziamenti UE."
+      },
+      "member6": {
+        "name": "Dr. Giovanni Martini",
+        "role": "Direttore Consulenza Finanziaria",
+        "description": "Specialista in finanza agevolata con track record di oltre 500 progetti finanziati. Docente presso università e business school."
+      }
+    },
+    "cta": {
+      "badge": "Unisciti al team",
+      "title": "Vuoi lavorare con noi?",
+      "subtitle": "Siamo sempre alla ricerca di talenti appassionati. Scopri le opportunità di carriera.",
+      "button": "Contattaci"
+    }
+  },
+  "areaRiservata": {
+    "hero": {
+      "title": "Accedi alla tua Area Riservata",
+      "subtitle": "Gestisci candidature, documenti e resta aggiornato sui bandi"
+    },
+    "client": {
+      "title": "Per Clienti e Partner",
+      "benefits": {
+        "documents": "Carica e gestisci documenti",
+        "applications": "Candidati ai bandi attivi",
+        "notifications": "Ricevi notifiche personalizzate",
+        "tracking": "Monitora lo stato delle candidature"
+      },
+      "login": "Accedi al Portale",
+      "register": "Registrati Gratuitamente",
+      "noAccount": "Non hai un account?"
+    },
+    "admin": {
+      "title": "Accesso Staff",
+      "description": "Riservato al team Gruppo Cestari",
+      "subdescription": "Accedi con le tue credenziali aziendali",
+      "login": "Accedi come Staff",
+      "badge": "Accesso Riservato",
+      "features": {
+        "content": "Gestione contenuti",
+        "analytics": "Analytics",
+        "users": "Utenti e ruoli",
+        "settings": "Impostazioni"
+      }
+    }
+  }
+}

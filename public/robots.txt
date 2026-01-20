@@ -1,0 +1,30 @@
+# Gruppo Cestari - robots.txt
+
+User-agent: *
+Allow: /
+
+# Block admin pages
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+
+# Block spam patterns (SEO attack mitigation)
+Disallow: /*?blogs/
+Disallow: /*?_gl=
+Disallow: /*?_bd_prev_page=
+Disallow: /*?_gcl_
+Disallow: /*.shtml$
+
+# Block numeric spam URLs
+Disallow: /1
+Disallow: /2
+Disallow: /3
+Disallow: /4
+Disallow: /5
+Disallow: /6
+Disallow: /7
+Disallow: /8
+Disallow: /9
+
+# Sitemap location
+Sitemap: https://gruppocestari.com/sitemap.xml

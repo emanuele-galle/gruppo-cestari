@@ -1,0 +1,699 @@
+generator client {
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["fullTextSearchPostgres"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// AUTENTICAZIONE & UTENTI
+// ============================================
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id               String    @id @default(cuid())
+  email            String    @unique
+  emailVerified    DateTime? @map("email_verified")
+  password         String?
+  name             String?
+  image            String?
+  role             UserRole  @default(CLIENT)
+  locale           String    @default("it") @db.VarChar(5)
+  isActive         Boolean   @default(true) @map("is_active")
+  resetToken       String?   @map("reset_token")
+  resetTokenExpiry DateTime? @map("reset_token_expiry")
+
+  accounts          Account[]
+  sessions          Session[]
+  profile           UserProfile?
+  documents         Document[]
+  bandoApplications BandoApplication[]
+  consultationForms ConsultationForm[]
+  notifications     Notification[]
+  auditLogs         AuditLog[]
+  newsAuthored      News[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+enum UserRole {
+  SUPERADMIN
+  ADMIN
+  EDITOR
+  PARTNER
+  CLIENT
+}
+
+model UserProfile {
+  id          String  @id @default(cuid())
+  userId      String  @unique @map("user_id")
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companyName String? @map("company_name")
+  vatNumber   String? @map("vat_number")
+  phone       String?
+  address     String?
+  city        String?
+  country     String?
+  zipCode     String? @map("zip_code")
+  notes       String? @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("user_profiles")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// ============================================
+// CONTENUTI MULTILINGUA
+// ============================================
+
+model Page {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  template    String   @default("default")
+  isPublished Boolean  @default(false) @map("is_published")
+  publishedAt DateTime? @map("published_at")
+  sortOrder   Int      @default(0) @map("sort_order")
+
+  translations PageTranslation[]
+  seoMeta      SeoMeta[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("pages")
+}
+
+model PageTranslation {
+  id       String @id @default(cuid())
+  pageId   String @map("page_id")
+  page     Page   @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  locale   String @db.VarChar(5)
+  title    String
+  subtitle String?
+  content  String @db.Text
+  excerpt  String? @db.Text
+
+  @@unique([pageId, locale])
+  @@map("page_translations")
+}
+
+// News / Blog
+model News {
+  id            String        @id @default(cuid())
+  slug          String        @unique
+  authorId      String        @map("author_id")
+  author        User          @relation(fields: [authorId], references: [id])
+  categoryId    String?       @map("category_id")
+  category      NewsCategory? @relation(fields: [categoryId], references: [id])
+  featuredImage String?       @map("featured_image")
+  isPublished   Boolean       @default(false) @map("is_published")
+  isFeatured    Boolean       @default(false) @map("is_featured")
+  publishedAt   DateTime?     @map("published_at")
+  viewCount     Int           @default(0) @map("view_count")
+  focalPoint    String?       @default("top") @map("focal_point")
+
+  translations NewsTranslation[]
+  tags         NewsTag[]
+  seoMeta      SeoMeta[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([isPublished, publishedAt])
+  @@map("news")
+}
+
+model NewsTranslation {
+  id      String @id @default(cuid())
+  newsId  String @map("news_id")
+  news    News   @relation(fields: [newsId], references: [id], onDelete: Cascade)
+  locale  String @db.VarChar(5)
+  title   String
+  excerpt String? @db.Text
+  content String @db.Text
+
+  @@unique([newsId, locale])
+  @@map("news_translations")
+}
+
+model NewsCategory {
+  id   String @id @default(cuid())
+  slug String @unique
+  news News[]
+
+  translations NewsCategoryTranslation[]
+
+  @@map("news_categories")
+}
+
+model NewsCategoryTranslation {
+  id          String       @id @default(cuid())
+  categoryId  String       @map("category_id")
+  category    NewsCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  locale      String       @db.VarChar(5)
+  name        String
+  description String?
+
+  @@unique([categoryId, locale])
+  @@map("news_category_translations")
+}
+
+model Tag {
+  id   String    @id @default(cuid())
+  slug String    @unique
+  name String
+  news NewsTag[]
+
+  @@map("tags")
+}
+
+model NewsTag {
+  newsId String @map("news_id")
+  news   News   @relation(fields: [newsId], references: [id], onDelete: Cascade)
+  tagId  String @map("tag_id")
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([newsId, tagId])
+  @@map("news_tags")
+}
+
+// ============================================
+// PROGETTI / PORTFOLIO
+// ============================================
+
+model Project {
+  id            String        @id @default(cuid())
+  slug          String        @unique
+  sector        ProjectSector
+  country       String        @db.VarChar(2)
+  featuredImage String?       @map("featured_image")
+  gallery       String[]
+  startDate     DateTime?     @map("start_date")
+  endDate       DateTime?     @map("end_date")
+  isPublished   Boolean       @default(false) @map("is_published")
+  isFeatured    Boolean       @default(false) @map("is_featured")
+  sortOrder     Int           @default(0) @map("sort_order")
+
+  translations ProjectTranslation[]
+  seoMeta      SeoMeta[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([sector, country])
+  @@map("projects")
+}
+
+enum ProjectSector {
+  FINANCE
+  COOPERATION
+  RENEWABLE_ENERGY
+  DEVELOPMENT
+  OTHER
+}
+
+model ProjectTranslation {
+  id          String  @id @default(cuid())
+  projectId   String  @map("project_id")
+  project     Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  locale      String  @db.VarChar(5)
+  title       String
+  subtitle    String?
+  description String  @db.Text
+  challenge   String? @db.Text
+  solution    String? @db.Text
+  results     String? @db.Text
+  client      String?
+
+  @@unique([projectId, locale])
+  @@map("project_translations")
+}
+
+// ============================================
+// SISTEMA BANDI
+// ============================================
+
+model Bando {
+  id              String         @id @default(cuid())
+  code            String         @unique
+  type            BandoType
+  sector          ProjectSector?
+  fundingAmount   Decimal?       @map("funding_amount") @db.Decimal(12, 2)
+  fundingCurrency String         @default("EUR") @map("funding_currency") @db.VarChar(3)
+  openDate        DateTime       @map("open_date")
+  closeDate       DateTime       @map("close_date")
+  isPublished     Boolean        @default(false) @map("is_published")
+  isFeatured      Boolean        @default(false) @map("is_featured")
+  publishedAt     DateTime?      @map("published_at")
+  externalUrl     String?        @map("external_url")
+  attachments     String[]
+
+  translations  BandoTranslation[]
+  applications  BandoApplication[]
+  notifications BandoNotification[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([type, sector])
+  @@index([closeDate])
+  @@index([isPublished])
+  @@map("bandi")
+}
+
+enum BandoType {
+  EUROPEAN
+  NATIONAL
+  REGIONAL
+  PRIVATE
+}
+
+model BandoTranslation {
+  id           String @id @default(cuid())
+  bandoId      String @map("bando_id")
+  bando        Bando  @relation(fields: [bandoId], references: [id], onDelete: Cascade)
+  locale       String @db.VarChar(5)
+  title        String
+  summary      String @db.Text
+  description  String @db.Text
+  requirements String? @db.Text
+  eligibility  String? @db.Text
+
+  @@unique([bandoId, locale])
+  @@map("bando_translations")
+}
+
+model BandoApplication {
+  id                 String            @id @default(cuid())
+  bandoId            String            @map("bando_id")
+  bando              Bando             @relation(fields: [bandoId], references: [id], onDelete: Cascade)
+  userId             String            @map("user_id")
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status             ApplicationStatus @default(DRAFT)
+  companyName        String            @map("company_name")
+  contactEmail       String            @map("contact_email")
+  contactPhone       String?           @map("contact_phone")
+  projectTitle       String            @map("project_title")
+  projectDescription String            @db.Text @map("project_description")
+  requestedAmount    Decimal?          @map("requested_amount") @db.Decimal(12, 2)
+  documents          Document[]
+  notes              String?           @db.Text
+  adminNotes         String?           @db.Text @map("admin_notes")
+  submittedAt        DateTime?         @map("submitted_at")
+  reviewedAt         DateTime?         @map("reviewed_at")
+  reviewedBy         String?           @map("reviewed_by")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([bandoId, status])
+  @@index([userId])
+  @@map("bando_applications")
+}
+
+enum ApplicationStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  APPROVED
+  REJECTED
+  WITHDRAWN
+}
+
+model BandoNotification {
+  id       String          @id @default(cuid())
+  email    String
+  sectors  ProjectSector[]
+  types    BandoType[]
+  isActive Boolean         @default(true) @map("is_active")
+  bandoId  String?         @map("bando_id")
+  bando    Bando?          @relation(fields: [bandoId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([email, bandoId])
+  @@map("bando_notifications")
+}
+
+// ============================================
+// DOCUMENTI & STORAGE
+// ============================================
+
+model Document {
+  id            String            @id @default(cuid())
+  userId        String?           @map("user_id")
+  user          User?             @relation(fields: [userId], references: [id], onDelete: SetNull)
+  applicationId String?           @map("application_id")
+  application   BandoApplication? @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  formId        String?           @map("form_id")
+  form          ConsultationForm? @relation(fields: [formId], references: [id], onDelete: Cascade)
+
+  name         String
+  originalName String           @map("original_name")
+  mimeType     String           @map("mime_type")
+  size         Int
+  url          String
+  category     DocumentCategory @default(OTHER)
+  isPublic     Boolean          @default(false) @map("is_public")
+  description  String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([userId, category])
+  @@map("documents")
+}
+
+enum DocumentCategory {
+  CONTRACT
+  REPORT
+  CERTIFICATE
+  PRESENTATION
+  APPLICATION
+  OTHER
+}
+
+// ============================================
+// FORM CONSULENZA MULTI-STEP
+// ============================================
+
+model ConsultationForm {
+  id     String             @id @default(cuid())
+  userId String?            @map("user_id")
+  user   User?              @relation(fields: [userId], references: [id], onDelete: SetNull)
+  status ConsultationStatus @default(NEW)
+
+  // Step 1: Informazioni base
+  companyName String      @map("company_name")
+  companySize CompanySize @map("company_size")
+  sector      String?
+  website     String?
+
+  // Step 2: Contatto
+  contactName  String  @map("contact_name")
+  contactEmail String  @map("contact_email")
+  contactPhone String? @map("contact_phone")
+  contactRole  String? @map("contact_role")
+
+  // Step 3: Richiesta
+  serviceType ServiceType[]  @map("service_type")
+  budget      BudgetRange?
+  timeline    String?
+  description String         @db.Text
+
+  // Step 4: Documenti
+  documents Document[]
+
+  // Admin
+  assignedTo   String?   @map("assigned_to")
+  adminNotes   String?   @db.Text @map("admin_notes")
+  followUpDate DateTime? @map("follow_up_date")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([status])
+  @@map("consultation_forms")
+}
+
+enum ConsultationStatus {
+  NEW
+  CONTACTED
+  IN_PROGRESS
+  PROPOSAL_SENT
+  CONVERTED
+  CLOSED
+}
+
+enum CompanySize {
+  MICRO
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+enum ServiceType {
+  FINANCIAL_CONSULTING
+  EU_FUNDING
+  RENEWABLE_ENERGY
+  INTERNATIONAL_COOPERATION
+  STRATEGIC_PLANNING
+  OTHER
+}
+
+enum BudgetRange {
+  UNDER_10K
+  FROM_10K_TO_50K
+  FROM_50K_TO_100K
+  FROM_100K_TO_500K
+  OVER_500K
+}
+
+// ============================================
+// CONTATTI & NEWSLETTER
+// ============================================
+
+model Contact {
+  id         String        @id @default(cuid())
+  name       String
+  email      String
+  phone      String?
+  company    String?
+  subject    String?
+  message    String        @db.Text
+  source     String?
+  status     ContactStatus @default(NEW)
+  isStarred  Boolean       @default(false) @map("is_starred")
+  adminNotes String?       @db.Text @map("admin_notes")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([status])
+  @@map("contacts")
+}
+
+enum ContactStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+model NewsletterSubscriber {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  name           String?
+  locale         String    @default("it") @db.VarChar(5)
+  isActive       Boolean   @default(true) @map("is_active")
+  confirmedAt    DateTime? @map("confirmed_at")
+  unsubscribedAt DateTime? @map("unsubscribed_at")
+  source         String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("newsletter_subscribers")
+}
+
+// ============================================
+// SEDI AZIENDALI
+// ============================================
+
+model Office {
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  isHeadquarters Boolean  @default(false) @map("is_headquarters")
+  address        String
+  city           String
+  country        String   @db.VarChar(2)
+  zipCode        String?  @map("zip_code")
+  phone          String?
+  email          String?
+  latitude       Decimal? @db.Decimal(10, 8)
+  longitude      Decimal? @db.Decimal(11, 8)
+  isActive       Boolean  @default(true) @map("is_active")
+  sortOrder      Int      @default(0) @map("sort_order")
+
+  translations OfficeTranslation[]
+
+  @@map("offices")
+}
+
+model OfficeTranslation {
+  id       String @id @default(cuid())
+  officeId String @map("office_id")
+  office   Office @relation(fields: [officeId], references: [id], onDelete: Cascade)
+  locale   String @db.VarChar(5)
+  name     String
+
+  @@unique([officeId, locale])
+  @@map("office_translations")
+}
+
+// ============================================
+// SOCIETA CONTROLLATE
+// ============================================
+
+model Subsidiary {
+  id        String         @id @default(cuid())
+  slug      String         @unique
+  logo      String?
+  website   String?
+  sector    ProjectSector?
+  isActive  Boolean        @default(true) @map("is_active")
+  sortOrder Int            @default(0) @map("sort_order")
+
+  translations SubsidiaryTranslation[]
+
+  @@map("subsidiaries")
+}
+
+model SubsidiaryTranslation {
+  id           String     @id @default(cuid())
+  subsidiaryId String     @map("subsidiary_id")
+  subsidiary   Subsidiary @relation(fields: [subsidiaryId], references: [id], onDelete: Cascade)
+  locale       String     @db.VarChar(5)
+  name         String
+  description  String?    @db.Text
+
+  @@unique([subsidiaryId, locale])
+  @@map("subsidiary_translations")
+}
+
+// ============================================
+// SEO & METADATA
+// ============================================
+
+model SeoMeta {
+  id              String   @id @default(cuid())
+  locale          String   @db.VarChar(5)
+  pageId          String?  @map("page_id")
+  page            Page?    @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  newsId          String?  @map("news_id")
+  news            News?    @relation(fields: [newsId], references: [id], onDelete: Cascade)
+  projectId       String?  @map("project_id")
+  project         Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  metaTitle       String? @map("meta_title")
+  metaDescription String? @map("meta_description")
+  ogImage         String? @map("og_image")
+  canonicalUrl    String? @map("canonical_url")
+  noIndex         Boolean @default(false) @map("no_index")
+  noFollow        Boolean @default(false) @map("no_follow")
+  structuredData  Json?   @map("structured_data")
+
+  @@unique([locale, pageId])
+  @@unique([locale, newsId])
+  @@unique([locale, projectId])
+  @@map("seo_meta")
+}
+
+// ============================================
+// NOTIFICHE & AUDIT
+// ============================================
+
+model Notification {
+  id       String           @id @default(cuid())
+  userId   String           @map("user_id")
+  user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type     NotificationType
+  title    String
+  message  String           @db.Text
+  link     String?
+  isRead   Boolean          @default(false) @map("is_read")
+  readAt   DateTime?        @map("read_at")
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId, isRead])
+  @@map("notifications")
+}
+
+enum NotificationType {
+  BANDO_NEW
+  BANDO_EXPIRING
+  APPLICATION_STATUS
+  DOCUMENT_SHARED
+  MESSAGE
+  SYSTEM
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String
+  entity    String
+  entityId  String   @map("entity_id")
+  before    Json?
+  after     Json?
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@index([entity, entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+// ============================================
+// SETTINGS
+// ============================================
+
+model Setting {
+  id       String  @id @default(cuid())
+  key      String  @unique
+  value    Json
+  category String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}
