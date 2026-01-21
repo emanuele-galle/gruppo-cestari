@@ -1,4 +1,4 @@
-// Re-export for backwards compatibility with Prisma 7.x
+// Re-export all Prisma types for easier imports
 export * from './client';
 export * from './enums';
-export type * from './models';
+export * from './models';

@@ -33,7 +33,7 @@ interface Application {
   bandoId: string;
   bandoCode: string;
   bandoTitle: string;
-  bandoCloseDate: Date | string;
+  bandoCloseDate: Date | string | null;
   status: string;
   companyName: string | null;
   projectTitle: string | null;
@@ -137,7 +137,8 @@ export default function ApplicationsPage() {
     },
   });
 
-  const formatDate = (date: Date | string) => {
+  const formatDate = (date: Date | string | null) => {
+    if (!date) return 'Fino a esaurimento fondi';
     return new Date(date).toLocaleDateString(locale, {
       day: '2-digit',
       month: 'short',

@@ -17,8 +17,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, ImageUpload } from '@/components/admin';
-import { ArrowLeft, Save, Eye, Loader2, Trash2, Newspaper, BarChart3, Calendar } from 'lucide-react';
+import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, ImageUpload, GalleryUpload } from '@/components/admin';
+import { ArrowLeft, Save, Eye, Loader2, Trash2, Newspaper, BarChart3, Calendar, Images } from 'lucide-react';
+import type { GalleryImage } from '@/lib/types/gallery';
+import { parseGallery } from '@/lib/types/gallery';
 import { toast } from 'sonner';
 import { trpc } from '@/lib/trpc';
 import {
@@ -71,6 +73,7 @@ export default function EditNewsPage({
 
   const [slug, setSlug] = useState('');
   const [featuredImage, setFeaturedImage] = useState('');
+  const [gallery, setGallery] = useState<GalleryImage[]>([]);
   const [categoryId, setCategoryId] = useState<string>('');
   const [isPublished, setIsPublished] = useState(false);
   const [isFeatured, setIsFeatured] = useState(false);
@@ -116,6 +119,7 @@ export default function EditNewsPage({
     if (news) {
       setSlug(news.slug);
       setFeaturedImage(news.featuredImage || '');
+      setGallery(parseGallery(news.gallery));
       setCategoryId(news.categoryId || '');
       setIsPublished(news.isPublished);
       setIsFeatured(news.isFeatured);
@@ -191,6 +195,7 @@ export default function EditNewsPage({
       id,
       slug,
       featuredImage: featuredImage || null,
+      gallery,
       categoryId: categoryId || null,
       focalPoint: (focalPoint || 'top') as 'top' | 'center' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right',
       isPublished,
@@ -352,6 +357,23 @@ export default function EditNewsPage({
                     </TabsContent>
                   ))}
                 </Tabs>
+              </CardContent>
+            </Card>
+
+            {/* Gallery */}
+            <Card variant="glass" delay={0.15}>
+              <CardHeader
+                title="Galleria Immagini"
+                description="Carica immagini aggiuntive per l'articolo"
+                icon={<Images className="h-5 w-5" />}
+              />
+              <CardContent>
+                <GalleryUpload
+                  value={gallery}
+                  onChange={setGallery}
+                  folder="news/gallery"
+                  maxImages={10}
+                />
               </CardContent>
             </Card>
           </motion.div>

@@ -31,7 +31,7 @@ interface Bando {
   id: string;
   code: string;
   title: string;
-  closeDate: Date | string;
+  closeDate: Date | string | null;
   maxFunding: number | null;
 }
 
@@ -370,7 +370,8 @@ export default function ApplicationWizard({
     }
   };
 
-  const formatDate = (date: Date | string) => {
+  const formatDate = (date: Date | string | null) => {
+    if (!date) return 'Fino a esaurimento fondi';
     return new Date(date).toLocaleDateString(locale, {
       day: '2-digit',
       month: 'long',

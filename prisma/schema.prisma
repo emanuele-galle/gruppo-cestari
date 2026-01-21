@@ -150,6 +150,7 @@ model News {
   categoryId    String?       @map("category_id")
   category      NewsCategory? @relation(fields: [categoryId], references: [id])
   featuredImage String?       @map("featured_image")
+  gallery       Json[]        @default([])
   isPublished   Boolean       @default(false) @map("is_published")
   isFeatured    Boolean       @default(false) @map("is_featured")
   publishedAt   DateTime?     @map("published_at")
@@ -231,7 +232,7 @@ model Project {
   sector        ProjectSector
   country       String        @db.VarChar(2)
   featuredImage String?       @map("featured_image")
-  gallery       String[]
+  gallery       Json[]        @default([])
   startDate     DateTime?     @map("start_date")
   endDate       DateTime?     @map("end_date")
   isPublished   Boolean       @default(false) @map("is_published")
@@ -278,19 +279,21 @@ model ProjectTranslation {
 // ============================================
 
 model Bando {
-  id              String         @id @default(cuid())
-  code            String         @unique
-  type            BandoType
-  sector          ProjectSector?
-  fundingAmount   Decimal?       @map("funding_amount") @db.Decimal(12, 2)
-  fundingCurrency String         @default("EUR") @map("funding_currency") @db.VarChar(3)
-  openDate        DateTime       @map("open_date")
-  closeDate       DateTime       @map("close_date")
-  isPublished     Boolean        @default(false) @map("is_published")
-  isFeatured      Boolean        @default(false) @map("is_featured")
-  publishedAt     DateTime?      @map("published_at")
-  externalUrl     String?        @map("external_url")
-  attachments     String[]
+  id                  String         @id @default(cuid())
+  code                String         @unique
+  type                BandoType
+  sector              ProjectSector?
+  fundingAmount       Decimal?       @map("funding_amount") @db.Decimal(12, 2)
+  fundingCurrency     String         @default("EUR") @map("funding_currency") @db.VarChar(3)
+  openDate            DateTime       @map("open_date")
+  closeDate           DateTime?      @map("close_date")
+  untilFundsExhausted Boolean        @default(false) @map("until_funds_exhausted")
+  isPublished         Boolean        @default(false) @map("is_published")
+  isFeatured          Boolean        @default(false) @map("is_featured")
+  publishedAt         DateTime?      @map("published_at")
+  externalUrl         String?        @map("external_url")
+  attachments         String[]
+  gallery             Json[]         @default([])
 
   translations  BandoTranslation[]
   applications  BandoApplication[]

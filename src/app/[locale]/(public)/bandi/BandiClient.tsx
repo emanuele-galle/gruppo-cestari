@@ -123,13 +123,13 @@ function FeaturedBandoCard({ bando, translation, formatCurrency, getStatusInfo, 
   bando: any;
   translation: any;
   formatCurrency: (amount: number | null) => string;
-  getStatusInfo: (openDate: Date, closeDate: Date) => { label: string; color: string };
-  getDaysRemaining: (closeDate: Date) => number | null;
+  getStatusInfo: (openDate: Date, closeDate: Date | null, untilFundsExhausted?: boolean) => { label: string; color: string };
+  getDaysRemaining: (closeDate: Date | null, untilFundsExhausted?: boolean) => number | null;
   translations: { featured: string; deadline: string; typeLabel: string };
   locale: string;
 }) {
-  const statusInfo = getStatusInfo(bando.openDate, bando.closeDate);
-  const daysRemaining = getDaysRemaining(bando.closeDate);
+  const statusInfo = getStatusInfo(bando.openDate, bando.closeDate, bando.untilFundsExhausted);
+  const daysRemaining = getDaysRemaining(bando.closeDate, bando.untilFundsExhausted);
 
   return (
     <Link href={`/bandi/${bando.code}`}>
@@ -180,7 +180,12 @@ function FeaturedBandoCard({ bando, translation, formatCurrency, getStatusInfo, 
             <div className="text-sm">
               <span className="opacity-70">{translations.deadline}: </span>
               <span className="font-medium">
-                {new Date(bando.closeDate).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}
+                {bando.untilFundsExhausted
+                  ? 'Fino a esaurimento fondi'
+                  : bando.closeDate
+                    ? new Date(bando.closeDate).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })
+                    : '—'
+                }
               </span>
             </div>
             {daysRemaining !== null && daysRemaining <= 30 && (
@@ -302,35 +307,43 @@ export function BandiClient() {
     }).format(amount);
   };
 
-  const getStatusInfo = (openDate: Date, closeDate: Date) => {
+  const getStatusInfo = (openDate: Date, closeDate: Date | null, untilFundsExhausted?: boolean) => {
     const now = new Date();
     const open = new Date(openDate);
-    const close = new Date(closeDate);
 
-    if (close < now) {
-      return { label: t('status.closed'), color: 'bg-red-100 text-red-700' };
-    }
     if (open > now) {
       return { label: t('status.upcoming'), color: 'bg-blue-100 text-blue-700' };
     }
-    const daysRemaining = Math.ceil((close.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-    if (daysRemaining <= 7) {
-      return { label: t('status.closing'), color: 'bg-amber-100 text-amber-700' };
+    // If "until funds exhausted", it's always open once started
+    if (untilFundsExhausted) {
+      return { label: t('status.open'), color: 'bg-green-100 text-green-700' };
+    }
+    if (closeDate) {
+      const close = new Date(closeDate);
+      if (close < now) {
+        return { label: t('status.closed'), color: 'bg-red-100 text-red-700' };
+      }
+      const daysRemaining = Math.ceil((close.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+      if (daysRemaining <= 7) {
+        return { label: t('status.closing'), color: 'bg-amber-100 text-amber-700' };
+      }
     }
     return { label: t('status.open'), color: 'bg-green-100 text-green-700' };
   };
 
-  const getDaysRemaining = (closeDate: Date) => {
+  const getDaysRemaining = (closeDate: Date | null, untilFundsExhausted?: boolean) => {
+    if (untilFundsExhausted || !closeDate) return null;
     const days = Math.ceil((new Date(closeDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24));
     return days > 0 ? days : null;
   };
 
   // Filter by search query and sector on client side
+  // L'ordinamento viene dal server (createdAt desc = più recenti prima)
   type BandoItem = NonNullable<typeof data>['items'][number];
   const filteredBandi = useMemo(() => {
     if (!data?.items) return [];
 
-    const filtered = data.items.filter((bando: BandoItem) => {
+    return data.items.filter((bando: BandoItem) => {
       const translation = bando.translations[0];
       if (!translation) return false;
 
@@ -351,35 +364,6 @@ export function BandiClient() {
 
       return true;
     });
-
-    // Sort: open first, then upcoming, then closed
-    return filtered.sort((a: BandoItem, b: BandoItem) => {
-      const now = new Date();
-      const aOpen = new Date(a.openDate);
-      const aClose = new Date(a.closeDate);
-      const bOpen = new Date(b.openDate);
-      const bClose = new Date(b.closeDate);
-
-      // Status: 0 = open, 1 = upcoming, 2 = closed
-      const getStatusPriority = (openDate: Date, closeDate: Date) => {
-        if (now >= openDate && now <= closeDate) return 0; // open
-        if (now < openDate) return 1; // upcoming
-        return 2; // closed
-      };
-
-      const aStatus = getStatusPriority(aOpen, aClose);
-      const bStatus = getStatusPriority(bOpen, bClose);
-
-      // Sort by status first
-      if (aStatus !== bStatus) return aStatus - bStatus;
-
-      // Within same status, sort by close date (closest deadline first for open)
-      if (aStatus === 0) return aClose.getTime() - bClose.getTime();
-      // For upcoming, sort by open date
-      if (aStatus === 1) return aOpen.getTime() - bOpen.getTime();
-      // For closed, sort by most recently closed first
-      return bClose.getTime() - aClose.getTime();
-    });
   }, [data?.items, searchQuery, activeSector]);
 
   // Get featured bandi (first 2 with highest funding that are open)
@@ -389,7 +373,7 @@ export function BandiClient() {
     const closingLabel = t('status.closing');
     return data.items
       .filter((b: BandoItem) => {
-        const status = getStatusInfo(b.openDate, b.closeDate);
+        const status = getStatusInfo(b.openDate, b.closeDate, b.untilFundsExhausted);
         return status.label === openLabel || status.label === closingLabel;
       })
       .sort((a: BandoItem, b: BandoItem) => (Number(b.fundingAmount) || 0) - (Number(a.fundingAmount) || 0))
@@ -779,8 +763,8 @@ export function BandiClient() {
                   const translation = bando.translations[0];
                   if (!translation) return null;
 
-                  const statusInfo = getStatusInfo(bando.openDate, bando.closeDate);
-                  const daysRemaining = getDaysRemaining(bando.closeDate);
+                  const statusInfo = getStatusInfo(bando.openDate, bando.closeDate, bando.untilFundsExhausted);
+                  const daysRemaining = getDaysRemaining(bando.closeDate, bando.untilFundsExhausted);
 
                   return (
                     <motion.div
@@ -846,11 +830,16 @@ export function BandiClient() {
                                   {t('deadline')}
                                 </div>
                                 <div className="font-semibold text-slate-800">
-                                  {new Date(bando.closeDate).toLocaleDateString(locale, {
-                                    day: 'numeric',
-                                    month: 'short',
-                                    year: 'numeric',
-                                  })}
+                                  {bando.untilFundsExhausted
+                                    ? 'Fino a esaurimento fondi'
+                                    : bando.closeDate
+                                      ? new Date(bando.closeDate).toLocaleDateString(locale, {
+                                          day: 'numeric',
+                                          month: 'short',
+                                          year: 'numeric',
+                                        })
+                                      : '—'
+                                  }
                                 </div>
                                 {daysRemaining !== null && (
                                   <div className="mt-3">

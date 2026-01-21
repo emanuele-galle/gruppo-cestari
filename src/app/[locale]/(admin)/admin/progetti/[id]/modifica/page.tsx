@@ -16,8 +16,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, ImageUpload } from '@/components/admin';
-import { ArrowLeft, Save, Eye, Loader2, Trash2, FolderKanban, BarChart3, Calendar } from 'lucide-react';
+import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, ImageUpload, GalleryUpload } from '@/components/admin';
+import { ArrowLeft, Save, Eye, Loader2, Trash2, FolderKanban, BarChart3, Calendar, Images } from 'lucide-react';
+import type { GalleryImage } from '@/lib/types/gallery';
+import { parseGallery } from '@/lib/types/gallery';
 import { toast } from 'sonner';
 import { trpc } from '@/lib/trpc';
 import {
@@ -102,6 +104,7 @@ export default function EditProjectPage({
   const [sector, setSector] = useState<string>('');
   const [country, setCountry] = useState<string>('');
   const [featuredImage, setFeaturedImage] = useState('');
+  const [gallery, setGallery] = useState<GalleryImage[]>([]);
   const [isPublished, setIsPublished] = useState(false);
   const [isFeatured, setIsFeatured] = useState(false);
   const [activeLocale, setActiveLocale] = useState<Locale>(locale);
@@ -144,6 +147,7 @@ export default function EditProjectPage({
       setSector(project.sector);
       setCountry(project.country);
       setFeaturedImage(project.featuredImage || '');
+      setGallery(parseGallery(project.gallery));
       setIsPublished(project.isPublished);
       setIsFeatured(project.isFeatured);
 
@@ -233,6 +237,7 @@ export default function EditProjectPage({
       sector: sector as 'FINANCE' | 'COOPERATION' | 'RENEWABLE_ENERGY' | 'DEVELOPMENT' | 'OTHER',
       country,
       featuredImage: featuredImage || null,
+      gallery,
       isPublished,
       isFeatured,
       translations: validTranslations.map(t => ({
@@ -446,6 +451,23 @@ export default function EditProjectPage({
                     </TabsContent>
                   ))}
                 </Tabs>
+              </CardContent>
+            </Card>
+
+            {/* Gallery */}
+            <Card variant="glass" delay={0.15}>
+              <CardHeader
+                title="Galleria Immagini"
+                description="Carica e gestisci le immagini del progetto"
+                icon={<Images className="h-5 w-5" />}
+              />
+              <CardContent>
+                <GalleryUpload
+                  value={gallery}
+                  onChange={setGallery}
+                  folder="progetti/gallery"
+                  maxImages={20}
+                />
               </CardContent>
             </Card>
           </motion.div>

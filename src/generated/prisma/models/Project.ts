@@ -229,7 +229,7 @@ export type ProjectGroupByOutputType = {
   sector: $Enums.ProjectSector
   country: string
   featuredImage: string | null
-  gallery: string[]
+  gallery: runtime.JsonValue[]
   startDate: Date | null
   endDate: Date | null
   isPublished: boolean
@@ -268,7 +268,7 @@ export type ProjectWhereInput = {
   sector?: Prisma.EnumProjectSectorFilter<"Project"> | $Enums.ProjectSector
   country?: Prisma.StringFilter<"Project"> | string
   featuredImage?: Prisma.StringNullableFilter<"Project"> | string | null
-  gallery?: Prisma.StringNullableListFilter<"Project">
+  gallery?: Prisma.JsonNullableListFilter<"Project">
   startDate?: Prisma.DateTimeNullableFilter<"Project"> | Date | string | null
   endDate?: Prisma.DateTimeNullableFilter<"Project"> | Date | string | null
   isPublished?: Prisma.BoolFilter<"Project"> | boolean
@@ -308,7 +308,7 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   sector?: Prisma.EnumProjectSectorFilter<"Project"> | $Enums.ProjectSector
   country?: Prisma.StringFilter<"Project"> | string
   featuredImage?: Prisma.StringNullableFilter<"Project"> | string | null
-  gallery?: Prisma.StringNullableListFilter<"Project">
+  gallery?: Prisma.JsonNullableListFilter<"Project">
   startDate?: Prisma.DateTimeNullableFilter<"Project"> | Date | string | null
   endDate?: Prisma.DateTimeNullableFilter<"Project"> | Date | string | null
   isPublished?: Prisma.BoolFilter<"Project"> | boolean
@@ -350,7 +350,7 @@ export type ProjectScalarWhereWithAggregatesInput = {
   sector?: Prisma.EnumProjectSectorWithAggregatesFilter<"Project"> | $Enums.ProjectSector
   country?: Prisma.StringWithAggregatesFilter<"Project"> | string
   featuredImage?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
-  gallery?: Prisma.StringNullableListFilter<"Project">
+  gallery?: Prisma.JsonNullableListFilter<"Project">
   startDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Project"> | Date | string | null
   endDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Project"> | Date | string | null
   isPublished?: Prisma.BoolWithAggregatesFilter<"Project"> | boolean
@@ -366,7 +366,7 @@ export type ProjectCreateInput = {
   sector: $Enums.ProjectSector
   country: string
   featuredImage?: string | null
-  gallery?: Prisma.ProjectCreategalleryInput | string[]
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -384,7 +384,7 @@ export type ProjectUncheckedCreateInput = {
   sector: $Enums.ProjectSector
   country: string
   featuredImage?: string | null
-  gallery?: Prisma.ProjectCreategalleryInput | string[]
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -402,7 +402,7 @@ export type ProjectUpdateInput = {
   sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gallery?: Prisma.ProjectUpdategalleryInput | string[]
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -420,7 +420,7 @@ export type ProjectUncheckedUpdateInput = {
   sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gallery?: Prisma.ProjectUpdategalleryInput | string[]
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -438,7 +438,7 @@ export type ProjectCreateManyInput = {
   sector: $Enums.ProjectSector
   country: string
   featuredImage?: string | null
-  gallery?: Prisma.ProjectCreategalleryInput | string[]
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -454,7 +454,7 @@ export type ProjectUpdateManyMutationInput = {
   sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gallery?: Prisma.ProjectUpdategalleryInput | string[]
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -470,7 +470,7 @@ export type ProjectUncheckedUpdateManyInput = {
   sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gallery?: Prisma.ProjectUpdategalleryInput | string[]
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -478,14 +478,6 @@ export type ProjectUncheckedUpdateManyInput = {
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type StringNullableListFilter<$PrismaModel = never> = {
-  equals?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null
-  has?: string | Prisma.StringFieldRefInput<$PrismaModel> | null
-  hasEvery?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
-  hasSome?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
-  isEmpty?: boolean
 }
 
 export type ProjectOrderByRelevanceInput = {
@@ -559,7 +551,7 @@ export type ProjectNullableScalarRelationFilter = {
 }
 
 export type ProjectCreategalleryInput = {
-  set: string[]
+  set: runtime.InputJsonValue[]
 }
 
 export type EnumProjectSectorFieldUpdateOperationsInput = {
@@ -567,8 +559,8 @@ export type EnumProjectSectorFieldUpdateOperationsInput = {
 }
 
 export type ProjectUpdategalleryInput = {
-  set?: string[]
-  push?: string | string[]
+  set?: runtime.InputJsonValue[]
+  push?: runtime.InputJsonValue | runtime.InputJsonValue[]
 }
 
 export type ProjectCreateNestedOneWithoutTranslationsInput = {
@@ -607,7 +599,7 @@ export type ProjectCreateWithoutTranslationsInput = {
   sector: $Enums.ProjectSector
   country: string
   featuredImage?: string | null
-  gallery?: Prisma.ProjectCreategalleryInput | string[]
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -624,7 +616,7 @@ export type ProjectUncheckedCreateWithoutTranslationsInput = {
   sector: $Enums.ProjectSector
   country: string
   featuredImage?: string | null
-  gallery?: Prisma.ProjectCreategalleryInput | string[]
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -657,7 +649,7 @@ export type ProjectUpdateWithoutTranslationsInput = {
   sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gallery?: Prisma.ProjectUpdategalleryInput | string[]
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -674,7 +666,7 @@ export type ProjectUncheckedUpdateWithoutTranslationsInput = {
   sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gallery?: Prisma.ProjectUpdategalleryInput | string[]
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -691,7 +683,7 @@ export type ProjectCreateWithoutSeoMetaInput = {
   sector: $Enums.ProjectSector
   country: string
   featuredImage?: string | null
-  gallery?: Prisma.ProjectCreategalleryInput | string[]
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -708,7 +700,7 @@ export type ProjectUncheckedCreateWithoutSeoMetaInput = {
   sector: $Enums.ProjectSector
   country: string
   featuredImage?: string | null
-  gallery?: Prisma.ProjectCreategalleryInput | string[]
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -741,7 +733,7 @@ export type ProjectUpdateWithoutSeoMetaInput = {
   sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gallery?: Prisma.ProjectUpdategalleryInput | string[]
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -758,7 +750,7 @@ export type ProjectUncheckedUpdateWithoutSeoMetaInput = {
   sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  gallery?: Prisma.ProjectUpdategalleryInput | string[]
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -897,7 +889,7 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     sector: $Enums.ProjectSector
     country: string
     featuredImage: string | null
-    gallery: string[]
+    gallery: runtime.JsonValue[]
     startDate: Date | null
     endDate: Date | null
     isPublished: boolean
@@ -1335,7 +1327,7 @@ export interface ProjectFieldRefs {
   readonly sector: Prisma.FieldRef<"Project", 'ProjectSector'>
   readonly country: Prisma.FieldRef<"Project", 'String'>
   readonly featuredImage: Prisma.FieldRef<"Project", 'String'>
-  readonly gallery: Prisma.FieldRef<"Project", 'String[]'>
+  readonly gallery: Prisma.FieldRef<"Project", 'Json[]'>
   readonly startDate: Prisma.FieldRef<"Project", 'DateTime'>
   readonly endDate: Prisma.FieldRef<"Project", 'DateTime'>
   readonly isPublished: Prisma.FieldRef<"Project", 'Boolean'>

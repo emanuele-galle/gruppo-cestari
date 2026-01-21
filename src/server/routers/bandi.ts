@@ -17,6 +17,30 @@ const minioUrlSchema = z.string().url().refine(
   { message: 'Solo URL dal dominio s3.fodivps1.cloud sono consentiti' }
 );
 
+// Gallery image schema matching GalleryImage type
+const galleryImageSchema = z.object({
+  url: z.string().url(),
+  title: z.string().optional(),
+  description: z.string().optional(),
+  order: z.number().int().min(0),
+});
+
+// External URL schema - auto-adds https:// if missing and allows empty strings
+const externalUrlSchema = z.preprocess(
+  (val) => {
+    // Handle non-string or empty values
+    if (typeof val !== 'string' || !val || val.trim() === '') {
+      return undefined;
+    }
+    // Add https:// if no protocol specified
+    if (!/^https?:\/\//i.test(val)) {
+      return `https://${val}`;
+    }
+    return val;
+  },
+  z.string().url().optional()
+);
+
 // Input schemas
 const bandoCreateInput = z.object({
   code: z.string().min(1).max(50),
@@ -25,11 +49,13 @@ const bandoCreateInput = z.object({
   fundingAmount: z.number().positive().optional(),
   fundingCurrency: z.string().length(3).default('EUR'),
   openDate: z.date(),
-  closeDate: z.date(),
+  closeDate: z.date().nullable().optional(),
+  untilFundsExhausted: z.boolean().default(false),
   isPublished: z.boolean().default(false),
   isFeatured: z.boolean().default(false),
-  externalUrl: z.string().url().optional(),
+  externalUrl: externalUrlSchema,
   attachments: z.array(minioUrlSchema).default([]),
+  gallery: z.array(galleryImageSchema).default([]),
   translations: z.array(z.object({
     locale: z.enum(['it', 'en', 'fr']),
     title: z.string().min(1).max(200),
@@ -38,7 +64,10 @@ const bandoCreateInput = z.object({
     requirements: z.string().optional(),
     eligibility: z.string().optional(),
   })).min(1),
-});
+}).refine(
+  (data) => data.untilFundsExhausted || data.closeDate,
+  { message: 'Specificare una data di chiusura o selezionare "Fino a esaurimento fondi"', path: ['closeDate'] }
+);
 
 const bandoUpdateInput = z.object({
   id: z.string(),
@@ -48,11 +77,13 @@ const bandoUpdateInput = z.object({
   fundingAmount: z.number().positive().nullable().optional(),
   fundingCurrency: z.string().length(3).optional(),
   openDate: z.date().optional(),
-  closeDate: z.date().optional(),
+  closeDate: z.date().nullable().optional(),
+  untilFundsExhausted: z.boolean().optional(),
   isPublished: z.boolean().optional(),
   isFeatured: z.boolean().optional(),
-  externalUrl: z.string().url().nullable().optional(),
+  externalUrl: externalUrlSchema,
   attachments: z.array(minioUrlSchema).optional(),
+  gallery: z.array(galleryImageSchema).optional(),
   translations: z.array(z.object({
     locale: z.enum(['it', 'en', 'fr']),
     title: z.string().min(1).max(200),
@@ -177,7 +208,7 @@ export const bandiRouter = router({
           where,
           skip,
           take: limit,
-          orderBy: { closeDate: 'asc' },
+          orderBy: { createdAt: 'desc' }, // Ordina per data creazione (più recenti prima)
           include: {
             translations: true, // Fetch all translations for fallback
           },
@@ -332,8 +363,8 @@ export const bandiRouter = router({
         });
       }
 
-      // Validate dates
-      if (bandoData.closeDate <= bandoData.openDate) {
+      // Validate dates (only if closeDate is provided - not for untilFundsExhausted bandi)
+      if (bandoData.closeDate && bandoData.closeDate <= bandoData.openDate) {
         throw new TRPCError({
           code: 'BAD_REQUEST',
           message: 'La data di chiusura deve essere successiva alla data di apertura',
@@ -387,10 +418,10 @@ export const bandiRouter = router({
         }
       }
 
-      // Validate dates if both provided
+      // Validate dates if closeDate is provided (not for untilFundsExhausted bandi)
       const openDate = bandoData.openDate ?? existing.openDate;
       const closeDate = bandoData.closeDate ?? existing.closeDate;
-      if (closeDate <= openDate) {
+      if (closeDate && closeDate <= openDate) {
         throw new TRPCError({
           code: 'BAD_REQUEST',
           message: 'La data di chiusura deve essere successiva alla data di apertura',

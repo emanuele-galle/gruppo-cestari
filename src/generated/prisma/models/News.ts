@@ -70,6 +70,7 @@ export type NewsCountAggregateOutputType = {
   authorId: number
   categoryId: number
   featuredImage: number
+  gallery: number
   isPublished: number
   isFeatured: number
   publishedAt: number
@@ -125,6 +126,7 @@ export type NewsCountAggregateInputType = {
   authorId?: true
   categoryId?: true
   featuredImage?: true
+  gallery?: true
   isPublished?: true
   isFeatured?: true
   publishedAt?: true
@@ -227,6 +229,7 @@ export type NewsGroupByOutputType = {
   authorId: string
   categoryId: string | null
   featuredImage: string | null
+  gallery: runtime.JsonValue[]
   isPublished: boolean
   isFeatured: boolean
   publishedAt: Date | null
@@ -265,6 +268,7 @@ export type NewsWhereInput = {
   authorId?: Prisma.StringFilter<"News"> | string
   categoryId?: Prisma.StringNullableFilter<"News"> | string | null
   featuredImage?: Prisma.StringNullableFilter<"News"> | string | null
+  gallery?: Prisma.JsonNullableListFilter<"News">
   isPublished?: Prisma.BoolFilter<"News"> | boolean
   isFeatured?: Prisma.BoolFilter<"News"> | boolean
   publishedAt?: Prisma.DateTimeNullableFilter<"News"> | Date | string | null
@@ -285,6 +289,7 @@ export type NewsOrderByWithRelationInput = {
   authorId?: Prisma.SortOrder
   categoryId?: Prisma.SortOrderInput | Prisma.SortOrder
   featuredImage?: Prisma.SortOrderInput | Prisma.SortOrder
+  gallery?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -309,6 +314,7 @@ export type NewsWhereUniqueInput = Prisma.AtLeast<{
   authorId?: Prisma.StringFilter<"News"> | string
   categoryId?: Prisma.StringNullableFilter<"News"> | string | null
   featuredImage?: Prisma.StringNullableFilter<"News"> | string | null
+  gallery?: Prisma.JsonNullableListFilter<"News">
   isPublished?: Prisma.BoolFilter<"News"> | boolean
   isFeatured?: Prisma.BoolFilter<"News"> | boolean
   publishedAt?: Prisma.DateTimeNullableFilter<"News"> | Date | string | null
@@ -329,6 +335,7 @@ export type NewsOrderByWithAggregationInput = {
   authorId?: Prisma.SortOrder
   categoryId?: Prisma.SortOrderInput | Prisma.SortOrder
   featuredImage?: Prisma.SortOrderInput | Prisma.SortOrder
+  gallery?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -352,6 +359,7 @@ export type NewsScalarWhereWithAggregatesInput = {
   authorId?: Prisma.StringWithAggregatesFilter<"News"> | string
   categoryId?: Prisma.StringNullableWithAggregatesFilter<"News"> | string | null
   featuredImage?: Prisma.StringNullableWithAggregatesFilter<"News"> | string | null
+  gallery?: Prisma.JsonNullableListFilter<"News">
   isPublished?: Prisma.BoolWithAggregatesFilter<"News"> | boolean
   isFeatured?: Prisma.BoolWithAggregatesFilter<"News"> | boolean
   publishedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"News"> | Date | string | null
@@ -365,6 +373,7 @@ export type NewsCreateInput = {
   id?: string
   slug: string
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -385,6 +394,7 @@ export type NewsUncheckedCreateInput = {
   authorId: string
   categoryId?: string | null
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -401,6 +411,7 @@ export type NewsUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -421,6 +432,7 @@ export type NewsUncheckedUpdateInput = {
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -439,6 +451,7 @@ export type NewsCreateManyInput = {
   authorId: string
   categoryId?: string | null
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -452,6 +465,7 @@ export type NewsUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -467,6 +481,7 @@ export type NewsUncheckedUpdateManyInput = {
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -486,6 +501,21 @@ export type NewsOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
+export type JsonNullableListFilter<$PrismaModel = never> =
+| Prisma.PatchUndefined<
+    Prisma.Either<Required<JsonNullableListFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableListFilterBase<$PrismaModel>>, 'path'>>,
+    Required<JsonNullableListFilterBase<$PrismaModel>>
+  >
+| Prisma.OptionalFlat<Omit<Required<JsonNullableListFilterBase<$PrismaModel>>, 'path'>>
+
+export type JsonNullableListFilterBase<$PrismaModel = never> = {
+  equals?: runtime.InputJsonValue[] | Prisma.ListJsonFieldRefInput<$PrismaModel> | null
+  has?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  hasEvery?: runtime.InputJsonValue[] | Prisma.ListJsonFieldRefInput<$PrismaModel>
+  hasSome?: runtime.InputJsonValue[] | Prisma.ListJsonFieldRefInput<$PrismaModel>
+  isEmpty?: boolean
+}
+
 export type NewsOrderByRelevanceInput = {
   fields: Prisma.NewsOrderByRelevanceFieldEnum | Prisma.NewsOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
@@ -498,6 +528,7 @@ export type NewsCountOrderByAggregateInput = {
   authorId?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
   featuredImage?: Prisma.SortOrder
+  gallery?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrder
@@ -597,6 +628,15 @@ export type NewsUncheckedUpdateManyWithoutAuthorNestedInput = {
   deleteMany?: Prisma.NewsScalarWhereInput | Prisma.NewsScalarWhereInput[]
 }
 
+export type NewsCreategalleryInput = {
+  set: runtime.InputJsonValue[]
+}
+
+export type NewsUpdategalleryInput = {
+  set?: runtime.InputJsonValue[]
+  push?: runtime.InputJsonValue | runtime.InputJsonValue[]
+}
+
 export type NewsCreateNestedOneWithoutTranslationsInput = {
   create?: Prisma.XOR<Prisma.NewsCreateWithoutTranslationsInput, Prisma.NewsUncheckedCreateWithoutTranslationsInput>
   connectOrCreate?: Prisma.NewsCreateOrConnectWithoutTranslationsInput
@@ -687,6 +727,7 @@ export type NewsCreateWithoutAuthorInput = {
   id?: string
   slug: string
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -705,6 +746,7 @@ export type NewsUncheckedCreateWithoutAuthorInput = {
   slug: string
   categoryId?: string | null
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -752,6 +794,7 @@ export type NewsScalarWhereInput = {
   authorId?: Prisma.StringFilter<"News"> | string
   categoryId?: Prisma.StringNullableFilter<"News"> | string | null
   featuredImage?: Prisma.StringNullableFilter<"News"> | string | null
+  gallery?: Prisma.JsonNullableListFilter<"News">
   isPublished?: Prisma.BoolFilter<"News"> | boolean
   isFeatured?: Prisma.BoolFilter<"News"> | boolean
   publishedAt?: Prisma.DateTimeNullableFilter<"News"> | Date | string | null
@@ -765,6 +808,7 @@ export type NewsCreateWithoutTranslationsInput = {
   id?: string
   slug: string
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -784,6 +828,7 @@ export type NewsUncheckedCreateWithoutTranslationsInput = {
   authorId: string
   categoryId?: string | null
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -815,6 +860,7 @@ export type NewsUpdateWithoutTranslationsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -834,6 +880,7 @@ export type NewsUncheckedUpdateWithoutTranslationsInput = {
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -849,6 +896,7 @@ export type NewsCreateWithoutCategoryInput = {
   id?: string
   slug: string
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -867,6 +915,7 @@ export type NewsUncheckedCreateWithoutCategoryInput = {
   slug: string
   authorId: string
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -909,6 +958,7 @@ export type NewsCreateWithoutTagsInput = {
   id?: string
   slug: string
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -928,6 +978,7 @@ export type NewsUncheckedCreateWithoutTagsInput = {
   authorId: string
   categoryId?: string | null
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -959,6 +1010,7 @@ export type NewsUpdateWithoutTagsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -978,6 +1030,7 @@ export type NewsUncheckedUpdateWithoutTagsInput = {
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -993,6 +1046,7 @@ export type NewsCreateWithoutSeoMetaInput = {
   id?: string
   slug: string
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -1012,6 +1066,7 @@ export type NewsUncheckedCreateWithoutSeoMetaInput = {
   authorId: string
   categoryId?: string | null
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -1043,6 +1098,7 @@ export type NewsUpdateWithoutSeoMetaInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1062,6 +1118,7 @@ export type NewsUncheckedUpdateWithoutSeoMetaInput = {
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1078,6 +1135,7 @@ export type NewsCreateManyAuthorInput = {
   slug: string
   categoryId?: string | null
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -1091,6 +1149,7 @@ export type NewsUpdateWithoutAuthorInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1109,6 +1168,7 @@ export type NewsUncheckedUpdateWithoutAuthorInput = {
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1126,6 +1186,7 @@ export type NewsUncheckedUpdateManyWithoutAuthorInput = {
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1140,6 +1201,7 @@ export type NewsCreateManyCategoryInput = {
   slug: string
   authorId: string
   featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
@@ -1153,6 +1215,7 @@ export type NewsUpdateWithoutCategoryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1171,6 +1234,7 @@ export type NewsUncheckedUpdateWithoutCategoryInput = {
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1188,6 +1252,7 @@ export type NewsUncheckedUpdateManyWithoutCategoryInput = {
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1252,6 +1317,7 @@ export type NewsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   authorId?: boolean
   categoryId?: boolean
   featuredImage?: boolean
+  gallery?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: boolean
@@ -1273,6 +1339,7 @@ export type NewsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   authorId?: boolean
   categoryId?: boolean
   featuredImage?: boolean
+  gallery?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: boolean
@@ -1290,6 +1357,7 @@ export type NewsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   authorId?: boolean
   categoryId?: boolean
   featuredImage?: boolean
+  gallery?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: boolean
@@ -1307,6 +1375,7 @@ export type NewsSelectScalar = {
   authorId?: boolean
   categoryId?: boolean
   featuredImage?: boolean
+  gallery?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: boolean
@@ -1316,7 +1385,7 @@ export type NewsSelectScalar = {
   updatedAt?: boolean
 }
 
-export type NewsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "authorId" | "categoryId" | "featuredImage" | "isPublished" | "isFeatured" | "publishedAt" | "viewCount" | "focalPoint" | "createdAt" | "updatedAt", ExtArgs["result"]["news"]>
+export type NewsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "authorId" | "categoryId" | "featuredImage" | "gallery" | "isPublished" | "isFeatured" | "publishedAt" | "viewCount" | "focalPoint" | "createdAt" | "updatedAt", ExtArgs["result"]["news"]>
 export type NewsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   author?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   category?: boolean | Prisma.News$categoryArgs<ExtArgs>
@@ -1349,6 +1418,7 @@ export type $NewsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     authorId: string
     categoryId: string | null
     featuredImage: string | null
+    gallery: runtime.JsonValue[]
     isPublished: boolean
     isFeatured: boolean
     publishedAt: Date | null
@@ -1789,6 +1859,7 @@ export interface NewsFieldRefs {
   readonly authorId: Prisma.FieldRef<"News", 'String'>
   readonly categoryId: Prisma.FieldRef<"News", 'String'>
   readonly featuredImage: Prisma.FieldRef<"News", 'String'>
+  readonly gallery: Prisma.FieldRef<"News", 'Json[]'>
   readonly isPublished: Prisma.FieldRef<"News", 'Boolean'>
   readonly isFeatured: Prisma.FieldRef<"News", 'Boolean'>
   readonly publishedAt: Prisma.FieldRef<"News", 'DateTime'>

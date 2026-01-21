@@ -5,13 +5,21 @@ import { TRPCError } from '@trpc/server';
 // Enum values matching Prisma schema
 const ProjectSectorEnum = z.enum(['FINANCE', 'COOPERATION', 'RENEWABLE_ENERGY', 'DEVELOPMENT', 'OTHER']);
 
+// Gallery image schema matching GalleryImage type
+const galleryImageSchema = z.object({
+  url: z.string().url(),
+  title: z.string().optional(),
+  description: z.string().optional(),
+  order: z.number().int().min(0),
+});
+
 // Input schemas
 const projectCreateInput = z.object({
   slug: z.string().min(1).max(100),
   sector: ProjectSectorEnum,
   country: z.string().length(2), // ISO country code
   featuredImage: z.string().optional(),
-  gallery: z.array(z.string()).default([]),
+  gallery: z.array(galleryImageSchema).default([]),
   startDate: z.date().optional(),
   endDate: z.date().optional(),
   isPublished: z.boolean().default(false),
@@ -35,7 +43,7 @@ const projectUpdateInput = z.object({
   sector: ProjectSectorEnum.optional(),
   country: z.string().length(2).optional(),
   featuredImage: z.string().nullable().optional(),
-  gallery: z.array(z.string()).optional(),
+  gallery: z.array(galleryImageSchema).optional(),
   startDate: z.date().nullable().optional(),
   endDate: z.date().nullable().optional(),
   isPublished: z.boolean().optional(),

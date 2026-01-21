@@ -17,8 +17,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, FileUpload } from '@/components/admin';
-import { ArrowLeft, Save, Loader2, FileText } from 'lucide-react';
+import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, FileUpload, GalleryUpload } from '@/components/admin';
+import { ArrowLeft, Save, Loader2, FileText, Images } from 'lucide-react';
+import type { GalleryImage } from '@/lib/types/gallery';
 import { toast } from 'sonner';
 import { trpc } from '@/lib/trpc';
 
@@ -77,8 +78,10 @@ export default function NewBandoPage() {
   const [fundingCurrency, setFundingCurrency] = useState('EUR');
   const [openDate, setOpenDate] = useState('');
   const [closeDate, setCloseDate] = useState('');
+  const [untilFundsExhausted, setUntilFundsExhausted] = useState(false);
   const [externalUrl, setExternalUrl] = useState('');
   const [attachments, setAttachments] = useState<string[]>([]);
+  const [gallery, setGallery] = useState<GalleryImage[]>([]);
   const [isFileUploading, setIsFileUploading] = useState(false);
   const [isPublished, setIsPublished] = useState(false);
   const [isFeatured, setIsFeatured] = useState(false);
@@ -134,8 +137,13 @@ export default function NewBandoPage() {
       return;
     }
 
-    if (!openDate || !closeDate) {
-      toast.error('Le date di apertura e chiusura sono obbligatorie');
+    if (!openDate) {
+      toast.error('La data di apertura è obbligatoria');
+      return;
+    }
+
+    if (!untilFundsExhausted && !closeDate) {
+      toast.error('Specificare una data di chiusura o selezionare "Fino a esaurimento fondi"');
       return;
     }
 
@@ -175,9 +183,11 @@ export default function NewBandoPage() {
       fundingAmount: fundingAmount ? parseFloat(fundingAmount) : undefined,
       fundingCurrency,
       openDate: new Date(openDate),
-      closeDate: new Date(closeDate),
+      closeDate: closeDate ? new Date(closeDate) : null,
+      untilFundsExhausted,
       externalUrl: externalUrl || undefined,
       attachments,
+      gallery,
       isPublished,
       isFeatured,
       translations: validTranslations,
@@ -326,6 +336,23 @@ export default function NewBandoPage() {
                 />
               </CardContent>
             </Card>
+
+            {/* Gallery */}
+            <Card variant="glass" delay={0.25}>
+              <CardHeader
+                title="Galleria Immagini"
+                description="Carica immagini per il bando"
+                icon={<Images className="h-5 w-5" />}
+              />
+              <CardContent>
+                <GalleryUpload
+                  value={gallery}
+                  onChange={setGallery}
+                  folder="bandi/gallery"
+                  maxImages={10}
+                />
+              </CardContent>
+            </Card>
           </motion.div>
 
           {/* Sidebar */}
@@ -377,10 +404,11 @@ export default function NewBandoPage() {
                     <Input
                       id="code"
                       value={code}
-                      onChange={(e) => setCode(e.target.value.toUpperCase())}
+                      onChange={(e) => setCode(e.target.value.toUpperCase().replace(/\s+/g, '-'))}
                       placeholder="ES: EU-2025-001"
                       className="bg-white border-slate-300 text-slate-900 focus:border-primary"
                     />
+                    <p className="text-xs text-slate-500">Gli spazi vengono automaticamente sostituiti con trattini</p>
                   </div>
 
                   <div className="space-y-2">
@@ -458,15 +486,33 @@ export default function NewBandoPage() {
 
                   <div className="space-y-2">
                     <Label htmlFor="closeDate" className="text-slate-900">
-                      Data chiusura <span className="text-destructive">*</span>
+                      Data chiusura {!untilFundsExhausted && <span className="text-destructive">*</span>}
                     </Label>
-                    <Input
-                      id="closeDate"
-                      type="date"
-                      value={closeDate}
-                      onChange={(e) => setCloseDate(e.target.value)}
-                      className="bg-white border-slate-300 text-slate-900 focus:border-primary"
-                    />
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-white border border-slate-300 mb-2">
+                      <div>
+                        <Label htmlFor="untilFundsExhausted" className="text-slate-900 font-medium text-sm">
+                          Fino a esaurimento fondi
+                        </Label>
+                        <p className="text-xs text-slate-600">Nessuna data di scadenza</p>
+                      </div>
+                      <Switch
+                        id="untilFundsExhausted"
+                        checked={untilFundsExhausted}
+                        onCheckedChange={(checked) => {
+                          setUntilFundsExhausted(checked);
+                          if (checked) setCloseDate('');
+                        }}
+                      />
+                    </div>
+                    {!untilFundsExhausted && (
+                      <Input
+                        id="closeDate"
+                        type="date"
+                        value={closeDate}
+                        onChange={(e) => setCloseDate(e.target.value)}
+                        className="bg-white border-slate-300 text-slate-900 focus:border-primary"
+                      />
+                    )}
                   </div>
 
                   <div className="space-y-2">

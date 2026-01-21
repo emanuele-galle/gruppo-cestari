@@ -2874,6 +2874,7 @@ export const NewsScalarFieldEnum = {
   authorId: 'authorId',
   categoryId: 'categoryId',
   featuredImage: 'featuredImage',
+  gallery: 'gallery',
   isPublished: 'isPublished',
   isFeatured: 'isFeatured',
   publishedAt: 'publishedAt',
@@ -2978,11 +2979,13 @@ export const BandoScalarFieldEnum = {
   fundingCurrency: 'fundingCurrency',
   openDate: 'openDate',
   closeDate: 'closeDate',
+  untilFundsExhausted: 'untilFundsExhausted',
   isPublished: 'isPublished',
   isFeatured: 'isFeatured',
   publishedAt: 'publishedAt',
   externalUrl: 'externalUrl',
   attachments: 'attachments',
+  gallery: 'gallery',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -3422,8 +3425,7 @@ export const ProjectOrderByRelevanceFieldEnum = {
   id: 'id',
   slug: 'slug',
   country: 'country',
-  featuredImage: 'featuredImage',
-  gallery: 'gallery'
+  featuredImage: 'featuredImage'
 } as const
 
 export type ProjectOrderByRelevanceFieldEnum = (typeof ProjectOrderByRelevanceFieldEnum)[keyof typeof ProjectOrderByRelevanceFieldEnum]
@@ -3728,6 +3730,20 @@ export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
 
 
 /**
+ * Reference to a field of type 'Json[]'
+ */
+export type ListJsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
  * Reference to a field of type 'ProjectSector'
  */
 export type EnumProjectSectorFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectSector'>
@@ -3864,13 +3880,6 @@ export type EnumContactStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$Pr
  * Reference to a field of type 'ContactStatus[]'
  */
 export type ListEnumContactStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ContactStatus[]'>
-    
-
-
-/**
- * Reference to a field of type 'Json'
- */
-export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
     
 
 

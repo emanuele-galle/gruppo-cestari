@@ -15,6 +15,8 @@ export { StatusBadge, PublishedBadge, ActiveBadge, RoleBadge } from './status-ba
 export { RichTextEditor } from './rich-text-editor';
 export { ImageUpload } from './image-upload';
 export { FileUpload } from './file-upload';
+export { GalleryUpload } from './gallery-upload';
+export { GalleryImageEditor } from './gallery-image-editor';
 export { BulkActionsBar, bulkActionPresets } from './bulk-actions-bar';
 export type { } from './bulk-actions-bar';
 

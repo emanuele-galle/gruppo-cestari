@@ -207,6 +207,7 @@ export const NewsScalarFieldEnum = {
   authorId: 'authorId',
   categoryId: 'categoryId',
   featuredImage: 'featuredImage',
+  gallery: 'gallery',
   isPublished: 'isPublished',
   isFeatured: 'isFeatured',
   publishedAt: 'publishedAt',
@@ -311,11 +312,13 @@ export const BandoScalarFieldEnum = {
   fundingCurrency: 'fundingCurrency',
   openDate: 'openDate',
   closeDate: 'closeDate',
+  untilFundsExhausted: 'untilFundsExhausted',
   isPublished: 'isPublished',
   isFeatured: 'isFeatured',
   publishedAt: 'publishedAt',
   externalUrl: 'externalUrl',
   attachments: 'attachments',
+  gallery: 'gallery',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -755,8 +758,7 @@ export const ProjectOrderByRelevanceFieldEnum = {
   id: 'id',
   slug: 'slug',
   country: 'country',
-  featuredImage: 'featuredImage',
-  gallery: 'gallery'
+  featuredImage: 'featuredImage'
 } as const
 
 export type ProjectOrderByRelevanceFieldEnum = (typeof ProjectOrderByRelevanceFieldEnum)[keyof typeof ProjectOrderByRelevanceFieldEnum]

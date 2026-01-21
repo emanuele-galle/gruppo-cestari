@@ -2,12 +2,21 @@ import { z } from 'zod';
 import { router, adminProcedure, publicProcedure } from '../trpc';
 import { TRPCError } from '@trpc/server';
 
+// Gallery image schema matching GalleryImage type
+const galleryImageSchema = z.object({
+  url: z.string().url(),
+  title: z.string().optional(),
+  description: z.string().optional(),
+  order: z.number().int().min(0),
+});
+
 // Input schemas
 const newsCreateInput = z.object({
   slug: z.string().min(1).max(100),
   categoryId: z.string().optional(),
   featuredImage: z.string().url().optional(),
   focalPoint: z.enum(['top', 'center', 'bottom', 'left', 'right', 'top-left', 'top-right', 'bottom-left', 'bottom-right']).optional(),
+  gallery: z.array(galleryImageSchema).default([]),
   isPublished: z.boolean().default(false),
   isFeatured: z.boolean().default(false),
   publishedAt: z.date().optional(),
@@ -26,6 +35,7 @@ const newsUpdateInput = z.object({
   categoryId: z.string().nullable().optional(),
   featuredImage: z.string().url().nullable().optional(),
   focalPoint: z.enum(['top', 'center', 'bottom', 'left', 'right', 'top-left', 'top-right', 'bottom-left', 'bottom-right']).nullable().optional(),
+  gallery: z.array(galleryImageSchema).optional(),
   isPublished: z.boolean().optional(),
   isFeatured: z.boolean().optional(),
   publishedAt: z.date().nullable().optional(),

@@ -224,7 +224,7 @@ export default function AdminBandiPage() {
           Importo: bando.fundingAmount ? Number(bando.fundingAmount) : '',
           Valuta: bando.fundingCurrency,
           DataApertura: new Date(bando.openDate).toLocaleDateString('it-IT'),
-          DataScadenza: new Date(bando.closeDate).toLocaleDateString('it-IT'),
+          DataScadenza: bando.untilFundsExhausted ? 'Fino a esaurimento fondi' : bando.closeDate ? new Date(bando.closeDate).toLocaleDateString('it-IT') : '',
           Pubblicato: bando.isPublished ? 'Sì' : 'No',
           Candidature: bando._count.applications,
         };
@@ -248,7 +248,8 @@ export default function AdminBandiPage() {
     toast.success(`Esportati ${exportData.length} bandi`);
   }, [data?.items, selectedIds]);
 
-  const getDaysRemaining = (closeDate: Date) => {
+  const getDaysRemaining = (closeDate: Date | null, untilFundsExhausted?: boolean) => {
+    if (untilFundsExhausted || !closeDate) return null;
     const now = new Date();
     const close = new Date(closeDate);
     const diffTime = close.getTime() - now.getTime();
@@ -269,23 +270,29 @@ export default function AdminBandiPage() {
     }).format(amount);
   };
 
-  const getBandoStatusInfo = (isPublished: boolean, openDate: Date, closeDate: Date) => {
+  const getBandoStatusInfo = (isPublished: boolean, openDate: Date, closeDate: Date | null, untilFundsExhausted?: boolean) => {
     const now = new Date();
     const open = new Date(openDate);
-    const close = new Date(closeDate);
-    const daysRemaining = getDaysRemaining(closeDate);
 
     if (!isPublished) {
       return { variant: 'default' as const, label: 'Bozza', icon: Clock };
     }
-    if (close < now) {
-      return { variant: 'danger' as const, label: 'Chiuso', icon: XCircle };
-    }
     if (open > now) {
       return { variant: 'info' as const, label: 'In Arrivo', icon: Clock };
     }
-    if (daysRemaining <= 7) {
-      return { variant: 'warning' as const, label: 'In Scadenza', icon: AlertTriangle };
+    // If "until funds exhausted", it's always open once started
+    if (untilFundsExhausted) {
+      return { variant: 'success' as const, label: 'Aperto', icon: CheckCircle };
+    }
+    if (closeDate) {
+      const close = new Date(closeDate);
+      const daysRemaining = getDaysRemaining(closeDate, untilFundsExhausted);
+      if (close < now) {
+        return { variant: 'danger' as const, label: 'Chiuso', icon: XCircle };
+      }
+      if (daysRemaining !== null && daysRemaining <= 7) {
+        return { variant: 'warning' as const, label: 'In Scadenza', icon: AlertTriangle };
+      }
     }
     return { variant: 'success' as const, label: 'Attivo', icon: CheckCircle };
   };
@@ -472,8 +479,8 @@ export default function AdminBandiPage() {
           <div className="space-y-4">
             {data?.items.map((bando: (typeof data.items)[number], index: number) => {
               const translation = getTranslation(bando.translations);
-              const daysRemaining = getDaysRemaining(bando.closeDate);
-              const statusInfo = getBandoStatusInfo(bando.isPublished, bando.openDate, bando.closeDate);
+              const daysRemaining = getDaysRemaining(bando.closeDate, bando.untilFundsExhausted);
+              const statusInfo = getBandoStatusInfo(bando.isPublished, bando.openDate, bando.closeDate, bando.untilFundsExhausted);
               const typeInfo = TYPE_BADGES[bando.type as BandoType];
 
               return (
@@ -573,31 +580,43 @@ export default function AdminBandiPage() {
                           </div>
 
                           {/* Deadline */}
-                          <div className={`rounded-xl px-4 py-3 border min-w-[120px] ${
-                            daysRemaining < 0
-                              ? 'bg-red-500/10 border-red-500/30'
-                              : daysRemaining <= 7
-                                ? 'bg-orange-500/10 border-orange-500/30'
-                                : daysRemaining <= 30
-                                  ? 'bg-amber-500/10 border-amber-500/30'
-                                  : 'bg-emerald-500/10 border-emerald-500/30'
-                          }`}>
-                            <div className={`flex items-center gap-2 text-lg font-bold ${
-                              daysRemaining < 0
-                                ? 'text-red-400'
-                                : daysRemaining <= 7
-                                  ? 'text-orange-400'
-                                  : daysRemaining <= 30
-                                    ? 'text-amber-400'
-                                    : 'text-emerald-400'
-                            }`}>
-                              <Calendar className="w-4 h-4" />
-                              {daysRemaining < 0 ? 'Scaduto' : `${daysRemaining}g`}
+                          {bando.untilFundsExhausted ? (
+                            <div className="rounded-xl px-4 py-3 border min-w-[120px] bg-blue-500/10 border-blue-500/30">
+                              <div className="flex items-center gap-2 text-lg font-bold text-blue-600">
+                                <Calendar className="w-4 h-4" />
+                                Aperto
+                              </div>
+                              <p className="text-xs text-slate-500 mt-0.5">
+                                Fino a esaurimento fondi
+                              </p>
                             </div>
-                            <p className="text-xs text-slate-500 mt-0.5">
-                              {new Date(bando.closeDate).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })}
-                            </p>
-                          </div>
+                          ) : (
+                            <div className={`rounded-xl px-4 py-3 border min-w-[120px] ${
+                              daysRemaining !== null && daysRemaining < 0
+                                ? 'bg-red-500/10 border-red-500/30'
+                                : daysRemaining !== null && daysRemaining <= 7
+                                  ? 'bg-orange-500/10 border-orange-500/30'
+                                  : daysRemaining !== null && daysRemaining <= 30
+                                    ? 'bg-amber-500/10 border-amber-500/30'
+                                    : 'bg-emerald-500/10 border-emerald-500/30'
+                            }`}>
+                              <div className={`flex items-center gap-2 text-lg font-bold ${
+                                daysRemaining !== null && daysRemaining < 0
+                                  ? 'text-red-400'
+                                  : daysRemaining !== null && daysRemaining <= 7
+                                    ? 'text-orange-400'
+                                    : daysRemaining !== null && daysRemaining <= 30
+                                      ? 'text-amber-400'
+                                      : 'text-emerald-400'
+                              }`}>
+                                <Calendar className="w-4 h-4" />
+                                {daysRemaining !== null && daysRemaining < 0 ? 'Scaduto' : `${daysRemaining}g`}
+                              </div>
+                              <p className="text-xs text-slate-500 mt-0.5">
+                                {bando.closeDate && new Date(bando.closeDate).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })}
+                              </p>
+                            </div>
+                          )}
                         </div>
 
                         {/* Right: Actions */}

@@ -30,7 +30,7 @@ interface RecentApplication {
   id: string;
   name: string;
   status: string;
-  deadline: Date | string;
+  deadline: Date | string | null;
   createdAt: Date | string;
 }
 
@@ -102,7 +102,8 @@ export default function PortalDashboard() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const formatDate = (date: Date | string) => {
+  const formatDate = (date: Date | string | null) => {
+    if (!date) return 'Fino a esaurimento fondi';
     return new Date(date).toLocaleDateString(locale, {
       day: '2-digit',
       month: 'short',

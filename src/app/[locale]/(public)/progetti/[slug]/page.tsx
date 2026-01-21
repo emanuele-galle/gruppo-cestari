@@ -24,6 +24,8 @@ import {
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { trpc } from '@/lib/trpc';
+import { useLightbox } from '@/components/ui/lightbox';
+import { parseGallery, galleryToLightboxImages } from '@/lib/types/gallery';
 
 // Mapping sector enum DB -> UI
 const SECTOR_DB_TO_UI: Record<string, string> = {
@@ -134,6 +136,11 @@ export default function ProjectDetailPage({ params }: PageProps) {
   const results = resultsText
     ? resultsText.replace(/<[^>]*>/g, '').split('\n').filter(r => r.trim())
     : [];
+
+  // Parse gallery images for lightbox
+  const galleryImages = parseGallery(project.gallery);
+  const lightboxImages = galleryToLightboxImages(galleryImages);
+  const { openLightbox, LightboxComponent } = useLightbox(lightboxImages);
 
   return (
     <div className="min-h-screen">
@@ -313,7 +320,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
               )}
 
               {/* Gallery */}
-              {project.gallery && project.gallery.length > 0 && (
+              {galleryImages.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -324,15 +331,36 @@ export default function ProjectDetailPage({ params }: PageProps) {
                     Galleria
                   </h2>
                   <div className="grid md:grid-cols-2 gap-6">
-                    {project.gallery.map((image, index) => (
-                      <div key={index} className="relative h-64 rounded-xl overflow-hidden">
+                    {galleryImages.map((image, index) => (
+                      <button
+                        key={image.url}
+                        onClick={() => openLightbox(index)}
+                        className="relative h-64 rounded-xl overflow-hidden group cursor-pointer"
+                      >
                         <Image
-                          src={image}
-                          alt={`${translation.title} - Immagine ${index + 1}`}
+                          src={image.url}
+                          alt={image.title || `${translation.title} - Immagine ${index + 1}`}
                           fill
-                          className="object-cover hover:scale-105 transition-transform duration-500"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                      </div>
+                        {/* Caption overlay */}
+                        {(image.title || image.description) && (
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            {image.title && (
+                              <h3 className="text-white font-semibold text-sm">{image.title}</h3>
+                            )}
+                            {image.description && (
+                              <p className="text-white/80 text-xs mt-1 line-clamp-2">{image.description}</p>
+                            )}
+                          </div>
+                        )}
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-slate-800 px-4 py-2 rounded-full text-sm font-medium">
+                            Visualizza
+                          </span>
+                        </div>
+                      </button>
                     ))}
                   </div>
                 </motion.div>
@@ -471,6 +499,9 @@ export default function ProjectDetailPage({ params }: PageProps) {
           </motion.div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <LightboxComponent />
     </div>
   );
 }

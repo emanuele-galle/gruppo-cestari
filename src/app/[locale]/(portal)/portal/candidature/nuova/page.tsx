@@ -48,6 +48,7 @@ export default function NuovaCandidaturaPage() {
       code: bando.code,
       title: translation.title,
       closeDate: bando.closeDate,
+      untilFundsExhausted: bando.untilFundsExhausted || false,
       maxFunding: bando.fundingAmount ? Number(bando.fundingAmount) : null,
     };
   };
@@ -129,9 +130,9 @@ export default function NuovaCandidaturaPage() {
               const translation = item.translations[0];
               if (!translation) return null;
 
-              const daysRemaining = Math.ceil(
-                (new Date(item.closeDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24)
-              );
+              const daysRemaining = item.closeDate && !item.untilFundsExhausted
+                ? Math.ceil((new Date(item.closeDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+                : null;
 
               return (
                 <Link
@@ -146,9 +147,14 @@ export default function NuovaCandidaturaPage() {
                           <span className="text-xs font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
                             {item.code}
                           </span>
-                          {daysRemaining <= 30 && daysRemaining > 0 && (
+                          {daysRemaining !== null && daysRemaining <= 30 && daysRemaining > 0 && (
                             <span className="text-xs font-medium text-amber-700 bg-amber-100 px-2 py-0.5 rounded">
                               {daysRemaining} giorni rimanenti
+                            </span>
+                          )}
+                          {item.untilFundsExhausted && (
+                            <span className="text-xs font-medium text-blue-700 bg-blue-100 px-2 py-0.5 rounded">
+                              Fino a esaurimento fondi
                             </span>
                           )}
                         </div>
@@ -168,7 +174,7 @@ export default function NuovaCandidaturaPage() {
                           </p>
                         )}
                         <p className="text-xs text-slate-500 mt-1">
-                          Scade: {new Date(item.closeDate).toLocaleDateString(locale)}
+                          {item.untilFundsExhausted ? 'Fino a esaurimento fondi' : item.closeDate ? `Scade: ${new Date(item.closeDate).toLocaleDateString(locale)}` : ''}
                         </p>
                       </div>
                     </div>
@@ -230,8 +236,10 @@ export default function NuovaCandidaturaPage() {
     );
   }
 
-  // Check if bando is still open
-  const isExpired = new Date(wizardBando.closeDate) < new Date();
+  // Check if bando is still open (untilFundsExhausted bandi never expire based on date)
+  const isExpired = wizardBando.closeDate && !wizardBando.untilFundsExhausted
+    ? new Date(wizardBando.closeDate) < new Date()
+    : false;
   if (isExpired) {
     return (
       <div className="max-w-2xl mx-auto">
@@ -240,7 +248,7 @@ export default function NuovaCandidaturaPage() {
           <h2 className="text-xl font-semibold text-red-800 mb-2">Bando scaduto</h2>
           <p className="text-red-600 mb-6">
             Il termine per presentare candidature a questo bando è scaduto il{' '}
-            {new Date(wizardBando.closeDate).toLocaleDateString(locale)}.
+            {wizardBando.closeDate && new Date(wizardBando.closeDate).toLocaleDateString(locale)}.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Link

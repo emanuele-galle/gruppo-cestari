@@ -43,6 +43,7 @@ export type BandoMinAggregateOutputType = {
   fundingCurrency: string | null
   openDate: Date | null
   closeDate: Date | null
+  untilFundsExhausted: boolean | null
   isPublished: boolean | null
   isFeatured: boolean | null
   publishedAt: Date | null
@@ -60,6 +61,7 @@ export type BandoMaxAggregateOutputType = {
   fundingCurrency: string | null
   openDate: Date | null
   closeDate: Date | null
+  untilFundsExhausted: boolean | null
   isPublished: boolean | null
   isFeatured: boolean | null
   publishedAt: Date | null
@@ -77,11 +79,13 @@ export type BandoCountAggregateOutputType = {
   fundingCurrency: number
   openDate: number
   closeDate: number
+  untilFundsExhausted: number
   isPublished: number
   isFeatured: number
   publishedAt: number
   externalUrl: number
   attachments: number
+  gallery: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -105,6 +109,7 @@ export type BandoMinAggregateInputType = {
   fundingCurrency?: true
   openDate?: true
   closeDate?: true
+  untilFundsExhausted?: true
   isPublished?: true
   isFeatured?: true
   publishedAt?: true
@@ -122,6 +127,7 @@ export type BandoMaxAggregateInputType = {
   fundingCurrency?: true
   openDate?: true
   closeDate?: true
+  untilFundsExhausted?: true
   isPublished?: true
   isFeatured?: true
   publishedAt?: true
@@ -139,11 +145,13 @@ export type BandoCountAggregateInputType = {
   fundingCurrency?: true
   openDate?: true
   closeDate?: true
+  untilFundsExhausted?: true
   isPublished?: true
   isFeatured?: true
   publishedAt?: true
   externalUrl?: true
   attachments?: true
+  gallery?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -243,12 +251,14 @@ export type BandoGroupByOutputType = {
   fundingAmount: runtime.Decimal | null
   fundingCurrency: string
   openDate: Date
-  closeDate: Date
+  closeDate: Date | null
+  untilFundsExhausted: boolean
   isPublished: boolean
   isFeatured: boolean
   publishedAt: Date | null
   externalUrl: string | null
   attachments: string[]
+  gallery: runtime.JsonValue[]
   createdAt: Date
   updatedAt: Date
   _count: BandoCountAggregateOutputType | null
@@ -284,12 +294,14 @@ export type BandoWhereInput = {
   fundingAmount?: Prisma.DecimalNullableFilter<"Bando"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFilter<"Bando"> | string
   openDate?: Prisma.DateTimeFilter<"Bando"> | Date | string
-  closeDate?: Prisma.DateTimeFilter<"Bando"> | Date | string
+  closeDate?: Prisma.DateTimeNullableFilter<"Bando"> | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFilter<"Bando"> | boolean
   isPublished?: Prisma.BoolFilter<"Bando"> | boolean
   isFeatured?: Prisma.BoolFilter<"Bando"> | boolean
   publishedAt?: Prisma.DateTimeNullableFilter<"Bando"> | Date | string | null
   externalUrl?: Prisma.StringNullableFilter<"Bando"> | string | null
   attachments?: Prisma.StringNullableListFilter<"Bando">
+  gallery?: Prisma.JsonNullableListFilter<"Bando">
   createdAt?: Prisma.DateTimeFilter<"Bando"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Bando"> | Date | string
   translations?: Prisma.BandoTranslationListRelationFilter
@@ -305,12 +317,14 @@ export type BandoOrderByWithRelationInput = {
   fundingAmount?: Prisma.SortOrderInput | Prisma.SortOrder
   fundingCurrency?: Prisma.SortOrder
   openDate?: Prisma.SortOrder
-  closeDate?: Prisma.SortOrder
+  closeDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  untilFundsExhausted?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   externalUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   attachments?: Prisma.SortOrder
+  gallery?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   translations?: Prisma.BandoTranslationOrderByRelationAggregateInput
@@ -330,12 +344,14 @@ export type BandoWhereUniqueInput = Prisma.AtLeast<{
   fundingAmount?: Prisma.DecimalNullableFilter<"Bando"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFilter<"Bando"> | string
   openDate?: Prisma.DateTimeFilter<"Bando"> | Date | string
-  closeDate?: Prisma.DateTimeFilter<"Bando"> | Date | string
+  closeDate?: Prisma.DateTimeNullableFilter<"Bando"> | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFilter<"Bando"> | boolean
   isPublished?: Prisma.BoolFilter<"Bando"> | boolean
   isFeatured?: Prisma.BoolFilter<"Bando"> | boolean
   publishedAt?: Prisma.DateTimeNullableFilter<"Bando"> | Date | string | null
   externalUrl?: Prisma.StringNullableFilter<"Bando"> | string | null
   attachments?: Prisma.StringNullableListFilter<"Bando">
+  gallery?: Prisma.JsonNullableListFilter<"Bando">
   createdAt?: Prisma.DateTimeFilter<"Bando"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Bando"> | Date | string
   translations?: Prisma.BandoTranslationListRelationFilter
@@ -351,12 +367,14 @@ export type BandoOrderByWithAggregationInput = {
   fundingAmount?: Prisma.SortOrderInput | Prisma.SortOrder
   fundingCurrency?: Prisma.SortOrder
   openDate?: Prisma.SortOrder
-  closeDate?: Prisma.SortOrder
+  closeDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  untilFundsExhausted?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   externalUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   attachments?: Prisma.SortOrder
+  gallery?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.BandoCountOrderByAggregateInput
@@ -377,12 +395,14 @@ export type BandoScalarWhereWithAggregatesInput = {
   fundingAmount?: Prisma.DecimalNullableWithAggregatesFilter<"Bando"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringWithAggregatesFilter<"Bando"> | string
   openDate?: Prisma.DateTimeWithAggregatesFilter<"Bando"> | Date | string
-  closeDate?: Prisma.DateTimeWithAggregatesFilter<"Bando"> | Date | string
+  closeDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Bando"> | Date | string | null
+  untilFundsExhausted?: Prisma.BoolWithAggregatesFilter<"Bando"> | boolean
   isPublished?: Prisma.BoolWithAggregatesFilter<"Bando"> | boolean
   isFeatured?: Prisma.BoolWithAggregatesFilter<"Bando"> | boolean
   publishedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Bando"> | Date | string | null
   externalUrl?: Prisma.StringNullableWithAggregatesFilter<"Bando"> | string | null
   attachments?: Prisma.StringNullableListFilter<"Bando">
+  gallery?: Prisma.JsonNullableListFilter<"Bando">
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Bando"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Bando"> | Date | string
 }
@@ -395,12 +415,14 @@ export type BandoCreateInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationCreateNestedManyWithoutBandoInput
@@ -416,12 +438,14 @@ export type BandoUncheckedCreateInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationUncheckedCreateNestedManyWithoutBandoInput
@@ -437,12 +461,14 @@ export type BandoUpdateInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUpdateManyWithoutBandoNestedInput
@@ -458,12 +484,14 @@ export type BandoUncheckedUpdateInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUncheckedUpdateManyWithoutBandoNestedInput
@@ -479,12 +507,14 @@ export type BandoCreateManyInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -497,12 +527,14 @@ export type BandoUpdateManyMutationInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -515,14 +547,24 @@ export type BandoUncheckedUpdateManyInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type StringNullableListFilter<$PrismaModel = never> = {
+  equals?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null
+  has?: string | Prisma.StringFieldRefInput<$PrismaModel> | null
+  hasEvery?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  hasSome?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  isEmpty?: boolean
 }
 
 export type BandoOrderByRelevanceInput = {
@@ -540,11 +582,13 @@ export type BandoCountOrderByAggregateInput = {
   fundingCurrency?: Prisma.SortOrder
   openDate?: Prisma.SortOrder
   closeDate?: Prisma.SortOrder
+  untilFundsExhausted?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrder
   externalUrl?: Prisma.SortOrder
   attachments?: Prisma.SortOrder
+  gallery?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -562,6 +606,7 @@ export type BandoMaxOrderByAggregateInput = {
   fundingCurrency?: Prisma.SortOrder
   openDate?: Prisma.SortOrder
   closeDate?: Prisma.SortOrder
+  untilFundsExhausted?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrder
@@ -579,6 +624,7 @@ export type BandoMinOrderByAggregateInput = {
   fundingCurrency?: Prisma.SortOrder
   openDate?: Prisma.SortOrder
   closeDate?: Prisma.SortOrder
+  untilFundsExhausted?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrder
@@ -605,6 +651,10 @@ export type BandoCreateattachmentsInput = {
   set: string[]
 }
 
+export type BandoCreategalleryInput = {
+  set: runtime.InputJsonValue[]
+}
+
 export type EnumBandoTypeFieldUpdateOperationsInput = {
   set?: $Enums.BandoType
 }
@@ -624,6 +674,11 @@ export type NullableDecimalFieldUpdateOperationsInput = {
 export type BandoUpdateattachmentsInput = {
   set?: string[]
   push?: string | string[]
+}
+
+export type BandoUpdategalleryInput = {
+  set?: runtime.InputJsonValue[]
+  push?: runtime.InputJsonValue | runtime.InputJsonValue[]
 }
 
 export type BandoCreateNestedOneWithoutTranslationsInput = {
@@ -678,12 +733,14 @@ export type BandoCreateWithoutTranslationsInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
   applications?: Prisma.BandoApplicationCreateNestedManyWithoutBandoInput
@@ -698,12 +755,14 @@ export type BandoUncheckedCreateWithoutTranslationsInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
   applications?: Prisma.BandoApplicationUncheckedCreateNestedManyWithoutBandoInput
@@ -734,12 +793,14 @@ export type BandoUpdateWithoutTranslationsInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   applications?: Prisma.BandoApplicationUpdateManyWithoutBandoNestedInput
@@ -754,12 +815,14 @@ export type BandoUncheckedUpdateWithoutTranslationsInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   applications?: Prisma.BandoApplicationUncheckedUpdateManyWithoutBandoNestedInput
@@ -774,12 +837,14 @@ export type BandoCreateWithoutApplicationsInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationCreateNestedManyWithoutBandoInput
@@ -794,12 +859,14 @@ export type BandoUncheckedCreateWithoutApplicationsInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationUncheckedCreateNestedManyWithoutBandoInput
@@ -830,12 +897,14 @@ export type BandoUpdateWithoutApplicationsInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUpdateManyWithoutBandoNestedInput
@@ -850,12 +919,14 @@ export type BandoUncheckedUpdateWithoutApplicationsInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUncheckedUpdateManyWithoutBandoNestedInput
@@ -870,12 +941,14 @@ export type BandoCreateWithoutNotificationsInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationCreateNestedManyWithoutBandoInput
@@ -890,12 +963,14 @@ export type BandoUncheckedCreateWithoutNotificationsInput = {
   fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: string
   openDate: Date | string
-  closeDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: Date | string | null
   externalUrl?: string | null
   attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
   createdAt?: Date | string
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationUncheckedCreateNestedManyWithoutBandoInput
@@ -926,12 +1001,14 @@ export type BandoUpdateWithoutNotificationsInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUpdateManyWithoutBandoNestedInput
@@ -946,12 +1023,14 @@ export type BandoUncheckedUpdateWithoutNotificationsInput = {
   fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
   openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  closeDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUncheckedUpdateManyWithoutBandoNestedInput
@@ -1016,11 +1095,13 @@ export type BandoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   fundingCurrency?: boolean
   openDate?: boolean
   closeDate?: boolean
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: boolean
   externalUrl?: boolean
   attachments?: boolean
+  gallery?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   translations?: boolean | Prisma.Bando$translationsArgs<ExtArgs>
@@ -1038,11 +1119,13 @@ export type BandoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   fundingCurrency?: boolean
   openDate?: boolean
   closeDate?: boolean
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: boolean
   externalUrl?: boolean
   attachments?: boolean
+  gallery?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["bando"]>
@@ -1056,11 +1139,13 @@ export type BandoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   fundingCurrency?: boolean
   openDate?: boolean
   closeDate?: boolean
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: boolean
   externalUrl?: boolean
   attachments?: boolean
+  gallery?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["bando"]>
@@ -1074,16 +1159,18 @@ export type BandoSelectScalar = {
   fundingCurrency?: boolean
   openDate?: boolean
   closeDate?: boolean
+  untilFundsExhausted?: boolean
   isPublished?: boolean
   isFeatured?: boolean
   publishedAt?: boolean
   externalUrl?: boolean
   attachments?: boolean
+  gallery?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type BandoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "code" | "type" | "sector" | "fundingAmount" | "fundingCurrency" | "openDate" | "closeDate" | "isPublished" | "isFeatured" | "publishedAt" | "externalUrl" | "attachments" | "createdAt" | "updatedAt", ExtArgs["result"]["bando"]>
+export type BandoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "code" | "type" | "sector" | "fundingAmount" | "fundingCurrency" | "openDate" | "closeDate" | "untilFundsExhausted" | "isPublished" | "isFeatured" | "publishedAt" | "externalUrl" | "attachments" | "gallery" | "createdAt" | "updatedAt", ExtArgs["result"]["bando"]>
 export type BandoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | Prisma.Bando$translationsArgs<ExtArgs>
   applications?: boolean | Prisma.Bando$applicationsArgs<ExtArgs>
@@ -1108,12 +1195,14 @@ export type $BandoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     fundingAmount: runtime.Decimal | null
     fundingCurrency: string
     openDate: Date
-    closeDate: Date
+    closeDate: Date | null
+    untilFundsExhausted: boolean
     isPublished: boolean
     isFeatured: boolean
     publishedAt: Date | null
     externalUrl: string | null
     attachments: string[]
+    gallery: runtime.JsonValue[]
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["bando"]>
@@ -1550,11 +1639,13 @@ export interface BandoFieldRefs {
   readonly fundingCurrency: Prisma.FieldRef<"Bando", 'String'>
   readonly openDate: Prisma.FieldRef<"Bando", 'DateTime'>
   readonly closeDate: Prisma.FieldRef<"Bando", 'DateTime'>
+  readonly untilFundsExhausted: Prisma.FieldRef<"Bando", 'Boolean'>
   readonly isPublished: Prisma.FieldRef<"Bando", 'Boolean'>
   readonly isFeatured: Prisma.FieldRef<"Bando", 'Boolean'>
   readonly publishedAt: Prisma.FieldRef<"Bando", 'DateTime'>
   readonly externalUrl: Prisma.FieldRef<"Bando", 'String'>
   readonly attachments: Prisma.FieldRef<"Bando", 'String[]'>
+  readonly gallery: Prisma.FieldRef<"Bando", 'Json[]'>
   readonly createdAt: Prisma.FieldRef<"Bando", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Bando", 'DateTime'>
 }
