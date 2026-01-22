@@ -379,6 +379,16 @@ export function getStaticPageMetadata(pathname: string, locale: Locale): Metadat
 
   const meta = pageMeta[locale];
 
+  // Fallback se la locale non è presente per questa pagina
+  if (!meta) {
+    return generatePageMetadata({
+      title: 'Gruppo Cestari',
+      description: 'Holding multisettoriale specializzata in consulenza finanziaria e cooperazione internazionale.',
+      pathname,
+      locale,
+    });
+  }
+
   return generatePageMetadata({
     title: meta.title,
     description: meta.description,

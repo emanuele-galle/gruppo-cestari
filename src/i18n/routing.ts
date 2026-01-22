@@ -6,7 +6,7 @@ export type Locale = (typeof locales)[number];
 export const routing = defineRouting({
   locales,
   defaultLocale: 'it',
-  localePrefix: 'as-needed',
+  localePrefix: 'always',
 });
 
 export const localeNames: Record<Locale, string> = {
