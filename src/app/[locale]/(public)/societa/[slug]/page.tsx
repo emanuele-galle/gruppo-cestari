@@ -37,6 +37,7 @@ type Certification = {
   number?: string;
   date?: string;
   description?: string;
+  document?: string;
 };
 
 // Sector colors mapping
@@ -167,26 +168,42 @@ La società ha stipulato convenzioni per la concessione di terreni e diritti per
       {
         name: 'Certificazione ESCo',
         number: '720-IT',
-        description: 'Secondo la Norma UNI CEI 11352:2014 per erogazione servizi energetici'
+        date: 'Scadenza: 20/09/2026',
+        description: 'Secondo la Norma UNI CEI 11352:2014 per erogazione servizi energetici',
+        document: '/documents/certificazioni/strategic-energy-esco.pdf'
       },
       {
         name: 'ISO 9001',
-        date: '30.07.2020',
-        description: 'Standard internazionale per la gestione della Qualità'
+        number: '3288 Rev. 0 R1',
+        date: 'Valido fino: 29/07/2026',
+        description: 'Standard internazionale per la gestione della Qualità',
+        document: '/documents/certificazioni/strategic-energy-iso-9001.pdf'
       },
       {
         name: 'EGE - Esperto Gestione Energia',
-        description: 'Settore civile: impianti, sistemi, infrastrutture, logistica nelle applicazioni civili ed edilizia pubblica/privata'
+        number: 'EGE2784',
+        date: '2025-2030',
+        description: 'Settore civile: impianti, sistemi, infrastrutture, logistica nelle applicazioni civili ed edilizia pubblica/privata',
+        document: '/documents/certificazioni/strategic-energy-ege.pdf'
       },
       {
         name: 'SOA',
-        number: '29342AL/11/00',
-        date: '01.08.2023',
-        description: 'Categoria OG1 CLASS. III - Categoria OG9 CLASS. III Bis'
+        number: '34296/11/00',
+        date: 'Rilasciato: 10/07/2025',
+        description: 'Categoria OG1 CLASS. III - Categoria OG9 CLASS. III Bis',
+        document: '/documents/certificazioni/strategic-energy-soa.pdf'
       },
       {
-        name: 'UNI CEI EN ISO 50001',
-        description: 'Sistemi di gestione dell\'energia (in fase di certificazione)'
+        name: 'Certificazione Parità di Genere',
+        number: '1047-IT',
+        date: 'Scadenza: 19/10/2028',
+        description: 'Certificazione UNI/PdR 125:2022 per la parità di genere',
+        document: '/documents/certificazioni/strategic-energy-parita-genere.pdf'
+      },
+      {
+        name: 'Politica Parità di Genere',
+        description: 'Documento di politica aziendale per la parità di genere',
+        document: '/documents/certificazioni/strategic-energy-politica-parita.pdf'
       }
     ]
   },
@@ -370,29 +387,29 @@ La Futuro & Programmazione, essendo partner di altre imprese del gruppo Cestari,
     certifications: [
       {
         name: 'ISO 9001',
-        description: 'Certificazione Sistema di Gestione Qualità'
+        number: '3652 Rev. 0 R0',
+        date: 'Valido fino: 06/03/2027',
+        description: 'Certificazione Sistema di Gestione Qualità',
+        document: '/documents/certificazioni/futuro-programmazione-iso.pdf'
       },
       {
         name: 'SOA',
-        description: 'Attestazione per partecipazione appalti pubblici'
+        number: '33906/11/00',
+        date: 'Rilasciato: 19/05/2025',
+        description: 'Attestazione per partecipazione appalti pubblici - Categoria OG1 CLASS. III-BIS - Categoria OG9 CLASS. I',
+        document: '/documents/certificazioni/futuro-programmazione-soa.pdf'
       },
       {
-        name: 'Licenza di Vettore Aereo',
-        number: 'DD 505UE',
-        date: '22.06.2012',
-        description: 'Rilasciata da ENAC'
+        name: 'Certificazione ESCo',
+        number: '663-IT',
+        date: 'Scadenza: 23/04/2028',
+        description: 'Energy Service Company - Società di Servizi Energetici secondo Norma UNI CEI 11352:2014',
+        document: '/documents/certificazioni/futuro-programmazione-esco.pdf'
       },
       {
-        name: 'Certificato di Operatore Aereo (COA)',
-        number: 'I-156',
-        date: '21.06.2012',
-        description: 'Rilasciato da ENAC'
-      },
-      {
-        name: 'Certificato di Approvazione Part 145',
-        number: 'IT.145.369',
-        date: '15.10.2013',
-        description: 'Emesso da ENAC'
+        name: 'Politica Parità di Genere',
+        description: 'Documento di politica aziendale per la parità di genere',
+        document: '/documents/certificazioni/futuro-programmazione-parita-genere.pdf'
       }
     ]
   },
@@ -798,7 +815,7 @@ export default function CompanyDetailPage({ params }: Props) {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: index * 0.1 }}
-                          className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:bg-white/20 transition-colors"
+                          className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:bg-white/20 transition-colors group relative"
                         >
                           <div className="flex items-start gap-4">
                             <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
@@ -821,6 +838,20 @@ export default function CompanyDetailPage({ params }: Props) {
                                 </p>
                               )}
                             </div>
+                            {cert.document && (
+                              <a
+                                href={cert.document}
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0 w-9 h-9 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center"
+                                title="Scarica certificato PDF"
+                              >
+                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                              </a>
+                            )}
                           </div>
                         </motion.div>
                       ))}
