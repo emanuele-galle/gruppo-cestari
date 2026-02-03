@@ -172,3 +172,13 @@ export type AuditLog = Prisma.AuditLogModel
  * 
  */
 export type Setting = Prisma.SettingModel
+/**
+ * Model Attachment
+ * 
+ */
+export type Attachment = Prisma.AttachmentModel
+/**
+ * Model VideoAttachment
+ * 
+ */
+export type VideoAttachment = Prisma.VideoAttachmentModel

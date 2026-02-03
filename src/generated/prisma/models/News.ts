@@ -281,6 +281,8 @@ export type NewsWhereInput = {
   translations?: Prisma.NewsTranslationListRelationFilter
   tags?: Prisma.NewsTagListRelationFilter
   seoMeta?: Prisma.SeoMetaListRelationFilter
+  attachments?: Prisma.AttachmentListRelationFilter
+  videoAttachments?: Prisma.VideoAttachmentListRelationFilter
 }
 
 export type NewsOrderByWithRelationInput = {
@@ -302,6 +304,8 @@ export type NewsOrderByWithRelationInput = {
   translations?: Prisma.NewsTranslationOrderByRelationAggregateInput
   tags?: Prisma.NewsTagOrderByRelationAggregateInput
   seoMeta?: Prisma.SeoMetaOrderByRelationAggregateInput
+  attachments?: Prisma.AttachmentOrderByRelationAggregateInput
+  videoAttachments?: Prisma.VideoAttachmentOrderByRelationAggregateInput
   _relevance?: Prisma.NewsOrderByRelevanceInput
 }
 
@@ -327,6 +331,8 @@ export type NewsWhereUniqueInput = Prisma.AtLeast<{
   translations?: Prisma.NewsTranslationListRelationFilter
   tags?: Prisma.NewsTagListRelationFilter
   seoMeta?: Prisma.SeoMetaListRelationFilter
+  attachments?: Prisma.AttachmentListRelationFilter
+  videoAttachments?: Prisma.VideoAttachmentListRelationFilter
 }, "id" | "slug">
 
 export type NewsOrderByWithAggregationInput = {
@@ -386,6 +392,8 @@ export type NewsCreateInput = {
   translations?: Prisma.NewsTranslationCreateNestedManyWithoutNewsInput
   tags?: Prisma.NewsTagCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentCreateNestedManyWithoutNewsInput
 }
 
 export type NewsUncheckedCreateInput = {
@@ -405,6 +413,8 @@ export type NewsUncheckedCreateInput = {
   translations?: Prisma.NewsTranslationUncheckedCreateNestedManyWithoutNewsInput
   tags?: Prisma.NewsTagUncheckedCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentUncheckedCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutNewsInput
 }
 
 export type NewsUpdateInput = {
@@ -424,6 +434,8 @@ export type NewsUpdateInput = {
   translations?: Prisma.NewsTranslationUpdateManyWithoutNewsNestedInput
   tags?: Prisma.NewsTagUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsUncheckedUpdateInput = {
@@ -443,6 +455,8 @@ export type NewsUncheckedUpdateInput = {
   translations?: Prisma.NewsTranslationUncheckedUpdateManyWithoutNewsNestedInput
   tags?: Prisma.NewsTagUncheckedUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUncheckedUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsCreateManyInput = {
@@ -723,6 +737,38 @@ export type NewsUpdateOneWithoutSeoMetaNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.NewsUpdateToOneWithWhereWithoutSeoMetaInput, Prisma.NewsUpdateWithoutSeoMetaInput>, Prisma.NewsUncheckedUpdateWithoutSeoMetaInput>
 }
 
+export type NewsCreateNestedOneWithoutAttachmentsInput = {
+  create?: Prisma.XOR<Prisma.NewsCreateWithoutAttachmentsInput, Prisma.NewsUncheckedCreateWithoutAttachmentsInput>
+  connectOrCreate?: Prisma.NewsCreateOrConnectWithoutAttachmentsInput
+  connect?: Prisma.NewsWhereUniqueInput
+}
+
+export type NewsUpdateOneWithoutAttachmentsNestedInput = {
+  create?: Prisma.XOR<Prisma.NewsCreateWithoutAttachmentsInput, Prisma.NewsUncheckedCreateWithoutAttachmentsInput>
+  connectOrCreate?: Prisma.NewsCreateOrConnectWithoutAttachmentsInput
+  upsert?: Prisma.NewsUpsertWithoutAttachmentsInput
+  disconnect?: Prisma.NewsWhereInput | boolean
+  delete?: Prisma.NewsWhereInput | boolean
+  connect?: Prisma.NewsWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.NewsUpdateToOneWithWhereWithoutAttachmentsInput, Prisma.NewsUpdateWithoutAttachmentsInput>, Prisma.NewsUncheckedUpdateWithoutAttachmentsInput>
+}
+
+export type NewsCreateNestedOneWithoutVideoAttachmentsInput = {
+  create?: Prisma.XOR<Prisma.NewsCreateWithoutVideoAttachmentsInput, Prisma.NewsUncheckedCreateWithoutVideoAttachmentsInput>
+  connectOrCreate?: Prisma.NewsCreateOrConnectWithoutVideoAttachmentsInput
+  connect?: Prisma.NewsWhereUniqueInput
+}
+
+export type NewsUpdateOneWithoutVideoAttachmentsNestedInput = {
+  create?: Prisma.XOR<Prisma.NewsCreateWithoutVideoAttachmentsInput, Prisma.NewsUncheckedCreateWithoutVideoAttachmentsInput>
+  connectOrCreate?: Prisma.NewsCreateOrConnectWithoutVideoAttachmentsInput
+  upsert?: Prisma.NewsUpsertWithoutVideoAttachmentsInput
+  disconnect?: Prisma.NewsWhereInput | boolean
+  delete?: Prisma.NewsWhereInput | boolean
+  connect?: Prisma.NewsWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.NewsUpdateToOneWithWhereWithoutVideoAttachmentsInput, Prisma.NewsUpdateWithoutVideoAttachmentsInput>, Prisma.NewsUncheckedUpdateWithoutVideoAttachmentsInput>
+}
+
 export type NewsCreateWithoutAuthorInput = {
   id?: string
   slug: string
@@ -739,6 +785,8 @@ export type NewsCreateWithoutAuthorInput = {
   translations?: Prisma.NewsTranslationCreateNestedManyWithoutNewsInput
   tags?: Prisma.NewsTagCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentCreateNestedManyWithoutNewsInput
 }
 
 export type NewsUncheckedCreateWithoutAuthorInput = {
@@ -757,6 +805,8 @@ export type NewsUncheckedCreateWithoutAuthorInput = {
   translations?: Prisma.NewsTranslationUncheckedCreateNestedManyWithoutNewsInput
   tags?: Prisma.NewsTagUncheckedCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentUncheckedCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutNewsInput
 }
 
 export type NewsCreateOrConnectWithoutAuthorInput = {
@@ -820,6 +870,8 @@ export type NewsCreateWithoutTranslationsInput = {
   category?: Prisma.NewsCategoryCreateNestedOneWithoutNewsInput
   tags?: Prisma.NewsTagCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentCreateNestedManyWithoutNewsInput
 }
 
 export type NewsUncheckedCreateWithoutTranslationsInput = {
@@ -838,6 +890,8 @@ export type NewsUncheckedCreateWithoutTranslationsInput = {
   updatedAt?: Date | string
   tags?: Prisma.NewsTagUncheckedCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentUncheckedCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutNewsInput
 }
 
 export type NewsCreateOrConnectWithoutTranslationsInput = {
@@ -872,6 +926,8 @@ export type NewsUpdateWithoutTranslationsInput = {
   category?: Prisma.NewsCategoryUpdateOneWithoutNewsNestedInput
   tags?: Prisma.NewsTagUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsUncheckedUpdateWithoutTranslationsInput = {
@@ -890,6 +946,8 @@ export type NewsUncheckedUpdateWithoutTranslationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   tags?: Prisma.NewsTagUncheckedUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUncheckedUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsCreateWithoutCategoryInput = {
@@ -908,6 +966,8 @@ export type NewsCreateWithoutCategoryInput = {
   translations?: Prisma.NewsTranslationCreateNestedManyWithoutNewsInput
   tags?: Prisma.NewsTagCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentCreateNestedManyWithoutNewsInput
 }
 
 export type NewsUncheckedCreateWithoutCategoryInput = {
@@ -926,6 +986,8 @@ export type NewsUncheckedCreateWithoutCategoryInput = {
   translations?: Prisma.NewsTranslationUncheckedCreateNestedManyWithoutNewsInput
   tags?: Prisma.NewsTagUncheckedCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentUncheckedCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutNewsInput
 }
 
 export type NewsCreateOrConnectWithoutCategoryInput = {
@@ -970,6 +1032,8 @@ export type NewsCreateWithoutTagsInput = {
   category?: Prisma.NewsCategoryCreateNestedOneWithoutNewsInput
   translations?: Prisma.NewsTranslationCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentCreateNestedManyWithoutNewsInput
 }
 
 export type NewsUncheckedCreateWithoutTagsInput = {
@@ -988,6 +1052,8 @@ export type NewsUncheckedCreateWithoutTagsInput = {
   updatedAt?: Date | string
   translations?: Prisma.NewsTranslationUncheckedCreateNestedManyWithoutNewsInput
   seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentUncheckedCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutNewsInput
 }
 
 export type NewsCreateOrConnectWithoutTagsInput = {
@@ -1022,6 +1088,8 @@ export type NewsUpdateWithoutTagsInput = {
   category?: Prisma.NewsCategoryUpdateOneWithoutNewsNestedInput
   translations?: Prisma.NewsTranslationUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsUncheckedUpdateWithoutTagsInput = {
@@ -1040,6 +1108,8 @@ export type NewsUncheckedUpdateWithoutTagsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.NewsTranslationUncheckedUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUncheckedUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsCreateWithoutSeoMetaInput = {
@@ -1058,6 +1128,8 @@ export type NewsCreateWithoutSeoMetaInput = {
   category?: Prisma.NewsCategoryCreateNestedOneWithoutNewsInput
   translations?: Prisma.NewsTranslationCreateNestedManyWithoutNewsInput
   tags?: Prisma.NewsTagCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentCreateNestedManyWithoutNewsInput
 }
 
 export type NewsUncheckedCreateWithoutSeoMetaInput = {
@@ -1076,6 +1148,8 @@ export type NewsUncheckedCreateWithoutSeoMetaInput = {
   updatedAt?: Date | string
   translations?: Prisma.NewsTranslationUncheckedCreateNestedManyWithoutNewsInput
   tags?: Prisma.NewsTagUncheckedCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentUncheckedCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutNewsInput
 }
 
 export type NewsCreateOrConnectWithoutSeoMetaInput = {
@@ -1110,6 +1184,8 @@ export type NewsUpdateWithoutSeoMetaInput = {
   category?: Prisma.NewsCategoryUpdateOneWithoutNewsNestedInput
   translations?: Prisma.NewsTranslationUpdateManyWithoutNewsNestedInput
   tags?: Prisma.NewsTagUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsUncheckedUpdateWithoutSeoMetaInput = {
@@ -1128,6 +1204,200 @@ export type NewsUncheckedUpdateWithoutSeoMetaInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.NewsTranslationUncheckedUpdateManyWithoutNewsNestedInput
   tags?: Prisma.NewsTagUncheckedUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUncheckedUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutNewsNestedInput
+}
+
+export type NewsCreateWithoutAttachmentsInput = {
+  id?: string
+  slug: string
+  featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
+  isPublished?: boolean
+  isFeatured?: boolean
+  publishedAt?: Date | string | null
+  viewCount?: number
+  focalPoint?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  author: Prisma.UserCreateNestedOneWithoutNewsAuthoredInput
+  category?: Prisma.NewsCategoryCreateNestedOneWithoutNewsInput
+  translations?: Prisma.NewsTranslationCreateNestedManyWithoutNewsInput
+  tags?: Prisma.NewsTagCreateNestedManyWithoutNewsInput
+  seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentCreateNestedManyWithoutNewsInput
+}
+
+export type NewsUncheckedCreateWithoutAttachmentsInput = {
+  id?: string
+  slug: string
+  authorId: string
+  categoryId?: string | null
+  featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
+  isPublished?: boolean
+  isFeatured?: boolean
+  publishedAt?: Date | string | null
+  viewCount?: number
+  focalPoint?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.NewsTranslationUncheckedCreateNestedManyWithoutNewsInput
+  tags?: Prisma.NewsTagUncheckedCreateNestedManyWithoutNewsInput
+  seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutNewsInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutNewsInput
+}
+
+export type NewsCreateOrConnectWithoutAttachmentsInput = {
+  where: Prisma.NewsWhereUniqueInput
+  create: Prisma.XOR<Prisma.NewsCreateWithoutAttachmentsInput, Prisma.NewsUncheckedCreateWithoutAttachmentsInput>
+}
+
+export type NewsUpsertWithoutAttachmentsInput = {
+  update: Prisma.XOR<Prisma.NewsUpdateWithoutAttachmentsInput, Prisma.NewsUncheckedUpdateWithoutAttachmentsInput>
+  create: Prisma.XOR<Prisma.NewsCreateWithoutAttachmentsInput, Prisma.NewsUncheckedCreateWithoutAttachmentsInput>
+  where?: Prisma.NewsWhereInput
+}
+
+export type NewsUpdateToOneWithWhereWithoutAttachmentsInput = {
+  where?: Prisma.NewsWhereInput
+  data: Prisma.XOR<Prisma.NewsUpdateWithoutAttachmentsInput, Prisma.NewsUncheckedUpdateWithoutAttachmentsInput>
+}
+
+export type NewsUpdateWithoutAttachmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  focalPoint?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  author?: Prisma.UserUpdateOneRequiredWithoutNewsAuthoredNestedInput
+  category?: Prisma.NewsCategoryUpdateOneWithoutNewsNestedInput
+  translations?: Prisma.NewsTranslationUpdateManyWithoutNewsNestedInput
+  tags?: Prisma.NewsTagUpdateManyWithoutNewsNestedInput
+  seoMeta?: Prisma.SeoMetaUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUpdateManyWithoutNewsNestedInput
+}
+
+export type NewsUncheckedUpdateWithoutAttachmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  authorId?: Prisma.StringFieldUpdateOperationsInput | string
+  categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  focalPoint?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.NewsTranslationUncheckedUpdateManyWithoutNewsNestedInput
+  tags?: Prisma.NewsTagUncheckedUpdateManyWithoutNewsNestedInput
+  seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutNewsNestedInput
+}
+
+export type NewsCreateWithoutVideoAttachmentsInput = {
+  id?: string
+  slug: string
+  featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
+  isPublished?: boolean
+  isFeatured?: boolean
+  publishedAt?: Date | string | null
+  viewCount?: number
+  focalPoint?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  author: Prisma.UserCreateNestedOneWithoutNewsAuthoredInput
+  category?: Prisma.NewsCategoryCreateNestedOneWithoutNewsInput
+  translations?: Prisma.NewsTranslationCreateNestedManyWithoutNewsInput
+  tags?: Prisma.NewsTagCreateNestedManyWithoutNewsInput
+  seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentCreateNestedManyWithoutNewsInput
+}
+
+export type NewsUncheckedCreateWithoutVideoAttachmentsInput = {
+  id?: string
+  slug: string
+  authorId: string
+  categoryId?: string | null
+  featuredImage?: string | null
+  gallery?: Prisma.NewsCreategalleryInput | runtime.InputJsonValue[]
+  isPublished?: boolean
+  isFeatured?: boolean
+  publishedAt?: Date | string | null
+  viewCount?: number
+  focalPoint?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.NewsTranslationUncheckedCreateNestedManyWithoutNewsInput
+  tags?: Prisma.NewsTagUncheckedCreateNestedManyWithoutNewsInput
+  seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutNewsInput
+  attachments?: Prisma.AttachmentUncheckedCreateNestedManyWithoutNewsInput
+}
+
+export type NewsCreateOrConnectWithoutVideoAttachmentsInput = {
+  where: Prisma.NewsWhereUniqueInput
+  create: Prisma.XOR<Prisma.NewsCreateWithoutVideoAttachmentsInput, Prisma.NewsUncheckedCreateWithoutVideoAttachmentsInput>
+}
+
+export type NewsUpsertWithoutVideoAttachmentsInput = {
+  update: Prisma.XOR<Prisma.NewsUpdateWithoutVideoAttachmentsInput, Prisma.NewsUncheckedUpdateWithoutVideoAttachmentsInput>
+  create: Prisma.XOR<Prisma.NewsCreateWithoutVideoAttachmentsInput, Prisma.NewsUncheckedCreateWithoutVideoAttachmentsInput>
+  where?: Prisma.NewsWhereInput
+}
+
+export type NewsUpdateToOneWithWhereWithoutVideoAttachmentsInput = {
+  where?: Prisma.NewsWhereInput
+  data: Prisma.XOR<Prisma.NewsUpdateWithoutVideoAttachmentsInput, Prisma.NewsUncheckedUpdateWithoutVideoAttachmentsInput>
+}
+
+export type NewsUpdateWithoutVideoAttachmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  focalPoint?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  author?: Prisma.UserUpdateOneRequiredWithoutNewsAuthoredNestedInput
+  category?: Prisma.NewsCategoryUpdateOneWithoutNewsNestedInput
+  translations?: Prisma.NewsTranslationUpdateManyWithoutNewsNestedInput
+  tags?: Prisma.NewsTagUpdateManyWithoutNewsNestedInput
+  seoMeta?: Prisma.SeoMetaUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUpdateManyWithoutNewsNestedInput
+}
+
+export type NewsUncheckedUpdateWithoutVideoAttachmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  authorId?: Prisma.StringFieldUpdateOperationsInput | string
+  categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.NewsUpdategalleryInput | runtime.InputJsonValue[]
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  focalPoint?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.NewsTranslationUncheckedUpdateManyWithoutNewsNestedInput
+  tags?: Prisma.NewsTagUncheckedUpdateManyWithoutNewsNestedInput
+  seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUncheckedUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsCreateManyAuthorInput = {
@@ -1161,6 +1431,8 @@ export type NewsUpdateWithoutAuthorInput = {
   translations?: Prisma.NewsTranslationUpdateManyWithoutNewsNestedInput
   tags?: Prisma.NewsTagUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsUncheckedUpdateWithoutAuthorInput = {
@@ -1179,6 +1451,8 @@ export type NewsUncheckedUpdateWithoutAuthorInput = {
   translations?: Prisma.NewsTranslationUncheckedUpdateManyWithoutNewsNestedInput
   tags?: Prisma.NewsTagUncheckedUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUncheckedUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsUncheckedUpdateManyWithoutAuthorInput = {
@@ -1227,6 +1501,8 @@ export type NewsUpdateWithoutCategoryInput = {
   translations?: Prisma.NewsTranslationUpdateManyWithoutNewsNestedInput
   tags?: Prisma.NewsTagUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsUncheckedUpdateWithoutCategoryInput = {
@@ -1245,6 +1521,8 @@ export type NewsUncheckedUpdateWithoutCategoryInput = {
   translations?: Prisma.NewsTranslationUncheckedUpdateManyWithoutNewsNestedInput
   tags?: Prisma.NewsTagUncheckedUpdateManyWithoutNewsNestedInput
   seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutNewsNestedInput
+  attachments?: Prisma.AttachmentUncheckedUpdateManyWithoutNewsNestedInput
+  videoAttachments?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutNewsNestedInput
 }
 
 export type NewsUncheckedUpdateManyWithoutCategoryInput = {
@@ -1271,12 +1549,16 @@ export type NewsCountOutputType = {
   translations: number
   tags: number
   seoMeta: number
+  attachments: number
+  videoAttachments: number
 }
 
 export type NewsCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | NewsCountOutputTypeCountTranslationsArgs
   tags?: boolean | NewsCountOutputTypeCountTagsArgs
   seoMeta?: boolean | NewsCountOutputTypeCountSeoMetaArgs
+  attachments?: boolean | NewsCountOutputTypeCountAttachmentsArgs
+  videoAttachments?: boolean | NewsCountOutputTypeCountVideoAttachmentsArgs
 }
 
 /**
@@ -1310,6 +1592,20 @@ export type NewsCountOutputTypeCountSeoMetaArgs<ExtArgs extends runtime.Types.Ex
   where?: Prisma.SeoMetaWhereInput
 }
 
+/**
+ * NewsCountOutputType without action
+ */
+export type NewsCountOutputTypeCountAttachmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AttachmentWhereInput
+}
+
+/**
+ * NewsCountOutputType without action
+ */
+export type NewsCountOutputTypeCountVideoAttachmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.VideoAttachmentWhereInput
+}
+
 
 export type NewsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1330,6 +1626,8 @@ export type NewsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   translations?: boolean | Prisma.News$translationsArgs<ExtArgs>
   tags?: boolean | Prisma.News$tagsArgs<ExtArgs>
   seoMeta?: boolean | Prisma.News$seoMetaArgs<ExtArgs>
+  attachments?: boolean | Prisma.News$attachmentsArgs<ExtArgs>
+  videoAttachments?: boolean | Prisma.News$videoAttachmentsArgs<ExtArgs>
   _count?: boolean | Prisma.NewsCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["news"]>
 
@@ -1392,6 +1690,8 @@ export type NewsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   translations?: boolean | Prisma.News$translationsArgs<ExtArgs>
   tags?: boolean | Prisma.News$tagsArgs<ExtArgs>
   seoMeta?: boolean | Prisma.News$seoMetaArgs<ExtArgs>
+  attachments?: boolean | Prisma.News$attachmentsArgs<ExtArgs>
+  videoAttachments?: boolean | Prisma.News$videoAttachmentsArgs<ExtArgs>
   _count?: boolean | Prisma.NewsCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type NewsIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1411,6 +1711,8 @@ export type $NewsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     translations: Prisma.$NewsTranslationPayload<ExtArgs>[]
     tags: Prisma.$NewsTagPayload<ExtArgs>[]
     seoMeta: Prisma.$SeoMetaPayload<ExtArgs>[]
+    attachments: Prisma.$AttachmentPayload<ExtArgs>[]
+    videoAttachments: Prisma.$VideoAttachmentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1825,6 +2127,8 @@ export interface Prisma__NewsClient<T, Null = never, ExtArgs extends runtime.Typ
   translations<T extends Prisma.News$translationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.News$translationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NewsTranslationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   tags<T extends Prisma.News$tagsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.News$tagsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NewsTagPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   seoMeta<T extends Prisma.News$seoMetaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.News$seoMetaArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SeoMetaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  attachments<T extends Prisma.News$attachmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.News$attachmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AttachmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  videoAttachments<T extends Prisma.News$videoAttachmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.News$videoAttachmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$VideoAttachmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2351,6 +2655,54 @@ export type News$seoMetaArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
   take?: number
   skip?: number
   distinct?: Prisma.SeoMetaScalarFieldEnum | Prisma.SeoMetaScalarFieldEnum[]
+}
+
+/**
+ * News.attachments
+ */
+export type News$attachmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Attachment
+   */
+  select?: Prisma.AttachmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Attachment
+   */
+  omit?: Prisma.AttachmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AttachmentInclude<ExtArgs> | null
+  where?: Prisma.AttachmentWhereInput
+  orderBy?: Prisma.AttachmentOrderByWithRelationInput | Prisma.AttachmentOrderByWithRelationInput[]
+  cursor?: Prisma.AttachmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AttachmentScalarFieldEnum | Prisma.AttachmentScalarFieldEnum[]
+}
+
+/**
+ * News.videoAttachments
+ */
+export type News$videoAttachmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the VideoAttachment
+   */
+  select?: Prisma.VideoAttachmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the VideoAttachment
+   */
+  omit?: Prisma.VideoAttachmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.VideoAttachmentInclude<ExtArgs> | null
+  where?: Prisma.VideoAttachmentWhereInput
+  orderBy?: Prisma.VideoAttachmentOrderByWithRelationInput | Prisma.VideoAttachmentOrderByWithRelationInput[]
+  cursor?: Prisma.VideoAttachmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.VideoAttachmentScalarFieldEnum | Prisma.VideoAttachmentScalarFieldEnum[]
 }
 
 /**

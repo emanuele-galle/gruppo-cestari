@@ -307,6 +307,8 @@ export type BandoWhereInput = {
   translations?: Prisma.BandoTranslationListRelationFilter
   applications?: Prisma.BandoApplicationListRelationFilter
   notifications?: Prisma.BandoNotificationListRelationFilter
+  attachmentsRelation?: Prisma.AttachmentListRelationFilter
+  videoAttachmentsRelation?: Prisma.VideoAttachmentListRelationFilter
 }
 
 export type BandoOrderByWithRelationInput = {
@@ -330,6 +332,8 @@ export type BandoOrderByWithRelationInput = {
   translations?: Prisma.BandoTranslationOrderByRelationAggregateInput
   applications?: Prisma.BandoApplicationOrderByRelationAggregateInput
   notifications?: Prisma.BandoNotificationOrderByRelationAggregateInput
+  attachmentsRelation?: Prisma.AttachmentOrderByRelationAggregateInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentOrderByRelationAggregateInput
   _relevance?: Prisma.BandoOrderByRelevanceInput
 }
 
@@ -357,6 +361,8 @@ export type BandoWhereUniqueInput = Prisma.AtLeast<{
   translations?: Prisma.BandoTranslationListRelationFilter
   applications?: Prisma.BandoApplicationListRelationFilter
   notifications?: Prisma.BandoNotificationListRelationFilter
+  attachmentsRelation?: Prisma.AttachmentListRelationFilter
+  videoAttachmentsRelation?: Prisma.VideoAttachmentListRelationFilter
 }, "id" | "code">
 
 export type BandoOrderByWithAggregationInput = {
@@ -428,6 +434,8 @@ export type BandoCreateInput = {
   translations?: Prisma.BandoTranslationCreateNestedManyWithoutBandoInput
   applications?: Prisma.BandoApplicationCreateNestedManyWithoutBandoInput
   notifications?: Prisma.BandoNotificationCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutBandoInput
 }
 
 export type BandoUncheckedCreateInput = {
@@ -451,6 +459,8 @@ export type BandoUncheckedCreateInput = {
   translations?: Prisma.BandoTranslationUncheckedCreateNestedManyWithoutBandoInput
   applications?: Prisma.BandoApplicationUncheckedCreateNestedManyWithoutBandoInput
   notifications?: Prisma.BandoNotificationUncheckedCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutBandoInput
 }
 
 export type BandoUpdateInput = {
@@ -474,6 +484,8 @@ export type BandoUpdateInput = {
   translations?: Prisma.BandoTranslationUpdateManyWithoutBandoNestedInput
   applications?: Prisma.BandoApplicationUpdateManyWithoutBandoNestedInput
   notifications?: Prisma.BandoNotificationUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutBandoNestedInput
 }
 
 export type BandoUncheckedUpdateInput = {
@@ -497,6 +509,8 @@ export type BandoUncheckedUpdateInput = {
   translations?: Prisma.BandoTranslationUncheckedUpdateManyWithoutBandoNestedInput
   applications?: Prisma.BandoApplicationUncheckedUpdateManyWithoutBandoNestedInput
   notifications?: Prisma.BandoNotificationUncheckedUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutBandoNestedInput
 }
 
 export type BandoCreateManyInput = {
@@ -725,6 +739,38 @@ export type BandoUpdateOneWithoutNotificationsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.BandoUpdateToOneWithWhereWithoutNotificationsInput, Prisma.BandoUpdateWithoutNotificationsInput>, Prisma.BandoUncheckedUpdateWithoutNotificationsInput>
 }
 
+export type BandoCreateNestedOneWithoutAttachmentsRelationInput = {
+  create?: Prisma.XOR<Prisma.BandoCreateWithoutAttachmentsRelationInput, Prisma.BandoUncheckedCreateWithoutAttachmentsRelationInput>
+  connectOrCreate?: Prisma.BandoCreateOrConnectWithoutAttachmentsRelationInput
+  connect?: Prisma.BandoWhereUniqueInput
+}
+
+export type BandoUpdateOneWithoutAttachmentsRelationNestedInput = {
+  create?: Prisma.XOR<Prisma.BandoCreateWithoutAttachmentsRelationInput, Prisma.BandoUncheckedCreateWithoutAttachmentsRelationInput>
+  connectOrCreate?: Prisma.BandoCreateOrConnectWithoutAttachmentsRelationInput
+  upsert?: Prisma.BandoUpsertWithoutAttachmentsRelationInput
+  disconnect?: Prisma.BandoWhereInput | boolean
+  delete?: Prisma.BandoWhereInput | boolean
+  connect?: Prisma.BandoWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.BandoUpdateToOneWithWhereWithoutAttachmentsRelationInput, Prisma.BandoUpdateWithoutAttachmentsRelationInput>, Prisma.BandoUncheckedUpdateWithoutAttachmentsRelationInput>
+}
+
+export type BandoCreateNestedOneWithoutVideoAttachmentsRelationInput = {
+  create?: Prisma.XOR<Prisma.BandoCreateWithoutVideoAttachmentsRelationInput, Prisma.BandoUncheckedCreateWithoutVideoAttachmentsRelationInput>
+  connectOrCreate?: Prisma.BandoCreateOrConnectWithoutVideoAttachmentsRelationInput
+  connect?: Prisma.BandoWhereUniqueInput
+}
+
+export type BandoUpdateOneWithoutVideoAttachmentsRelationNestedInput = {
+  create?: Prisma.XOR<Prisma.BandoCreateWithoutVideoAttachmentsRelationInput, Prisma.BandoUncheckedCreateWithoutVideoAttachmentsRelationInput>
+  connectOrCreate?: Prisma.BandoCreateOrConnectWithoutVideoAttachmentsRelationInput
+  upsert?: Prisma.BandoUpsertWithoutVideoAttachmentsRelationInput
+  disconnect?: Prisma.BandoWhereInput | boolean
+  delete?: Prisma.BandoWhereInput | boolean
+  connect?: Prisma.BandoWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.BandoUpdateToOneWithWhereWithoutVideoAttachmentsRelationInput, Prisma.BandoUpdateWithoutVideoAttachmentsRelationInput>, Prisma.BandoUncheckedUpdateWithoutVideoAttachmentsRelationInput>
+}
+
 export type BandoCreateWithoutTranslationsInput = {
   id?: string
   code: string
@@ -745,6 +791,8 @@ export type BandoCreateWithoutTranslationsInput = {
   updatedAt?: Date | string
   applications?: Prisma.BandoApplicationCreateNestedManyWithoutBandoInput
   notifications?: Prisma.BandoNotificationCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutBandoInput
 }
 
 export type BandoUncheckedCreateWithoutTranslationsInput = {
@@ -767,6 +815,8 @@ export type BandoUncheckedCreateWithoutTranslationsInput = {
   updatedAt?: Date | string
   applications?: Prisma.BandoApplicationUncheckedCreateNestedManyWithoutBandoInput
   notifications?: Prisma.BandoNotificationUncheckedCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutBandoInput
 }
 
 export type BandoCreateOrConnectWithoutTranslationsInput = {
@@ -805,6 +855,8 @@ export type BandoUpdateWithoutTranslationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   applications?: Prisma.BandoApplicationUpdateManyWithoutBandoNestedInput
   notifications?: Prisma.BandoNotificationUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutBandoNestedInput
 }
 
 export type BandoUncheckedUpdateWithoutTranslationsInput = {
@@ -827,6 +879,8 @@ export type BandoUncheckedUpdateWithoutTranslationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   applications?: Prisma.BandoApplicationUncheckedUpdateManyWithoutBandoNestedInput
   notifications?: Prisma.BandoNotificationUncheckedUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutBandoNestedInput
 }
 
 export type BandoCreateWithoutApplicationsInput = {
@@ -849,6 +903,8 @@ export type BandoCreateWithoutApplicationsInput = {
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationCreateNestedManyWithoutBandoInput
   notifications?: Prisma.BandoNotificationCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutBandoInput
 }
 
 export type BandoUncheckedCreateWithoutApplicationsInput = {
@@ -871,6 +927,8 @@ export type BandoUncheckedCreateWithoutApplicationsInput = {
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationUncheckedCreateNestedManyWithoutBandoInput
   notifications?: Prisma.BandoNotificationUncheckedCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutBandoInput
 }
 
 export type BandoCreateOrConnectWithoutApplicationsInput = {
@@ -909,6 +967,8 @@ export type BandoUpdateWithoutApplicationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUpdateManyWithoutBandoNestedInput
   notifications?: Prisma.BandoNotificationUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutBandoNestedInput
 }
 
 export type BandoUncheckedUpdateWithoutApplicationsInput = {
@@ -931,6 +991,8 @@ export type BandoUncheckedUpdateWithoutApplicationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUncheckedUpdateManyWithoutBandoNestedInput
   notifications?: Prisma.BandoNotificationUncheckedUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutBandoNestedInput
 }
 
 export type BandoCreateWithoutNotificationsInput = {
@@ -953,6 +1015,8 @@ export type BandoCreateWithoutNotificationsInput = {
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationCreateNestedManyWithoutBandoInput
   applications?: Prisma.BandoApplicationCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutBandoInput
 }
 
 export type BandoUncheckedCreateWithoutNotificationsInput = {
@@ -975,6 +1039,8 @@ export type BandoUncheckedCreateWithoutNotificationsInput = {
   updatedAt?: Date | string
   translations?: Prisma.BandoTranslationUncheckedCreateNestedManyWithoutBandoInput
   applications?: Prisma.BandoApplicationUncheckedCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutBandoInput
 }
 
 export type BandoCreateOrConnectWithoutNotificationsInput = {
@@ -1013,6 +1079,8 @@ export type BandoUpdateWithoutNotificationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUpdateManyWithoutBandoNestedInput
   applications?: Prisma.BandoApplicationUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutBandoNestedInput
 }
 
 export type BandoUncheckedUpdateWithoutNotificationsInput = {
@@ -1035,6 +1103,232 @@ export type BandoUncheckedUpdateWithoutNotificationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.BandoTranslationUncheckedUpdateManyWithoutBandoNestedInput
   applications?: Prisma.BandoApplicationUncheckedUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutBandoNestedInput
+}
+
+export type BandoCreateWithoutAttachmentsRelationInput = {
+  id?: string
+  code: string
+  type: $Enums.BandoType
+  sector?: $Enums.ProjectSector | null
+  fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  fundingCurrency?: string
+  openDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
+  isPublished?: boolean
+  isFeatured?: boolean
+  publishedAt?: Date | string | null
+  externalUrl?: string | null
+  attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.BandoTranslationCreateNestedManyWithoutBandoInput
+  applications?: Prisma.BandoApplicationCreateNestedManyWithoutBandoInput
+  notifications?: Prisma.BandoNotificationCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutBandoInput
+}
+
+export type BandoUncheckedCreateWithoutAttachmentsRelationInput = {
+  id?: string
+  code: string
+  type: $Enums.BandoType
+  sector?: $Enums.ProjectSector | null
+  fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  fundingCurrency?: string
+  openDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
+  isPublished?: boolean
+  isFeatured?: boolean
+  publishedAt?: Date | string | null
+  externalUrl?: string | null
+  attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.BandoTranslationUncheckedCreateNestedManyWithoutBandoInput
+  applications?: Prisma.BandoApplicationUncheckedCreateNestedManyWithoutBandoInput
+  notifications?: Prisma.BandoNotificationUncheckedCreateNestedManyWithoutBandoInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutBandoInput
+}
+
+export type BandoCreateOrConnectWithoutAttachmentsRelationInput = {
+  where: Prisma.BandoWhereUniqueInput
+  create: Prisma.XOR<Prisma.BandoCreateWithoutAttachmentsRelationInput, Prisma.BandoUncheckedCreateWithoutAttachmentsRelationInput>
+}
+
+export type BandoUpsertWithoutAttachmentsRelationInput = {
+  update: Prisma.XOR<Prisma.BandoUpdateWithoutAttachmentsRelationInput, Prisma.BandoUncheckedUpdateWithoutAttachmentsRelationInput>
+  create: Prisma.XOR<Prisma.BandoCreateWithoutAttachmentsRelationInput, Prisma.BandoUncheckedCreateWithoutAttachmentsRelationInput>
+  where?: Prisma.BandoWhereInput
+}
+
+export type BandoUpdateToOneWithWhereWithoutAttachmentsRelationInput = {
+  where?: Prisma.BandoWhereInput
+  data: Prisma.XOR<Prisma.BandoUpdateWithoutAttachmentsRelationInput, Prisma.BandoUncheckedUpdateWithoutAttachmentsRelationInput>
+}
+
+export type BandoUpdateWithoutAttachmentsRelationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumBandoTypeFieldUpdateOperationsInput | $Enums.BandoType
+  sector?: Prisma.NullableEnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector | null
+  fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
+  openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.BandoTranslationUpdateManyWithoutBandoNestedInput
+  applications?: Prisma.BandoApplicationUpdateManyWithoutBandoNestedInput
+  notifications?: Prisma.BandoNotificationUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutBandoNestedInput
+}
+
+export type BandoUncheckedUpdateWithoutAttachmentsRelationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumBandoTypeFieldUpdateOperationsInput | $Enums.BandoType
+  sector?: Prisma.NullableEnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector | null
+  fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
+  openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.BandoTranslationUncheckedUpdateManyWithoutBandoNestedInput
+  applications?: Prisma.BandoApplicationUncheckedUpdateManyWithoutBandoNestedInput
+  notifications?: Prisma.BandoNotificationUncheckedUpdateManyWithoutBandoNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutBandoNestedInput
+}
+
+export type BandoCreateWithoutVideoAttachmentsRelationInput = {
+  id?: string
+  code: string
+  type: $Enums.BandoType
+  sector?: $Enums.ProjectSector | null
+  fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  fundingCurrency?: string
+  openDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
+  isPublished?: boolean
+  isFeatured?: boolean
+  publishedAt?: Date | string | null
+  externalUrl?: string | null
+  attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.BandoTranslationCreateNestedManyWithoutBandoInput
+  applications?: Prisma.BandoApplicationCreateNestedManyWithoutBandoInput
+  notifications?: Prisma.BandoNotificationCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutBandoInput
+}
+
+export type BandoUncheckedCreateWithoutVideoAttachmentsRelationInput = {
+  id?: string
+  code: string
+  type: $Enums.BandoType
+  sector?: $Enums.ProjectSector | null
+  fundingAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  fundingCurrency?: string
+  openDate: Date | string
+  closeDate?: Date | string | null
+  untilFundsExhausted?: boolean
+  isPublished?: boolean
+  isFeatured?: boolean
+  publishedAt?: Date | string | null
+  externalUrl?: string | null
+  attachments?: Prisma.BandoCreateattachmentsInput | string[]
+  gallery?: Prisma.BandoCreategalleryInput | runtime.InputJsonValue[]
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.BandoTranslationUncheckedCreateNestedManyWithoutBandoInput
+  applications?: Prisma.BandoApplicationUncheckedCreateNestedManyWithoutBandoInput
+  notifications?: Prisma.BandoNotificationUncheckedCreateNestedManyWithoutBandoInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutBandoInput
+}
+
+export type BandoCreateOrConnectWithoutVideoAttachmentsRelationInput = {
+  where: Prisma.BandoWhereUniqueInput
+  create: Prisma.XOR<Prisma.BandoCreateWithoutVideoAttachmentsRelationInput, Prisma.BandoUncheckedCreateWithoutVideoAttachmentsRelationInput>
+}
+
+export type BandoUpsertWithoutVideoAttachmentsRelationInput = {
+  update: Prisma.XOR<Prisma.BandoUpdateWithoutVideoAttachmentsRelationInput, Prisma.BandoUncheckedUpdateWithoutVideoAttachmentsRelationInput>
+  create: Prisma.XOR<Prisma.BandoCreateWithoutVideoAttachmentsRelationInput, Prisma.BandoUncheckedCreateWithoutVideoAttachmentsRelationInput>
+  where?: Prisma.BandoWhereInput
+}
+
+export type BandoUpdateToOneWithWhereWithoutVideoAttachmentsRelationInput = {
+  where?: Prisma.BandoWhereInput
+  data: Prisma.XOR<Prisma.BandoUpdateWithoutVideoAttachmentsRelationInput, Prisma.BandoUncheckedUpdateWithoutVideoAttachmentsRelationInput>
+}
+
+export type BandoUpdateWithoutVideoAttachmentsRelationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumBandoTypeFieldUpdateOperationsInput | $Enums.BandoType
+  sector?: Prisma.NullableEnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector | null
+  fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
+  openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.BandoTranslationUpdateManyWithoutBandoNestedInput
+  applications?: Prisma.BandoApplicationUpdateManyWithoutBandoNestedInput
+  notifications?: Prisma.BandoNotificationUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutBandoNestedInput
+}
+
+export type BandoUncheckedUpdateWithoutVideoAttachmentsRelationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumBandoTypeFieldUpdateOperationsInput | $Enums.BandoType
+  sector?: Prisma.NullableEnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector | null
+  fundingAmount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  fundingCurrency?: Prisma.StringFieldUpdateOperationsInput | string
+  openDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closeDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untilFundsExhausted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  attachments?: Prisma.BandoUpdateattachmentsInput | string[]
+  gallery?: Prisma.BandoUpdategalleryInput | runtime.InputJsonValue[]
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.BandoTranslationUncheckedUpdateManyWithoutBandoNestedInput
+  applications?: Prisma.BandoApplicationUncheckedUpdateManyWithoutBandoNestedInput
+  notifications?: Prisma.BandoNotificationUncheckedUpdateManyWithoutBandoNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutBandoNestedInput
 }
 
 
@@ -1046,12 +1340,16 @@ export type BandoCountOutputType = {
   translations: number
   applications: number
   notifications: number
+  attachmentsRelation: number
+  videoAttachmentsRelation: number
 }
 
 export type BandoCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | BandoCountOutputTypeCountTranslationsArgs
   applications?: boolean | BandoCountOutputTypeCountApplicationsArgs
   notifications?: boolean | BandoCountOutputTypeCountNotificationsArgs
+  attachmentsRelation?: boolean | BandoCountOutputTypeCountAttachmentsRelationArgs
+  videoAttachmentsRelation?: boolean | BandoCountOutputTypeCountVideoAttachmentsRelationArgs
 }
 
 /**
@@ -1085,6 +1383,20 @@ export type BandoCountOutputTypeCountNotificationsArgs<ExtArgs extends runtime.T
   where?: Prisma.BandoNotificationWhereInput
 }
 
+/**
+ * BandoCountOutputType without action
+ */
+export type BandoCountOutputTypeCountAttachmentsRelationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AttachmentWhereInput
+}
+
+/**
+ * BandoCountOutputType without action
+ */
+export type BandoCountOutputTypeCountVideoAttachmentsRelationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.VideoAttachmentWhereInput
+}
+
 
 export type BandoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1107,6 +1419,8 @@ export type BandoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   translations?: boolean | Prisma.Bando$translationsArgs<ExtArgs>
   applications?: boolean | Prisma.Bando$applicationsArgs<ExtArgs>
   notifications?: boolean | Prisma.Bando$notificationsArgs<ExtArgs>
+  attachmentsRelation?: boolean | Prisma.Bando$attachmentsRelationArgs<ExtArgs>
+  videoAttachmentsRelation?: boolean | Prisma.Bando$videoAttachmentsRelationArgs<ExtArgs>
   _count?: boolean | Prisma.BandoCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["bando"]>
 
@@ -1175,6 +1489,8 @@ export type BandoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   translations?: boolean | Prisma.Bando$translationsArgs<ExtArgs>
   applications?: boolean | Prisma.Bando$applicationsArgs<ExtArgs>
   notifications?: boolean | Prisma.Bando$notificationsArgs<ExtArgs>
+  attachmentsRelation?: boolean | Prisma.Bando$attachmentsRelationArgs<ExtArgs>
+  videoAttachmentsRelation?: boolean | Prisma.Bando$videoAttachmentsRelationArgs<ExtArgs>
   _count?: boolean | Prisma.BandoCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type BandoIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1186,6 +1502,8 @@ export type $BandoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     translations: Prisma.$BandoTranslationPayload<ExtArgs>[]
     applications: Prisma.$BandoApplicationPayload<ExtArgs>[]
     notifications: Prisma.$BandoNotificationPayload<ExtArgs>[]
+    attachmentsRelation: Prisma.$AttachmentPayload<ExtArgs>[]
+    videoAttachmentsRelation: Prisma.$VideoAttachmentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1602,6 +1920,8 @@ export interface Prisma__BandoClient<T, Null = never, ExtArgs extends runtime.Ty
   translations<T extends Prisma.Bando$translationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Bando$translationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BandoTranslationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   applications<T extends Prisma.Bando$applicationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Bando$applicationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BandoApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   notifications<T extends Prisma.Bando$notificationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Bando$notificationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BandoNotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  attachmentsRelation<T extends Prisma.Bando$attachmentsRelationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Bando$attachmentsRelationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AttachmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  videoAttachmentsRelation<T extends Prisma.Bando$videoAttachmentsRelationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Bando$videoAttachmentsRelationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$VideoAttachmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2105,6 +2425,54 @@ export type Bando$notificationsArgs<ExtArgs extends runtime.Types.Extensions.Int
   take?: number
   skip?: number
   distinct?: Prisma.BandoNotificationScalarFieldEnum | Prisma.BandoNotificationScalarFieldEnum[]
+}
+
+/**
+ * Bando.attachmentsRelation
+ */
+export type Bando$attachmentsRelationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Attachment
+   */
+  select?: Prisma.AttachmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Attachment
+   */
+  omit?: Prisma.AttachmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AttachmentInclude<ExtArgs> | null
+  where?: Prisma.AttachmentWhereInput
+  orderBy?: Prisma.AttachmentOrderByWithRelationInput | Prisma.AttachmentOrderByWithRelationInput[]
+  cursor?: Prisma.AttachmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AttachmentScalarFieldEnum | Prisma.AttachmentScalarFieldEnum[]
+}
+
+/**
+ * Bando.videoAttachmentsRelation
+ */
+export type Bando$videoAttachmentsRelationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the VideoAttachment
+   */
+  select?: Prisma.VideoAttachmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the VideoAttachment
+   */
+  omit?: Prisma.VideoAttachmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.VideoAttachmentInclude<ExtArgs> | null
+  where?: Prisma.VideoAttachmentWhereInput
+  orderBy?: Prisma.VideoAttachmentOrderByWithRelationInput | Prisma.VideoAttachmentOrderByWithRelationInput[]
+  cursor?: Prisma.VideoAttachmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.VideoAttachmentScalarFieldEnum | Prisma.VideoAttachmentScalarFieldEnum[]
 }
 
 /**

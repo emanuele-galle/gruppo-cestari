@@ -81,7 +81,9 @@ export const ModelName = {
   SeoMeta: 'SeoMeta',
   Notification: 'Notification',
   AuditLog: 'AuditLog',
-  Setting: 'Setting'
+  Setting: 'Setting',
+  Attachment: 'Attachment',
+  VideoAttachment: 'VideoAttachment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -90,12 +92,12 @@ export type ModelName = (typeof ModelName)[keyof typeof ModelName]
  * Enums
  */
 
-export const TransactionIsolationLevel = {
+export const TransactionIsolationLevel = runtime.makeStrictEnum({
   ReadUncommitted: 'ReadUncommitted',
   ReadCommitted: 'ReadCommitted',
   RepeatableRead: 'RepeatableRead',
   Serializable: 'Serializable'
-} as const
+} as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
@@ -275,6 +277,7 @@ export const ProjectScalarFieldEnum = {
   country: 'country',
   featuredImage: 'featuredImage',
   gallery: 'gallery',
+  attachments: 'attachments',
   startDate: 'startDate',
   endDate: 'endDate',
   isPublished: 'isPublished',
@@ -570,6 +573,51 @@ export const SettingScalarFieldEnum = {
 export type SettingScalarFieldEnum = (typeof SettingScalarFieldEnum)[keyof typeof SettingScalarFieldEnum]
 
 
+export const AttachmentScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  fileName: 'fileName',
+  fileSize: 'fileSize',
+  mimeType: 'mimeType',
+  caption: 'caption',
+  captionEn: 'captionEn',
+  captionFr: 'captionFr',
+  sortOrder: 'sortOrder',
+  projectId: 'projectId',
+  newsId: 'newsId',
+  bandoId: 'bandoId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AttachmentScalarFieldEnum = (typeof AttachmentScalarFieldEnum)[keyof typeof AttachmentScalarFieldEnum]
+
+
+export const VideoAttachmentScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  type: 'type',
+  fileName: 'fileName',
+  fileSize: 'fileSize',
+  thumbnail: 'thumbnail',
+  duration: 'duration',
+  title: 'title',
+  titleEn: 'titleEn',
+  titleFr: 'titleFr',
+  caption: 'caption',
+  captionEn: 'captionEn',
+  captionFr: 'captionFr',
+  sortOrder: 'sortOrder',
+  projectId: 'projectId',
+  newsId: 'newsId',
+  bandoId: 'bandoId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type VideoAttachmentScalarFieldEnum = (typeof VideoAttachmentScalarFieldEnum)[keyof typeof VideoAttachmentScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -579,15 +627,15 @@ export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
 export const NullableJsonNullValueInput = {
-  DbNull: 'DbNull',
-  JsonNull: 'JsonNull'
+  DbNull: DbNull,
+  JsonNull: JsonNull
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const JsonNullValueInput = {
-  JsonNull: 'JsonNull'
+  JsonNull: JsonNull
 } as const
 
 export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
@@ -937,9 +985,9 @@ export type SubsidiaryTranslationOrderByRelevanceFieldEnum = (typeof SubsidiaryT
 
 
 export const JsonNullValueFilter = {
-  DbNull: 'DbNull',
-  JsonNull: 'JsonNull',
-  AnyNull: 'AnyNull'
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
 } as const
 
 export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
@@ -991,4 +1039,40 @@ export const SettingOrderByRelevanceFieldEnum = {
 } as const
 
 export type SettingOrderByRelevanceFieldEnum = (typeof SettingOrderByRelevanceFieldEnum)[keyof typeof SettingOrderByRelevanceFieldEnum]
+
+
+export const AttachmentOrderByRelevanceFieldEnum = {
+  id: 'id',
+  url: 'url',
+  fileName: 'fileName',
+  mimeType: 'mimeType',
+  caption: 'caption',
+  captionEn: 'captionEn',
+  captionFr: 'captionFr',
+  projectId: 'projectId',
+  newsId: 'newsId',
+  bandoId: 'bandoId'
+} as const
+
+export type AttachmentOrderByRelevanceFieldEnum = (typeof AttachmentOrderByRelevanceFieldEnum)[keyof typeof AttachmentOrderByRelevanceFieldEnum]
+
+
+export const VideoAttachmentOrderByRelevanceFieldEnum = {
+  id: 'id',
+  url: 'url',
+  type: 'type',
+  fileName: 'fileName',
+  thumbnail: 'thumbnail',
+  title: 'title',
+  titleEn: 'titleEn',
+  titleFr: 'titleFr',
+  caption: 'caption',
+  captionEn: 'captionEn',
+  captionFr: 'captionFr',
+  projectId: 'projectId',
+  newsId: 'newsId',
+  bandoId: 'bandoId'
+} as const
+
+export type VideoAttachmentOrderByRelevanceFieldEnum = (typeof VideoAttachmentOrderByRelevanceFieldEnum)[keyof typeof VideoAttachmentOrderByRelevanceFieldEnum]
 

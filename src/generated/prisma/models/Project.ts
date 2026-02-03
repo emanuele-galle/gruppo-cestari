@@ -71,6 +71,7 @@ export type ProjectCountAggregateOutputType = {
   country: number
   featuredImage: number
   gallery: number
+  attachments: number
   startDate: number
   endDate: number
   isPublished: number
@@ -127,6 +128,7 @@ export type ProjectCountAggregateInputType = {
   country?: true
   featuredImage?: true
   gallery?: true
+  attachments?: true
   startDate?: true
   endDate?: true
   isPublished?: true
@@ -230,6 +232,7 @@ export type ProjectGroupByOutputType = {
   country: string
   featuredImage: string | null
   gallery: runtime.JsonValue[]
+  attachments: runtime.JsonValue[]
   startDate: Date | null
   endDate: Date | null
   isPublished: boolean
@@ -269,6 +272,7 @@ export type ProjectWhereInput = {
   country?: Prisma.StringFilter<"Project"> | string
   featuredImage?: Prisma.StringNullableFilter<"Project"> | string | null
   gallery?: Prisma.JsonNullableListFilter<"Project">
+  attachments?: Prisma.JsonNullableListFilter<"Project">
   startDate?: Prisma.DateTimeNullableFilter<"Project"> | Date | string | null
   endDate?: Prisma.DateTimeNullableFilter<"Project"> | Date | string | null
   isPublished?: Prisma.BoolFilter<"Project"> | boolean
@@ -278,6 +282,8 @@ export type ProjectWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   translations?: Prisma.ProjectTranslationListRelationFilter
   seoMeta?: Prisma.SeoMetaListRelationFilter
+  attachmentsRelation?: Prisma.AttachmentListRelationFilter
+  videoAttachmentsRelation?: Prisma.VideoAttachmentListRelationFilter
 }
 
 export type ProjectOrderByWithRelationInput = {
@@ -287,6 +293,7 @@ export type ProjectOrderByWithRelationInput = {
   country?: Prisma.SortOrder
   featuredImage?: Prisma.SortOrderInput | Prisma.SortOrder
   gallery?: Prisma.SortOrder
+  attachments?: Prisma.SortOrder
   startDate?: Prisma.SortOrderInput | Prisma.SortOrder
   endDate?: Prisma.SortOrderInput | Prisma.SortOrder
   isPublished?: Prisma.SortOrder
@@ -296,6 +303,8 @@ export type ProjectOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   translations?: Prisma.ProjectTranslationOrderByRelationAggregateInput
   seoMeta?: Prisma.SeoMetaOrderByRelationAggregateInput
+  attachmentsRelation?: Prisma.AttachmentOrderByRelationAggregateInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentOrderByRelationAggregateInput
   _relevance?: Prisma.ProjectOrderByRelevanceInput
 }
 
@@ -309,6 +318,7 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   country?: Prisma.StringFilter<"Project"> | string
   featuredImage?: Prisma.StringNullableFilter<"Project"> | string | null
   gallery?: Prisma.JsonNullableListFilter<"Project">
+  attachments?: Prisma.JsonNullableListFilter<"Project">
   startDate?: Prisma.DateTimeNullableFilter<"Project"> | Date | string | null
   endDate?: Prisma.DateTimeNullableFilter<"Project"> | Date | string | null
   isPublished?: Prisma.BoolFilter<"Project"> | boolean
@@ -318,6 +328,8 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   translations?: Prisma.ProjectTranslationListRelationFilter
   seoMeta?: Prisma.SeoMetaListRelationFilter
+  attachmentsRelation?: Prisma.AttachmentListRelationFilter
+  videoAttachmentsRelation?: Prisma.VideoAttachmentListRelationFilter
 }, "id" | "slug">
 
 export type ProjectOrderByWithAggregationInput = {
@@ -327,6 +339,7 @@ export type ProjectOrderByWithAggregationInput = {
   country?: Prisma.SortOrder
   featuredImage?: Prisma.SortOrderInput | Prisma.SortOrder
   gallery?: Prisma.SortOrder
+  attachments?: Prisma.SortOrder
   startDate?: Prisma.SortOrderInput | Prisma.SortOrder
   endDate?: Prisma.SortOrderInput | Prisma.SortOrder
   isPublished?: Prisma.SortOrder
@@ -351,6 +364,7 @@ export type ProjectScalarWhereWithAggregatesInput = {
   country?: Prisma.StringWithAggregatesFilter<"Project"> | string
   featuredImage?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   gallery?: Prisma.JsonNullableListFilter<"Project">
+  attachments?: Prisma.JsonNullableListFilter<"Project">
   startDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Project"> | Date | string | null
   endDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Project"> | Date | string | null
   isPublished?: Prisma.BoolWithAggregatesFilter<"Project"> | boolean
@@ -367,6 +381,7 @@ export type ProjectCreateInput = {
   country: string
   featuredImage?: string | null
   gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -376,6 +391,8 @@ export type ProjectCreateInput = {
   updatedAt?: Date | string
   translations?: Prisma.ProjectTranslationCreateNestedManyWithoutProjectInput
   seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutProjectInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutProjectInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutProjectInput
 }
 
 export type ProjectUncheckedCreateInput = {
@@ -385,6 +402,7 @@ export type ProjectUncheckedCreateInput = {
   country: string
   featuredImage?: string | null
   gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -394,6 +412,8 @@ export type ProjectUncheckedCreateInput = {
   updatedAt?: Date | string
   translations?: Prisma.ProjectTranslationUncheckedCreateNestedManyWithoutProjectInput
   seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutProjectInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutProjectInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutProjectInput
 }
 
 export type ProjectUpdateInput = {
@@ -403,6 +423,7 @@ export type ProjectUpdateInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -412,6 +433,8 @@ export type ProjectUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ProjectTranslationUpdateManyWithoutProjectNestedInput
   seoMeta?: Prisma.SeoMetaUpdateManyWithoutProjectNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutProjectNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutProjectNestedInput
 }
 
 export type ProjectUncheckedUpdateInput = {
@@ -421,6 +444,7 @@ export type ProjectUncheckedUpdateInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -430,6 +454,8 @@ export type ProjectUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ProjectTranslationUncheckedUpdateManyWithoutProjectNestedInput
   seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutProjectNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutProjectNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutProjectNestedInput
 }
 
 export type ProjectCreateManyInput = {
@@ -439,6 +465,7 @@ export type ProjectCreateManyInput = {
   country: string
   featuredImage?: string | null
   gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -455,6 +482,7 @@ export type ProjectUpdateManyMutationInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -471,6 +499,7 @@ export type ProjectUncheckedUpdateManyInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -493,6 +522,7 @@ export type ProjectCountOrderByAggregateInput = {
   country?: Prisma.SortOrder
   featuredImage?: Prisma.SortOrder
   gallery?: Prisma.SortOrder
+  attachments?: Prisma.SortOrder
   startDate?: Prisma.SortOrder
   endDate?: Prisma.SortOrder
   isPublished?: Prisma.SortOrder
@@ -554,11 +584,20 @@ export type ProjectCreategalleryInput = {
   set: runtime.InputJsonValue[]
 }
 
+export type ProjectCreateattachmentsInput = {
+  set: runtime.InputJsonValue[]
+}
+
 export type EnumProjectSectorFieldUpdateOperationsInput = {
   set?: $Enums.ProjectSector
 }
 
 export type ProjectUpdategalleryInput = {
+  set?: runtime.InputJsonValue[]
+  push?: runtime.InputJsonValue | runtime.InputJsonValue[]
+}
+
+export type ProjectUpdateattachmentsInput = {
   set?: runtime.InputJsonValue[]
   push?: runtime.InputJsonValue | runtime.InputJsonValue[]
 }
@@ -593,6 +632,38 @@ export type ProjectUpdateOneWithoutSeoMetaNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.ProjectUpdateToOneWithWhereWithoutSeoMetaInput, Prisma.ProjectUpdateWithoutSeoMetaInput>, Prisma.ProjectUncheckedUpdateWithoutSeoMetaInput>
 }
 
+export type ProjectCreateNestedOneWithoutAttachmentsRelationInput = {
+  create?: Prisma.XOR<Prisma.ProjectCreateWithoutAttachmentsRelationInput, Prisma.ProjectUncheckedCreateWithoutAttachmentsRelationInput>
+  connectOrCreate?: Prisma.ProjectCreateOrConnectWithoutAttachmentsRelationInput
+  connect?: Prisma.ProjectWhereUniqueInput
+}
+
+export type ProjectUpdateOneWithoutAttachmentsRelationNestedInput = {
+  create?: Prisma.XOR<Prisma.ProjectCreateWithoutAttachmentsRelationInput, Prisma.ProjectUncheckedCreateWithoutAttachmentsRelationInput>
+  connectOrCreate?: Prisma.ProjectCreateOrConnectWithoutAttachmentsRelationInput
+  upsert?: Prisma.ProjectUpsertWithoutAttachmentsRelationInput
+  disconnect?: Prisma.ProjectWhereInput | boolean
+  delete?: Prisma.ProjectWhereInput | boolean
+  connect?: Prisma.ProjectWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProjectUpdateToOneWithWhereWithoutAttachmentsRelationInput, Prisma.ProjectUpdateWithoutAttachmentsRelationInput>, Prisma.ProjectUncheckedUpdateWithoutAttachmentsRelationInput>
+}
+
+export type ProjectCreateNestedOneWithoutVideoAttachmentsRelationInput = {
+  create?: Prisma.XOR<Prisma.ProjectCreateWithoutVideoAttachmentsRelationInput, Prisma.ProjectUncheckedCreateWithoutVideoAttachmentsRelationInput>
+  connectOrCreate?: Prisma.ProjectCreateOrConnectWithoutVideoAttachmentsRelationInput
+  connect?: Prisma.ProjectWhereUniqueInput
+}
+
+export type ProjectUpdateOneWithoutVideoAttachmentsRelationNestedInput = {
+  create?: Prisma.XOR<Prisma.ProjectCreateWithoutVideoAttachmentsRelationInput, Prisma.ProjectUncheckedCreateWithoutVideoAttachmentsRelationInput>
+  connectOrCreate?: Prisma.ProjectCreateOrConnectWithoutVideoAttachmentsRelationInput
+  upsert?: Prisma.ProjectUpsertWithoutVideoAttachmentsRelationInput
+  disconnect?: Prisma.ProjectWhereInput | boolean
+  delete?: Prisma.ProjectWhereInput | boolean
+  connect?: Prisma.ProjectWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProjectUpdateToOneWithWhereWithoutVideoAttachmentsRelationInput, Prisma.ProjectUpdateWithoutVideoAttachmentsRelationInput>, Prisma.ProjectUncheckedUpdateWithoutVideoAttachmentsRelationInput>
+}
+
 export type ProjectCreateWithoutTranslationsInput = {
   id?: string
   slug: string
@@ -600,6 +671,7 @@ export type ProjectCreateWithoutTranslationsInput = {
   country: string
   featuredImage?: string | null
   gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -608,6 +680,8 @@ export type ProjectCreateWithoutTranslationsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutProjectInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutProjectInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutProjectInput
 }
 
 export type ProjectUncheckedCreateWithoutTranslationsInput = {
@@ -617,6 +691,7 @@ export type ProjectUncheckedCreateWithoutTranslationsInput = {
   country: string
   featuredImage?: string | null
   gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -625,6 +700,8 @@ export type ProjectUncheckedCreateWithoutTranslationsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutProjectInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutProjectInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutProjectInput
 }
 
 export type ProjectCreateOrConnectWithoutTranslationsInput = {
@@ -650,6 +727,7 @@ export type ProjectUpdateWithoutTranslationsInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -658,6 +736,8 @@ export type ProjectUpdateWithoutTranslationsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   seoMeta?: Prisma.SeoMetaUpdateManyWithoutProjectNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutProjectNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutProjectNestedInput
 }
 
 export type ProjectUncheckedUpdateWithoutTranslationsInput = {
@@ -667,6 +747,7 @@ export type ProjectUncheckedUpdateWithoutTranslationsInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -675,6 +756,8 @@ export type ProjectUncheckedUpdateWithoutTranslationsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutProjectNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutProjectNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutProjectNestedInput
 }
 
 export type ProjectCreateWithoutSeoMetaInput = {
@@ -684,6 +767,7 @@ export type ProjectCreateWithoutSeoMetaInput = {
   country: string
   featuredImage?: string | null
   gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -692,6 +776,8 @@ export type ProjectCreateWithoutSeoMetaInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   translations?: Prisma.ProjectTranslationCreateNestedManyWithoutProjectInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutProjectInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutProjectInput
 }
 
 export type ProjectUncheckedCreateWithoutSeoMetaInput = {
@@ -701,6 +787,7 @@ export type ProjectUncheckedCreateWithoutSeoMetaInput = {
   country: string
   featuredImage?: string | null
   gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Date | string | null
   endDate?: Date | string | null
   isPublished?: boolean
@@ -709,6 +796,8 @@ export type ProjectUncheckedCreateWithoutSeoMetaInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   translations?: Prisma.ProjectTranslationUncheckedCreateNestedManyWithoutProjectInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutProjectInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutProjectInput
 }
 
 export type ProjectCreateOrConnectWithoutSeoMetaInput = {
@@ -734,6 +823,7 @@ export type ProjectUpdateWithoutSeoMetaInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -742,6 +832,8 @@ export type ProjectUpdateWithoutSeoMetaInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ProjectTranslationUpdateManyWithoutProjectNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutProjectNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutProjectNestedInput
 }
 
 export type ProjectUncheckedUpdateWithoutSeoMetaInput = {
@@ -751,6 +843,7 @@ export type ProjectUncheckedUpdateWithoutSeoMetaInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
   startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -759,6 +852,200 @@ export type ProjectUncheckedUpdateWithoutSeoMetaInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ProjectTranslationUncheckedUpdateManyWithoutProjectNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutProjectNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutProjectNestedInput
+}
+
+export type ProjectCreateWithoutAttachmentsRelationInput = {
+  id?: string
+  slug: string
+  sector: $Enums.ProjectSector
+  country: string
+  featuredImage?: string | null
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
+  startDate?: Date | string | null
+  endDate?: Date | string | null
+  isPublished?: boolean
+  isFeatured?: boolean
+  sortOrder?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.ProjectTranslationCreateNestedManyWithoutProjectInput
+  seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutProjectInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentCreateNestedManyWithoutProjectInput
+}
+
+export type ProjectUncheckedCreateWithoutAttachmentsRelationInput = {
+  id?: string
+  slug: string
+  sector: $Enums.ProjectSector
+  country: string
+  featuredImage?: string | null
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
+  startDate?: Date | string | null
+  endDate?: Date | string | null
+  isPublished?: boolean
+  isFeatured?: boolean
+  sortOrder?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.ProjectTranslationUncheckedCreateNestedManyWithoutProjectInput
+  seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutProjectInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedCreateNestedManyWithoutProjectInput
+}
+
+export type ProjectCreateOrConnectWithoutAttachmentsRelationInput = {
+  where: Prisma.ProjectWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProjectCreateWithoutAttachmentsRelationInput, Prisma.ProjectUncheckedCreateWithoutAttachmentsRelationInput>
+}
+
+export type ProjectUpsertWithoutAttachmentsRelationInput = {
+  update: Prisma.XOR<Prisma.ProjectUpdateWithoutAttachmentsRelationInput, Prisma.ProjectUncheckedUpdateWithoutAttachmentsRelationInput>
+  create: Prisma.XOR<Prisma.ProjectCreateWithoutAttachmentsRelationInput, Prisma.ProjectUncheckedCreateWithoutAttachmentsRelationInput>
+  where?: Prisma.ProjectWhereInput
+}
+
+export type ProjectUpdateToOneWithWhereWithoutAttachmentsRelationInput = {
+  where?: Prisma.ProjectWhereInput
+  data: Prisma.XOR<Prisma.ProjectUpdateWithoutAttachmentsRelationInput, Prisma.ProjectUncheckedUpdateWithoutAttachmentsRelationInput>
+}
+
+export type ProjectUpdateWithoutAttachmentsRelationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
+  startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.ProjectTranslationUpdateManyWithoutProjectNestedInput
+  seoMeta?: Prisma.SeoMetaUpdateManyWithoutProjectNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUpdateManyWithoutProjectNestedInput
+}
+
+export type ProjectUncheckedUpdateWithoutAttachmentsRelationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
+  startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.ProjectTranslationUncheckedUpdateManyWithoutProjectNestedInput
+  seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutProjectNestedInput
+  videoAttachmentsRelation?: Prisma.VideoAttachmentUncheckedUpdateManyWithoutProjectNestedInput
+}
+
+export type ProjectCreateWithoutVideoAttachmentsRelationInput = {
+  id?: string
+  slug: string
+  sector: $Enums.ProjectSector
+  country: string
+  featuredImage?: string | null
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
+  startDate?: Date | string | null
+  endDate?: Date | string | null
+  isPublished?: boolean
+  isFeatured?: boolean
+  sortOrder?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.ProjectTranslationCreateNestedManyWithoutProjectInput
+  seoMeta?: Prisma.SeoMetaCreateNestedManyWithoutProjectInput
+  attachmentsRelation?: Prisma.AttachmentCreateNestedManyWithoutProjectInput
+}
+
+export type ProjectUncheckedCreateWithoutVideoAttachmentsRelationInput = {
+  id?: string
+  slug: string
+  sector: $Enums.ProjectSector
+  country: string
+  featuredImage?: string | null
+  gallery?: Prisma.ProjectCreategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectCreateattachmentsInput | runtime.InputJsonValue[]
+  startDate?: Date | string | null
+  endDate?: Date | string | null
+  isPublished?: boolean
+  isFeatured?: boolean
+  sortOrder?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  translations?: Prisma.ProjectTranslationUncheckedCreateNestedManyWithoutProjectInput
+  seoMeta?: Prisma.SeoMetaUncheckedCreateNestedManyWithoutProjectInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedCreateNestedManyWithoutProjectInput
+}
+
+export type ProjectCreateOrConnectWithoutVideoAttachmentsRelationInput = {
+  where: Prisma.ProjectWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProjectCreateWithoutVideoAttachmentsRelationInput, Prisma.ProjectUncheckedCreateWithoutVideoAttachmentsRelationInput>
+}
+
+export type ProjectUpsertWithoutVideoAttachmentsRelationInput = {
+  update: Prisma.XOR<Prisma.ProjectUpdateWithoutVideoAttachmentsRelationInput, Prisma.ProjectUncheckedUpdateWithoutVideoAttachmentsRelationInput>
+  create: Prisma.XOR<Prisma.ProjectCreateWithoutVideoAttachmentsRelationInput, Prisma.ProjectUncheckedCreateWithoutVideoAttachmentsRelationInput>
+  where?: Prisma.ProjectWhereInput
+}
+
+export type ProjectUpdateToOneWithWhereWithoutVideoAttachmentsRelationInput = {
+  where?: Prisma.ProjectWhereInput
+  data: Prisma.XOR<Prisma.ProjectUpdateWithoutVideoAttachmentsRelationInput, Prisma.ProjectUncheckedUpdateWithoutVideoAttachmentsRelationInput>
+}
+
+export type ProjectUpdateWithoutVideoAttachmentsRelationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
+  startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.ProjectTranslationUpdateManyWithoutProjectNestedInput
+  seoMeta?: Prisma.SeoMetaUpdateManyWithoutProjectNestedInput
+  attachmentsRelation?: Prisma.AttachmentUpdateManyWithoutProjectNestedInput
+}
+
+export type ProjectUncheckedUpdateWithoutVideoAttachmentsRelationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  sector?: Prisma.EnumProjectSectorFieldUpdateOperationsInput | $Enums.ProjectSector
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  featuredImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gallery?: Prisma.ProjectUpdategalleryInput | runtime.InputJsonValue[]
+  attachments?: Prisma.ProjectUpdateattachmentsInput | runtime.InputJsonValue[]
+  startDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  translations?: Prisma.ProjectTranslationUncheckedUpdateManyWithoutProjectNestedInput
+  seoMeta?: Prisma.SeoMetaUncheckedUpdateManyWithoutProjectNestedInput
+  attachmentsRelation?: Prisma.AttachmentUncheckedUpdateManyWithoutProjectNestedInput
 }
 
 
@@ -769,11 +1056,15 @@ export type ProjectUncheckedUpdateWithoutSeoMetaInput = {
 export type ProjectCountOutputType = {
   translations: number
   seoMeta: number
+  attachmentsRelation: number
+  videoAttachmentsRelation: number
 }
 
 export type ProjectCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | ProjectCountOutputTypeCountTranslationsArgs
   seoMeta?: boolean | ProjectCountOutputTypeCountSeoMetaArgs
+  attachmentsRelation?: boolean | ProjectCountOutputTypeCountAttachmentsRelationArgs
+  videoAttachmentsRelation?: boolean | ProjectCountOutputTypeCountVideoAttachmentsRelationArgs
 }
 
 /**
@@ -800,6 +1091,20 @@ export type ProjectCountOutputTypeCountSeoMetaArgs<ExtArgs extends runtime.Types
   where?: Prisma.SeoMetaWhereInput
 }
 
+/**
+ * ProjectCountOutputType without action
+ */
+export type ProjectCountOutputTypeCountAttachmentsRelationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AttachmentWhereInput
+}
+
+/**
+ * ProjectCountOutputType without action
+ */
+export type ProjectCountOutputTypeCountVideoAttachmentsRelationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.VideoAttachmentWhereInput
+}
+
 
 export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -808,6 +1113,7 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   country?: boolean
   featuredImage?: boolean
   gallery?: boolean
+  attachments?: boolean
   startDate?: boolean
   endDate?: boolean
   isPublished?: boolean
@@ -817,6 +1123,8 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   updatedAt?: boolean
   translations?: boolean | Prisma.Project$translationsArgs<ExtArgs>
   seoMeta?: boolean | Prisma.Project$seoMetaArgs<ExtArgs>
+  attachmentsRelation?: boolean | Prisma.Project$attachmentsRelationArgs<ExtArgs>
+  videoAttachmentsRelation?: boolean | Prisma.Project$videoAttachmentsRelationArgs<ExtArgs>
   _count?: boolean | Prisma.ProjectCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["project"]>
 
@@ -827,6 +1135,7 @@ export type ProjectSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   country?: boolean
   featuredImage?: boolean
   gallery?: boolean
+  attachments?: boolean
   startDate?: boolean
   endDate?: boolean
   isPublished?: boolean
@@ -843,6 +1152,7 @@ export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   country?: boolean
   featuredImage?: boolean
   gallery?: boolean
+  attachments?: boolean
   startDate?: boolean
   endDate?: boolean
   isPublished?: boolean
@@ -859,6 +1169,7 @@ export type ProjectSelectScalar = {
   country?: boolean
   featuredImage?: boolean
   gallery?: boolean
+  attachments?: boolean
   startDate?: boolean
   endDate?: boolean
   isPublished?: boolean
@@ -868,10 +1179,12 @@ export type ProjectSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "sector" | "country" | "featuredImage" | "gallery" | "startDate" | "endDate" | "isPublished" | "isFeatured" | "sortOrder" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
+export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "sector" | "country" | "featuredImage" | "gallery" | "attachments" | "startDate" | "endDate" | "isPublished" | "isFeatured" | "sortOrder" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
 export type ProjectInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | Prisma.Project$translationsArgs<ExtArgs>
   seoMeta?: boolean | Prisma.Project$seoMetaArgs<ExtArgs>
+  attachmentsRelation?: boolean | Prisma.Project$attachmentsRelationArgs<ExtArgs>
+  videoAttachmentsRelation?: boolean | Prisma.Project$videoAttachmentsRelationArgs<ExtArgs>
   _count?: boolean | Prisma.ProjectCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ProjectIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -882,6 +1195,8 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   objects: {
     translations: Prisma.$ProjectTranslationPayload<ExtArgs>[]
     seoMeta: Prisma.$SeoMetaPayload<ExtArgs>[]
+    attachmentsRelation: Prisma.$AttachmentPayload<ExtArgs>[]
+    videoAttachmentsRelation: Prisma.$VideoAttachmentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -890,6 +1205,7 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     country: string
     featuredImage: string | null
     gallery: runtime.JsonValue[]
+    attachments: runtime.JsonValue[]
     startDate: Date | null
     endDate: Date | null
     isPublished: boolean
@@ -1293,6 +1609,8 @@ export interface Prisma__ProjectClient<T, Null = never, ExtArgs extends runtime.
   readonly [Symbol.toStringTag]: "PrismaPromise"
   translations<T extends Prisma.Project$translationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Project$translationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProjectTranslationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   seoMeta<T extends Prisma.Project$seoMetaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Project$seoMetaArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SeoMetaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  attachmentsRelation<T extends Prisma.Project$attachmentsRelationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Project$attachmentsRelationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AttachmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  videoAttachmentsRelation<T extends Prisma.Project$videoAttachmentsRelationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Project$videoAttachmentsRelationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$VideoAttachmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1328,6 +1646,7 @@ export interface ProjectFieldRefs {
   readonly country: Prisma.FieldRef<"Project", 'String'>
   readonly featuredImage: Prisma.FieldRef<"Project", 'String'>
   readonly gallery: Prisma.FieldRef<"Project", 'Json[]'>
+  readonly attachments: Prisma.FieldRef<"Project", 'Json[]'>
   readonly startDate: Prisma.FieldRef<"Project", 'DateTime'>
   readonly endDate: Prisma.FieldRef<"Project", 'DateTime'>
   readonly isPublished: Prisma.FieldRef<"Project", 'Boolean'>
@@ -1768,6 +2087,54 @@ export type Project$seoMetaArgs<ExtArgs extends runtime.Types.Extensions.Interna
   take?: number
   skip?: number
   distinct?: Prisma.SeoMetaScalarFieldEnum | Prisma.SeoMetaScalarFieldEnum[]
+}
+
+/**
+ * Project.attachmentsRelation
+ */
+export type Project$attachmentsRelationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Attachment
+   */
+  select?: Prisma.AttachmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Attachment
+   */
+  omit?: Prisma.AttachmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AttachmentInclude<ExtArgs> | null
+  where?: Prisma.AttachmentWhereInput
+  orderBy?: Prisma.AttachmentOrderByWithRelationInput | Prisma.AttachmentOrderByWithRelationInput[]
+  cursor?: Prisma.AttachmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AttachmentScalarFieldEnum | Prisma.AttachmentScalarFieldEnum[]
+}
+
+/**
+ * Project.videoAttachmentsRelation
+ */
+export type Project$videoAttachmentsRelationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the VideoAttachment
+   */
+  select?: Prisma.VideoAttachmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the VideoAttachment
+   */
+  omit?: Prisma.VideoAttachmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.VideoAttachmentInclude<ExtArgs> | null
+  where?: Prisma.VideoAttachmentWhereInput
+  orderBy?: Prisma.VideoAttachmentOrderByWithRelationInput | Prisma.VideoAttachmentOrderByWithRelationInput[]
+  cursor?: Prisma.VideoAttachmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.VideoAttachmentScalarFieldEnum | Prisma.VideoAttachmentScalarFieldEnum[]
 }
 
 /**

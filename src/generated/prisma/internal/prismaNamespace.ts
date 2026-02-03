@@ -80,12 +80,12 @@ export type PrismaVersion = {
 }
 
 /**
- * Prisma Client JS version: 7.2.0
- * Query Engine version: 0c8ef2ce45c83248ab3df073180d5eda9e8be7a3
+ * Prisma Client JS version: 7.3.0
+ * Query Engine version: 9d6ad21cbbceab97458517b147a6a09ff43aa735
  */
 export const prismaVersion: PrismaVersion = {
-  client: "7.2.0",
-  engine: "0c8ef2ce45c83248ab3df073180d5eda9e8be7a3"
+  client: "7.3.0",
+  engine: "9d6ad21cbbceab97458517b147a6a09ff43aa735"
 }
 
 /**
@@ -414,7 +414,9 @@ export const ModelName = {
   SeoMeta: 'SeoMeta',
   Notification: 'Notification',
   AuditLog: 'AuditLog',
-  Setting: 'Setting'
+  Setting: 'Setting',
+  Attachment: 'Attachment',
+  VideoAttachment: 'VideoAttachment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -430,7 +432,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "account" | "session" | "user" | "userProfile" | "verificationToken" | "page" | "pageTranslation" | "news" | "newsTranslation" | "newsCategory" | "newsCategoryTranslation" | "tag" | "newsTag" | "project" | "projectTranslation" | "bando" | "bandoTranslation" | "bandoApplication" | "bandoNotification" | "document" | "consultationForm" | "contact" | "newsletterSubscriber" | "office" | "officeTranslation" | "subsidiary" | "subsidiaryTranslation" | "seoMeta" | "notification" | "auditLog" | "setting"
+    modelProps: "account" | "session" | "user" | "userProfile" | "verificationToken" | "page" | "pageTranslation" | "news" | "newsTranslation" | "newsCategory" | "newsCategoryTranslation" | "tag" | "newsTag" | "project" | "projectTranslation" | "bando" | "bandoTranslation" | "bandoApplication" | "bandoNotification" | "document" | "consultationForm" | "contact" | "newsletterSubscriber" | "office" | "officeTranslation" | "subsidiary" | "subsidiaryTranslation" | "seoMeta" | "notification" | "auditLog" | "setting" | "attachment" | "videoAttachment"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2728,6 +2730,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Attachment: {
+      payload: Prisma.$AttachmentPayload<ExtArgs>
+      fields: Prisma.AttachmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AttachmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AttachmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>
+        }
+        findFirst: {
+          args: Prisma.AttachmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AttachmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>
+        }
+        findMany: {
+          args: Prisma.AttachmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>[]
+        }
+        create: {
+          args: Prisma.AttachmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>
+        }
+        createMany: {
+          args: Prisma.AttachmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AttachmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>[]
+        }
+        delete: {
+          args: Prisma.AttachmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>
+        }
+        update: {
+          args: Prisma.AttachmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.AttachmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AttachmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AttachmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.AttachmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AttachmentPayload>
+        }
+        aggregate: {
+          args: Prisma.AttachmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAttachment>
+        }
+        groupBy: {
+          args: Prisma.AttachmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AttachmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AttachmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AttachmentCountAggregateOutputType> | number
+        }
+      }
+    }
+    VideoAttachment: {
+      payload: Prisma.$VideoAttachmentPayload<ExtArgs>
+      fields: Prisma.VideoAttachmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.VideoAttachmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.VideoAttachmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>
+        }
+        findFirst: {
+          args: Prisma.VideoAttachmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.VideoAttachmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>
+        }
+        findMany: {
+          args: Prisma.VideoAttachmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>[]
+        }
+        create: {
+          args: Prisma.VideoAttachmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>
+        }
+        createMany: {
+          args: Prisma.VideoAttachmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.VideoAttachmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>[]
+        }
+        delete: {
+          args: Prisma.VideoAttachmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>
+        }
+        update: {
+          args: Prisma.VideoAttachmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.VideoAttachmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.VideoAttachmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.VideoAttachmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.VideoAttachmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$VideoAttachmentPayload>
+        }
+        aggregate: {
+          args: Prisma.VideoAttachmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateVideoAttachment>
+        }
+        groupBy: {
+          args: Prisma.VideoAttachmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.VideoAttachmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.VideoAttachmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.VideoAttachmentCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -2942,6 +3092,7 @@ export const ProjectScalarFieldEnum = {
   country: 'country',
   featuredImage: 'featuredImage',
   gallery: 'gallery',
+  attachments: 'attachments',
   startDate: 'startDate',
   endDate: 'endDate',
   isPublished: 'isPublished',
@@ -3235,6 +3386,51 @@ export const SettingScalarFieldEnum = {
 } as const
 
 export type SettingScalarFieldEnum = (typeof SettingScalarFieldEnum)[keyof typeof SettingScalarFieldEnum]
+
+
+export const AttachmentScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  fileName: 'fileName',
+  fileSize: 'fileSize',
+  mimeType: 'mimeType',
+  caption: 'caption',
+  captionEn: 'captionEn',
+  captionFr: 'captionFr',
+  sortOrder: 'sortOrder',
+  projectId: 'projectId',
+  newsId: 'newsId',
+  bandoId: 'bandoId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AttachmentScalarFieldEnum = (typeof AttachmentScalarFieldEnum)[keyof typeof AttachmentScalarFieldEnum]
+
+
+export const VideoAttachmentScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  type: 'type',
+  fileName: 'fileName',
+  fileSize: 'fileSize',
+  thumbnail: 'thumbnail',
+  duration: 'duration',
+  title: 'title',
+  titleEn: 'titleEn',
+  titleFr: 'titleFr',
+  caption: 'caption',
+  captionEn: 'captionEn',
+  captionFr: 'captionFr',
+  sortOrder: 'sortOrder',
+  projectId: 'projectId',
+  newsId: 'newsId',
+  bandoId: 'bandoId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type VideoAttachmentScalarFieldEnum = (typeof VideoAttachmentScalarFieldEnum)[keyof typeof VideoAttachmentScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -3660,6 +3856,42 @@ export const SettingOrderByRelevanceFieldEnum = {
 export type SettingOrderByRelevanceFieldEnum = (typeof SettingOrderByRelevanceFieldEnum)[keyof typeof SettingOrderByRelevanceFieldEnum]
 
 
+export const AttachmentOrderByRelevanceFieldEnum = {
+  id: 'id',
+  url: 'url',
+  fileName: 'fileName',
+  mimeType: 'mimeType',
+  caption: 'caption',
+  captionEn: 'captionEn',
+  captionFr: 'captionFr',
+  projectId: 'projectId',
+  newsId: 'newsId',
+  bandoId: 'bandoId'
+} as const
+
+export type AttachmentOrderByRelevanceFieldEnum = (typeof AttachmentOrderByRelevanceFieldEnum)[keyof typeof AttachmentOrderByRelevanceFieldEnum]
+
+
+export const VideoAttachmentOrderByRelevanceFieldEnum = {
+  id: 'id',
+  url: 'url',
+  type: 'type',
+  fileName: 'fileName',
+  thumbnail: 'thumbnail',
+  title: 'title',
+  titleEn: 'titleEn',
+  titleFr: 'titleFr',
+  caption: 'caption',
+  captionEn: 'captionEn',
+  captionFr: 'captionFr',
+  projectId: 'projectId',
+  newsId: 'newsId',
+  bandoId: 'bandoId'
+} as const
+
+export type VideoAttachmentOrderByRelevanceFieldEnum = (typeof VideoAttachmentOrderByRelevanceFieldEnum)[keyof typeof VideoAttachmentOrderByRelevanceFieldEnum]
+
+
 
 /**
  * Field references
@@ -4043,6 +4275,8 @@ export type GlobalOmitConfig = {
   notification?: Prisma.NotificationOmit
   auditLog?: Prisma.AuditLogOmit
   setting?: Prisma.SettingOmit
+  attachment?: Prisma.AttachmentOmit
+  videoAttachment?: Prisma.VideoAttachmentOmit
 }
 
 /* Types for Logging */
