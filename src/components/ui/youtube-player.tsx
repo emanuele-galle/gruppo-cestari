@@ -174,6 +174,7 @@ export function YouTubePlayer({
           setDuration(event.target.getDuration());
           setIsMutedState(event.target.isMuted());
           setVolume(event.target.getVolume());
+          setIsLoading(false);
           onReady?.();
         },
         onStateChange: (event) => {
@@ -334,12 +335,15 @@ export function YouTubePlayer({
 
   const speedOptions = [0.5, 0.75, 1, 1.25, 1.5, 2];
 
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div
       ref={containerRef}
       className={`relative overflow-hidden bg-black ${className}`}
       onMouseMove={resetHideControlsTimer}
       onMouseEnter={resetHideControlsTimer}
+      onTouchStart={resetHideControlsTimer}
       style={isFullscreen ? { width: '100vw', height: '100vh' } : undefined}
     >
       <div className="relative aspect-video">
@@ -368,14 +372,133 @@ export function YouTubePlayer({
           </div>
         ) : (
           <>
-            {/* Player YouTube - iframe standard per massima compatibilità */}
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${muted ? 1 : 0}&rel=0&modestbranding=1&playsinline=1&controls=1${loop ? `&loop=1&playlist=${videoId}` : ''}`}
-              className="absolute inset-0 w-full h-full border-0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              title={title}
+            {/* Player YouTube via IFrame API (controls: 0) */}
+            <div
+              ref={playerElementRef}
+              className="absolute inset-0 w-full h-full [&_iframe]:!absolute [&_iframe]:!inset-0 [&_iframe]:!w-full [&_iframe]:!h-full"
             />
+
+            {/* Click overlay - blocca interazione diretta con iframe YouTube */}
+            <div
+              className="absolute inset-0 z-10"
+              onClick={togglePlay}
+            />
+
+            {/* Spinner di caricamento */}
+            {isLoading && (
+              <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white" />
+              </div>
+            )}
+
+            {/* Big Play Button centrale quando in pausa */}
+            {!isPlaying && !isLoading && (
+              <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-black/50 backdrop-blur-sm">
+                  <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="white" />
+                </div>
+              </div>
+            )}
+
+            {/* Controlli custom */}
+            {showControls && (
+              <div
+                className={`absolute bottom-0 left-0 right-0 z-30 bg-gradient-to-t from-black/90 via-black/50 to-transparent px-4 pb-3 pt-12 transition-opacity duration-300 ${
+                  showControlsOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                }`}
+              >
+                {/* Progress Bar */}
+                <div
+                  className="relative w-full h-1 bg-white/30 rounded-full cursor-pointer mb-3 group/progress"
+                  onClick={handleSeek}
+                >
+                  <div
+                    className="absolute inset-y-0 left-0 bg-primary rounded-full transition-all"
+                    style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
+                  />
+                  <div
+                    className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-md opacity-0 group-hover/progress:opacity-100 transition-opacity"
+                    style={{ left: `${duration ? (currentTime / duration) * 100 : 0}%`, transform: 'translate(-50%, -50%)' }}
+                  />
+                </div>
+
+                {/* Bottoni controlli */}
+                <div className="flex items-center justify-between text-white">
+                  <div className="flex items-center gap-2">
+                    {/* Play/Pause */}
+                    <button
+                      onClick={(e) => { e.stopPropagation(); togglePlay(); }}
+                      className="p-1.5 hover:bg-white/20 rounded-full transition-colors"
+                      aria-label={isPlaying ? 'Pausa' : 'Riproduci'}
+                    >
+                      {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" fill="white" />}
+                    </button>
+
+                    {/* Volume */}
+                    <div className="flex items-center gap-1 group/vol">
+                      <button
+                        onClick={(e) => { e.stopPropagation(); toggleMute(); }}
+                        className="p-1.5 hover:bg-white/20 rounded-full transition-colors"
+                        aria-label={isMutedState ? 'Attiva audio' : 'Muta'}
+                      >
+                        {isMutedState ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                      </button>
+                      <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value={isMutedState ? 0 : volume}
+                        onChange={handleVolumeChange}
+                        className="w-0 opacity-0 group-hover/vol:w-20 group-hover/vol:opacity-100 transition-all duration-200 accent-white h-1"
+                      />
+                    </div>
+
+                    {/* Tempo */}
+                    <span className="text-xs font-medium tabular-nums ml-1">
+                      {formatTime(currentTime)} / {formatTime(duration)}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-1">
+                    {/* Velocità */}
+                    <div className="relative">
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setShowSpeedMenu(!showSpeedMenu); }}
+                        className="p-1.5 hover:bg-white/20 rounded-full transition-colors"
+                        aria-label="Velocità di riproduzione"
+                      >
+                        <Settings className="w-5 h-5" />
+                      </button>
+                      {showSpeedMenu && (
+                        <div className="absolute bottom-full right-0 mb-2 bg-black/95 rounded-lg p-1.5 min-w-[100px]">
+                          <div className="text-xs text-white/60 mb-1 px-2">Velocità</div>
+                          {speedOptions.map((rate) => (
+                            <button
+                              key={rate}
+                              onClick={(e) => { e.stopPropagation(); handlePlaybackRateChange(rate); }}
+                              className={`w-full text-left px-2 py-1.5 text-xs rounded transition-colors ${
+                                playbackRate === rate ? 'text-primary font-semibold bg-white/10' : 'text-white hover:bg-white/20'
+                              }`}
+                            >
+                              {rate}x {rate === 1 && '(Normale)'}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Fullscreen */}
+                    <button
+                      onClick={(e) => { e.stopPropagation(); toggleFullscreen(); }}
+                      className="p-1.5 hover:bg-white/20 rounded-full transition-colors"
+                      aria-label={isFullscreen ? 'Esci da schermo intero' : 'Schermo intero'}
+                    >
+                      {isFullscreen ? <Minimize2 className="w-5 h-5" /> : <Maximize2 className="w-5 h-5" />}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </>
         )}
       </div>
