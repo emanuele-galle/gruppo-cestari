@@ -165,6 +165,12 @@ export function Footer() {
                 {t('legal.cookies')}
               </Link>
               <Link
+                href="/termini"
+                className="py-2 text-xs text-slate-400 hover:text-primary active:text-primary/80 transition-colors"
+              >
+                {t('legal.terms')}
+              </Link>
+              <Link
                 href="/admin"
                 className="py-2 text-xs text-slate-400 hover:text-primary active:text-primary/80 transition-colors"
               >

@@ -93,10 +93,22 @@
     "services": {
       "title": "Our Services",
       "subtitle": "Integrated solutions for your business growth",
-      "financial": { "title": "Grants & Funding", "description": "Dedicated section for businesses, public entities, citizens and SMEs seeking financial support." },
-      "cooperation": { "title": "Sud Polo Magnetico", "description": "Project aimed at combating depopulation in Southern Italy and promoting economic growth." },
-      "energy": { "title": "Energy Communities", "description": "Produce and share renewable energy with 20% to 50% savings on your bills." },
-      "planning": { "title": "Feasibility Studies", "description": "Technical-economic analysis, business plans and funding research for your investments." }
+      "financial": {
+        "title": "Grants & Funding",
+        "description": "Dedicated section for businesses, public entities, citizens and SMEs seeking financial support."
+      },
+      "cooperation": {
+        "title": "Sud Polo Magnetico",
+        "description": "Project aimed at combating depopulation in Southern Italy and promoting economic growth."
+      },
+      "energy": {
+        "title": "Energy Communities",
+        "description": "Produce and share renewable energy with 20% to 50% savings on your bills."
+      },
+      "planning": {
+        "title": "Feasibility Studies",
+        "description": "Technical-economic analysis, business plans and funding research for your investments."
+      }
     },
     "videoBackground": {
       "badge": "Global Presence",
@@ -128,7 +140,12 @@
       "bottomText": "Leaders in financial consulting, international cooperation and renewable energy",
       "companiesLink": "Our 10 companies"
     },
-    "news": { "title": "Latest News", "subtitle": "Stay updated on our activities", "noNews": "No news available", "viewAll": "View all news" },
+    "news": {
+      "title": "Latest News",
+      "subtitle": "Stay updated on our activities",
+      "noNews": "No news available",
+      "viewAll": "View all news"
+    },
     "cta": {
       "badge": "Partnership Opportunity",
       "title": "Looking to invest in Africa?",
@@ -299,12 +316,30 @@
       "title": "The principles that guide us",
       "subtitle": "Core values that guide every decision and relationship we make",
       "items": {
-        "integrity": { "title": "Integrity", "description": "We act with honesty and transparency in every relationship." },
-        "innovation": { "title": "Innovation", "description": "We constantly seek new solutions for our clients." },
-        "collaboration": { "title": "Collaboration", "description": "We work together with our partners towards common goals." },
-        "excellence": { "title": "Excellence", "description": "We always aim for the highest quality in everything we do." },
-        "sustainability": { "title": "Sustainability", "description": "We integrate environmental responsibility into every project." },
-        "trust": { "title": "Trust", "description": "We build lasting relationships based on mutual trust." }
+        "integrity": {
+          "title": "Integrity",
+          "description": "We act with honesty and transparency in every relationship."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "We constantly seek new solutions for our clients."
+        },
+        "collaboration": {
+          "title": "Collaboration",
+          "description": "We work together with our partners towards common goals."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "We always aim for the highest quality in everything we do."
+        },
+        "sustainability": {
+          "title": "Sustainability",
+          "description": "We integrate environmental responsibility into every project."
+        },
+        "trust": {
+          "title": "Trust",
+          "description": "We build lasting relationships based on mutual trust."
+        }
       }
     },
     "timeline": {
@@ -312,24 +347,96 @@
       "title": "40 years of evolution",
       "subtitle": "Key milestones in our growth journey",
       "milestones": {
-        "origini": { "year": "1980–1985", "title": "The origins", "description": "Gruppo Cestari is born in Salerno in the early 1980s through the initiative of engineer Alfredo Carmine Cestari. Initial activities focus on civil engineering and technical and financial consulting for public entities and territories in Southern Italy." },
-        "espansione": { "year": "1990", "title": "National expansion", "description": "The Group begins a structured growth phase with the opening of offices in Rome, Milan and Naples. This expansion allows it to cover major Italian institutional hubs and manage complex industrial and territorial development projects nationwide." },
-        "consolidamento": { "year": "1993", "title": "Corporate consolidation", "description": "Several historic entities of the original nucleus are formalized, including Cestari S.r.l. During these years, Futuro & Programmazione takes shape, a company specialized in strategic planning, subsidized finance and territorial development." },
-        "rafforzamento": { "year": "1997", "title": "Strengthening competencies", "description": "Alfredo Carmine Cestari obtains his degree in Civil Engineering, Land Defense and Territorial Planning. The Group already operates nationally and begins to look beyond Italian borders." },
-        "internazionalizzazione": { "year": "2000", "title": "Start of internationalization", "description": "The Group launches its first international cooperation projects, with particular attention to Africa. The vision of exporting Italian know-how in infrastructure, energy and territorial development is born." },
-        "africa": { "year": "2002", "title": "Africa and institutional dimension", "description": "The appointment of Alfredo Cestari as Honorary Consul of the Democratic Republic of Congo marks a strategic turning point. The Group strengthens its presence in African countries, expanding operations to Rwanda, Angola, Burundi, Kenya and Gabon." },
-        "sistemaPaese": { "year": "2004", "title": "Country System and structured cooperation", "description": "ItalAfrica Centrale is born, a Foreign Chamber of Commerce recognized in Italy, founded by Alfredo Carmine Cestari. It represents a strategic tool to accompany Italian companies in African markets." },
-        "energia": { "year": "2005", "title": "Energy and sustainability", "description": "Strategic Energy Resources (S.E.R.) is founded, dedicated to renewable energy and energy efficiency. The Group builds wind and photovoltaic parks in Italy, anticipating energy transition themes." },
-        "logistica": { "year": "2006", "title": "Logistics and aviation in Africa", "description": "Emeraude S.a.r.l. is born in Pointe-Noire (Republic of Congo), with air taxi and air logistics activities. The experience lays the foundation for the subsequent development of the Group's aviation sector." },
-        "sostenibilita": { "year": "2010", "title": "Sustainability and international photovoltaic", "description": "The division dedicated exclusively to sustainability is launched. Midday Sun is born, focused on large photovoltaic systems, with particular attention to solar projects in Africa." },
-        "aviazione": { "year": "2012", "title": "Civil aviation and airport infrastructure", "description": "Winfly airline, founded by Alfredo Cestari, obtains its COA. Winfly operates in civil and executive transport, aeronautical maintenance and airport infrastructure management, including the 'Enrico Mattei' airport in Pisticci." },
-        "expo": { "year": "2013", "title": "Expo and economic diplomacy", "description": "Alfredo Cestari is appointed General Commissioner of Burundi for Expo Milano 2015. The Group plays a key role in facilitating the participation of numerous African countries, strengthening the institutional and international dimension of the network." },
-        "europa": { "year": "2015", "title": "Europe, South America and Expo Milano 2015", "description": "Expo Milano 2015 represents a moment of strong international visibility for Gruppo Cestari. The Brussels office opens for direct monitoring of EU funds and EU-Africa programs. Cestari Brasil is born, marking the Group's structured entry into South America." },
-        "ecosistema": { "year": "2019", "title": "Integrated ecosystem", "description": "The Group consolidates its model as a multi-sector entrepreneurial ecosystem, active in financial consulting, energy, logistics, training and international cooperation." },
-        "sudPoloMagnetico": { "year": "2020–2021", "title": "Sud Polo Magnetico", "description": "The Sud Polo Magnetico project is launched, identifying Southern Italy as the natural hub between Europe and Africa. Special Economic Zones (SEZs) are recognized as fundamental tools to attract investments and strengthen territorial competitiveness." },
-        "zes2022": { "year": "2022", "title": "SEZs and investment attraction", "description": "The Group structurally integrates SEZs into its territorial development models. SEZs are used as leverage to accompany Italian and international companies in production localization and industrial development in Southern Italy." },
-        "zesPianoMattei": { "year": "2023–2024", "title": "SEZs, Mattei Plan and international cooperation", "description": "SEZs are read systemically and linked to the objectives of the Mattei Plan. The Group helps build cooperation models that connect Italian SEZs and African production chains, promoting sustainable investments and shared industrial development." },
-        "zesOggi": { "year": "2026 – Today", "title": "SEZs as strategic infrastructure", "description": "SEZs represent one of the Group's positioning pillars. Southern Italy is promoted as an advanced productive, energy and logistics platform, capable of dialoguing with Europe and Africa in a structured and competitive way." }
+        "origini": {
+          "year": "1980–1985",
+          "title": "The origins",
+          "description": "Gruppo Cestari is born in Salerno in the early 1980s through the initiative of engineer Alfredo Carmine Cestari. Initial activities focus on civil engineering and technical and financial consulting for public entities and territories in Southern Italy."
+        },
+        "espansione": {
+          "year": "1990",
+          "title": "National expansion",
+          "description": "The Group begins a structured growth phase with the opening of offices in Rome, Milan and Naples. This expansion allows it to cover major Italian institutional hubs and manage complex industrial and territorial development projects nationwide."
+        },
+        "consolidamento": {
+          "year": "1993",
+          "title": "Corporate consolidation",
+          "description": "Several historic entities of the original nucleus are formalized, including Cestari S.r.l. During these years, Futuro & Programmazione takes shape, a company specialized in strategic planning, subsidized finance and territorial development."
+        },
+        "rafforzamento": {
+          "year": "1997",
+          "title": "Strengthening competencies",
+          "description": "Alfredo Carmine Cestari obtains his degree in Civil Engineering, Land Defense and Territorial Planning. The Group already operates nationally and begins to look beyond Italian borders."
+        },
+        "internazionalizzazione": {
+          "year": "2000",
+          "title": "Start of internationalization",
+          "description": "The Group launches its first international cooperation projects, with particular attention to Africa. The vision of exporting Italian know-how in infrastructure, energy and territorial development is born."
+        },
+        "africa": {
+          "year": "2002",
+          "title": "Africa and institutional dimension",
+          "description": "The appointment of Alfredo Cestari as Honorary Consul of the Democratic Republic of Congo marks a strategic turning point. The Group strengthens its presence in African countries, expanding operations to Rwanda, Angola, Burundi, Kenya and Gabon."
+        },
+        "sistemaPaese": {
+          "year": "2004",
+          "title": "Country System and structured cooperation",
+          "description": "ItalAfrica Centrale is born, a Foreign Chamber of Commerce recognized in Italy, founded by Alfredo Carmine Cestari. It represents a strategic tool to accompany Italian companies in African markets."
+        },
+        "energia": {
+          "year": "2005",
+          "title": "Energy and sustainability",
+          "description": "Strategic Energy Resources (S.E.R.) is founded, dedicated to renewable energy and energy efficiency. The Group builds wind and photovoltaic parks in Italy, anticipating energy transition themes."
+        },
+        "logistica": {
+          "year": "2006",
+          "title": "Logistics and aviation in Africa",
+          "description": "Emeraude S.a.r.l. is born in Pointe-Noire (Republic of Congo), with air taxi and air logistics activities. The experience lays the foundation for the subsequent development of the Group's aviation sector."
+        },
+        "sostenibilita": {
+          "year": "2010",
+          "title": "Sustainability and international photovoltaic",
+          "description": "The division dedicated exclusively to sustainability is launched. Midday Sun is born, focused on large photovoltaic systems, with particular attention to solar projects in Africa."
+        },
+        "aviazione": {
+          "year": "2012",
+          "title": "Civil aviation and airport infrastructure",
+          "description": "Winfly airline, founded by Alfredo Cestari, obtains its COA. Winfly operates in civil and executive transport, aeronautical maintenance and airport infrastructure management, including the 'Enrico Mattei' airport in Pisticci."
+        },
+        "expo": {
+          "year": "2013",
+          "title": "Expo and economic diplomacy",
+          "description": "Alfredo Cestari is appointed General Commissioner of Burundi for Expo Milano 2015. The Group plays a key role in facilitating the participation of numerous African countries, strengthening the institutional and international dimension of the network."
+        },
+        "europa": {
+          "year": "2015",
+          "title": "Europe, South America and Expo Milano 2015",
+          "description": "Expo Milano 2015 represents a moment of strong international visibility for Gruppo Cestari. The Brussels office opens for direct monitoring of EU funds and EU-Africa programs. Cestari Brasil is born, marking the Group's structured entry into South America."
+        },
+        "ecosistema": {
+          "year": "2019",
+          "title": "Integrated ecosystem",
+          "description": "The Group consolidates its model as a multi-sector entrepreneurial ecosystem, active in financial consulting, energy, logistics, training and international cooperation."
+        },
+        "sudPoloMagnetico": {
+          "year": "2020–2021",
+          "title": "Sud Polo Magnetico",
+          "description": "The Sud Polo Magnetico project is launched, identifying Southern Italy as the natural hub between Europe and Africa. Special Economic Zones (SEZs) are recognized as fundamental tools to attract investments and strengthen territorial competitiveness."
+        },
+        "zes2022": {
+          "year": "2022",
+          "title": "SEZs and investment attraction",
+          "description": "The Group structurally integrates SEZs into its territorial development models. SEZs are used as leverage to accompany Italian and international companies in production localization and industrial development in Southern Italy."
+        },
+        "zesPianoMattei": {
+          "year": "2023–2024",
+          "title": "SEZs, Mattei Plan and international cooperation",
+          "description": "SEZs are read systemically and linked to the objectives of the Mattei Plan. The Group helps build cooperation models that connect Italian SEZs and African production chains, promoting sustainable investments and shared industrial development."
+        },
+        "zesOggi": {
+          "year": "2026 – Today",
+          "title": "SEZs as strategic infrastructure",
+          "description": "SEZs represent one of the Group's positioning pillars. Southern Italy is promoted as an advanced productive, energy and logistics platform, capable of dialoguing with Europe and Africa in a structured and competitive way."
+        }
       }
     },
     "companies": {
@@ -338,16 +445,46 @@
       "subtitle": "An integrated ecosystem of specialized expertise",
       "viewAll": "Discover all companies",
       "items": {
-        "winfly": { "name": "Winfly", "description": "Aviation and logistics" },
-        "ser": { "name": "Strategic Energy Resources", "description": "Renewable energy" },
-        "ied": { "name": "I.E.D.", "description": "Economic development" },
-        "brasil": { "name": "Cestari Brasil", "description": "South America operations" },
-        "newser1": { "name": "Newser1", "description": "Communications" },
-        "futuro": { "name": "Futuro & Programmazione", "description": "Strategic consulting" },
-        "sakti": { "name": "SAKTI", "description": "Sustainable technologies" },
-        "wiremena": { "name": "Wiremena", "description": "Infrastructure" },
-        "midday": { "name": "Midday Sun", "description": "Solar energy" },
-        "flywin": { "name": "Flywin", "description": "Airport services" }
+        "winfly": {
+          "name": "Winfly",
+          "description": "Aviation and logistics"
+        },
+        "ser": {
+          "name": "Strategic Energy Resources",
+          "description": "Renewable energy"
+        },
+        "ied": {
+          "name": "I.E.D.",
+          "description": "Economic development"
+        },
+        "brasil": {
+          "name": "Cestari Brasil",
+          "description": "South America operations"
+        },
+        "newser1": {
+          "name": "Newser1",
+          "description": "Communications"
+        },
+        "futuro": {
+          "name": "Futuro & Programmazione",
+          "description": "Strategic consulting"
+        },
+        "sakti": {
+          "name": "SAKTI",
+          "description": "Sustainable technologies"
+        },
+        "wiremena": {
+          "name": "Wiremena",
+          "description": "Infrastructure"
+        },
+        "midday": {
+          "name": "Midday Sun",
+          "description": "Solar energy"
+        },
+        "flywin": {
+          "name": "Flywin",
+          "description": "Airport services"
+        }
       }
     },
     "offices": {
@@ -387,56 +524,285 @@
       "title": "Grants & Funding",
       "description": "Dedicated section for businesses, public entities, citizens and SMEs seeking financial support. We identify and manage grants tailored to your specific needs.",
       "shortDescription": "Funding for businesses, public entities and SMEs",
-      "highlights": ["EU Funds", "National Incentives", "Tax Credits"]
+      "highlights": [
+        "EU Funds",
+        "National Incentives",
+        "Tax Credits"
+      ]
     },
     "cooperation": {
       "title": "Sud Polo Magnetico",
       "description": "Thanks to EU funds and national resources, Gruppo Cestari launched the Sud Polo Magnetico project, aimed at combating depopulation in Southern Italy and promoting the economic growth of southern regions.",
       "shortDescription": "Economic development of Southern Italy",
-      "highlights": ["EU Funds", "Combat depopulation", "South Italy growth"]
+      "highlights": [
+        "EU Funds",
+        "Combat depopulation",
+        "South Italy growth"
+      ]
     },
     "energy": {
       "title": "Energy Communities",
       "description": "Gruppo Cestari is among the first to believe in the potential of RECs, promoting their creation throughout the national territory. Produce and share renewable energy with savings between 20% and 50% on your bills.",
       "shortDescription": "RECs with 20-50% savings",
-      "highlights": ["20-50% savings", "20-year incentives", "Zero emissions"]
+      "highlights": [
+        "20-50% savings",
+        "20-year incentives",
+        "Zero emissions"
+      ]
     },
     "planning": {
       "title": "Feasibility Studies",
       "description": "Complete technical-economic analysis for your investments. Plant design, business plan drafting, funding research and support to achieve your goals.",
       "shortDescription": "Business plans and investment analysis",
-      "highlights": ["ROI Analysis", "Business plan", "Funding"]
+      "highlights": [
+        "ROI Analysis",
+        "Business plan",
+        "Funding"
+      ]
     },
-    "hero": { "badge": "Since 1980 serving businesses", "title": "Our Services", "subtitle": "Complete and customized solutions for every business need" },
+    "hero": {
+      "badge": "Since 1980 serving businesses",
+      "title": "Our Services",
+      "subtitle": "Complete and customized solutions for every business need"
+    },
     "items": {
-      "financial": { "title": "Financial Consulting", "description": "Strategic support for accessing public and private funding, tax optimization and financial planning.", "features": { "analysis": "In-depth financial analysis", "planning": "Strategic planning", "funding": "Access to funding", "management": "Credit management" } },
-      "international": { "title": "International Cooperation", "description": "Development projects in emerging markets, international partnerships and capacity building.", "features": { "projects": "International project management", "partnerships": "Partnership development", "development": "Development programs", "training": "Training and capacity building" } },
-      "energy": { "title": "Renewable Energy", "description": "Design and implementation of photovoltaic, wind farms and renewable energy communities.", "features": { "solar": "Photovoltaic systems", "efficiency": "Energy efficiency", "consulting": "Energy consulting", "certification": "Environmental certifications" } },
-      "grants": { "title": "Grants and Funding", "description": "Research, analysis and management of European, national and regional grants for your business.", "features": { "search": "Opportunity research", "writing": "Project writing", "submission": "Application submission", "reporting": "Reporting" } },
-      "business": { "title": "Business Consulting", "description": "Strategic support for growth, process optimization and digital transformation.", "features": { "strategy": "Business strategy", "operations": "Process optimization", "digital": "Digital transformation", "growth": "Growth plans" } },
-      "training": { "title": "Training", "description": "Customized training programs for entrepreneurs, managers and business teams.", "features": { "corporate": "Corporate training", "specialized": "Specialized courses", "workshops": "Interactive workshops", "coaching": "Business coaching" } }
+      "financial": {
+        "title": "Financial Consulting",
+        "description": "Strategic support for accessing public and private funding, tax optimization and financial planning.",
+        "features": {
+          "analysis": "In-depth financial analysis",
+          "planning": "Strategic planning",
+          "funding": "Access to funding",
+          "management": "Credit management"
+        }
+      },
+      "international": {
+        "title": "International Cooperation",
+        "description": "Development projects in emerging markets, international partnerships and capacity building.",
+        "features": {
+          "projects": "International project management",
+          "partnerships": "Partnership development",
+          "development": "Development programs",
+          "training": "Training and capacity building"
+        }
+      },
+      "energy": {
+        "title": "Renewable Energy",
+        "description": "Design and implementation of photovoltaic, wind farms and renewable energy communities.",
+        "features": {
+          "solar": "Photovoltaic systems",
+          "efficiency": "Energy efficiency",
+          "consulting": "Energy consulting",
+          "certification": "Environmental certifications"
+        }
+      },
+      "grants": {
+        "title": "Grants and Funding",
+        "description": "Research, analysis and management of European, national and regional grants for your business.",
+        "features": {
+          "search": "Opportunity research",
+          "writing": "Project writing",
+          "submission": "Application submission",
+          "reporting": "Reporting"
+        }
+      },
+      "business": {
+        "title": "Business Consulting",
+        "description": "Strategic support for growth, process optimization and digital transformation.",
+        "features": {
+          "strategy": "Business strategy",
+          "operations": "Process optimization",
+          "digital": "Digital transformation",
+          "growth": "Growth plans"
+        }
+      },
+      "training": {
+        "title": "Training",
+        "description": "Customized training programs for entrepreneurs, managers and business teams.",
+        "features": {
+          "corporate": "Corporate training",
+          "specialized": "Specialized courses",
+          "workshops": "Interactive workshops",
+          "coaching": "Business coaching"
+        }
+      }
     },
     "learnMore": "Request information",
-    "process": { "title": "Our Method", "subtitle": "A structured approach to ensure concrete results", "step": "Step", "steps": { "analysis": { "title": "Analysis", "description": "We study your needs and the market context." }, "strategy": { "title": "Strategy", "description": "We define objectives and action plan together." }, "implementation": { "title": "Implementation", "description": "We execute the project with continuous support." }, "monitoring": { "title": "Monitoring", "description": "We measure results and optimize performance." } } },
-    "industries": { "title": "Areas of Expertise", "subtitle": "Consolidated experience in multiple industrial sectors", "items": { "manufacturing": "Manufacturing", "agriculture": "Agriculture", "tourism": "Tourism", "healthcare": "Healthcare", "technology": "Technology", "construction": "Construction", "retail": "Retail", "logistics": "Logistics" } },
-    "cta": { "title": "Ready to start?", "subtitle": "Contact us for a personalized consultation on your needs.", "consultation": "Request Consultation", "contact": "Contact Us" }
+    "process": {
+      "title": "Our Method",
+      "subtitle": "A structured approach to ensure concrete results",
+      "step": "Step",
+      "steps": {
+        "analysis": {
+          "title": "Analysis",
+          "description": "We study your needs and the market context."
+        },
+        "strategy": {
+          "title": "Strategy",
+          "description": "We define objectives and action plan together."
+        },
+        "implementation": {
+          "title": "Implementation",
+          "description": "We execute the project with continuous support."
+        },
+        "monitoring": {
+          "title": "Monitoring",
+          "description": "We measure results and optimize performance."
+        }
+      }
+    },
+    "industries": {
+      "title": "Areas of Expertise",
+      "subtitle": "Consolidated experience in multiple industrial sectors",
+      "items": {
+        "manufacturing": "Manufacturing",
+        "agriculture": "Agriculture",
+        "tourism": "Tourism",
+        "healthcare": "Healthcare",
+        "technology": "Technology",
+        "construction": "Construction",
+        "retail": "Retail",
+        "logistics": "Logistics"
+      }
+    },
+    "cta": {
+      "title": "Ready to start?",
+      "subtitle": "Contact us for a personalized consultation on your needs.",
+      "consultation": "Request Consultation",
+      "contact": "Contact Us"
+    }
   },
   "sustainability": {
-    "hero": { "badge": "Environmental Commitment", "title": "Sustainability at the Core", "subtitle": "We believe in development that respects the environment and creates value for future generations." },
-    "pillars": { "title": "ESG Pillars", "subtitle": "Our commitment to environment, social and governance", "items": { "environmental": { "title": "Environment", "description": "Reducing environmental impact and promoting renewable energy.", "point1": "CO2 emission reduction", "point2": "Renewable energy", "point3": "Circular economy" }, "social": { "title": "Social", "description": "Valuing people and communities where we operate.", "point1": "Local community development", "point2": "Training and growth", "point3": "Diversity and inclusion" }, "governance": { "title": "Governance", "description": "Transparent and responsible management of business activities.", "point1": "Ethics and transparency", "point2": "Risk management", "point3": "Regulatory compliance" } } },
-    "goals": { "title": "Our 2030 Goals", "subtitle": "Ambitious targets for a sustainable future", "items": { "emissions": "Emission reduction", "renewable": "Renewable energy", "waste": "Landfill waste", "trees": "Trees planted" } },
-    "initiatives": { "title": "Our Initiatives", "subtitle": "Concrete actions for sustainability", "items": { "solar": { "title": "Photovoltaic Systems", "description": "Installation of solar systems for businesses and communities." }, "waste": { "title": "Waste Management", "description": "Waste reduction and recycling programs." }, "reforestation": { "title": "Reforestation", "description": "Tree planting projects in degraded areas." }, "water": { "title": "Water Resources", "description": "Water usage optimization." }, "emissions": { "title": "Carbon Footprint", "description": "Monitoring and reducing emissions." }, "community": { "title": "Local Communities", "description": "Supporting communities in the territories where we operate." } } },
-    "certifications": { "title": "Certifications", "subtitle": "Recognition of our commitment to quality and environment" },
-    "report": { "title": "Sustainability Report", "description": "Download our annual report to discover in detail our activities and results achieved.", "download": "Download Report" },
-    "cta": { "title": "Want to make your company more sustainable?", "subtitle": "Discover how we can help you on the path to sustainability.", "button": "Contact Us" }
+    "hero": {
+      "badge": "Environmental Commitment",
+      "title": "Sustainability at the Core",
+      "subtitle": "We believe in development that respects the environment and creates value for future generations."
+    },
+    "pillars": {
+      "title": "ESG Pillars",
+      "subtitle": "Our commitment to environment, social and governance",
+      "items": {
+        "environmental": {
+          "title": "Environment",
+          "description": "Reducing environmental impact and promoting renewable energy.",
+          "point1": "CO2 emission reduction",
+          "point2": "Renewable energy",
+          "point3": "Circular economy"
+        },
+        "social": {
+          "title": "Social",
+          "description": "Valuing people and communities where we operate.",
+          "point1": "Local community development",
+          "point2": "Training and growth",
+          "point3": "Diversity and inclusion"
+        },
+        "governance": {
+          "title": "Governance",
+          "description": "Transparent and responsible management of business activities.",
+          "point1": "Ethics and transparency",
+          "point2": "Risk management",
+          "point3": "Regulatory compliance"
+        }
+      }
+    },
+    "goals": {
+      "title": "Our 2030 Goals",
+      "subtitle": "Ambitious targets for a sustainable future",
+      "items": {
+        "emissions": "Emission reduction",
+        "renewable": "Renewable energy",
+        "waste": "Landfill waste",
+        "trees": "Trees planted"
+      }
+    },
+    "initiatives": {
+      "title": "Our Initiatives",
+      "subtitle": "Concrete actions for sustainability",
+      "items": {
+        "solar": {
+          "title": "Photovoltaic Systems",
+          "description": "Installation of solar systems for businesses and communities."
+        },
+        "waste": {
+          "title": "Waste Management",
+          "description": "Waste reduction and recycling programs."
+        },
+        "reforestation": {
+          "title": "Reforestation",
+          "description": "Tree planting projects in degraded areas."
+        },
+        "water": {
+          "title": "Water Resources",
+          "description": "Water usage optimization."
+        },
+        "emissions": {
+          "title": "Carbon Footprint",
+          "description": "Monitoring and reducing emissions."
+        },
+        "community": {
+          "title": "Local Communities",
+          "description": "Supporting communities in the territories where we operate."
+        }
+      }
+    },
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "Recognition of our commitment to quality and environment"
+    },
+    "report": {
+      "title": "Sustainability Report",
+      "description": "Download our annual report to discover in detail our activities and results achieved.",
+      "download": "Download Report"
+    },
+    "cta": {
+      "title": "Want to make your company more sustainable?",
+      "subtitle": "Discover how we can help you on the path to sustainability.",
+      "button": "Contact Us"
+    }
   },
   "projects": {
-    "hero": { "title": "Our Projects", "subtitle": "Discover the achievements and case studies that demonstrate our experience" },
-    "stats": { "totalProjects": "Projects completed", "countries": "Countries involved", "investments": "Investments managed", "beneficiaries": "Beneficiaries" },
-    "filters": { "sector": "Sector", "sectors": { "all": "All", "financial": "Finance", "cooperation": "Cooperation", "energy": "Energy", "training": "Training" }, "country": "Geographic area", "countries": { "all": "All", "italy": "Italy", "europe": "Europe", "africa": "Africa", "asia": "Asia", "americas": "Americas" } },
-    "status": { "completed": "Completed", "ongoing": "Ongoing" },
-    "impact": "Impact", "viewProject": "View project", "noResults": "No projects found with the selected filters.",
-    "cta": { "title": "Have a project in mind?", "subtitle": "Contact us to discover how we can help you realize it.", "consultation": "Request Consultation", "contact": "Contact Us" }
+    "hero": {
+      "title": "Our Projects",
+      "subtitle": "Discover the achievements and case studies that demonstrate our experience"
+    },
+    "stats": {
+      "totalProjects": "Projects completed",
+      "countries": "Countries involved",
+      "investments": "Investments managed",
+      "beneficiaries": "Beneficiaries"
+    },
+    "filters": {
+      "sector": "Sector",
+      "sectors": {
+        "all": "All",
+        "financial": "Finance",
+        "cooperation": "Cooperation",
+        "energy": "Energy",
+        "training": "Training"
+      },
+      "country": "Geographic area",
+      "countries": {
+        "all": "All",
+        "italy": "Italy",
+        "europe": "Europe",
+        "africa": "Africa",
+        "asia": "Asia",
+        "americas": "Americas"
+      }
+    },
+    "status": {
+      "completed": "Completed",
+      "ongoing": "Ongoing"
+    },
+    "impact": "Impact",
+    "viewProject": "View project",
+    "noResults": "No projects found with the selected filters.",
+    "cta": {
+      "title": "Have a project in mind?",
+      "subtitle": "Contact us to discover how we can help you realize it.",
+      "consultation": "Request Consultation",
+      "contact": "Contact Us"
+    }
   },
   "news": {
     "hero": {
@@ -444,8 +810,16 @@
       "title": "News and Insights",
       "subtitle": "Stay updated on the latest news from the world of finance, cooperation and sustainability"
     },
-    "search": { "placeholder": "Search articles..." },
-    "categories": { "all": "All articles", "energy": "Energy", "international": "International", "events": "Events", "investment": "Investment" },
+    "search": {
+      "placeholder": "Search articles..."
+    },
+    "categories": {
+      "all": "All articles",
+      "energy": "Energy",
+      "international": "International",
+      "events": "Events",
+      "investment": "Investment"
+    },
     "readTime": "min read",
     "readMore": "Read",
     "empty": {
@@ -494,8 +868,13 @@
       "title": "Grants and Funding",
       "subtitle": "Discover active funding opportunities for your business"
     },
-    "search": { "placeholder": "Search grants..." },
-    "notification": { "text": "Enable notifications to receive updates on new grants in your sector.", "button": "Enable Notifications" },
+    "search": {
+      "placeholder": "Search grants..."
+    },
+    "notification": {
+      "text": "Enable notifications to receive updates on new grants in your sector.",
+      "button": "Enable Notifications"
+    },
     "stats": {
       "activeGrants": "Active grants",
       "availableFunds": "Available funds",
@@ -534,17 +913,44 @@
       "clear": "Clear",
       "removeAll": "Remove all filters",
       "allSectors": "All sectors",
-      "sectors": { "all": "All sectors", "innovation": "Innovation", "sustainability": "Sustainability", "internationalization": "Internationalization", "training": "Training", "startups": "Startups" },
-      "regions": { "all": "All areas", "national": "National", "european": "European", "regional": "Regional" },
-      "statuses": { "all": "All", "open": "Open", "closing": "Closing soon", "upcoming": "Upcoming" }
+      "sectors": {
+        "all": "All sectors",
+        "innovation": "Innovation",
+        "sustainability": "Sustainability",
+        "internationalization": "Internationalization",
+        "training": "Training",
+        "startups": "Startups"
+      },
+      "regions": {
+        "all": "All areas",
+        "national": "National",
+        "european": "European",
+        "regional": "Regional"
+      },
+      "statuses": {
+        "all": "All",
+        "open": "Open",
+        "closing": "Closing soon",
+        "upcoming": "Upcoming"
+      }
     },
-    "status": { "open": "Open", "closing": "Closing soon", "upcoming": "Upcoming", "closed": "Closed" },
+    "status": {
+      "open": "Open",
+      "closing": "Closing soon",
+      "upcoming": "Upcoming",
+      "closed": "Closed"
+    },
     "featured": "Featured",
     "featuredGrants": "Featured grants",
     "amount": "Amount",
     "toDefine": "To be defined",
     "funding": "Coverage",
-    "fundingTypes": { "grant": "non-repayable", "loan": "soft loan", "reimbursement": "reimbursement", "tax_credit": "tax credit" },
+    "fundingTypes": {
+      "grant": "non-repayable",
+      "loan": "soft loan",
+      "reimbursement": "reimbursement",
+      "tax_credit": "tax credit"
+    },
     "deadline": "Deadline",
     "daysRemaining": "days remaining",
     "noDeadline": "No deadline",
@@ -554,35 +960,253 @@
     "noResultsMessage": "No grants match the selected filters. Try changing the search criteria.",
     "noResultsEmpty": "No active grants at the moment. Check back soon!",
     "loadingError": "Error loading grants",
-    "cta": { "title": "Need assistance?", "subtitle": "Our experts can help you identify the most suitable grants and manage your application.", "consultation": "Request Consultation", "contact": "Contact Us" }
+    "cta": {
+      "title": "Need assistance?",
+      "subtitle": "Our experts can help you identify the most suitable grants and manage your application.",
+      "consultation": "Request Consultation",
+      "contact": "Contact Us"
+    }
   },
   "contact": {
-    "hero": { "title": "Contact Us", "subtitle": "We are here to answer all your questions" },
-    "form": { "title": "Send a message", "description": "Fill out the form and we will respond as soon as possible.", "name": "First Name", "namePlaceholder": "Your first name", "surname": "Last Name", "surnamePlaceholder": "Your last name", "email": "Email", "emailPlaceholder": "email@example.com", "phone": "Phone", "phonePlaceholder": "+39 123 456 7890", "company": "Company / Organization", "companyPlaceholder": "Company or organization name", "subject": "Subject", "subjectPlaceholder": "Select a topic", "subjects": { "default": "Select a topic", "info": "General information", "consulting": "Consulting request", "partnership": "Partnership proposal", "energy": "Energy projects", "euGrants": "Grants and funding", "career": "Careers", "other": "Other" }, "message": "Message", "messagePlaceholder": "Describe your request...", "privacy": "I have read and accept the", "privacyLink": "Privacy Policy", "privacyEnd": "and authorize the processing of my personal data.", "submit": "Send message", "sending": "Sending...", "success": { "title": "Message sent!", "message": "Thank you for contacting us. We will respond within 24 business hours.", "button": "Send another message" }, "error": "An error occurred" },
-    "quickContact": { "badge": "We are at your disposal", "phoneLabel": "Phone", "emailLabel": "Email", "hoursLabel": "Hours", "hoursValue": "Mon-Fri 8:30-17" },
-    "sidebar": { "whyTitle": "Why contact us?", "reasons": { "consultation": "Free initial consultation", "response": "Response within 24 hours", "team": "Multilingual expert team", "presence": "International presence" }, "followTitle": "Follow us", "stats": { "clients": "Clients served", "countries": "Countries worldwide" } },
-    "info": { "title": "Contact Information", "description": "Choose your preferred channel to get in touch with us.", "phone": "Phone", "email": "Email", "hours": "Hours", "hoursValue": "Mon - Fri: 8:30 AM - 5:00 PM", "social": "Follow us" },
-    "offices": { "badge": "Our offices", "title": "Where to find us", "subtitle": "Strategic locations in Italy and Europe to always be close to our clients.", "hqBadge": "Headquarters", "types": { "headquarters": "Headquarters", "office": "Office", "institutional": "Institutional Relations", "euAffairs": "EU Affairs" } },
-    "map": { "placeholder": "Interactive map of our offices", "openMaps": "Open in Google Maps" },
-    "finalCta": { "title": "Need immediate support?", "subtitle": "Our team is ready to assist you.", "button": "Call: +39 089 952889" }
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "We are here to answer all your questions"
+    },
+    "form": {
+      "title": "Send a message",
+      "description": "Fill out the form and we will respond as soon as possible.",
+      "name": "First Name",
+      "namePlaceholder": "Your first name",
+      "surname": "Last Name",
+      "surnamePlaceholder": "Your last name",
+      "email": "Email",
+      "emailPlaceholder": "email@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+39 123 456 7890",
+      "company": "Company / Organization",
+      "companyPlaceholder": "Company or organization name",
+      "subject": "Subject",
+      "subjectPlaceholder": "Select a topic",
+      "subjects": {
+        "default": "Select a topic",
+        "info": "General information",
+        "consulting": "Consulting request",
+        "partnership": "Partnership proposal",
+        "energy": "Energy projects",
+        "euGrants": "Grants and funding",
+        "career": "Careers",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Describe your request...",
+      "privacy": "I have read and accept the",
+      "privacyLink": "Privacy Policy",
+      "privacyEnd": "and authorize the processing of my personal data.",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": {
+        "title": "Message sent!",
+        "message": "Thank you for contacting us. We will respond within 24 business hours.",
+        "button": "Send another message"
+      },
+      "error": "An error occurred"
+    },
+    "quickContact": {
+      "badge": "We are at your disposal",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "hoursLabel": "Hours",
+      "hoursValue": "Mon-Fri 8:30-17"
+    },
+    "sidebar": {
+      "whyTitle": "Why contact us?",
+      "reasons": {
+        "consultation": "Free initial consultation",
+        "response": "Response within 24 hours",
+        "team": "Multilingual expert team",
+        "presence": "International presence"
+      },
+      "followTitle": "Follow us",
+      "stats": {
+        "clients": "Clients served",
+        "countries": "Countries worldwide"
+      }
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "Choose your preferred channel to get in touch with us.",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Hours",
+      "hoursValue": "Mon - Fri: 8:30 AM - 5:00 PM",
+      "social": "Follow us"
+    },
+    "offices": {
+      "badge": "Our offices",
+      "title": "Where to find us",
+      "subtitle": "Strategic locations in Italy and Europe to always be close to our clients.",
+      "hqBadge": "Headquarters",
+      "types": {
+        "headquarters": "Headquarters",
+        "office": "Office",
+        "institutional": "Institutional Relations",
+        "euAffairs": "EU Affairs"
+      }
+    },
+    "map": {
+      "placeholder": "Interactive map of our offices",
+      "openMaps": "Open in Google Maps"
+    },
+    "finalCta": {
+      "title": "Need immediate support?",
+      "subtitle": "Our team is ready to assist you.",
+      "button": "Call: +39 089 952889"
+    }
   },
   "consultation": {
-    "hero": { "title": "Request a Consultation", "subtitle": "Fill out the form to be contacted by our team of experts" },
-    "steps": { "company": { "title": "Company", "subtitle": "Tell us about your company" }, "contact": { "title": "Contact", "subtitle": "Your contact details" }, "request": { "title": "Request", "subtitle": "What do you need?" }, "details": { "title": "Details", "subtitle": "Describe your request" } },
-    "fields": { "companyName": "Company Name", "companyType": "Company Type", "sector": "Business Sector", "employees": "Number of Employees", "revenue": "Annual Revenue", "vatNumber": "VAT Number", "firstName": "First Name", "lastName": "Last Name", "email": "Email", "phone": "Phone", "role": "Role in Company", "services": "Services of Interest", "budget": "Indicative Budget", "timeline": "Timeline", "description": "Describe your request", "goals": "Goals to achieve", "documents": "Supporting documents", "privacy": "I have read and accept the Privacy Policy and authorize the processing of personal data.", "newsletter": "I would like to receive updates on grants and funding opportunities." },
-    "placeholders": { "companyName": "Your company name", "select": "Select...", "vatNumber": "IT12345678901", "firstName": "Your first name", "lastName": "Your last name", "email": "name@company.com", "phone": "+39 333 1234567", "role": "e.g., CEO, Director...", "description": "Describe in detail your request and needs...", "goals": "What goals would you like to achieve with our support?", "documents": "Drag files here or click to select (max 10MB per file)" },
-    "companyTypes": { "srl": "LLC", "spa": "Corporation", "snc": "General Partnership", "sas": "Limited Partnership", "individual": "Sole Proprietorship", "cooperative": "Cooperative", "other": "Other" },
-    "sectors": { "manufacturing": "Manufacturing", "services": "Services", "commerce": "Commerce", "agriculture": "Agriculture", "technology": "Technology", "construction": "Construction", "tourism": "Tourism", "other": "Other" },
-    "serviceOptions": { "financial": "Financial Consulting", "grants": "Grants and Funding", "international": "International Cooperation", "energy": "Renewable Energy", "training": "Training", "other": "Other" },
-    "budgetOptions": { "under50k": "< €50,000", "50k-100k": "€50,000 - €100,000", "100k-500k": "€100,000 - €500,000", "500k-1m": "€500,000 - €1M", "over1m": "> €1,000,000", "unknown": "To be defined" },
-    "timelineOptions": { "urgent": "Urgent", "1-3months": "1-3 months", "3-6months": "3-6 months", "6-12months": "6-12 months", "flexible": "Flexible" },
-    "buttons": { "previous": "Previous", "next": "Next", "submit": "Submit Request", "submitting": "Submitting...", "selectFiles": "Select files" },
-    "success": { "title": "Request Sent Successfully!", "message": "Thank you for contacting us. A consultant will contact you within 24 business hours.", "nextSteps": "In the meantime, you can explore our website to discover all our services and projects.", "backHome": "Back to Home" }
+    "hero": {
+      "title": "Request a Consultation",
+      "subtitle": "Fill out the form to be contacted by our team of experts"
+    },
+    "steps": {
+      "company": {
+        "title": "Company",
+        "subtitle": "Tell us about your company"
+      },
+      "contact": {
+        "title": "Contact",
+        "subtitle": "Your contact details"
+      },
+      "request": {
+        "title": "Request",
+        "subtitle": "What do you need?"
+      },
+      "details": {
+        "title": "Details",
+        "subtitle": "Describe your request"
+      }
+    },
+    "fields": {
+      "companyName": "Company Name",
+      "companyType": "Company Type",
+      "sector": "Business Sector",
+      "employees": "Number of Employees",
+      "revenue": "Annual Revenue",
+      "vatNumber": "VAT Number",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "role": "Role in Company",
+      "services": "Services of Interest",
+      "budget": "Indicative Budget",
+      "timeline": "Timeline",
+      "description": "Describe your request",
+      "goals": "Goals to achieve",
+      "documents": "Supporting documents",
+      "privacy": "I have read and accept the Privacy Policy and authorize the processing of personal data.",
+      "newsletter": "I would like to receive updates on grants and funding opportunities."
+    },
+    "placeholders": {
+      "companyName": "Your company name",
+      "select": "Select...",
+      "vatNumber": "IT12345678901",
+      "firstName": "Your first name",
+      "lastName": "Your last name",
+      "email": "name@company.com",
+      "phone": "+39 333 1234567",
+      "role": "e.g., CEO, Director...",
+      "description": "Describe in detail your request and needs...",
+      "goals": "What goals would you like to achieve with our support?",
+      "documents": "Drag files here or click to select (max 10MB per file)"
+    },
+    "companyTypes": {
+      "srl": "LLC",
+      "spa": "Corporation",
+      "snc": "General Partnership",
+      "sas": "Limited Partnership",
+      "individual": "Sole Proprietorship",
+      "cooperative": "Cooperative",
+      "other": "Other"
+    },
+    "sectors": {
+      "manufacturing": "Manufacturing",
+      "services": "Services",
+      "commerce": "Commerce",
+      "agriculture": "Agriculture",
+      "technology": "Technology",
+      "construction": "Construction",
+      "tourism": "Tourism",
+      "other": "Other"
+    },
+    "serviceOptions": {
+      "financial": "Financial Consulting",
+      "grants": "Grants and Funding",
+      "international": "International Cooperation",
+      "energy": "Renewable Energy",
+      "training": "Training",
+      "other": "Other"
+    },
+    "budgetOptions": {
+      "under50k": "< €50,000",
+      "50k-100k": "€50,000 - €100,000",
+      "100k-500k": "€100,000 - €500,000",
+      "500k-1m": "€500,000 - €1M",
+      "over1m": "> €1,000,000",
+      "unknown": "To be defined"
+    },
+    "timelineOptions": {
+      "urgent": "Urgent",
+      "1-3months": "1-3 months",
+      "3-6months": "3-6 months",
+      "6-12months": "6-12 months",
+      "flexible": "Flexible"
+    },
+    "buttons": {
+      "previous": "Previous",
+      "next": "Next",
+      "submit": "Submit Request",
+      "submitting": "Submitting...",
+      "selectFiles": "Select files"
+    },
+    "success": {
+      "title": "Request Sent Successfully!",
+      "message": "Thank you for contacting us. A consultant will contact you within 24 business hours.",
+      "nextSteps": "In the meantime, you can explore our website to discover all our services and projects.",
+      "backHome": "Back to Home"
+    }
   },
   "auth": {
-    "login": { "title": "Login", "subtitle": "Access your client area", "email": "Email", "password": "Password", "remember": "Remember me", "forgot": "Forgot password?", "submit": "Login", "noAccount": "Don't have an account?", "register": "Register" },
-    "register": { "title": "Register", "subtitle": "Create your account", "name": "Full name", "email": "Email", "password": "Password", "confirmPassword": "Confirm Password", "submit": "Register", "hasAccount": "Already have an account?", "login": "Login" },
-    "forgot": { "title": "Recover Password", "subtitle": "Enter your email to recover your password", "email": "Email", "submit": "Send Link", "success": "Email sent! Check your inbox.", "back": "Back to login" },
+    "login": {
+      "title": "Login",
+      "subtitle": "Access your client area",
+      "email": "Email",
+      "password": "Password",
+      "remember": "Remember me",
+      "forgot": "Forgot password?",
+      "submit": "Login",
+      "noAccount": "Don't have an account?",
+      "register": "Register"
+    },
+    "register": {
+      "title": "Register",
+      "subtitle": "Create your account",
+      "name": "Full name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Register",
+      "hasAccount": "Already have an account?",
+      "login": "Login"
+    },
+    "forgot": {
+      "title": "Recover Password",
+      "subtitle": "Enter your email to recover your password",
+      "email": "Email",
+      "submit": "Send Link",
+      "success": "Email sent! Check your inbox.",
+      "back": "Back to login"
+    },
     "reset": {
       "title": "Reset Password",
       "subtitle": "Enter your new password",
@@ -906,8 +1530,18 @@
       "roma": "Rome",
       "bruxelles": "Brussels"
     },
-    "legal": { "privacy": "Privacy Policy", "terms": "Terms and Conditions", "cookies": "Cookie Policy" },
-    "newsletter": { "title": "Newsletter", "subtitle": "Subscribe to receive the latest news", "placeholder": "Your email", "submit": "Subscribe", "success": "Subscription completed!" },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms and Conditions",
+      "cookies": "Cookie Policy"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Subscribe to receive the latest news",
+      "placeholder": "Your email",
+      "submit": "Subscribe",
+      "success": "Subscription completed!"
+    },
     "copyright": "© {year} All rights reserved",
     "credits": "Created by <a href=\"https://www.pieromuscari.it\" target=\"_blank\" rel=\"noopener noreferrer\">Piero Muscari Storytailor</a> in collaboration with <a href=\"https://www.fodisrl.it\" target=\"_blank\" rel=\"noopener noreferrer\">Fodi S.r.l.</a>",
     "owner": "This website is owned by: FUTURO & PROGRAMMAZIONE SRL - VAT 05749040654"
@@ -918,14 +1552,21 @@
       "title": "Privacy Policy",
       "subtitle": "Information on the processing of personal data pursuant to EU Regulation 2016/679 (GDPR)",
       "lastUpdate": "Last update: December 2024",
-      "content": "<h2>1. Data Controller</h2><p>The Data Controller is <strong>Gruppo Cestari S.r.l.</strong>, with registered office in Salerno, Italy.</p><ul><li><strong>Email:</strong> privacy@gruppocestari.com</li><li><strong>Phone:</strong> +39 089 952889</li><li><strong>PEC:</strong> gruppocestari@pec.it</li></ul><h2>2. Types of Data Collected</h2><p>Among the personal data collected by this website, either independently or through third parties, are: usage data, email, first name, last name, phone number, company name, VAT number and address.</p><p>Personal data may be freely provided by the User or, in the case of usage data, collected automatically when using this website.</p><h2>3. Purpose of Processing</h2><p>User data is collected for the following purposes:</p><ul><li>Management of contact and consultation requests</li><li>Sending commercial communications and newsletters (with prior consent)</li><li>Management of the reserved area and related services</li><li>Compliance with legal and tax obligations</li><li>Aggregate and anonymous statistical analysis</li></ul><h2>4. Legal Basis for Processing</h2><p>The processing of personal data is based on:</p><ul><li><strong>Consent:</strong> for sending newsletters and commercial communications</li><li><strong>Contractual execution:</strong> for managing requested services</li><li><strong>Legal obligation:</strong> for tax and regulatory compliance</li><li><strong>Legitimate interest:</strong> for statistical analysis and service improvement</li></ul><h2>5. Processing Methods</h2><p>Processing is carried out using IT and/or telematic tools, with organizational and logical methods strictly related to the stated purposes. Adequate technical and organizational security measures are adopted.</p><h2>6. Data Retention</h2><p>Personal data will be retained for the time necessary to achieve the purposes for which they are processed and in any case:</p><ul><li>Contractual data: 10 years from termination of the relationship</li><li>Tax data: according to legal terms</li><li>Marketing data: until consent is withdrawn</li><li>Browsing data: 24 months</li></ul><h2>7. Data Subject Rights</h2><p>The User may exercise the following rights:</p><ul><li><strong>Access:</strong> obtain confirmation of processing and a copy of the data</li><li><strong>Rectification:</strong> correct inaccurate or incomplete data</li><li><strong>Erasure:</strong> request deletion of data</li><li><strong>Restriction:</strong> limit processing in certain cases</li><li><strong>Portability:</strong> receive data in structured format</li><li><strong>Objection:</strong> object to processing for legitimate reasons</li><li><strong>Consent withdrawal:</strong> at any time, without affecting the lawfulness of previous processing</li></ul><p>To exercise their rights, Users can send a request to <a href=\"mailto:privacy@gruppocestari.com\">privacy@gruppocestari.com</a>.</p><h2>8. Data Communication and Disclosure</h2><p>Personal data will not be disclosed. They may be communicated to:</p><ul><li>Entities providing services for IT system management</li><li>Professional firms for legal, tax and accounting consultancy</li><li>Competent authorities for legal compliance</li></ul><h2>9. Data Transfer</h2><p>Personal data is processed at the Controller's premises and in the data centers of IT service providers. Data is not transferred outside the European Union.</p><h2>10. Changes to Privacy Policy</h2><p>The Controller reserves the right to make changes to this privacy policy at any time, informing Users on this page.</p>"
+      "content": "<h2>1. Data Controller</h2><p>The Data Controller is <strong>Gruppo Cestari S.r.l.</strong>, with registered office in Salerno, Italy.</p><ul><li><strong>Email:</strong> privacy@gruppocestari.com</li><li><strong>Phone:</strong> +39 089 952889</li><li><strong>PEC:</strong> gruppocestari@pec.it</li></ul><h2>2. Types of Data Collected</h2><p>Among the personal data collected by this website, either independently or through third parties, are: usage data, email, first name, last name, phone number, company name, VAT number and address.</p><p>Personal data may be freely provided by the User or, in the case of usage data, collected automatically when using this website.</p><h2>3. Purpose of Processing</h2><p>User data is collected for the following purposes:</p><ul><li>Management of contact and consultation requests</li><li>Sending commercial communications and newsletters (with prior consent)</li><li>Management of the reserved area and related services</li><li>Compliance with legal and tax obligations</li><li>Aggregate and anonymous statistical analysis</li></ul><h2>4. Legal Basis for Processing</h2><p>The processing of personal data is based on:</p><ul><li><strong>Consent:</strong> for sending newsletters and commercial communications</li><li><strong>Contractual execution:</strong> for managing requested services</li><li><strong>Legal obligation:</strong> for tax and regulatory compliance</li><li><strong>Legitimate interest:</strong> for statistical analysis and service improvement</li></ul><h2>5. Processing Methods</h2><p>Processing is carried out using IT and/or telematic tools, with organizational and logical methods strictly related to the stated purposes. Adequate technical and organizational security measures are adopted.</p><h2>6. Data Retention</h2><p>Personal data will be retained for the time necessary to achieve the purposes for which they are processed and in any case:</p><ul><li>Contractual data: 10 years from termination of the relationship</li><li>Tax data: according to legal terms</li><li>Marketing data: until consent is withdrawn</li><li>Browsing data: 24 months</li></ul><h2>7. Data Subject Rights</h2><p>The User may exercise the following rights:</p><ul><li><strong>Access:</strong> obtain confirmation of processing and a copy of the data</li><li><strong>Rectification:</strong> correct inaccurate or incomplete data</li><li><strong>Erasure:</strong> request deletion of data</li><li><strong>Restriction:</strong> limit processing in certain cases</li><li><strong>Portability:</strong> receive data in structured format</li><li><strong>Objection:</strong> object to processing for legitimate reasons</li><li><strong>Consent withdrawal:</strong> at any time, without affecting the lawfulness of previous processing</li></ul><p>To exercise their rights, Users can send a request to <a href=\"mailto:privacy@gruppocestari.com\">privacy@gruppocestari.com</a>.</p><h2>8. Data Communication and Disclosure</h2><p>Personal data will not be disclosed. They may be communicated to:</p><ul><li>Entities providing services for IT system management</li><li>Professional firms for legal, tax and accounting consultancy</li><li>Competent authorities for legal compliance</li></ul><h2>9. Data Transfer</h2><p>Personal data is processed at the Controller's premises and in the data centers of IT service providers. Data is not transferred outside the European Union.</p><h2>10. Changes to Privacy Policy</h2><p>The Controller reserves the right to make changes to this privacy policy at any time, informing Users on this page.</p><h2>Website Development and Technical Management</h2><p>This website was built and is managed by:</p><p><strong>FODI S.r.l. – Innovative Startup</strong><br>Via Santicelli 18/A, 88068 Soverato (CZ), Italy<br>VAT: IT03856160793<br>Email: <a href=\"mailto:info@fodisrl.it\">info@fodisrl.it</a><br>Phone: +39 0963 576433<br>Web: <a href=\"https://www.fodisrl.it\" target=\"_blank\" rel=\"noopener noreferrer\">www.fodisrl.it</a></p>"
     },
     "cookies": {
       "badge": "Cookie Notice",
       "title": "Cookie Policy",
       "subtitle": "Information on the use of cookies pursuant to EU Regulation 2016/679 (GDPR) and Directive 2002/58/EC",
       "lastUpdate": "Last update: December 2024",
-      "content": "<h2>What are Cookies</h2><p>Cookies are small text files that websites send to the user's browser, where they are stored, to be retransmitted to the same sites on subsequent visits.</p><h2>Types of Cookies Used</h2><div class=\"not-prose grid gap-6 my-8\"><div class=\"flex gap-4 p-6 rounded-xl bg-slate-50 border border-slate-200\"><div class=\"shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center\">⚙️</div><div><h3 class=\"font-semibold text-slate-800 mb-2\">Technical Cookies (Necessary)</h3><p class=\"text-slate-600 text-sm\">Essential for the proper functioning of the site. They include session cookies, authentication and user preferences (such as language). Do not require consent.</p></div></div><div class=\"flex gap-4 p-6 rounded-xl bg-slate-50 border border-slate-200\"><div class=\"shrink-0 w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center\">📊</div><div><h3 class=\"font-semibold text-slate-800 mb-2\">Analytics Cookies</h3><p class=\"text-slate-600 text-sm\">Used to collect aggregate information on site usage (pages visited, time spent). Help improve user experience.</p></div></div><div class=\"flex gap-4 p-6 rounded-xl bg-slate-50 border border-slate-200\"><div class=\"shrink-0 w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center\">🔗</div><div><h3 class=\"font-semibold text-slate-800 mb-2\">Third-Party Cookies</h3><p class=\"text-slate-600 text-sm\">Cookies installed by external services (e.g. Google Maps, social media). Management is governed by their respective privacy policies.</p></div></div></div><h2>Technical Cookies Used</h2><table><thead><tr><th>Name</th><th>Purpose</th><th>Duration</th></tr></thead><tbody><tr><td><code>session</code></td><td>User session management</td><td>Session</td></tr><tr><td><code>locale</code></td><td>Language preference</td><td>1 year</td></tr><tr><td><code>cookie-consent</code></td><td>Stores cookie preferences</td><td>1 year</td></tr><tr><td><code>theme</code></td><td>Theme preference (light/dark)</td><td>1 year</td></tr></tbody></table><h2>How to Manage Cookies</h2><p>Users can manage cookie preferences directly within their browser and prevent third parties from installing them. Browser preferences can also be used to delete previously installed cookies.</p><h3>Instructions for major browsers:</h3><ul><li><strong>Chrome:</strong> Settings → Privacy and security → Cookies and other site data</li><li><strong>Firefox:</strong> Options → Privacy and security → Cookies and site data</li><li><strong>Safari:</strong> Preferences → Privacy → Manage website data</li><li><strong>Edge:</strong> Settings → Cookies and site permissions → Cookies and site data</li></ul><h2>Consequences of Disabling Cookies</h2><p>By disabling technical cookies, some site features may not be available or may not work properly. Users may need to log in at each visit and preferences will not be saved.</p><h2>Updates</h2><p>This Cookie Policy may be subject to changes. It is recommended to periodically consult this page to check for updates.</p><h2>Contact</h2><p>For any questions regarding this Cookie Policy, please contact us:</p><ul><li><strong>Email:</strong> privacy@gruppocestari.com</li><li><strong>Phone:</strong> +39 089 952889</li></ul>"
+      "content": "<h2>What are Cookies</h2><p>Cookies are small text files that websites send to the user's browser, where they are stored, to be retransmitted to the same sites on subsequent visits.</p><h2>Types of Cookies Used</h2><div class=\"not-prose grid gap-6 my-8\"><div class=\"flex gap-4 p-6 rounded-xl bg-slate-50 border border-slate-200\"><div class=\"shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center\">⚙️</div><div><h3 class=\"font-semibold text-slate-800 mb-2\">Technical Cookies (Necessary)</h3><p class=\"text-slate-600 text-sm\">Essential for the proper functioning of the site. They include session cookies, authentication and user preferences (such as language). Do not require consent.</p></div></div><div class=\"flex gap-4 p-6 rounded-xl bg-slate-50 border border-slate-200\"><div class=\"shrink-0 w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center\">📊</div><div><h3 class=\"font-semibold text-slate-800 mb-2\">Analytics Cookies</h3><p class=\"text-slate-600 text-sm\">Used to collect aggregate information on site usage (pages visited, time spent). Help improve user experience.</p></div></div><div class=\"flex gap-4 p-6 rounded-xl bg-slate-50 border border-slate-200\"><div class=\"shrink-0 w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center\">🔗</div><div><h3 class=\"font-semibold text-slate-800 mb-2\">Third-Party Cookies</h3><p class=\"text-slate-600 text-sm\">Cookies installed by external services (e.g. Google Maps, social media). Management is governed by their respective privacy policies.</p></div></div></div><h2>Technical Cookies Used</h2><table><thead><tr><th>Name</th><th>Purpose</th><th>Duration</th></tr></thead><tbody><tr><td><code>session</code></td><td>User session management</td><td>Session</td></tr><tr><td><code>locale</code></td><td>Language preference</td><td>1 year</td></tr><tr><td><code>cookie-consent</code></td><td>Stores cookie preferences</td><td>1 year</td></tr><tr><td><code>theme</code></td><td>Theme preference (light/dark)</td><td>1 year</td></tr></tbody></table><h2>How to Manage Cookies</h2><p>Users can manage cookie preferences directly within their browser and prevent third parties from installing them. Browser preferences can also be used to delete previously installed cookies.</p><h3>Instructions for major browsers:</h3><ul><li><strong>Chrome:</strong> Settings → Privacy and security → Cookies and other site data</li><li><strong>Firefox:</strong> Options → Privacy and security → Cookies and site data</li><li><strong>Safari:</strong> Preferences → Privacy → Manage website data</li><li><strong>Edge:</strong> Settings → Cookies and site permissions → Cookies and site data</li></ul><h2>Consequences of Disabling Cookies</h2><p>By disabling technical cookies, some site features may not be available or may not work properly. Users may need to log in at each visit and preferences will not be saved.</p><h2>Updates</h2><p>This Cookie Policy may be subject to changes. It is recommended to periodically consult this page to check for updates.</p><h2>Contact</h2><p>For any questions regarding this Cookie Policy, please contact us:</p><ul><li><strong>Email:</strong> privacy@gruppocestari.com</li><li><strong>Phone:</strong> +39 089 952889</li></ul><h2>Website Development and Technical Management</h2><p>This website was built and is managed by:</p><p><strong>FODI S.r.l. – Innovative Startup</strong><br>Via Santicelli 18/A, 88068 Soverato (CZ), Italy<br>VAT: IT03856160793<br>Email: <a href=\"mailto:info@fodisrl.it\">info@fodisrl.it</a><br>Phone: +39 0963 576433<br>Web: <a href=\"https://www.fodisrl.it\" target=\"_blank\" rel=\"noopener noreferrer\">www.fodisrl.it</a></p>"
+    },
+    "terms": {
+      "badge": "Terms and Conditions",
+      "title": "Terms and Conditions",
+      "subtitle": "Terms of use of the Gruppo Cestari website.",
+      "content": "<h2>1. Purpose</h2><p>This website is managed by <strong>FUTURO &amp; PROGRAMMAZIONE SRL</strong>, with registered office in Fisciano (SA), Italy. The site provides information about Gruppo Cestari's activities in financial consulting, international cooperation and sustainable development.</p><h2>2. Use of the Site</h2><p>The user agrees to:</p><ul><li>Use the site lawfully and in accordance with these terms</li><li>Not spread illegal, offensive or defamatory content</li><li>Not attempt to access restricted areas without authorization</li><li>Provide truthful data in contact forms and registration</li></ul><h2>3. Intellectual Property</h2><p>All site content (texts, images, logos, videos, graphics) is the property of FUTURO &amp; PROGRAMMAZIONE SRL or their respective owners and is protected by copyright laws. Reproduction, distribution or modification of content without written authorization is prohibited.</p><h2>4. Account and Registration</h2><p>Some areas of the site require registration. The user is responsible for the confidentiality of their credentials and all activities carried out with their account.</p><h2>5. Limitation of Liability</h2><p>Gruppo Cestari strives to keep site information accurate and up to date, but does not guarantee the completeness or accuracy of the content. The site is provided \"as is\", without warranties of any kind.</p><h2>6. Changes to Terms</h2><p>We reserve the right to modify these Terms and Conditions at any time. Changes will be published on this page.</p><h2>7. Applicable Law</h2><p>These Terms and Conditions are governed by Italian law. For any dispute, the Court of Salerno shall have jurisdiction.</p><h2>Website Development and Technical Management</h2><p>This website was built and is managed by:</p><p><strong>FODI S.r.l. – Innovative Startup</strong><br>Via Santicelli 18/A, 88068 Soverato (CZ), Italy<br>VAT: IT03856160793<br>Email: <a href=\"mailto:info@fodisrl.it\">info@fodisrl.it</a><br>Phone: +39 0963 576433<br>Web: <a href=\"https://www.fodisrl.it\" target=\"_blank\" rel=\"noopener noreferrer\">www.fodisrl.it</a></p>",
+      "lastUpdate": "Last updated: February 2026"
     }
   },
   "faq": {
