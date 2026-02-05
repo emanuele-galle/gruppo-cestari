@@ -165,9 +165,8 @@ export function YouTubePlayer({
         rel: 0,
         showinfo: 0,
         playsinline: 1,
-        loop: loop ? 1 : 0,
-        playlist: loop ? videoId : '',
         origin: window.location.origin,
+        ...(loop ? { loop: 1, playlist: videoId } : {}),
       },
       events: {
         onReady: (event) => {
