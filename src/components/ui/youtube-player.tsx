@@ -256,11 +256,17 @@ export function YouTubePlayer({
     };
   }, [stopProgressTracking]);
 
+  // Init player dopo che il DOM è renderizzato (isStarted → true → re-render → ref disponibile)
+  useEffect(() => {
+    if (isStarted && !playerRef.current) {
+      initPlayer();
+    }
+  }, [isStarted, initPlayer]);
+
   // Controlli
   const handleStart = useCallback(() => {
     setIsStarted(true);
-    initPlayer();
-  }, [initPlayer]);
+  }, []);
 
   const togglePlay = useCallback(() => {
     if (!playerRef.current) return;
