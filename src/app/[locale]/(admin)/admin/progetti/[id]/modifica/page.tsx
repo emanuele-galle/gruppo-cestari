@@ -16,8 +16,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, ImageUpload, GalleryUpload } from '@/components/admin';
-import { ArrowLeft, Save, Eye, Loader2, Trash2, FolderKanban, BarChart3, Calendar, Images } from 'lucide-react';
+import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, ImageUpload, GalleryUpload, FileUpload } from '@/components/admin';
+import { ArrowLeft, Save, Eye, Loader2, Trash2, FolderKanban, BarChart3, Calendar, Images, FileText } from 'lucide-react';
 import type { GalleryImage } from '@/lib/types/gallery';
 import { parseGallery } from '@/lib/types/gallery';
 import { toast } from 'sonner';
@@ -69,11 +69,20 @@ const SECTOR_OPTIONS = [
   { value: 'COOPERATION', label: 'Cooperazione' },
   { value: 'RENEWABLE_ENERGY', label: 'Energie Rinnovabili' },
   { value: 'DEVELOPMENT', label: 'Sviluppo' },
+  { value: 'REAL_ESTATE', label: 'Immobiliare' },
   { value: 'OTHER', label: 'Altro' },
 ];
 
 const COUNTRY_OPTIONS = [
+  // Europa
   { value: 'IT', label: 'Italia' },
+  { value: 'FR', label: 'Francia' },
+  { value: 'DE', label: 'Germania' },
+  { value: 'ES', label: 'Spagna' },
+  { value: 'GB', label: 'Regno Unito' },
+  { value: 'BE', label: 'Belgio' },
+  { value: 'CH', label: 'Svizzera' },
+  // Africa
   { value: 'ET', label: 'Etiopia' },
   { value: 'KE', label: 'Kenya' },
   { value: 'TZ', label: 'Tanzania' },
@@ -87,8 +96,12 @@ const COUNTRY_OPTIONS = [
   { value: 'SN', label: 'Senegal' },
   { value: 'CI', label: "Costa d'Avorio" },
   { value: 'CD', label: 'RD Congo' },
+  { value: 'CG', label: 'Congo Brazzaville' },
   { value: 'UG', label: 'Uganda' },
   { value: 'RW', label: 'Rwanda' },
+  // Altro
+  { value: 'INT', label: 'Internazionale' },
+  { value: 'MULTI', label: 'Multi-paese' },
 ];
 
 export default function EditProjectPage({
@@ -105,8 +118,12 @@ export default function EditProjectPage({
   const [country, setCountry] = useState<string>('');
   const [featuredImage, setFeaturedImage] = useState('');
   const [gallery, setGallery] = useState<GalleryImage[]>([]);
+  const [attachments, setAttachments] = useState<string[]>([]);
   const [isPublished, setIsPublished] = useState(false);
   const [isFeatured, setIsFeatured] = useState(false);
+  const [startDate, setStartDate] = useState<string>('');
+  const [endDate, setEndDate] = useState<string>('');
+  const [isOngoing, setIsOngoing] = useState(false);
   const [activeLocale, setActiveLocale] = useState<Locale>(locale);
 
   const [translations, setTranslations] = useState<Record<Locale, ProjectTranslation>>({
@@ -148,8 +165,26 @@ export default function EditProjectPage({
       setCountry(project.country);
       setFeaturedImage(project.featuredImage || '');
       setGallery(parseGallery(project.gallery));
+      // Load attachments (array of objects with url property)
+      if (Array.isArray(project.attachments)) {
+        const urls = project.attachments.map((item: any) =>
+          typeof item === 'object' && item?.url ? item.url : String(item)
+        );
+        setAttachments(urls);
+      }
       setIsPublished(project.isPublished);
       setIsFeatured(project.isFeatured);
+
+      // Date handling
+      if (project.startDate) {
+        setStartDate(new Date(project.startDate).toISOString().split('T')[0]);
+      }
+      if (project.endDate) {
+        setEndDate(new Date(project.endDate).toISOString().split('T')[0]);
+        setIsOngoing(false);
+      } else {
+        setIsOngoing(true);
+      }
 
       // Populate translations
       const newTranslations: Record<Locale, ProjectTranslation> = {
@@ -234,12 +269,19 @@ export default function EditProjectPage({
     updateMutation.mutate({
       id,
       slug,
-      sector: sector as 'FINANCE' | 'COOPERATION' | 'RENEWABLE_ENERGY' | 'DEVELOPMENT' | 'OTHER',
+      sector: sector as 'FINANCE' | 'COOPERATION' | 'RENEWABLE_ENERGY' | 'DEVELOPMENT' | 'REAL_ESTATE' | 'OTHER',
       country,
       featuredImage: featuredImage || null,
       gallery,
+      attachments: attachments.map((url, index) => ({
+        url,
+        title: url.split('/').pop() || 'Documento',
+        order: index,
+      })),
       isPublished,
       isFeatured,
+      startDate: startDate ? new Date(startDate) : null,
+      endDate: isOngoing ? null : (endDate ? new Date(endDate) : null),
       translations: validTranslations.map(t => ({
         ...t,
         subtitle: t.subtitle || undefined,
@@ -470,6 +512,25 @@ export default function EditProjectPage({
                 />
               </CardContent>
             </Card>
+
+            {/* Attachments */}
+            <Card variant="glass" delay={0.18}>
+              <CardHeader
+                title="Allegati PDF"
+                description="Carica documenti e file PDF del progetto"
+                icon={<FileText className="h-5 w-5" />}
+              />
+              <CardContent>
+                <FileUpload
+                  value={attachments}
+                  onChange={setAttachments}
+                  folder="progetti/attachments"
+                  maxFiles={10}
+                  accept=".pdf"
+                  maxSizeMB={50}
+                />
+              </CardContent>
+            </Card>
           </motion.div>
 
           {/* Sidebar */}
@@ -589,6 +650,52 @@ export default function EditProjectPage({
                       </SelectContent>
                     </Select>
                   </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="startDate" className="text-slate-900">
+                      Data Inizio
+                    </Label>
+                    <Input
+                      id="startDate"
+                      type="date"
+                      value={startDate}
+                      onChange={(e) => setStartDate(e.target.value)}
+                      className="bg-white border-slate-300 text-slate-900 focus:border-primary"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-white border border-slate-300">
+                    <div>
+                      <Label htmlFor="ongoing" className="text-slate-900 font-medium">
+                        Progetto in corso
+                      </Label>
+                      <p className="text-xs text-slate-600">Ancora attivo</p>
+                    </div>
+                    <Switch
+                      id="ongoing"
+                      checked={isOngoing}
+                      onCheckedChange={(checked) => {
+                        setIsOngoing(checked);
+                        if (checked) setEndDate('');
+                      }}
+                    />
+                  </div>
+
+                  {!isOngoing && (
+                    <div className="space-y-2">
+                      <Label htmlFor="endDate" className="text-slate-900">
+                        Data Fine
+                      </Label>
+                      <Input
+                        id="endDate"
+                        type="date"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        min={startDate}
+                        className="bg-white border-slate-300 text-slate-900 focus:border-primary"
+                      />
+                    </div>
+                  )}
 
                   <div className="space-y-2">
                     <Label className="text-slate-900">

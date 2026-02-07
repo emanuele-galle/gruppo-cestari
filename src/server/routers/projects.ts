@@ -3,7 +3,7 @@ import { router, adminProcedure, publicProcedure } from '../trpc';
 import { TRPCError } from '@trpc/server';
 
 // Enum values matching Prisma schema
-const ProjectSectorEnum = z.enum(['FINANCE', 'COOPERATION', 'RENEWABLE_ENERGY', 'DEVELOPMENT', 'OTHER']);
+const ProjectSectorEnum = z.enum(['FINANCE', 'COOPERATION', 'RENEWABLE_ENERGY', 'DEVELOPMENT', 'REAL_ESTATE', 'OTHER']);
 
 // Gallery image schema matching GalleryImage type
 const galleryImageSchema = z.object({
@@ -13,6 +13,13 @@ const galleryImageSchema = z.object({
   order: z.number().int().min(0),
 });
 
+// Attachment schema for PDFs and documents (simplified - just URL)
+const attachmentSchema = z.object({
+  url: z.string().url(),
+  title: z.string().optional(),
+  order: z.number().int().min(0).default(0),
+});
+
 // Input schemas
 const projectCreateInput = z.object({
   slug: z.string().min(1).max(100),
@@ -20,6 +27,7 @@ const projectCreateInput = z.object({
   country: z.string().length(2), // ISO country code
   featuredImage: z.string().optional(),
   gallery: z.array(galleryImageSchema).default([]),
+  attachments: z.array(attachmentSchema).default([]),
   startDate: z.date().optional(),
   endDate: z.date().optional(),
   isPublished: z.boolean().default(false),
@@ -44,6 +52,7 @@ const projectUpdateInput = z.object({
   country: z.string().length(2).optional(),
   featuredImage: z.string().nullable().optional(),
   gallery: z.array(galleryImageSchema).optional(),
+  attachments: z.array(attachmentSchema).optional(),
   startDate: z.date().nullable().optional(),
   endDate: z.date().nullable().optional(),
   isPublished: z.boolean().optional(),

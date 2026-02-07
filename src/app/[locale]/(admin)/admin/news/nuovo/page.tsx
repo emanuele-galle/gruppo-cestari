@@ -17,7 +17,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, ImageUpload, GalleryUpload } from '@/components/admin';
+import {
+  PageHeader,
+  Card,
+  CardHeader,
+  CardContent,
+  RichTextEditor,
+  ImageUpload,
+  GalleryUpload,
+  AttachmentsManager,
+  VideoManager,
+  type AttachmentData,
+  type VideoData,
+} from '@/components/admin';
 import { ArrowLeft, Save, Eye, Loader2, Newspaper, Images } from 'lucide-react';
 import type { GalleryImage } from '@/lib/types/gallery';
 import { toast } from 'sonner';

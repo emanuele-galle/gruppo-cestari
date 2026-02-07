@@ -78,11 +78,18 @@ const SECTOR_LABELS: Record<string, string> = {
   COOPERATION: 'Cooperazione',
   RENEWABLE_ENERGY: 'Energie Rinnovabili',
   DEVELOPMENT: 'Sviluppo',
+  REAL_ESTATE: 'Immobiliare',
   OTHER: 'Altro',
 };
 
 const COUNTRY_LABELS: Record<string, string> = {
   IT: 'Italia',
+  FR: 'Francia',
+  DE: 'Germania',
+  ES: 'Spagna',
+  GB: 'Regno Unito',
+  BE: 'Belgio',
+  CH: 'Svizzera',
   ET: 'Etiopia',
   KE: 'Kenya',
   TZ: 'Tanzania',

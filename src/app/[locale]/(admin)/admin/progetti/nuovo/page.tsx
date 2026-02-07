@@ -17,8 +17,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { PageHeader, Card, CardHeader, CardContent, RichTextEditor, ImageUpload, GalleryUpload } from '@/components/admin';
-import { ArrowLeft, Save, Eye, Loader2, FolderKanban, Images } from 'lucide-react';
+import {
+  PageHeader,
+  Card,
+  CardHeader,
+  CardContent,
+  RichTextEditor,
+  ImageUpload,
+  GalleryUpload,
+  FileUpload,
+  AttachmentsManager,
+  VideoManager,
+  type AttachmentData,
+  type VideoData,
+} from '@/components/admin';
+import { ArrowLeft, Save, Eye, Loader2, FolderKanban, Images, FileText } from 'lucide-react';
 import type { GalleryImage } from '@/lib/types/gallery';
 import { toast } from 'sonner';
 import { trpc } from '@/lib/trpc';
@@ -58,11 +71,20 @@ const SECTOR_OPTIONS = [
   { value: 'COOPERATION', label: 'Cooperazione' },
   { value: 'RENEWABLE_ENERGY', label: 'Energie Rinnovabili' },
   { value: 'DEVELOPMENT', label: 'Sviluppo' },
+  { value: 'REAL_ESTATE', label: 'Immobiliare' },
   { value: 'OTHER', label: 'Altro' },
 ];
 
 const COUNTRY_OPTIONS = [
+  // Europa
   { value: 'IT', label: 'Italia' },
+  { value: 'FR', label: 'Francia' },
+  { value: 'DE', label: 'Germania' },
+  { value: 'ES', label: 'Spagna' },
+  { value: 'GB', label: 'Regno Unito' },
+  { value: 'BE', label: 'Belgio' },
+  { value: 'CH', label: 'Svizzera' },
+  // Africa
   { value: 'ET', label: 'Etiopia' },
   { value: 'KE', label: 'Kenya' },
   { value: 'TZ', label: 'Tanzania' },
@@ -76,8 +98,12 @@ const COUNTRY_OPTIONS = [
   { value: 'SN', label: 'Senegal' },
   { value: 'CI', label: "Costa d'Avorio" },
   { value: 'CD', label: 'RD Congo' },
+  { value: 'CG', label: 'Congo Brazzaville' },
   { value: 'UG', label: 'Uganda' },
   { value: 'RW', label: 'Rwanda' },
+  // Altro
+  { value: 'INT', label: 'Internazionale' },
+  { value: 'MULTI', label: 'Multi-paese' },
 ];
 
 export default function NewProjectPage() {
@@ -89,8 +115,14 @@ export default function NewProjectPage() {
   const [country, setCountry] = useState<string>('');
   const [featuredImage, setFeaturedImage] = useState('');
   const [gallery, setGallery] = useState<GalleryImage[]>([]);
+  const [attachments, setAttachments] = useState<string[]>([]);
+  const [attachmentsList, setAttachmentsList] = useState<AttachmentData[]>([]);
+  const [videosList, setVideosList] = useState<VideoData[]>([]);
   const [isPublished, setIsPublished] = useState(false);
   const [isFeatured, setIsFeatured] = useState(false);
+  const [startDate, setStartDate] = useState<string>('');
+  const [endDate, setEndDate] = useState<string>('');
+  const [isOngoing, setIsOngoing] = useState(false);
   const [activeLocale, setActiveLocale] = useState<Locale>(locale);
 
   const [translations, setTranslations] = useState<Record<Locale, ProjectTranslation>>({
@@ -101,7 +133,43 @@ export default function NewProjectPage() {
 
   // Create mutation
   const createMutation = trpc.projects.create.useMutation({
-    onSuccess: () => {
+    onSuccess: async (data) => {
+      const projectId = data.id;
+
+      // Save attachments
+      if (attachmentsList.length > 0) {
+        try {
+          await fetch('/api/admin/attachments', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              entityType: 'project',
+              entityId: projectId,
+              attachments: attachmentsList.map((att, idx) => ({ ...att, sortOrder: idx })),
+            }),
+          });
+        } catch (error) {
+          console.error('Error saving attachments:', error);
+        }
+      }
+
+      // Save videos
+      if (videosList.length > 0) {
+        try {
+          await fetch('/api/admin/videos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              entityType: 'project',
+              entityId: projectId,
+              videos: videosList.map((vid, idx) => ({ ...vid, sortOrder: idx })),
+            }),
+          });
+        } catch (error) {
+          console.error('Error saving videos:', error);
+        }
+      }
+
       toast.success('Progetto creato con successo');
       router.push(`/${locale}/admin/progetti`);
     },
@@ -176,12 +244,19 @@ export default function NewProjectPage() {
 
     createMutation.mutate({
       slug,
-      sector: sector as 'FINANCE' | 'COOPERATION' | 'RENEWABLE_ENERGY' | 'DEVELOPMENT' | 'OTHER',
+      sector: sector as 'FINANCE' | 'COOPERATION' | 'RENEWABLE_ENERGY' | 'DEVELOPMENT' | 'REAL_ESTATE' | 'OTHER',
       country,
       featuredImage: featuredImage || undefined,
       gallery,
+      attachments: attachments.map((url, index) => ({
+        url,
+        title: url.split('/').pop() || 'Documento',
+        order: index,
+      })),
       isPublished,
       isFeatured,
+      startDate: startDate ? new Date(startDate) : undefined,
+      endDate: isOngoing ? undefined : (endDate ? new Date(endDate) : undefined),
       translations: validTranslations.map(t => ({
         ...t,
         subtitle: t.subtitle || undefined,
@@ -368,6 +443,51 @@ export default function NewProjectPage() {
                 />
               </CardContent>
             </Card>
+
+            {/* Attachments */}
+            <Card variant="glass" delay={0.18}>
+              <CardHeader
+                title="Allegati PDF"
+                description="Carica documenti e file PDF del progetto"
+                icon={<FileText className="h-5 w-5" />}
+              />
+              <CardContent>
+                <FileUpload
+                  value={attachments}
+                  onChange={setAttachments}
+                  folder="progetti/attachments"
+                  maxFiles={10}
+                  accept=".pdf"
+                  maxSizeMB={50}
+                />
+              </CardContent>
+            </Card>
+
+            {/* Allegati PDF */}
+            <Card variant="glass" delay={0.3}>
+              <CardHeader title="Allegati PDF" />
+              <CardContent>
+                <p className="text-sm text-slate-600 mb-4">
+                  Documenti, presentazioni, report (max 10 file, 100MB ciascuno)
+                </p>
+                <AttachmentsManager
+                  value={attachmentsList}
+                  onChange={setAttachmentsList}
+                  maxAttachments={10}
+                />
+              </CardContent>
+            </Card>
+
+            {/* Video */}
+            <Card variant="glass" delay={0.4}>
+              <CardHeader title="Video" />
+              <CardContent>
+                <p className="text-sm text-slate-600 mb-4">
+                  Embed YouTube/Vimeo o upload diretto (max 5 video, 500MB ciascuno)
+                </p>
+                <VideoManager value={videosList} onChange={setVideosList} maxVideos={5} />
+              </CardContent>
+            </Card>
           </motion.div>
 
           {/* Sidebar */}
@@ -463,6 +583,52 @@ export default function NewProjectPage() {
                       </SelectContent>
                     </Select>
                   </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="startDate" className="text-slate-900">
+                      Data Inizio
+                    </Label>
+                    <Input
+                      id="startDate"
+                      type="date"
+                      value={startDate}
+                      onChange={(e) => setStartDate(e.target.value)}
+                      className="bg-white border-slate-300 text-slate-900 focus:border-primary"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-white border border-slate-300">
+                    <div>
+                      <Label htmlFor="ongoing" className="text-slate-900 font-medium">
+                        Progetto in corso
+                      </Label>
+                      <p className="text-xs text-slate-600">Ancora attivo</p>
+                    </div>
+                    <Switch
+                      id="ongoing"
+                      checked={isOngoing}
+                      onCheckedChange={(checked) => {
+                        setIsOngoing(checked);
+                        if (checked) setEndDate('');
+                      }}
+                    />
+                  </div>
+
+                  {!isOngoing && (
+                    <div className="space-y-2">
+                      <Label htmlFor="endDate" className="text-slate-900">
+                        Data Fine
+                      </Label>
+                      <Input
+                        id="endDate"
+                        type="date"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        min={startDate}
+                        className="bg-white border-slate-300 text-slate-900 focus:border-primary"
+                      />
+                    </div>
+                  )}
 
                   <div className="space-y-2">
                     <Label className="text-slate-900">
