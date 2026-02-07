@@ -12,7 +12,11 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('Application error:', error);
+    console.error('[ErrorBoundary] Application error:', error);
+    console.error('[ErrorBoundary] Error name:', error.name);
+    console.error('[ErrorBoundary] Error message:', error.message);
+    console.error('[ErrorBoundary] Error stack:', error.stack);
+    console.error('[ErrorBoundary] Error digest:', error.digest);
   }, [error]);
 
   return (
