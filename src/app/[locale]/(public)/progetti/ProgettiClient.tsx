@@ -25,6 +25,7 @@ const SECTOR_DB_TO_UI: Record<string, string> = {
   'COOPERATION': 'cooperation',
   'RENEWABLE_ENERGY': 'energy',
   'DEVELOPMENT': 'development',
+  'REAL_ESTATE': 'realestate',
   'OTHER': 'other',
 };
 
@@ -33,6 +34,7 @@ const SECTOR_UI_TO_DB: Record<string, string> = {
   'cooperation': 'COOPERATION',
   'energy': 'RENEWABLE_ENERGY',
   'development': 'DEVELOPMENT',
+  'realestate': 'REAL_ESTATE',
   'other': 'OTHER',
 };
 
@@ -42,6 +44,7 @@ const sectors = [
   { key: 'financial', icon: TrendingUp },
   { key: 'cooperation', icon: Globe },
   { key: 'development', icon: Lightbulb },
+  { key: 'realestate', icon: Building2 },
 ];
 
 const SECTOR_LABELS: Record<string, string> = {
@@ -49,12 +52,19 @@ const SECTOR_LABELS: Record<string, string> = {
   'financial': 'Finanza',
   'cooperation': 'Cooperazione',
   'development': 'Sviluppo',
+  'realestate': 'Immobiliare',
   'other': 'Altro',
 };
 
 // Country code to name mapping
 const COUNTRY_NAMES: Record<string, string> = {
   'IT': 'Italia',
+  'FR': 'Francia',
+  'DE': 'Germania',
+  'ES': 'Spagna',
+  'GB': 'Regno Unito',
+  'BE': 'Belgio',
+  'CH': 'Svizzera',
   'CD': 'Rep. Dem. Congo',
   'CG': 'Congo Brazzaville',
   'ET': 'Etiopia',
