@@ -17,6 +17,8 @@ export { ImageUpload } from './image-upload';
 export { FileUpload } from './file-upload';
 export { GalleryUpload } from './gallery-upload';
 export { GalleryImageEditor } from './gallery-image-editor';
+export { AttachmentsManager, type AttachmentData } from './attachments-manager';
+export { VideoManager, type VideoData } from './video-manager';
 export { BulkActionsBar, bulkActionPresets } from './bulk-actions-bar';
 export type { } from './bulk-actions-bar';
 

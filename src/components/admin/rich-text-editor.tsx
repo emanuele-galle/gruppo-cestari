@@ -7,6 +7,7 @@ import Image from '@tiptap/extension-image';
 import Placeholder from '@tiptap/extension-placeholder';
 import { useCallback, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Video } from '@/lib/tiptap/video-extension';
 import { Button } from '@/components/ui/button';
 import {
   Bold,
@@ -25,6 +26,7 @@ import {
   Heading3,
   Minus,
   Pilcrow,
+  Film,
 } from 'lucide-react';
 import {
   Tooltip,
@@ -103,6 +105,24 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
     if (url) {
       editor.chain().focus().setImage({ src: url }).run();
     }
+  }, [editor]);
+
+  const addVideo = useCallback(() => {
+    if (!editor) return;
+
+    const url = window.prompt('Inserisci URL video (YouTube, Vimeo o URL diretto):');
+
+    if (!url) return;
+
+    // Determina tipo video
+    let type: 'youtube' | 'vimeo' | 'upload' = 'upload';
+    if (url.includes('youtube.com') || url.includes('youtu.be')) {
+      type = 'youtube';
+    } else if (url.includes('vimeo.com')) {
+      type = 'vimeo';
+    }
+
+    editor.chain().focus().setVideo({ src: url, type }).run();
   }, [editor]);
 
   if (!editor) return null;
@@ -215,6 +235,9 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
       <MenuButton onClick={addImage} tooltip="Immagine">
         <ImageIcon className="h-4 w-4" />
       </MenuButton>
+      <MenuButton onClick={addVideo} tooltip="Video">
+        <Film className="h-4 w-4" />
+      </MenuButton>
 
       <div className="w-px h-6 bg-slate-200 mx-1" />
 
@@ -264,6 +287,11 @@ export function RichTextEditor({
       }),
       Placeholder.configure({
         placeholder,
+      }),
+      Video.configure({
+        HTMLAttributes: {
+          class: 'rounded-lg shadow-md',
+        },
       }),
     ],
     content,

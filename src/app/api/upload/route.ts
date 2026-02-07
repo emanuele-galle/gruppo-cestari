@@ -22,10 +22,18 @@ const ALLOWED_TYPES = [
   'text/csv',
   'application/zip',
   'application/x-rar-compressed',
+  // Videos
+  'video/mp4',
+  'video/mpeg',
+  'video/quicktime',
+  'video/x-msvideo',
+  'video/x-ms-wmv',
+  'video/webm',
+  'video/ogg',
 ];
 
-// Max file size (100MB)
-const MAX_FILE_SIZE = 100 * 1024 * 1024;
+// Max file size (500MB for videos, 100MB for others)
+const MAX_FILE_SIZE = 500 * 1024 * 1024;
 
 // POST - Upload file (requires authentication)
 export async function POST(request: NextRequest) {
