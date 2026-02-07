@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: '24'
 
 jobs:
   # ===========================================
@@ -95,7 +95,7 @@ jobs:
       - name: Health check
         run: |
           sleep 15
-          curl -sf https://gruppocestari.it || echo "Health check endpoint not available"
+          curl -sf https://gruppocestari.com || echo "Health check endpoint not available"
 
       - name: Notify deployment
         if: always()
