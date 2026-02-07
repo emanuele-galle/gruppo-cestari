@@ -1,10 +1,77 @@
-# Gruppo Cestari - Database Services
-
-volumes:
-  postgres_data:
-  redis_data:
-
 services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host
+    container_name: gruppo-cestari-app
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - traefik-public
+      - default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik-public"
+      # Router principale: gruppocestari.com (Cloudflare Origin Cert)
+      - "traefik.http.routers.gruppo-cestari.rule=Host(`gruppocestari.com`)"
+      - "traefik.http.routers.gruppo-cestari.entrypoints=websecure"
+      - "traefik.http.routers.gruppo-cestari.tls=true"
+      - "traefik.http.routers.gruppo-cestari.middlewares=cestari-headers,cestari-www-redirect"
+      - "traefik.http.services.gruppo-cestari.loadbalancer.server.port=3000"
+      # Router www redirect
+      - "traefik.http.routers.gruppo-cestari-www.rule=Host(`www.gruppocestari.com`)"
+      - "traefik.http.routers.gruppo-cestari-www.entrypoints=websecure"
+      - "traefik.http.routers.gruppo-cestari-www.tls=true"
+      - "traefik.http.routers.gruppo-cestari-www.middlewares=cestari-www-redirect"
+      - "traefik.http.routers.gruppo-cestari-www.service=gruppo-cestari"
+      # Router HTTP redirect
+      - "traefik.http.routers.gruppo-cestari-http.rule=Host(`gruppocestari.com`) || Host(`www.gruppocestari.com`)"
+      - "traefik.http.routers.gruppo-cestari-http.entrypoints=web"
+      - "traefik.http.routers.gruppo-cestari-http.middlewares=redirect-to-https@file"
+      - "traefik.http.routers.gruppo-cestari-http.service=gruppo-cestari"
+      # Router legacy fodivps1
+      - "traefik.http.routers.gruppo-cestari-legacy.rule=Host(`cestari.fodivps1.cloud`)"
+      - "traefik.http.routers.gruppo-cestari-legacy.entrypoints=websecure"
+      - "traefik.http.routers.gruppo-cestari-legacy.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.gruppo-cestari-legacy.middlewares=cestari-redirect-to-prod"
+      - "traefik.http.routers.gruppo-cestari-legacy.service=gruppo-cestari"
+      # Router legacy HTTP
+      - "traefik.http.routers.gruppo-cestari-legacy-http.rule=Host(`cestari.fodivps1.cloud`)"
+      - "traefik.http.routers.gruppo-cestari-legacy-http.entrypoints=web"
+      - "traefik.http.routers.gruppo-cestari-legacy-http.middlewares=redirect-to-https@file"
+      - "traefik.http.routers.gruppo-cestari-legacy-http.service=gruppo-cestari"
+      # Middleware: headers
+      - "traefik.http.middlewares.cestari-headers.headers.sslredirect=true"
+      - "traefik.http.middlewares.cestari-headers.headers.stsseconds=31536000"
+      - "traefik.http.middlewares.cestari-headers.headers.stsincludesubdomains=true"
+      - "traefik.http.middlewares.cestari-headers.headers.stspreload=true"
+      - "traefik.http.middlewares.cestari-headers.headers.customframeoptionsvalue=SAMEORIGIN"
+      - "traefik.http.middlewares.cestari-headers.headers.contenttypenosniff=true"
+      - "traefik.http.middlewares.cestari-headers.headers.browserxssfilter=true"
+      - "traefik.http.middlewares.cestari-headers.headers.referrerpolicy=strict-origin-when-cross-origin"
+      - "traefik.http.middlewares.cestari-headers.headers.customresponseheaders.X-Robots-Tag=index,follow"
+      # Middleware: www -> non-www
+      - "traefik.http.middlewares.cestari-www-redirect.redirectregex.regex=^https://www\\.gruppocestari\\.com/(.*)"
+      - "traefik.http.middlewares.cestari-www-redirect.redirectregex.replacement=https://gruppocestari.com/$${1}"
+      - "traefik.http.middlewares.cestari-www-redirect.redirectregex.permanent=true"
+      # Middleware: legacy -> production
+      - "traefik.http.middlewares.cestari-redirect-to-prod.redirectregex.regex=^https://cestari\\.fodivps1\\.cloud/(.*)"
+      - "traefik.http.middlewares.cestari-redirect-to-prod.redirectregex.replacement=https://gruppocestari.com/$${1}"
+      - "traefik.http.middlewares.cestari-redirect-to-prod.redirectregex.permanent=true"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
   postgres:
     image: postgres:18-alpine
     container_name: gruppo-cestari-postgres
@@ -17,6 +84,8 @@ services:
       POSTGRES_DB: gruppo_cestari
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - default
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U cestari_user -d gruppo_cestari"]
       interval: 10s
@@ -32,8 +101,18 @@ services:
     command: redis-server --appendonly yes --maxmemory 128mb --maxmemory-policy allkeys-lru --requirepass ${REDIS_PASSWORD:-cestari_redis_2025}
     volumes:
       - redis_data:/data
+    networks:
+      - default
     healthcheck:
       test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-cestari_redis_2025}", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  traefik-public:
+    external: true

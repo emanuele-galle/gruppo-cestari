@@ -50,7 +50,11 @@ coverage
 # Prisma
 prisma/migrations/**/migration_lock.toml
 
-# Backups
+# Docker env (credentials)
+.env.docker
+
+# Backup files
+*.bak
 backups/
 *.dump
 *.sql.gz
