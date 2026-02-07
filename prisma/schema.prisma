@@ -157,9 +157,11 @@ model News {
   viewCount     Int           @default(0) @map("view_count")
   focalPoint    String?       @default("top") @map("focal_point")
 
-  translations NewsTranslation[]
-  tags         NewsTag[]
-  seoMeta      SeoMeta[]
+  translations     NewsTranslation[]
+  tags             NewsTag[]
+  seoMeta          SeoMeta[]
+  attachments      Attachment[]
+  videoAttachments VideoAttachment[]
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -233,14 +235,17 @@ model Project {
   country       String        @db.VarChar(2)
   featuredImage String?       @map("featured_image")
   gallery       Json[]        @default([])
+  attachments   Json[]        @default([])
   startDate     DateTime?     @map("start_date")
   endDate       DateTime?     @map("end_date")
   isPublished   Boolean       @default(false) @map("is_published")
   isFeatured    Boolean       @default(false) @map("is_featured")
   sortOrder     Int           @default(0) @map("sort_order")
 
-  translations ProjectTranslation[]
-  seoMeta      SeoMeta[]
+  translations         ProjectTranslation[]
+  seoMeta              SeoMeta[]
+  attachmentsRelation  Attachment[]
+  videoAttachmentsRelation VideoAttachment[]
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -254,6 +259,7 @@ enum ProjectSector {
   COOPERATION
   RENEWABLE_ENERGY
   DEVELOPMENT
+  REAL_ESTATE
   OTHER
 }
 
@@ -295,9 +301,11 @@ model Bando {
   attachments         String[]
   gallery             Json[]         @default([])
 
-  translations  BandoTranslation[]
-  applications  BandoApplication[]
-  notifications BandoNotification[]
+  translations         BandoTranslation[]
+  applications         BandoApplication[]
+  notifications        BandoNotification[]
+  attachmentsRelation  Attachment[]
+  videoAttachmentsRelation VideoAttachment[]
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -699,4 +707,78 @@ model Setting {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("settings")
+}
+
+// ============================================
+// ATTACHMENTS (PDF/Documents)
+// ============================================
+
+model Attachment {
+  id       String  @id @default(cuid())
+  url      String
+  fileName String  @map("file_name")
+  fileSize Int     @map("file_size")
+  mimeType String  @map("mime_type")
+
+  caption   String? @db.Text
+  captionEn String? @map("caption_en") @db.Text
+  captionFr String? @map("caption_fr") @db.Text
+
+  sortOrder Int @default(0) @map("sort_order")
+
+  projectId String? @map("project_id")
+  newsId    String? @map("news_id")
+  bandoId   String? @map("bando_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  project Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  news    News?    @relation(fields: [newsId], references: [id], onDelete: Cascade)
+  bando   Bando?   @relation(fields: [bandoId], references: [id], onDelete: Cascade)
+
+  @@index([projectId, sortOrder])
+  @@index([newsId, sortOrder])
+  @@index([bandoId, sortOrder])
+  @@map("attachments")
+}
+
+// ============================================
+// VIDEO ATTACHMENTS
+// ============================================
+
+model VideoAttachment {
+  id       String  @id @default(cuid())
+  url      String
+  type     String  // 'youtube' | 'vimeo' | 'upload'
+  fileName String? @map("file_name")
+  fileSize Int?    @map("file_size")
+
+  thumbnail String? @db.Text
+  duration  Int?
+
+  title     String?
+  titleEn   String? @map("title_en")
+  titleFr   String? @map("title_fr")
+  caption   String? @db.Text
+  captionEn String? @map("caption_en") @db.Text
+  captionFr String? @map("caption_fr") @db.Text
+
+  sortOrder Int @default(0) @map("sort_order")
+
+  projectId String? @map("project_id")
+  newsId    String? @map("news_id")
+  bandoId   String? @map("bando_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  project Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  news    News?    @relation(fields: [newsId], references: [id], onDelete: Cascade)
+  bando   Bando?   @relation(fields: [bandoId], references: [id], onDelete: Cascade)
+
+  @@index([projectId, sortOrder])
+  @@index([newsId, sortOrder])
+  @@index([bandoId, sortOrder])
+  @@map("video_attachments")
 }
