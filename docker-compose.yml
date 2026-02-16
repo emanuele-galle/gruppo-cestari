@@ -15,6 +15,7 @@ services:
         condition: service_healthy
     networks:
       - traefik-public
+      - panel-internal
       - default
     labels:
       - "traefik.enable=true"
@@ -115,4 +116,6 @@ volumes:
 
 networks:
   traefik-public:
+    external: true
+  panel-internal:
     external: true
