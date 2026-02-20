@@ -15,26 +15,38 @@ interface Office {
 const offices: Office[] = [
   {
     city: 'Salerno',
-    address: 'Via Roma 123, 84121 Salerno SA, Italia',
+    address: 'Via Don Minzoni, 1 – 84084 Fisciano (SA), Italia',
     isHQ: true,
     flag: '🇮🇹',
     country: 'Italia',
   },
   {
+    city: 'Napoli',
+    address: 'Centro Direzionale Isola A5 – 80143 Napoli (NA), Italia',
+    flag: '🇮🇹',
+    country: 'Italia',
+  },
+  {
     city: 'Milano',
-    address: 'Corso Como 15, 20154 Milano MI, Italia',
+    address: 'Corso Sempione 32/B – 20154 Milano, Italia',
     flag: '🇮🇹',
     country: 'Italia',
   },
   {
     city: 'Roma',
-    address: 'Via Veneto 89, 00187 Roma RM, Italia',
+    address: 'Via Ludovisi 35 – 00187 Roma, Italia',
+    flag: '🇮🇹',
+    country: 'Italia',
+  },
+  {
+    city: 'Moliterno',
+    address: 'Via Amendola 170 – 85047 Moliterno (PZ), Italia',
     flag: '🇮🇹',
     country: 'Italia',
   },
   {
     city: 'Bruxelles',
-    address: 'Rue de la Loi 200, 1040 Bruxelles, Belgique',
+    address: 'Rue Belliard 20 – 140 – 1040 Bruxelles, Belgio',
     flag: '🇧🇪',
     country: 'Belgio',
   },

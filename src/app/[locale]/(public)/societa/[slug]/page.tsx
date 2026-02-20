@@ -19,7 +19,6 @@ import {
   Award,
   CheckCircle2,
   ArrowRight,
-  Plane,
   Users,
   Target,
   Sparkles,
@@ -42,7 +41,6 @@ type Certification = {
 
 // Sector colors mapping
 const sectorColors: Record<string, { gradient: string; bg: string; text: string; lightBg: string; border: string }> = {
-  'aviation': { gradient: 'from-sky-500 to-cyan-600', bg: 'bg-sky-500', text: 'text-sky-600', lightBg: 'bg-sky-50', border: 'border-sky-200' },
   'energy': { gradient: 'from-emerald-500 to-teal-600', bg: 'bg-emerald-500', text: 'text-emerald-600', lightBg: 'bg-emerald-50', border: 'border-emerald-200' },
   'consulting': { gradient: 'from-blue-500 to-indigo-600', bg: 'bg-blue-500', text: 'text-blue-600', lightBg: 'bg-blue-50', border: 'border-blue-200' },
   'international': { gradient: 'from-violet-500 to-purple-600', bg: 'bg-violet-500', text: 'text-violet-600', lightBg: 'bg-violet-50', border: 'border-violet-200' },
@@ -65,69 +63,6 @@ const companiesData: Record<string, {
   phone?: string;
   certifications?: Certification[];
 }> = {
-  'winfly': {
-    name: 'WinFly',
-    logo: '/images/companies/winfly.webp',
-    sector: 'Aviazione Civile',
-    sectorKey: 'aviation',
-    icon: Plane,
-    description: 'Compagnia aerea italiana di aviazione civile specializzata nel trasporto pubblico passeggeri executive, aerotaxi e voli non di linea.',
-    longDescription: `WinFly è una compagnia aerea italiana di aviazione civile che si inserisce nell'ampio settore del trasporto pubblico passeggeri, in particolare nel segmento executive, offrendo servizio di aerotaxi e voli non di linea.
-
-WinFly assicura collegamenti con le destinazioni comprese tra Centro-Nord Europa e Centro-Sud Italia ed è pronta a sviluppare attività di linea anche in Africa, dove ha basi operative nella Repubblica del Congo e in Nigeria.
-
-La società fornisce anche servizi correlati: manutenzione approvata dall'Autorità Aeronautica Italiana, hangaraggio, rifornimento carburante, soccorso aereo, noleggio Jet privati, servizi di handling e logistica, accoglienza passeggeri. È in grado di effettuare lavori aerei, studi e rilevazioni aerofotogrammetriche, nonché servizi di pubblicità.
-
-La compagnia aerea, certificata ENAC (CAMO e COA), ha strutturato anche una scuola di formazione che, al momento, a livello nazionale, non ha precedenti, in grado di formulare un'offerta formativa ampia, aggiornata, professionalizzante.
-
-WinFly rappresenta un gesto concreto di impegno e di responsabilità imprenditoriale anche per il rilancio economico del Mezzogiorno, con un forte orientamento verso il PNRR che attribuisce ad infrastrutture e mobilità grandi risorse finanziarie.`,
-    services: [
-      'Trasporto passeggeri e merci a mezzo aeromobili ed elicotteri',
-      'Voli di linea e voli non di linea',
-      'Servizi aerotaxi',
-      'Voli di osservazione e soccorso',
-      'Voli aerofotogrammetrici e telerilevamento',
-      'Voli turistici e panoramici',
-      'Lavori aerei in genere',
-      'Voli didattici',
-      'Scuole di paracadutismo e di volo a vela',
-      'Manutenzione aeronautica certificata ENAC',
-      'Hangaraggio e rifornimento carburante',
-      'Servizi di handling e logistica',
-      'Realizzazione e gestione di avio-superfici e idrosuperfici',
-      'Compravendita articoli di ricambio per aeromobili'
-    ],
-    location: 'Fisciano (SA) / Milano / Napoli / Roma / Moliterno (PZ) / Bruxelles',
-    founded: '2012',
-    website: 'https://winfly.eu',
-    phone: '+39 089 952889',
-    certifications: [
-      {
-        name: 'Licenza di Vettore Aereo',
-        number: 'DD 505UE',
-        date: '22.06.2012',
-        description: 'Rilasciata da ENAC'
-      },
-      {
-        name: 'Certificato di Operatore Aereo (COA)',
-        number: 'I-156',
-        date: '21.06.2012',
-        description: 'Rilasciato da ENAC'
-      },
-      {
-        name: 'Certificato di Approvazione Part 145',
-        number: 'IT.145.369',
-        date: '15.10.2013',
-        description: 'Emesso da ENAC per manutenzione aeromobili'
-      },
-      {
-        name: 'ISO 9001:2008',
-        number: 'IT246570',
-        date: '30.11.2012',
-        description: 'Attestato di Certificazione Qualità'
-      }
-    ]
-  },
   'strategic-energy': {
     name: 'Strategic Energy Resources',
     logo: '/images/companies/strategic-energy.webp',
@@ -204,62 +139,6 @@ La società ha stipulato convenzioni per la concessione di terreni e diritti per
         name: 'Politica Parità di Genere',
         description: 'Documento di politica aziendale per la parità di genere',
         document: '/documents/certificazioni/strategic-energy-politica-parita.pdf'
-      }
-    ]
-  },
-  'ied': {
-    name: 'I.E.D.',
-    logo: '/images/companies/ied.webp',
-    sector: 'Consulenza Finanziamenti',
-    sectorKey: 'consulting',
-    icon: Building2,
-    description: 'Innovation Engineering Development - Consulenza specializzata in finanziamenti italiani, europei, internazionali e programmi di cooperazione esterna.',
-    longDescription: `Innovation Engineering Development (I.E.D.) è una società di consulenza specializzata nei finanziamenti italiani, europei, internazionali ed in particolare nei programmi di cooperazione esterna.
-
-Dopo un primo periodo dedicato principalmente alla progettazione di interventi infrastrutturali per enti pubblici italiani, la società ha ampliato e migliorato nel tempo la sua attività per acquisire sempre di più un ruolo di consulente globale in grado di seguire tutti gli aspetti peculiari della progettazione: dalla fase preliminare di informazione a quella più prettamente tecnica, da quella economico-finanziaria a quella amministrativo-burocratica, senza dimenticare il ruolo di mediatore tra i diversi interlocutori coinvolti nel progetto.
-
-Gli ottimi risultati conseguiti nel passato ciclo di programmazione dei fondi strutturali gestiti a livello regionale hanno stimolato la società ad intraprendere un progetto ambizioso di ampliamento dell'offerta di servizi.
-
-Innovation Engineering Development si è specializzata anche in fondi non strutturali legati a programmi tematici e di cooperazione allo sviluppo gestiti centralmente dalla Commissione Europea e che coinvolgono le autorità locali, le università e gli enti di ricerca, le associazioni e gli enti no profit, le PMI europee e dei Paesi terzi.
-
-Punto di riferimento per quanti cercano i migliori strumenti finanziari da utilizzare per ottenere le risorse necessarie per implementare un'idea progettuale, oltre ad offrire supporto per partecipare direttamente a bandi di gara locali, nazionali e internazionali, integra anche un servizio di ricerca di partner europei ed internazionali, grazie a una solida rete di rapporti instauratisi con le rappresentanze diplomatiche, le Istituzioni, le associazioni, le ONG ed gli operatori economici dei Paesi in via di sviluppo.`,
-    services: [
-      'Progettazione interventi infrastrutturali',
-      'Consulenza economico-finanziaria',
-      'Consulenza amministrativo-burocratica',
-      'Fondi strutturali regionali',
-      'Fondi non strutturali UE',
-      'Programmi di cooperazione allo sviluppo',
-      'Supporto bandi locali, nazionali e internazionali',
-      'Ricerca partner europei e internazionali',
-      'Mediazione tra interlocutori di progetto'
-    ],
-    location: 'Fisciano (SA) / Milano / Napoli / Roma / Moliterno (PZ) / Bruxelles',
-    phone: '+39 089 952889',
-    certifications: [
-      {
-        name: 'Licenza di Vettore Aereo',
-        number: 'DD 505UE',
-        date: '22.06.2012',
-        description: 'Rilasciata da ENAC'
-      },
-      {
-        name: 'ISO 9001:2008',
-        number: 'IT246570',
-        date: '30.11.2012',
-        description: 'Attestato di Certificazione secondo la Normativa UNI EN ISO 9001:2008'
-      },
-      {
-        name: 'Certificato di Operatore Aereo (COA)',
-        number: 'I-156',
-        date: '21.06.2012',
-        description: 'Rilasciato da ENAC'
-      },
-      {
-        name: 'Certificato di Approvazione Part 145',
-        number: 'IT.145.369',
-        date: '15.10.2013',
-        description: 'Emesso da ENAC'
       }
     ]
   },
@@ -407,8 +286,10 @@ La Futuro & Programmazione, essendo partner di altre imprese del gruppo Cestari,
         document: '/documents/certificazioni/futuro-programmazione-esco.pdf'
       },
       {
-        name: 'Politica Parità di Genere',
-        description: 'Documento di politica aziendale per la parità di genere',
+        name: 'Certificazione Parità di Genere',
+        number: '442/125/2025',
+        date: '2025',
+        description: 'Certificazione UNI/PdR 125:2022 per la parità di genere',
         document: '/documents/certificazioni/futuro-programmazione-parita-genere.pdf'
       }
     ]
@@ -526,6 +407,63 @@ L'impegno di Midday Sun per l'innovazione e la tutela dell'ambiente rappresenta 
     ],
     location: 'Fisciano (SA) / Milano / Napoli / Roma / Moliterno (PZ) / Bruxelles',
     phone: '+39 089 952889',
+  },
+  'ristruttura': {
+    name: 'Ristruttura SMC Newco',
+    logo: '/images/companies/ristruttura.webp',
+    sector: 'Edilizia e Impiantistica',
+    sectorKey: 'consulting',
+    icon: Building2,
+    description: 'Realtà specializzata nel settore dell\'edilizia civile, industriale e dell\'impiantistica, con soluzioni integrate per infrastrutture moderne e sostenibili.',
+    longDescription: `Ristruttura SMC Newco opera come realtà specializzata nel settore dell'edilizia civile, industriale e dell'impiantistica, offrendo soluzioni integrate per la realizzazione e la riqualificazione di infrastrutture moderne e sostenibili.
+
+L'azienda si occupa della progettazione, costruzione, manutenzione e ristrutturazione di edifici residenziali e non residenziali, fornendo competenze tecniche avanzate per trasformare progetti complessi in opere compiute a regola d'arte.
+
+Sfruttando tecnologie costruttive all'avanguardia e la sinergia con i professionisti del Gruppo Cestari, Ristruttura SMC Newco sviluppa interventi volti all'efficienza strutturale e all'innovazione tecnologica, garantendo affidabilità e durata nel tempo per ogni tipologia di fabbricato.
+
+L'azienda gestisce con estrema precisione ogni fase del cantiere, dalla pianificazione iniziale fino al collaudo finale, ottimizzando tempi e risorse per soddisfare le esigenze di un mercato in continua evoluzione.
+
+L'orientamento all'eccellenza, la solidità operativa e la capacità di integrare soluzioni edilizie intelligenti costituiscono i pilastri di Ristruttura SMC Newco, che si propone come partner competente e affidabile per la costruzione di un futuro infrastrutturale più solido, funzionale e allineato ai più alti standard di settore.`,
+    services: [
+      'Progettazione edilizia civile e industriale',
+      'Costruzione edifici residenziali e non residenziali',
+      'Ristrutturazione e riqualificazione',
+      'Impiantistica integrata',
+      'Manutenzione fabbricati',
+      'Direzione lavori e collaudo',
+      'Efficienza strutturale',
+      'Innovazione tecnologica nelle costruzioni'
+    ],
+    location: 'Fisciano (SA) / Milano / Napoli / Roma / Moliterno (PZ) / Bruxelles',
+    phone: '+39 089 952889',
+  },
+  'cestari-france': {
+    name: 'Cestari Group France',
+    logo: '/images/companies/cestari-france.webp',
+    sector: 'Immobiliare e Costruzioni',
+    sectorKey: 'international',
+    icon: Globe,
+    description: 'Realtà specializzata nel mercato immobiliare e delle costruzioni in Francia, con soluzioni integrate per acquisizione, valorizzazione e gestione di patrimoni immobiliari.',
+    longDescription: `Cestari Group France S.a.s. opera come realtà specializzata nel mercato immobiliare e delle costruzioni, offrendo soluzioni integrate per l'acquisizione, la valorizzazione e la gestione di patrimoni immobiliari sul territorio francese.
+
+L'azienda si occupa della compravendita, della costruzione, del restauro e dell'amministrazione di edifici di ogni tipologia, fornendo competenze tecniche e gestionali avanzate per trasformare investimenti complessi in asset immobiliari di valore.
+
+Sfruttando l'esperienza internazionale e la stretta sinergia con i professionisti del Gruppo Cestari, Cestari Group France sviluppa interventi volti all'eccellenza strutturale e funzionale, garantendo affidabilità e visione strategica in ogni progetto.
+
+L'azienda gestisce con estrema precisione ogni fase del ciclo di vita immobiliare, dalla pianificazione finanziaria iniziale fino alla locazione e manutenzione finale, ottimizzando risorse e rendimenti per soddisfare le esigenze di un mercato globale in continua evoluzione.
+
+L'orientamento all'eccellenza, la solidità operativa e la capacità di integrare soluzioni immobiliari intelligenti costituiscono i pilastri di Cestari Group France, che si propone come partner competente e affidabile per lo sviluppo di un futuro immobiliare solido, funzionale e allineato ai più alti standard internazionali.`,
+    services: [
+      'Compravendita immobiliare',
+      'Costruzione e restauro edifici',
+      'Amministrazione patrimoni immobiliari',
+      'Valorizzazione asset immobiliari',
+      'Pianificazione finanziaria immobiliare',
+      'Gestione locazioni',
+      'Manutenzione immobili',
+      'Consulenza investimenti immobiliari in Francia'
+    ],
+    location: 'Francia',
   },
   'flywin': {
     name: 'Flywin S.p.A.',

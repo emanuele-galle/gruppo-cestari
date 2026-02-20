@@ -36,12 +36,12 @@ const milestoneKeys = ['origini', 'espansione', 'consolidamento', 'rafforzamento
 
 
 const offices = [
-  { city: 'Salerno', address: 'Via Don Minzoni, 1 - Fisciano', phone: '+39 089 952889', typeKey: 'headquarters', flag: '🇮🇹' },
-  { city: 'Milano', address: 'Corso Sempione 32/B', phone: '+39 02 36683102', typeKey: 'office', flag: '🇮🇹' },
-  { city: 'Roma', address: 'Via Ludovisi 35', phone: '+39 06 42037372', typeKey: 'office', flag: '🇮🇹' },
-  { city: 'Napoli', address: 'Centro Direzionale Isola A5', phone: '+39 081 7875970', typeKey: 'office', flag: '🇮🇹' },
-  { city: 'Moliterno', address: 'Via Amendola 170', phone: '+39 0975 668609', typeKey: 'office', flag: '🇮🇹' },
-  { city: 'Bruxelles', address: 'Rue Belliard 20-140', phone: '+32 25372400', typeKey: 'euOffice', flag: '🇧🇪' },
+  { city: 'Salerno', address: 'Via Don Minzoni, 1 – 84084 Fisciano (SA)', phone: '+39 089 952889', typeKey: 'headquarters', flag: '🇮🇹' },
+  { city: 'Napoli', address: 'Centro Direzionale Isola A5 – 80143 Napoli (NA)', phone: '+39 081 7875970', typeKey: 'office', flag: '🇮🇹' },
+  { city: 'Milano', address: 'Corso Sempione 32/B – 20154 Milano', phone: '+39 0236683102', typeKey: 'office', flag: '🇮🇹' },
+  { city: 'Roma', address: 'Via Ludovisi 35 – 00187 Roma', phone: '', typeKey: 'office', flag: '🇮🇹' },
+  { city: 'Moliterno', address: 'Via Amendola 170 – 85047 Moliterno (PZ)', phone: '+39 0975 668609', typeKey: 'office', flag: '🇮🇹' },
+  { city: 'Bruxelles', address: 'Rue Belliard 20 – 140 – 1040 Bruxelles', phone: '+32 253724000', typeKey: 'euOffice', flag: '🇧🇪' },
 ];
 
 const galleryImages: LightboxImage[] = [
@@ -370,16 +370,18 @@ export function ChiSiamoClient() {
                     <div className={`text-sm mb-3 ${office.typeKey === 'headquarters' ? 'text-white/90' : 'text-slate-600'}`}>
                       {office.address}
                     </div>
-                    <a
-                      href={`tel:${office.phone.replace(/\s/g, '')}`}
-                      className={`inline-flex items-center gap-2 text-sm font-medium transition-all ${
-                        office.typeKey === 'headquarters'
-                          ? 'text-white hover:text-white/90'
-                          : 'text-primary hover:text-primary/80'
-                      }`}
-                    >
-                      {office.phone}
-                    </a>
+                    {office.phone && (
+                      <a
+                        href={`tel:${office.phone.replace(/\s/g, '')}`}
+                        className={`inline-flex items-center gap-2 text-sm font-medium transition-all ${
+                          office.typeKey === 'headquarters'
+                            ? 'text-white hover:text-white/90'
+                            : 'text-primary hover:text-primary/80'
+                        }`}
+                      >
+                        {office.phone}
+                      </a>
+                    )}
                   </div>
                 </div>
                 {office.typeKey === 'headquarters' && (

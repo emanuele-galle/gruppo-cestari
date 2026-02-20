@@ -3,7 +3,7 @@
 import { useRef, useState, useMemo } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { Globe2, Leaf, Briefcase, ArrowRight, Filter, Handshake, Mail, Phone, Plane, Sparkles, Sun, Wind, Zap, TreeDeciduous } from 'lucide-react';
+import { Globe2, Leaf, Briefcase, ArrowRight, Filter, Handshake, Mail, Phone, Sparkles, Sun, Wind, Zap, TreeDeciduous, Building2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
@@ -23,14 +23,12 @@ const sectors = [
   { key: 'energy', icon: Leaf, color: 'from-emerald-500 to-emerald-600', bg: 'bg-emerald-50' },
   { key: 'consulting', icon: Briefcase, color: 'from-blue-500 to-blue-600', bg: 'bg-blue-50' },
   { key: 'international', icon: Globe2, color: 'from-violet-500 to-violet-600', bg: 'bg-violet-50' },
-  { key: 'aviation', icon: Plane, color: 'from-sky-500 to-sky-600', bg: 'bg-sky-50' },
 ];
 
 const sectorColors: Record<string, { gradient: string; bg: string; text: string; border: string }> = {
   'sectors.energy': { gradient: 'from-emerald-500 to-teal-600', bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200' },
   'sectors.consulting': { gradient: 'from-blue-500 to-indigo-600', bg: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-200' },
   'sectors.international': { gradient: 'from-violet-500 to-purple-600', bg: 'bg-violet-50', text: 'text-violet-600', border: 'border-violet-200' },
-  'sectors.aviation': { gradient: 'from-sky-500 to-cyan-600', bg: 'bg-sky-50', text: 'text-sky-600', border: 'border-sky-200' },
 };
 
 export function SocietaClient() {
@@ -41,16 +39,6 @@ export function SocietaClient() {
 
   const companies: Company[] = [
     {
-      id: 'winfly',
-      slug: 'winfly',
-      name: 'WinFly',
-      descriptionKey: 'list.winfly.description',
-      sectorKey: 'sectors.aviation',
-      logo: '/images/companies/winfly.webp',
-      icon: Plane,
-      color: 'aviation',
-    },
-    {
       id: 'strategic-energy',
       slug: 'strategic-energy',
       name: 'Strategic Energy Resources',
@@ -59,16 +47,6 @@ export function SocietaClient() {
       logo: '/images/companies/strategic-energy.webp',
       icon: Leaf,
       color: 'energy',
-    },
-    {
-      id: 'ied',
-      slug: 'ied',
-      name: 'I.E.D.',
-      descriptionKey: 'list.ied.description',
-      sectorKey: 'sectors.consulting',
-      logo: '/images/companies/ied.webp',
-      icon: Briefcase,
-      color: 'consulting',
     },
     {
       id: 'cestari-brasil',
@@ -101,6 +79,16 @@ export function SocietaClient() {
       color: 'energy',
     },
     {
+      id: 'ristruttura',
+      slug: 'ristruttura',
+      name: 'Ristruttura SMC Newco',
+      descriptionKey: 'list.ristruttura.description',
+      sectorKey: 'sectors.consulting',
+      logo: '/images/companies/ristruttura.webp',
+      icon: Building2,
+      color: 'consulting',
+    },
+    {
       id: 'sakti',
       slug: 'sakti',
       name: 'SAKTI',
@@ -127,6 +115,16 @@ export function SocietaClient() {
       descriptionKey: 'list.italAfrica.description',
       sectorKey: 'sectors.international',
       logo: '/images/companies/italafrica.webp',
+      icon: Globe2,
+      color: 'international',
+    },
+    {
+      id: 'cestari-france',
+      slug: 'cestari-france',
+      name: 'Cestari Group France',
+      descriptionKey: 'list.cestariFrance.description',
+      sectorKey: 'sectors.international',
+      logo: '/images/companies/cestari-france.webp',
       icon: Globe2,
       color: 'international',
     },
@@ -253,19 +251,6 @@ export function SocietaClient() {
             <Wind className="w-14 h-14 text-emerald-400" />
           </motion.div>
 
-          {/* Aviation - Plane */}
-          <motion.div
-            className="absolute top-[35%] right-[20%]"
-            animate={{
-              x: [0, 30, 0],
-              y: [0, -10, 0],
-              opacity: [0.1, 0.25, 0.1]
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <Plane className="w-12 h-12 text-sky-300 rotate-45" />
-          </motion.div>
-
           {/* Africa - Acacia tree (using TreeDeciduous) */}
           <motion.div
             className="absolute bottom-[20%] right-[8%]"
@@ -360,7 +345,7 @@ export function SocietaClient() {
               </div>
               <div className="w-px h-10 sm:h-12 bg-white/20 hidden sm:block" />
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-1">4</div>
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-1">3</div>
                 <div className="text-xs sm:text-sm text-white/60 uppercase tracking-wider">Settori</div>
               </div>
               <div className="w-px h-10 sm:h-12 bg-white/20 hidden sm:block" />

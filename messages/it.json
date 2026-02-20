@@ -1468,21 +1468,12 @@
     "sectors": {
       "consulting": "Consulenza",
       "energy": "Energia",
-      "international": "Internazionale",
-      "aviation": "Aviazione"
+      "international": "Internazionale"
     },
     "list": {
-      "winfly": {
-        "description": "Consulenza strategica e sviluppo aziendale",
-        "details": "Winfly è specializzata nella consulenza strategica per le imprese che vogliono crescere e innovare. Offriamo servizi di business development, pianificazione strategica e supporto manageriale per accompagnare le aziende nei loro percorsi di sviluppo, sia in Italia che all'estero."
-      },
       "strategicEnergy": {
         "description": "Energie rinnovabili e efficientamento energetico",
         "details": "Strategic Energy Resources è leader nel settore delle energie rinnovabili. Progettiamo e realizziamo impianti fotovoltaici, eolici e comunità energetiche rinnovabili, offrendo consulenza per l'efficientamento energetico e la transizione verso un futuro sostenibile."
-      },
-      "ied": {
-        "description": "Istituto Europeo di Design e formazione",
-        "details": "I.E.D. (Istituto Europeo per lo Sviluppo) si occupa di formazione professionale e sviluppo delle competenze. Organizziamo corsi di formazione, workshop e programmi di capacity building per imprese, enti pubblici e professionisti."
       },
       "cestariBrasil": {
         "description": "Consulenza e sviluppo progetti in Brasile",
@@ -1515,6 +1506,14 @@
       "flywin": {
         "description": "Servizi aeroportuali e logistica",
         "details": "Flywin offre servizi aeroportuali e soluzioni logistiche integrate. Gestiamo servizi di handling, cargo e assistenza aeroportuale, supportando le operazioni di trasporto aereo nazionale e internazionale."
+      },
+      "ristruttura": {
+        "description": "Edilizia civile, industriale e impiantistica per infrastrutture moderne e sostenibili",
+        "details": "Ristruttura SMC Newco è specializzata nella progettazione, costruzione, manutenzione e ristrutturazione di edifici residenziali e non residenziali, con tecnologie costruttive all'avanguardia."
+      },
+      "cestariFrance": {
+        "description": "Soluzioni integrate per il mercato immobiliare e delle costruzioni in Francia",
+        "details": "Cestari Group France S.a.s. opera nel mercato immobiliare francese, occupandosi di compravendita, costruzione, restauro e amministrazione di edifici di ogni tipologia."
       }
     }
   },
@@ -1526,8 +1525,10 @@
     "location": "Fisciano (SA)",
     "locations": {
       "fisciano": "Fisciano (SA) - Sede Principale",
+      "napoli": "Napoli",
       "milano": "Milano",
       "roma": "Roma",
+      "moliterno": "Moliterno (PZ)",
       "bruxelles": "Bruxelles"
     },
     "legal": {

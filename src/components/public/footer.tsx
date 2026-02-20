@@ -138,8 +138,10 @@ export function Footer() {
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
                 <div className="flex flex-col gap-0.5">
                   <span>{t('locations.fisciano')}</span>
+                  <span>{t('locations.napoli')}</span>
                   <span>{t('locations.milano')}</span>
                   <span>{t('locations.roma')}</span>
+                  <span>{t('locations.moliterno')}</span>
                   <span>{t('locations.bruxelles')}</span>
                 </div>
               </li>

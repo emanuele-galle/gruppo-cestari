@@ -1468,21 +1468,12 @@
     "sectors": {
       "consulting": "Conseil",
       "energy": "Énergie",
-      "international": "International",
-      "aviation": "Aviation"
+      "international": "International"
     },
     "list": {
-      "winfly": {
-        "description": "Conseil stratégique et développement commercial",
-        "details": "Winfly est spécialisée dans le conseil stratégique pour les entreprises qui souhaitent croître et innover. Nous offrons des services de développement commercial, de planification stratégique et de support managérial pour accompagner les entreprises dans leurs parcours de développement, tant en Italie qu'à l'étranger."
-      },
       "strategicEnergy": {
         "description": "Énergies renouvelables et efficacité énergétique",
         "details": "Strategic Energy Resources est leader dans le secteur des énergies renouvelables. Nous concevons et réalisons des installations photovoltaïques, éoliennes et des communautés énergétiques renouvelables, offrant des conseils pour l'efficacité énergétique et la transition vers un avenir durable."
-      },
-      "ied": {
-        "description": "Institut Européen de Design et formation",
-        "details": "I.E.D. (Institut Européen pour le Développement) se concentre sur la formation professionnelle et le développement des compétences. Nous organisons des cours de formation, des ateliers et des programmes de renforcement des capacités pour les entreprises, les organismes publics et les professionnels."
       },
       "cestariBrasil": {
         "description": "Conseil et développement de projets au Brésil",
@@ -1515,6 +1506,14 @@
       "flywin": {
         "description": "Services aéroportuaires et logistique",
         "details": "Flywin offre des services aéroportuaires et des solutions logistiques intégrées. Nous gérons des services de manutention, de fret et d'assistance aéroportuaire, soutenant les opérations de transport aérien nationales et internationales."
+      },
+      "ristruttura": {
+        "description": "Construction civile, industrielle et installations pour des infrastructures modernes et durables",
+        "details": "Ristruttura SMC Newco est spécialisée dans la conception, la construction, la maintenance et la rénovation de bâtiments résidentiels et non résidentiels, avec des technologies de construction de pointe."
+      },
+      "cestariFrance": {
+        "description": "Solutions intégrées pour le marché immobilier et de la construction en France",
+        "details": "Cestari Group France S.a.s. opère sur le marché immobilier français, s'occupant de l'achat, la construction, la restauration et l'administration de bâtiments de toute typologie."
       }
     }
   },
@@ -1525,9 +1524,11 @@
     "contact": "Contact",
     "location": "Fisciano (SA)",
     "locations": {
-      "fisciano": "Fisciano (SA) - Siège Social",
-      "milano": "Milan",
-      "roma": "Rome",
+      "fisciano": "Fisciano (SA) - Siège Principal",
+      "napoli": "Napoli",
+      "milano": "Milano",
+      "roma": "Roma",
+      "moliterno": "Moliterno (PZ)",
       "bruxelles": "Bruxelles"
     },
     "legal": {

@@ -32,33 +32,49 @@ const offices = [
   {
     city: 'Salerno',
     type: 'headquarters',
-    address: 'Via Roma 123, 84121 Salerno SA',
+    address: 'Via Don Minzoni, 1 – 84084 Fisciano (SA)',
     phone: '+39 089 952889',
     email: 'info@gruppocestari.com',
     isHQ: true,
     flag: '🇮🇹',
   },
   {
+    city: 'Napoli',
+    type: 'office',
+    address: 'Centro Direzionale Isola A5 – 80143 Napoli (NA)',
+    phone: '+39 081 7875970',
+    email: 'napoli@gruppocestari.com',
+    flag: '🇮🇹',
+  },
+  {
     city: 'Milano',
     type: 'office',
-    address: 'Corso Como 15, 20154 Milano MI',
-    phone: '+39 02 8765 4321',
+    address: 'Corso Sempione 32/B – 20154 Milano',
+    phone: '+39 0236683102',
     email: 'milano@gruppocestari.com',
     flag: '🇮🇹',
   },
   {
     city: 'Roma',
     type: 'institutional',
-    address: 'Via Veneto 89, 00187 Roma RM',
-    phone: '+39 06 1234 5678',
+    address: 'Via Ludovisi 35 – 00187 Roma',
+    phone: '',
     email: 'roma@gruppocestari.com',
+    flag: '🇮🇹',
+  },
+  {
+    city: 'Moliterno',
+    type: 'office',
+    address: 'Via Amendola 170 – 85047 Moliterno (PZ)',
+    phone: '+39 0975 668609',
+    email: 'moliterno@gruppocestari.com',
     flag: '🇮🇹',
   },
   {
     city: 'Bruxelles',
     type: 'euAffairs',
-    address: 'Rue de la Loi 200, 1040 Bruxelles',
-    phone: '+32 2 123 4567',
+    address: 'Rue Belliard 20 – 140 – 1040 Bruxelles',
+    phone: '+32 253724000',
     email: 'brussels@gruppocestari.com',
     flag: '🇧🇪',
   },
@@ -734,15 +750,17 @@ export function ContattiClient() {
                       <MapPin className="w-4 h-4 shrink-0 mt-1" />
                       <span className="text-sm">{office.address}</span>
                     </div>
-                    <a
-                      href={`tel:${office.phone.replace(/\s/g, '')}`}
-                      className={`flex items-center gap-3 text-sm transition-colors ${
-                        office.isHQ ? 'text-white/90 hover:text-white' : 'text-slate-600 hover:text-primary'
-                      }`}
-                    >
-                      <Phone className="w-4 h-4" />
-                      {office.phone}
-                    </a>
+                    {office.phone && (
+                      <a
+                        href={`tel:${office.phone.replace(/\s/g, '')}`}
+                        className={`flex items-center gap-3 text-sm transition-colors ${
+                          office.isHQ ? 'text-white/90 hover:text-white' : 'text-slate-600 hover:text-primary'
+                        }`}
+                      >
+                        <Phone className="w-4 h-4" />
+                        {office.phone}
+                      </a>
+                    )}
                     <a
                       href={`mailto:${office.email}`}
                       className={`flex items-center gap-3 text-sm transition-colors ${
