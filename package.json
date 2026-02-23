@@ -67,7 +67,7 @@
     "dotenv": "^17.2.3",
     "framer-motion": "^12.27.0",
     "isomorphic-dompurify": "^2.35.0",
-    "lucide-react": "^0.562.0",
+    "lucide-react": "^0.575.0",
     "marked": "^17.0.1",
     "nanoid": "^5.0.9",
     "next": "^16.1.1",
