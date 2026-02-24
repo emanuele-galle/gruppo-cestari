@@ -102,8 +102,8 @@ const COUNTRY_OPTIONS = [
   { value: 'UG', label: 'Uganda' },
   { value: 'RW', label: 'Rwanda' },
   // Altro
-  { value: 'INT', label: 'Internazionale' },
-  { value: 'MULTI', label: 'Multi-paese' },
+  { value: 'XX', label: 'Internazionale' },
+  { value: 'XM', label: 'Multi-paese' },
 ];
 
 export default function NewProjectPage() {

@@ -18,8 +18,8 @@ import {
   Award,
   Lightbulb,
   FileText,
-  Download,
 } from 'lucide-react';
+import { PdfViewer } from '@/components/ui/pdf-viewer';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { trpc } from '@/lib/trpc';
@@ -454,26 +454,11 @@ export function ProjectDetailClient({ slug, initialProject }: ProjectDetailClien
                   </h2>
                   <div className="grid gap-4">
                     {projectAttachments.map((attachment) => (
-                      <a
+                      <PdfViewer
                         key={attachment.url}
-                        href={attachment.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-lg hover:border-primary hover:shadow-md transition-all group"
-                      >
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                          <FileText className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="font-medium text-slate-800 truncate group-hover:text-primary transition-colors">
-                            {attachment.title}
-                          </p>
-                          <p className="text-sm text-slate-500">
-                            Documento PDF
-                          </p>
-                        </div>
-                        <Download className="w-5 h-5 text-slate-400 group-hover:text-primary transition-colors shrink-0" />
-                      </a>
+                        url={attachment.url}
+                        title={attachment.title}
+                      />
                     ))}
                   </div>
                 </motion.div>

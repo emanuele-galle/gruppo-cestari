@@ -77,8 +77,8 @@ const COUNTRY_NAMES: Record<string, string> = {
   'MA': 'Marocco',
   'EG': 'Egitto',
   'BR': 'Brasile',
-  'INT': 'Internazionale',
-  'MULTI': 'Multinazionale',
+  'XX': 'Internazionale',
+  'XM': 'Multi-paese',
 };
 
 export function ProgettiClient() {

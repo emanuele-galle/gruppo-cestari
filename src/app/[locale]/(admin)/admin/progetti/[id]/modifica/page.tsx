@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect, useRef, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
@@ -100,8 +100,8 @@ const COUNTRY_OPTIONS = [
   { value: 'UG', label: 'Uganda' },
   { value: 'RW', label: 'Rwanda' },
   // Altro
-  { value: 'INT', label: 'Internazionale' },
-  { value: 'MULTI', label: 'Multi-paese' },
+  { value: 'XX', label: 'Internazionale' },
+  { value: 'XM', label: 'Multi-paese' },
 ];
 
 export default function EditProjectPage({
@@ -157,9 +157,11 @@ export default function EditProjectPage({
     },
   });
 
-  // Populate form with existing data
+  // Populate form with existing data (only on first load)
+  const isFormInitialized = useRef(false);
   useEffect(() => {
-    if (project) {
+    if (project && !isFormInitialized.current) {
+      isFormInitialized.current = true;
       setSlug(project.slug);
       setSector(project.sector);
       setCountry(project.country);
