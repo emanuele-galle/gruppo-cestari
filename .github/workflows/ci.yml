@@ -95,7 +95,7 @@ jobs:
       - name: Health check
         run: |
           sleep 15
-          curl -sf https://gruppocestari.com || echo "Health check endpoint not available"
+          curl -sf https://gruppocestari.com/api/health || echo "Health check failed (non-critical)"
 
       - name: Notify deployment
         if: always()
