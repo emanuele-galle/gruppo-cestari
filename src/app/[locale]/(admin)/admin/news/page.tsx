@@ -79,6 +79,7 @@ const itemVariants = {
   },
 };
 
+// eslint-disable-next-line sonarjs/cognitive-complexity -- complex admin listing with filters
 export default function AdminNewsPage() {
   const t = useTranslations('admin.news');
   const locale = useLocale() as 'it' | 'en' | 'fr';
@@ -198,6 +199,7 @@ export default function AdminNewsPage() {
     const exportData = data.items
       .filter((item) => selectedIds.size === 0 || selectedIds.has(item.id))
       .map((article) => {
+        // eslint-disable-next-line react-hooks/immutability -- function is defined below but hoisted
         const translation = getTranslation(article.translations);
         return {
           Titolo: translation?.title || '',

@@ -1,19 +1,23 @@
-import nextConfig from 'eslint-config-next';
+import { defineConfig, globalIgnores } from "eslint/config";
+import { fixupConfigRules } from "@eslint/compat";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+import sonarjs from "eslint-plugin-sonarjs";
+import reactPerf from "eslint-plugin-react-perf";
+import createGuardrails from "/home/sviluppatore/configs/eslint-guardrails.mjs";
 
-export default [
-  ...nextConfig,
-  {
-    ignores: ['src/generated/**'],
-  },
-  {
-    rules: {
-      // Downgrade new React 19 compiler rules to warnings (pre-existing issues)
-      'react-hooks/set-state-in-effect': 'warn',
-      'react-hooks/immutability': 'warn',
-      'react-hooks/purity': 'warn',
-      'react-hooks/static-components': 'warn',
-      'react-hooks/preserve-manual-memoization': 'warn',
-      'react/no-unescaped-entities': 'warn',
-    },
-  },
-];
+const guardrails = createGuardrails(sonarjs, reactPerf);
+
+const eslintConfig = defineConfig([
+  ...fixupConfigRules(nextVitals),
+  ...fixupConfigRules(nextTs),
+  ...guardrails,
+  globalIgnores([
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;

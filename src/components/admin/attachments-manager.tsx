@@ -38,6 +38,7 @@ export function AttachmentsManager({
   const [editData, setEditData] = useState<AttachmentData | null>(null);
   const [uploading, setUploading] = useState(false);
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity -- complex file management logic
   const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;

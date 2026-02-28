@@ -195,7 +195,7 @@ export default function ApplicationsPage() {
           <div className="bg-white rounded-xl p-6 max-w-md w-full">
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Elimina Bozza</h3>
             <p className="text-slate-600 mb-6">
-              Sei sicuro di voler eliminare questa bozza? L'azione non può essere annullata.
+              Sei sicuro di voler eliminare questa bozza? L&apos;azione non può essere annullata.
             </p>
             <div className="flex justify-end gap-3">
               <button

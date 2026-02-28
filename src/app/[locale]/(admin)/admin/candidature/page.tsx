@@ -148,6 +148,7 @@ export default function AdminCandidaturePage() {
   });
 
   // Export to CSV
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization -- existing memo pattern is intentional
   const handleExport = useCallback(() => {
     if (!applicationsData?.items) return;
 

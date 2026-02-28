@@ -763,7 +763,7 @@ export function SostenibilitaClient() {
                     </div>
                   </div>
                   <p className="text-white/90 text-lg leading-relaxed mb-6">
-                    La S.E.R. "Strategic Energy Resources" è una società a responsabilità limitata che opera nel settore della produzione elettrica da fonti rinnovabili attraverso l'adozione di tecnologie all'avanguardia che assicurano alta efficienza a fronte di ridotti impatti ambientali.
+                    La S.E.R. &quot;Strategic Energy Resources&quot; è una società a responsabilità limitata che opera nel settore della produzione elettrica da fonti rinnovabili attraverso l&apos;adozione di tecnologie all&apos;avanguardia che assicurano alta efficienza a fronte di ridotti impatti ambientali.
                   </p>
                   <p className="text-white/70 leading-relaxed">
                     La società ha diversi impianti di proprietà sul territorio nazionale per la produzione di energia rinnovabile. Abbiamo in sviluppo diversi impianti sia di piccola taglia che parchi eolici di diversi megawatt.

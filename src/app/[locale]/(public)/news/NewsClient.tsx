@@ -95,6 +95,7 @@ function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue;
 }
 
+// eslint-disable-next-line sonarjs/cognitive-complexity -- complex news listing with filters
 export function NewsClient() {
   const t = useTranslations('news');
   const locale = useLocale() as 'it' | 'en' | 'fr';

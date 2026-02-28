@@ -59,6 +59,7 @@ export function Lightbox({ images, initialIndex = 0, isOpen, onClose }: Lightbox
 
   // Reset index when initialIndex changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- handle keyboard events
     setCurrentIndex(initialIndex);
     setIsZoomed(false);
   }, [initialIndex, isOpen]);

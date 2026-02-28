@@ -117,6 +117,7 @@ export default function EditNewsPage({
   // Populate form with existing data
   useEffect(() => {
     if (news) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- populate form from loaded data
       setSlug(news.slug);
       setFeaturedImage(news.featuredImage || '');
       setGallery(parseGallery(news.gallery));

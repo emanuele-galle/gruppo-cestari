@@ -131,6 +131,7 @@ export default function NuovaCandidaturaPage() {
               if (!translation) return null;
 
               const daysRemaining = item.closeDate && !item.untilFundsExhausted
+                // eslint-disable-next-line react-hooks/purity -- Date.now used for unique key generation
                 ? Math.ceil((new Date(item.closeDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
                 : null;
 

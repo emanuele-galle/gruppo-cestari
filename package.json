@@ -7,7 +7,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start -p 3016",
-    "lint": "eslint src/",
+    "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
@@ -17,7 +17,10 @@
     "db:migrate": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "db:seed": "tsx prisma/seed.ts",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "lint:fix": "eslint . --fix",
+    "knip": "knip",
+    "check": "npm run lint && npm run knip"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
@@ -92,6 +95,7 @@
     "zod": "^4.3.5"
   },
   "devDependencies": {
+    "@eslint/compat": "^2.0.2",
     "@prisma/client": "^7.2.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -106,9 +110,12 @@
     "@vitejs/plugin-react": "^5.1.2",
     "@vitest/coverage-v8": "^4.0.17",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.17.0",
-    "eslint-config-next": "^16.1.1",
+    "eslint": "^9.39.3",
+    "eslint-config-next": "^16.1.6",
+    "eslint-plugin-react-perf": "^3.3.3",
+    "eslint-plugin-sonarjs": "^4.0.0",
     "jsdom": "^27.4.0",
+    "knip": "^5.85.0",
     "pg": "^8.13.1",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",

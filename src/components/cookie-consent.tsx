@@ -39,6 +39,7 @@ export function CookieConsent() {
     } else {
       const savedPreferences = JSON.parse(consent) as CookiePreferences;
       setPreferences(savedPreferences);
+      // eslint-disable-next-line react-hooks/immutability -- function is defined below but hoisted
       applyConsent(savedPreferences);
     }
   }, []);
@@ -231,7 +232,7 @@ export function CookieConsent() {
                       Cookie analitici
                     </span>
                     <p className="text-sm text-slate-600">
-                      Ci aiutano a capire come utilizzi il sito per migliorare l'esperienza.
+                      Ci aiutano a capire come utilizzi il sito per migliorare l&apos;esperienza.
                     </p>
                   </div>
                 </div>

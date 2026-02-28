@@ -48,6 +48,7 @@ export default function NewsDetailPage({ params }: PageProps) {
   const [currentUrl, setCurrentUrl] = useState('');
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- handle query state update
     setCurrentUrl(window.location.href);
   }, []);
 

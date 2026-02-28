@@ -162,6 +162,7 @@ export default function EditProjectPage({
   useEffect(() => {
     if (project && !isFormInitialized.current) {
       isFormInitialized.current = true;
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- populate form from loaded data
       setSlug(project.slug);
       setSector(project.sector);
       setCountry(project.country);
@@ -169,6 +170,7 @@ export default function EditProjectPage({
       setGallery(parseGallery(project.gallery));
       // Load attachments (array of objects with url property)
       if (Array.isArray(project.attachments)) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any -- dynamic attachment structure
         const urls = project.attachments.map((item: any) =>
           typeof item === 'object' && item?.url ? item.url : String(item)
         );

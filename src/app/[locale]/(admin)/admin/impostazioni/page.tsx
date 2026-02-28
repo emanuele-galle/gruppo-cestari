@@ -127,6 +127,7 @@ const itemVariants = {
   },
 };
 
+// eslint-disable-next-line sonarjs/cognitive-complexity -- complex settings form logic
 export default function AdminImpostazioniPage() {
   const t = useTranslations('admin.settings');
   const router = useRouter();
@@ -169,6 +170,7 @@ export default function AdminImpostazioniPage() {
           loadedSettings[key as keyof SettingsData] = String(settingData.value ?? '');
         }
       });
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sync settings from API data
       setSettings(loadedSettings);
     }
   }, [settingsData]);
@@ -176,6 +178,7 @@ export default function AdminImpostazioniPage() {
   // Set error from query
   useEffect(() => {
     if (queryError) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sync settings from API data
       setError(queryError.message || 'Errore nel caricamento delle impostazioni');
     }
   }, [queryError]);

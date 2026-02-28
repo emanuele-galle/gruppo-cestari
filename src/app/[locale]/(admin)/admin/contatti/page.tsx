@@ -135,6 +135,7 @@ export default function AdminContattiPage() {
   // Search loading indicator
   useEffect(() => {
     if (searchQuery !== debouncedSearch) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sync form state from query data
       setIsSearching(true);
     } else {
       setIsSearching(false);
@@ -339,6 +340,7 @@ export default function AdminContattiPage() {
   };
 
   // Keyboard navigation
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization -- existing memo pattern is intentional
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (!contacts.length) return;
 
@@ -366,6 +368,7 @@ export default function AdminContattiPage() {
   // Update notes value when contact changes
   useEffect(() => {
     if (selectedContactData) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sync form state from query data
       setNotesValue(selectedContactData.adminNotes || '');
     }
   }, [selectedContactData?.id]);

@@ -92,7 +92,7 @@ export default function DocumentsPage() {
   const utils = trpc.useUtils();
 
   const { data: documents, isLoading } = trpc.portal.getMyDocuments.useQuery({
-    category: selectedCategory !== 'all' ? selectedCategory as any : undefined,
+    category: selectedCategory !== 'all' ? selectedCategory as "OTHER" | "CONTRACT" | "REPORT" | "CERTIFICATE" | "PRESENTATION" | "APPLICATION" : undefined,
     search: searchQuery || undefined,
   });
 

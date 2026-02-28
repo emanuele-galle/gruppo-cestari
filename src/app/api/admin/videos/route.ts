@@ -30,9 +30,9 @@ export async function POST(request: NextRequest) {
     // Create new videos with sortOrder
     if (videos && videos.length > 0) {
       // Clean and prepare data for createMany
-      const videosData = videos.map((vid: any, idx: number) => {
+      const videosData = videos.map((vid: Record<string, unknown>, idx: number) => {
         // Set the correct foreign key based on entityType
-        const foreignKeys: any = {
+        const foreignKeys: Record<string, unknown> = {
           projectId: null,
           articleId: null,
           eventId: null,

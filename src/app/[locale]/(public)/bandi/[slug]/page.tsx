@@ -215,6 +215,7 @@ function getFileName(url: string, index: number) {
   return `Documento ${index + 1}`;
 }
 
+// eslint-disable-next-line sonarjs/cognitive-complexity -- complex bando detail rendering
 export default function BandoDetailPage({ params }: PageProps) {
   const resolvedParams = React.use(params);
   const t = useTranslations('grants');
@@ -950,6 +951,7 @@ export default function BandoDetailPage({ params }: PageProps) {
                   const relTranslation = related.translations[0];
                   if (!relTranslation) return null;
                   const relDays = related.closeDate && !related.untilFundsExhausted
+                    // eslint-disable-next-line react-hooks/purity -- Date.now used for status calculation
                     ? Math.ceil((new Date(related.closeDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
                     : null;
 

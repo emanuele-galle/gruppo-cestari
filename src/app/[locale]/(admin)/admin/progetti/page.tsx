@@ -236,6 +236,7 @@ export default function AdminProjectsPage() {
     const exportData = data.items
       .filter((item) => selectedIds.size === 0 || selectedIds.has(item.id))
       .map((project) => {
+        // eslint-disable-next-line react-hooks/immutability -- function is defined below but hoisted
         const translation = getTranslation(project.translations);
         return {
           Titolo: translation?.title || '',

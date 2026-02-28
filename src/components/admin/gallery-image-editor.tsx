@@ -34,6 +34,7 @@ export function GalleryImageEditor({
   // Update form when image changes
   useEffect(() => {
     if (image) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sync editor state from prop
       setTitle(image.title || '');
       setDescription(image.description || '');
     }

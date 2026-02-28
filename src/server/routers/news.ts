@@ -357,6 +357,7 @@ export const newsRouter = router({
       });
 
       // Helper function for translation fallback
+      // eslint-disable-next-line sonarjs/no-identical-functions -- same helper reused in different query scope
       const getTranslation = <T extends { locale: string }>(translations: T[], targetLocale: string): T | undefined => {
         return translations.find(t => t.locale === targetLocale)
           || translations.find(t => t.locale === 'it')

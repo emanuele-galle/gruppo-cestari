@@ -99,6 +99,7 @@ interface FormErrors {
   [key: string]: string;
 }
 
+// eslint-disable-next-line sonarjs/cognitive-complexity -- complex contact form with validation
 export function ContattiClient() {
   const t = useTranslations('contact');
   const heroRef = useRef(null);

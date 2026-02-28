@@ -176,6 +176,7 @@ export default function ApplicationWizard({
     }
   }, [profile, initialData]);
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity -- complex multi-step wizard logic
   const validateStep = (step: number): boolean => {
     const newErrors: Record<string, string> = {};
 

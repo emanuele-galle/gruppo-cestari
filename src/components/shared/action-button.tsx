@@ -5,6 +5,7 @@ import { LucideIcon } from 'lucide-react';
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
+import { Edit, Eye, Trash2, MoreVertical } from 'lucide-react';
 
 export type ActionVariant = 'edit' | 'view' | 'delete' | 'archive' | 'menu' | 'publish' | 'custom';
 
@@ -151,7 +152,7 @@ interface PresetActionProps {
 }
 
 export function EditAction({ href, onClick, ...props }: PresetActionProps) {
-  const EditIcon = require('lucide-react').Edit;
+  const EditIcon = Edit;
   return (
     <ActionButton
       icon={EditIcon}
@@ -165,7 +166,7 @@ export function EditAction({ href, onClick, ...props }: PresetActionProps) {
 }
 
 export function ViewAction({ href, onClick, target = '_blank', ...props }: PresetActionProps & { target?: '_blank' | '_self' }) {
-  const EyeIcon = require('lucide-react').Eye;
+  const EyeIcon = Eye;
   return (
     <ActionButton
       icon={EyeIcon}
@@ -180,7 +181,7 @@ export function ViewAction({ href, onClick, target = '_blank', ...props }: Prese
 }
 
 export function DeleteAction({ onClick, ...props }: Omit<PresetActionProps, 'href'>) {
-  const Trash2Icon = require('lucide-react').Trash2;
+  const Trash2Icon = Trash2;
   return (
     <ActionButton
       icon={Trash2Icon}
@@ -193,7 +194,7 @@ export function DeleteAction({ onClick, ...props }: Omit<PresetActionProps, 'hre
 }
 
 export function MenuAction({ onClick, ...props }: Omit<PresetActionProps, 'href'>) {
-  const MoreVerticalIcon = require('lucide-react').MoreVertical;
+  const MoreVerticalIcon = MoreVertical;
   return (
     <ActionButton
       icon={MoreVerticalIcon}

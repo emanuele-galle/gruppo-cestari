@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import {
@@ -141,12 +142,12 @@ export function ConsulenzaClient() {
             <p className="text-sm text-slate-500 mb-8">
               {t('success.nextSteps')}
             </p>
-            <a
+            <Link
               href="/"
               className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
             >
               {t('success.backHome')}
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

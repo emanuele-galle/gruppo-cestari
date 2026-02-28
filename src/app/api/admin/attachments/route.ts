@@ -25,8 +25,8 @@ export async function POST(request: NextRequest) {
     // Create new attachments with sortOrder
     if (attachments && attachments.length > 0) {
       // Remove id field if present (createMany doesn't accept it)
-      const attachmentsData = attachments.map((att: any, idx: number) => {
-        const data: any = {
+      const attachmentsData = attachments.map((att: Record<string, unknown>, idx: number) => {
+        const data: Record<string, unknown> = {
           url: att.url,
           fileName: att.fileName,
           fileSize: att.fileSize,

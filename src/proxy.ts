@@ -124,6 +124,7 @@ function decodeJwtPayload(token: string): { role?: string } | null {
   }
 }
 
+// eslint-disable-next-line sonarjs/cognitive-complexity -- complex proxy routing logic
 export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 

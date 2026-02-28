@@ -207,7 +207,7 @@ export function VideoManager({
             </Button>
           </div>
           <p className="text-xs text-gray-500">
-            Incolla l'URL completo del video YouTube o Vimeo
+            Incolla l&apos;URL completo del video YouTube o Vimeo
           </p>
         </div>
       )}

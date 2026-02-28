@@ -43,10 +43,8 @@ export default function PortalLayout({
 
   // Redirect admin users to admin dashboard
   useEffect(() => {
-    if (status === 'authenticated' && session?.user?.role) {
-      if (adminRoles.includes(session.user.role)) {
-        router.replace('/admin');
-      }
+    if (status === 'authenticated' && session?.user?.role && adminRoles.includes(session.user.role)) {
+      router.replace('/admin');
     }
   }, [status, session, router]);
 

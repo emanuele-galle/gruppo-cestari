@@ -137,6 +137,7 @@ export default function EditBandoPage() {
   // Populate form when data loads
   useEffect(() => {
     if (bando) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- populate form from loaded data
       setCode(bando.code);
       setType(bando.type);
       setSector(bando.sector || '');

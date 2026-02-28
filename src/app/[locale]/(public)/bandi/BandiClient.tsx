@@ -120,7 +120,9 @@ function StatCard({ icon: Icon, value, label, color }: { icon: React.ElementType
 
 // Featured bando card
 function FeaturedBandoCard({ bando, translation, formatCurrency, getStatusInfo, getDaysRemaining, translations, locale }: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- complex bando type from tRPC
   bando: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- complex translation type from tRPC
   translation: any;
   formatCurrency: (amount: number | null) => string;
   getStatusInfo: (openDate: Date, closeDate: Date | null, untilFundsExhausted?: boolean) => { label: string; color: string };

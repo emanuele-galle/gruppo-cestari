@@ -146,6 +146,7 @@ const config: Config = {
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports -- Tailwind plugin convention
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 };
 

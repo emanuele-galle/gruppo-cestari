@@ -27,6 +27,7 @@ export function ChartPlaceholder({
   const Icon = chartIcons[type];
 
   // Generate random bars for visual effect
+  // eslint-disable-next-line react-hooks/purity -- Math.random for placeholder data
   const bars = Array.from({ length: 12 }, () => Math.random() * 100);
 
   return (

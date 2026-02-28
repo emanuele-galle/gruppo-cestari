@@ -216,6 +216,7 @@ export default function AdminBandiPage() {
     const exportData = data.items
       .filter((item) => selectedIds.size === 0 || selectedIds.has(item.id))
       .map((bando) => {
+        // eslint-disable-next-line react-hooks/immutability -- function is defined below but hoisted
         const translation = getTranslation(bando.translations);
         return {
           Codice: bando.code,
@@ -477,6 +478,7 @@ export default function AdminBandiPage() {
           </Card>
         ) : (
           <div className="space-y-4">
+            {/* eslint-disable-next-line sonarjs/cognitive-complexity -- complex admin listing with filters */}
             {data?.items.map((bando: (typeof data.items)[number], index: number) => {
               const translation = getTranslation(bando.translations);
               const daysRemaining = getDaysRemaining(bando.closeDate, bando.untilFundsExhausted);

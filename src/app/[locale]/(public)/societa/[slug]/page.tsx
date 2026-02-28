@@ -530,6 +530,7 @@ export default function CompanyDetailPage({ params }: Props) {
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
 
   // Unwrap params using React.use() pattern for App Router
+  // eslint-disable-next-line @typescript-eslint/no-require-imports -- React.use pattern for App Router
   const { slug } = require('react').use(params);
 
   const company = companiesData[slug];

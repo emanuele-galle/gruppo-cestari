@@ -249,6 +249,7 @@ export function ProjectDetailClient({ slug, initialProject }: ProjectDetailClien
 
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <span className="px-4 py-2 bg-white/10 text-white rounded-full text-sm font-medium flex items-center gap-2">
+                {/* eslint-disable-next-line react-hooks/static-components -- component created conditionally by design */}
                 <Icon className="w-4 h-4" />
                 {SECTOR_LABELS[sectorUI] || sectorUI}
               </span>
@@ -318,6 +319,7 @@ export function ProjectDetailClient({ slug, initialProject }: ProjectDetailClien
               className="bg-white rounded-xl p-6 border border-slate-200 shadow-lg"
             >
               <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                {/* eslint-disable-next-line react-hooks/static-components -- component created conditionally by design */}
                 <Icon className="w-6 h-6 text-secondary" />
               </div>
               <h3 className="text-sm text-slate-600 mb-1">Settore</h3>
