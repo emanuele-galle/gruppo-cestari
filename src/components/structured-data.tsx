@@ -112,7 +112,7 @@ interface ArticleStructuredDataProps {
   locale: string;
 }
 
-export function ArticleStructuredData({
+function ArticleStructuredData({
   title,
   description,
   image,
@@ -166,7 +166,7 @@ interface BreadcrumbItem {
   href: string;
 }
 
-export function BreadcrumbStructuredData({
+function BreadcrumbStructuredData({
   items,
   locale,
 }: {

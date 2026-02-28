@@ -18,7 +18,7 @@ const chartIcons = {
   area: Activity,
 };
 
-export function ChartPlaceholder({
+function ChartPlaceholder({
   type = 'bar',
   title = 'Grafico in arrivo',
   height = 280,

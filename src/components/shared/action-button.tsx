@@ -7,7 +7,7 @@ import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { Edit, Eye, Trash2, MoreVertical } from 'lucide-react';
 
-export type ActionVariant = 'edit' | 'view' | 'delete' | 'archive' | 'menu' | 'publish' | 'custom';
+type ActionVariant = 'edit' | 'view' | 'delete' | 'archive' | 'menu' | 'publish' | 'custom';
 
 interface ActionButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
   icon: LucideIcon;
@@ -151,7 +151,7 @@ interface PresetActionProps {
   className?: string;
 }
 
-export function EditAction({ href, onClick, ...props }: PresetActionProps) {
+function EditAction({ href, onClick, ...props }: PresetActionProps) {
   const EditIcon = Edit;
   return (
     <ActionButton
@@ -165,7 +165,7 @@ export function EditAction({ href, onClick, ...props }: PresetActionProps) {
   );
 }
 
-export function ViewAction({ href, onClick, target = '_blank', ...props }: PresetActionProps & { target?: '_blank' | '_self' }) {
+function ViewAction({ href, onClick, target = '_blank', ...props }: PresetActionProps & { target?: '_blank' | '_self' }) {
   const EyeIcon = Eye;
   return (
     <ActionButton
@@ -180,7 +180,7 @@ export function ViewAction({ href, onClick, target = '_blank', ...props }: Prese
   );
 }
 
-export function DeleteAction({ onClick, ...props }: Omit<PresetActionProps, 'href'>) {
+function DeleteAction({ onClick, ...props }: Omit<PresetActionProps, 'href'>) {
   const Trash2Icon = Trash2;
   return (
     <ActionButton
@@ -193,7 +193,7 @@ export function DeleteAction({ onClick, ...props }: Omit<PresetActionProps, 'hre
   );
 }
 
-export function MenuAction({ onClick, ...props }: Omit<PresetActionProps, 'href'>) {
+function MenuAction({ onClick, ...props }: Omit<PresetActionProps, 'href'>) {
   const MoreVerticalIcon = MoreVertical;
   return (
     <ActionButton

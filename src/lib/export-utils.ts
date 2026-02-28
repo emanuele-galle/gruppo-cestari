@@ -58,7 +58,7 @@ export function exportToCSV<T extends ExportableData>(
 /**
  * Export data to JSON format
  */
-export function exportToJSON<T>(data: T[], options: ExportOptions): void {
+function exportToJSON<T>(data: T[], options: ExportOptions): void {
   const jsonContent = JSON.stringify(data, null, 2);
   const blob = new Blob([jsonContent], { type: 'application/json;charset=utf-8;' });
   downloadBlob(blob, `${options.filename}.json`);

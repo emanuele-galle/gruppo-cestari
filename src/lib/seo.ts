@@ -8,7 +8,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://gruppocestari.com';
  * @param pathname - Il path della pagina senza locale (es: '/chi-siamo', '/news/slug')
  * @param currentLocale - La locale corrente
  */
-export function generateAlternates(pathname: string, currentLocale: Locale) {
+function generateAlternates(pathname: string, currentLocale: Locale) {
   // Rimuovi slash iniziale se presente per consistenza
   const cleanPath = pathname.startsWith('/') ? pathname : `/${pathname}`;
 
@@ -46,7 +46,7 @@ interface GeneratePageMetadataParams {
   keywords?: string[];
 }
 
-export function generatePageMetadata({
+function generatePageMetadata({
   title,
   description,
   pathname,
@@ -119,7 +119,7 @@ interface GenerateArticleMetadataParams {
   tags?: string[];
 }
 
-export function generateArticleMetadata({
+function generateArticleMetadata({
   title,
   description,
   slug,
@@ -155,7 +155,7 @@ export function generateArticleMetadata({
 /**
  * Genera metadata per bandi
  */
-export function generateBandoMetadata({
+function generateBandoMetadata({
   title,
   description,
   slug,

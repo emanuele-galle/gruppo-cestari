@@ -50,7 +50,7 @@ export function parseGallery(data: unknown): GalleryImage[] {
 /**
  * Sort gallery images by order field
  */
-export function sortGallery(gallery: GalleryImage[]): GalleryImage[] {
+function sortGallery(gallery: GalleryImage[]): GalleryImage[] {
   return [...gallery].sort((a, b) => a.order - b.order);
 }
 

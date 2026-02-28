@@ -105,7 +105,7 @@ interface CardFooterProps {
   className?: string;
 }
 
-export function CardFooter({ children, className }: CardFooterProps) {
+function CardFooter({ children, className }: CardFooterProps) {
   return (
     <div className={cn(
       'mt-6 pt-4 border-t border-slate-200 flex items-center justify-between',

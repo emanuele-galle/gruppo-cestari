@@ -1,6 +1,6 @@
 import { Node, mergeAttributes } from '@tiptap/core';
 
-export interface VideoOptions {
+interface VideoOptions {
   HTMLAttributes: Record<string, unknown>;
 }
 

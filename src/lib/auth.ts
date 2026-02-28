@@ -29,7 +29,7 @@ declare module '@auth/core/jwt' {
   }
 }
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+const nextAuth = NextAuth({
   adapter: PrismaAdapter(prisma) as Adapter,
   session: {
     strategy: 'jwt',
@@ -112,13 +112,15 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   debug: process.env.NODE_ENV === 'development',
 });
 
+export const { handlers, auth } = nextAuth;
+
 // Helper to check if user has required role
-export function hasRole(userRole: UserRole, requiredRoles: UserRole[]): boolean {
+function hasRole(userRole: UserRole, requiredRoles: UserRole[]): boolean {
   return requiredRoles.includes(userRole);
 }
 
 // Role hierarchy check
-export function hasMinimumRole(userRole: UserRole, minimumRole: UserRole): boolean {
+function hasMinimumRole(userRole: UserRole, minimumRole: UserRole): boolean {
   const roleHierarchy: Record<UserRole, number> = {
     CLIENT: 1,
     PARTNER: 2,

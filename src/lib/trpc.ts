@@ -5,7 +5,7 @@ import type { AppRouter } from '@/server/routers';
 
 export const trpc = createTRPCReact<AppRouter>();
 
-export function getBaseUrl() {
+function getBaseUrl() {
   if (typeof window !== 'undefined') {
     // Browser should use relative path
     return '';

@@ -18,13 +18,13 @@ interface AuthSession extends Session {
 }
 
 // Context type
-export interface Context {
+interface Context {
   prisma: typeof prisma;
   session: AuthSession | null;
 }
 
 // Authenticated context type
-export interface AuthenticatedContext extends Context {
+interface AuthenticatedContext extends Context {
   session: AuthSession;
 }
 
@@ -122,4 +122,4 @@ export const superadminProcedure = t.procedure.use(async ({ ctx, next }) => {
   });
 });
 
-export const createCallerFactory = t.createCallerFactory;
+const createCallerFactory = t.createCallerFactory;

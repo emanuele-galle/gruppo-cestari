@@ -109,7 +109,7 @@ export function Turnstile({
 }
 
 // Hook for resetting Turnstile after form submission
-export function useTurnstileReset() {
+function useTurnstileReset() {
   const resetRef = useRef<(() => void) | null>(null);
 
   const setReset = useCallback((resetFn: () => void) => {

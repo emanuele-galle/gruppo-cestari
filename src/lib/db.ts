@@ -20,4 +20,3 @@ if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = db;
 // Named export for compatibility with auth and API routes
 export const prisma = db;
 
-export default db;

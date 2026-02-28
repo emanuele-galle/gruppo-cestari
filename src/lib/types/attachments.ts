@@ -2,7 +2,7 @@
  * Attachment type for project PDFs and documents
  * Used with Json[] field in Prisma for flexible file management
  */
-export interface ProjectAttachment {
+interface ProjectAttachment {
   /** File URL from MinIO storage */
   url: string;
   /** File title/name */
@@ -49,7 +49,7 @@ export function sortAttachments(attachments: ProjectAttachment[]): ProjectAttach
 /**
  * Normalize attachments order (ensure consecutive order numbers starting from 0)
  */
-export function normalizeAttachmentsOrder(attachments: ProjectAttachment[]): ProjectAttachment[] {
+function normalizeAttachmentsOrder(attachments: ProjectAttachment[]): ProjectAttachment[] {
   return attachments.map((item, index) => ({
     ...item,
     order: index,
@@ -59,7 +59,7 @@ export function normalizeAttachmentsOrder(attachments: ProjectAttachment[]): Pro
 /**
  * Get file extension from URL
  */
-export function getFileExtension(url: string): string {
+function getFileExtension(url: string): string {
   const match = url.match(/\.([^./?]+)(?:[?#]|$)/);
   return match ? match[1].toLowerCase() : '';
 }
@@ -67,7 +67,7 @@ export function getFileExtension(url: string): string {
 /**
  * Get file icon based on extension
  */
-export function getFileIcon(url: string): string {
+function getFileIcon(url: string): string {
   const ext = getFileExtension(url);
   const iconMap: Record<string, string> = {
     pdf: '📄',
