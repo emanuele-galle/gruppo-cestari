@@ -38,7 +38,7 @@ const securityHeaders = [
       "img-src 'self' data: blob: https: http:",
       "font-src 'self' https://fonts.gstatic.com",
       "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://vitals.vercel-insights.com https://www.youtube.com https://www.youtube-nocookie.com https://img.youtube.com https://i.ytimg.com https://s.ytimg.com",
-      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://s3.fodivps1.cloud",
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://storage.fodivps2.cloud",
       "media-src 'self' https:",
       "object-src 'none'",
       "base-uri 'self'",
@@ -55,11 +55,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 's3.fodivps1.cloud',
+        hostname: 'storage.fodivps2.cloud',
       },
       {
         protocol: 'https',
-        hostname: 'cestari.fodivps1.cloud',
+        hostname: 'gruppocestari.com',
       },
       {
         protocol: 'https',

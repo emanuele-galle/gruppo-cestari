@@ -117,7 +117,7 @@ export default function NewBandoPage() {
   // Handle file removal - delete from MinIO storage
   const handleFileRemove = async (url: string) => {
     try {
-      const key = url.replace('https://s3.fodivps1.cloud/gruppo-cestari/', '');
+      const key = url.replace('https://storage.fodivps2.cloud/gruppo-cestari/', '');
       await fetch(`/api/upload?key=${encodeURIComponent(key)}`, { method: 'DELETE' });
     } catch (error) {
       console.error('Errore eliminazione file:', error);
@@ -151,7 +151,7 @@ export default function NewBandoPage() {
     const invalidAttachments = attachments.filter(url => {
       try {
         const parsed = new URL(url);
-        return parsed.hostname !== 's3.fodivps1.cloud';
+        return parsed.hostname !== 'storage.fodivps2.cloud';
       } catch {
         return true;
       }

@@ -9,12 +9,12 @@ const minioUrlSchema = z.string().url().refine(
   (url) => {
     try {
       const parsed = new URL(url);
-      return parsed.hostname === 's3.fodivps1.cloud';
+      return parsed.hostname === 'storage.fodivps2.cloud';
     } catch {
       return false;
     }
   },
-  { message: 'Solo URL dal dominio s3.fodivps1.cloud sono consentiti' }
+  { message: 'Solo URL dal dominio storage.fodivps2.cloud sono consentiti' }
 );
 
 // Gallery image schema matching GalleryImage type
