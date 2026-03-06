@@ -13,7 +13,7 @@ const minioClient = new S3Client({
 });
 
 const MINIO_BUCKET = process.env.MINIO_BUCKET || 'gruppo-cestari';
-const MINIO_PUBLIC_URL = process.env.MINIO_PUBLIC_URL || 'https://storage.fodivps2.cloud';
+const MINIO_PUBLIC_URL = process.env.MINIO_PUBLIC_URL || 'https://s3.muscarivps.cloud';
 
 // Generate a unique filename
 export function generateFileName(originalName: string): string {

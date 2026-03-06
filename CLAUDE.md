@@ -6,7 +6,7 @@ Sito corporate multilingue per Gruppo Cestari - Holding multisettoriale.
 
 | | |
 |---|---|
-| **Dominio** | cestari.fodivps1.cloud |
+| **Dominio** | cestari.muscarivps.cloud |
 | **Porta PM2** | 3016 |
 | **PostgreSQL** | localhost:5442 |
 | **Redis** | localhost:6387 |
@@ -142,11 +142,11 @@ pm2 logs gruppo-cestari
 
 | Area | URL |
 |------|-----|
-| Homepage | https://cestari.fodivps1.cloud |
-| Login | https://cestari.fodivps1.cloud/login |
-| Registrazione | https://cestari.fodivps1.cloud/register |
-| Portale | https://cestari.fodivps1.cloud/portal |
-| Admin | https://cestari.fodivps1.cloud/admin |
+| Homepage | https://cestari.muscarivps.cloud |
+| Login | https://cestari.muscarivps.cloud/login |
+| Registrazione | https://cestari.muscarivps.cloud/register |
+| Portale | https://cestari.muscarivps.cloud/portal |
+| Admin | https://cestari.muscarivps.cloud/admin |
 
 ## Troubleshooting
 
