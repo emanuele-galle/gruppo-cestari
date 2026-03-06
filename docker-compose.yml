@@ -51,6 +51,8 @@ services:
       - "traefik.http.middlewares.cestari-www-redirect.redirectregex.regex=^https://www\\.gruppocestari\\.com/(.*)"
       - "traefik.http.middlewares.cestari-www-redirect.redirectregex.replacement=https://gruppocestari.com/$${1}"
       - "traefik.http.middlewares.cestari-www-redirect.redirectregex.permanent=true"
+    extra_hosts:
+      - "storage.muscarivps.cloud:193.203.190.63"
     volumes:
       - nextcache:/app/.next/cache
     healthcheck:
