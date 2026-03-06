@@ -51,6 +51,8 @@ services:
       - "traefik.http.middlewares.cestari-www-redirect.redirectregex.regex=^https://www\\.gruppocestari\\.com/(.*)"
       - "traefik.http.middlewares.cestari-www-redirect.redirectregex.replacement=https://gruppocestari.com/$${1}"
       - "traefik.http.middlewares.cestari-www-redirect.redirectregex.permanent=true"
+    volumes:
+      - nextcache:/app/.next/cache
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3000"]
       interval: 30s
@@ -96,6 +98,7 @@ services:
       retries: 5
 
 volumes:
+  nextcache:
   postgres_data:
   redis_data:
 
