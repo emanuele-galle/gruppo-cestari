@@ -27,7 +27,8 @@ function slugify(text: string): string {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
+    .replace(/(^-|-$)+/g, '')
+    .slice(0, 100);
 }
 
 function truncate(text: string, length: number): string {

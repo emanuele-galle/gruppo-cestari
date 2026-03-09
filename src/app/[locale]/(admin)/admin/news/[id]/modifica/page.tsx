@@ -167,7 +167,8 @@ export default function EditNewsPage({
       .replace(/[^a-z0-9\s-]/g, '')
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
-      .trim();
+      .trim()
+      .slice(0, 100);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

@@ -114,7 +114,8 @@ export default function NewNewsPage() {
       .replace(/[^a-z0-9\s-]/g, '')
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
-      .trim();
+      .trim()
+      .slice(0, 100);
   };
 
   const handleTitleChange = (value: string) => {
