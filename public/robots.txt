@@ -6,7 +6,8 @@ Allow: /
 # Block admin pages
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/
+# Allow _next for proper rendering (Google needs CSS/JS)
+# Disallow: /_next/
 
 # Block spam patterns (SEO attack mitigation)
 Disallow: /*?blogs/

@@ -44,14 +44,17 @@ const organizationSchema = {
     'https://www.instagram.com/cestari.group/',
     'https://www.youtube.com/@CestariGroup',
   ],
-  areaServed: {
-    '@type': 'GeoCircle',
-    geoMidpoint: {
-      '@type': 'GeoCoordinates',
-      latitude: 40.6824,
-      longitude: 14.7681,
-    },
-    geoRadius: '10000',
+  areaServed: [
+    { '@type': 'Country', name: 'Italy' },
+    { '@type': 'Country', name: 'Belgium' },
+    { '@type': 'Country', name: 'Senegal' },
+    { '@type': 'Country', name: 'Kenya' },
+    { '@type': 'Country', name: 'Mozambique' },
+    { '@type': 'Country', name: 'Brazil' },
+  ],
+  numberOfEmployees: {
+    '@type': 'QuantitativeValue',
+    minValue: 50,
   },
   knowsAbout: [
     'Consulenza Finanziaria',
@@ -60,7 +63,79 @@ const organizationSchema = {
     'Comunità Energetiche Rinnovabili',
     'Cooperazione Internazionale',
     'Sviluppo Sostenibile',
+    'PNRR',
+    'Business Plan',
+    'Finanza Agevolata',
   ],
+};
+
+// ProfessionalService schema (for local SEO)
+const professionalServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Gruppo Cestari - Consulenza Finanziaria',
+  image: `${BASE_URL}/images/brand/logo-gruppo-cestari.png`,
+  '@id': `${BASE_URL}/#professional-service`,
+  url: BASE_URL,
+  telephone: '+39-089-952889',
+  priceRange: '€€',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Via Don Minzoni, 1',
+    addressLocality: 'Fisciano',
+    postalCode: '84084',
+    addressRegion: 'SA',
+    addressCountry: 'IT',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 40.7736,
+    longitude: 14.7681,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servizi di Consulenza',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Consulenza Finanziaria',
+          description: 'Accesso a finanziamenti pubblici e privati, analisi di bancabilità, business planning',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Europrogettazione',
+          description: 'Progettazione e gestione bandi europei, PNRR, fondi strutturali',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Comunità Energetiche Rinnovabili',
+          description: 'Costituzione e gestione CER, impianti fotovoltaici, efficientamento energetico',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Cooperazione Internazionale',
+          description: 'Progetti di sviluppo in Africa e America Latina, partnership internazionali',
+        },
+      },
+    ],
+  },
 };
 
 // WebSite schema
@@ -69,6 +144,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'Gruppo Cestari',
   url: BASE_URL,
+  inLanguage: ['it', 'en', 'fr'],
   potentialAction: {
     '@type': 'SearchAction',
     target: {
@@ -87,6 +163,13 @@ export function OrganizationStructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <Script
+        id="professional-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(professionalServiceSchema),
         }}
       />
       <Script
@@ -112,7 +195,7 @@ interface ArticleStructuredDataProps {
   locale: string;
 }
 
-function ArticleStructuredData({
+export function ArticleStructuredData({
   title,
   description,
   image,
@@ -166,7 +249,7 @@ interface BreadcrumbItem {
   href: string;
 }
 
-function BreadcrumbStructuredData({
+export function BreadcrumbStructuredData({
   items,
   locale,
 }: {
@@ -190,6 +273,37 @@ function BreadcrumbStructuredData({
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(breadcrumbSchema),
+      }}
+    />
+  );
+}
+
+// FAQPage schema
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export function FAQStructuredData({ items }: { items: FAQItem[] }) {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
+  return (
+    <Script
+      id="faq-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(faqSchema),
       }}
     />
   );

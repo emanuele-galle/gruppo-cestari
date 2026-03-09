@@ -119,7 +119,7 @@ interface GenerateArticleMetadataParams {
   tags?: string[];
 }
 
-function generateArticleMetadata({
+export function generateArticleMetadata({
   title,
   description,
   slug,
@@ -155,7 +155,7 @@ function generateArticleMetadata({
 /**
  * Genera metadata per bandi
  */
-function generateBandoMetadata({
+export function generateBandoMetadata({
   title,
   description,
   slug,
@@ -185,21 +185,25 @@ type PageMetaContent = {
   title: string;
   description: string;
   image?: string;
+  keywords?: string[];
 };
 
 const PAGE_META: Record<string, Record<Locale, PageMetaContent>> = {
   '/': {
     it: {
       title: 'Gruppo Cestari - Consulenza Finanziaria e Cooperazione Internazionale',
-      description: 'Holding multisettoriale specializzata in consulenza finanziaria, cooperazione internazionale ed energie rinnovabili. Oltre 40 anni di esperienza.',
+      description: 'Holding multisettoriale specializzata in consulenza finanziaria, cooperazione internazionale ed energie rinnovabili. Oltre 40 anni di esperienza al servizio di imprese e territori.',
+      keywords: ['consulenza finanziaria', 'cooperazione internazionale', 'energie rinnovabili', 'bandi europei', 'finanziamenti pubblici', 'sviluppo sostenibile', 'PNRR', 'comunità energetiche'],
     },
     en: {
       title: 'Gruppo Cestari - Financial Consulting and International Cooperation',
       description: 'Multisectoral holding specialized in financial consulting, international cooperation and renewable energy. Over 40 years of experience.',
+      keywords: ['financial consulting', 'international cooperation', 'renewable energy', 'European grants', 'public funding', 'sustainable development'],
     },
     fr: {
       title: 'Gruppo Cestari - Conseil Financier et Coopération Internationale',
       description: 'Holding multisectorielle spécialisée dans le conseil financier, la coopération internationale et les énergies renouvelables. Plus de 40 ans d\'expérience.',
+      keywords: ['conseil financier', 'coopération internationale', 'énergies renouvelables', 'subventions européennes', 'développement durable'],
     },
   },
   '/chi-siamo': {
@@ -223,6 +227,7 @@ const PAGE_META: Record<string, Record<Locale, PageMetaContent>> = {
     it: {
       title: 'I Nostri Servizi | Gruppo Cestari',
       description: 'Consulenza finanziaria, bandi europei, comunità energetiche rinnovabili e cooperazione internazionale. Scopri tutti i servizi del Gruppo Cestari.',
+      keywords: ['consulenza finanziaria', 'europrogettazione', 'comunità energetiche rinnovabili', 'studi di fattibilità', 'business plan', 'finanza agevolata'],
     },
     en: {
       title: 'Our Services | Gruppo Cestari',
@@ -251,6 +256,7 @@ const PAGE_META: Record<string, Record<Locale, PageMetaContent>> = {
     it: {
       title: 'Sostenibilità e Sviluppo Sostenibile | Gruppo Cestari',
       description: 'Il nostro impegno per la sostenibilità: comunità energetiche, energie rinnovabili e progetti di sviluppo sostenibile per un futuro migliore.',
+      keywords: ['comunità energetiche rinnovabili', 'CER', 'fotovoltaico aziendale', 'efficientamento energetico', 'ESG', 'sviluppo sostenibile'],
     },
     en: {
       title: 'Sustainability and Sustainable Development | Gruppo Cestari',
@@ -293,6 +299,7 @@ const PAGE_META: Record<string, Record<Locale, PageMetaContent>> = {
     it: {
       title: 'Bandi e Agevolazioni | Gruppo Cestari',
       description: 'Scopri i bandi attivi per imprese, enti pubblici e PMI: finanziamenti europei, PNRR, agevolazioni regionali e nazionali.',
+      keywords: ['bandi europei', 'finanziamenti PNRR', 'agevolazioni imprese', 'fondi strutturali', 'incentivi PMI', 'bandi regionali', 'finanza agevolata'],
     },
     en: {
       title: 'Grants and Incentives | Gruppo Cestari',
@@ -321,6 +328,7 @@ const PAGE_META: Record<string, Record<Locale, PageMetaContent>> = {
     it: {
       title: 'Consulenza Finanziaria | Gruppo Cestari',
       description: 'Servizi di consulenza finanziaria strategica per imprese, enti pubblici e start-up. Business plan, finanza agevolata e accesso al credito.',
+      keywords: ['consulenza finanziaria Salerno', 'business plan', 'accesso al credito', 'finanza agevolata', 'consulenza strategica imprese'],
     },
     en: {
       title: 'Financial Consulting | Gruppo Cestari',
@@ -395,5 +403,6 @@ export function getStaticPageMetadata(pathname: string, locale: Locale): Metadat
     pathname,
     locale,
     image: meta.image,
+    keywords: meta.keywords,
   });
 }
