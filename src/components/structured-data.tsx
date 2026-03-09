@@ -1,4 +1,5 @@
-import Script from 'next/script';
+// Using native <script> instead of next/script to ensure JSON-LD
+// is in the initial HTML (not loaded via JS after hydration)
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://gruppocestari.com';
 
@@ -158,22 +159,19 @@ const websiteSchema = {
 export function OrganizationStructuredData() {
   return (
     <>
-      <Script
-        id="organization-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema),
         }}
       />
-      <Script
-        id="professional-service-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(professionalServiceSchema),
         }}
       />
-      <Script
-        id="website-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(websiteSchema),
@@ -233,8 +231,7 @@ export function ArticleStructuredData({
   };
 
   return (
-    <Script
-      id={`article-schema-${slug}`}
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(articleSchema),
@@ -268,8 +265,7 @@ export function BreadcrumbStructuredData({
   };
 
   return (
-    <Script
-      id="breadcrumb-schema"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(breadcrumbSchema),
@@ -299,8 +295,7 @@ export function FAQStructuredData({ items }: { items: FAQItem[] }) {
   };
 
   return (
-    <Script
-      id="faq-schema"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(faqSchema),
