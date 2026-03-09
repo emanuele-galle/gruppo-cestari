@@ -8,7 +8,8 @@ export async function DELETE(
 ) {
   try {
     const session = await auth();
-    if (!session?.user) {
+    const ADMIN_ROLES = ['EDITOR', 'ADMIN', 'SUPERADMIN'];
+    if (!session?.user || !ADMIN_ROLES.includes(session.user.role as string)) {
       return NextResponse.json({ error: 'Non autorizzato' }, { status: 401 });
     }
 

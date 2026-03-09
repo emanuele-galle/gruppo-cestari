@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { db } from '@/lib/db';
+import { auth } from '@/lib/auth';
 import { sendEmail, emailTemplates } from '@/lib/email';
 
 const contactSchema = z.object({
@@ -165,6 +166,11 @@ export async function POST(request: NextRequest) {
 // GET - List contacts (admin only)
 export async function GET(request: NextRequest) {
   try {
+    const session = await auth();
+    if (!session?.user) {
+      return NextResponse.json({ error: 'Non autorizzato' }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status');
     const page = parseInt(searchParams.get('page') || '1');

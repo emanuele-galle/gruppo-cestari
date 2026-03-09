@@ -111,12 +111,13 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// DELETE - Delete file (requires authentication)
+// DELETE - Delete file (requires admin role)
 export async function DELETE(request: NextRequest) {
   try {
-    // Verify authentication
+    // Verify authentication and admin role
     const session = await auth();
-    if (!session?.user) {
+    const ADMIN_ROLES = ['EDITOR', 'ADMIN', 'SUPERADMIN'];
+    if (!session?.user || !ADMIN_ROLES.includes(session.user.role as string)) {
       return NextResponse.json(
         { success: false, message: 'Non autorizzato' },
         { status: 401 }

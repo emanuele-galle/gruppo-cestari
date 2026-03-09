@@ -2,10 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { db } from '@/lib/db';
 
+const ADMIN_ROLES = ['EDITOR', 'ADMIN', 'SUPERADMIN'];
+
 export async function POST(request: NextRequest) {
   try {
     const session = await auth();
-    if (!session?.user) {
+    if (!session?.user || !ADMIN_ROLES.includes(session.user.role as string)) {
       return NextResponse.json({ error: 'Non autorizzato' }, { status: 401 });
     }
 
@@ -34,13 +36,13 @@ export async function POST(request: NextRequest) {
         // Set the correct foreign key based on entityType
         const foreignKeys: Record<string, unknown> = {
           projectId: null,
-          articleId: null,
-          eventId: null,
+          newsId: null,
+          bandoId: null,
         };
 
         if (entityType === 'project') foreignKeys.projectId = entityId;
-        if (entityType === 'article') foreignKeys.articleId = entityId;
-        if (entityType === 'event') foreignKeys.eventId = entityId;
+        if (entityType === 'news') foreignKeys.newsId = entityId;
+        if (entityType === 'bando') foreignKeys.bandoId = entityId;
 
         return {
           url: vid.url,

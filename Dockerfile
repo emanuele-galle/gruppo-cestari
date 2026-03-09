@@ -24,6 +24,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder /app/prisma ./prisma
+RUN mkdir -p .next/cache/images && chown -R nextjs:nodejs .next/cache
 USER nextjs
 EXPOSE 3000
 ENV PORT=3000

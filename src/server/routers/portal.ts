@@ -608,7 +608,16 @@ export const portalRouter = router({
         originalName: z.string(),
         mimeType: z.string(),
         size: z.number(),
-        url: z.string().url(),
+        url: z.string().url().refine(
+          (url) => {
+            try {
+              return new URL(url).hostname === 's3.muscarivps.cloud';
+            } catch {
+              return false;
+            }
+          },
+          { message: 'Solo URL dal dominio s3.muscarivps.cloud sono consentiti' }
+        ),
         category: z.enum(['CONTRACT', 'REPORT', 'CERTIFICATE', 'PRESENTATION', 'APPLICATION', 'OTHER']),
         description: z.string().optional(),
         applicationId: z.string().optional(),
@@ -835,7 +844,10 @@ export const portalRouter = router({
       const bandi = await ctx.prisma.bando.findMany({
         where: {
           isPublished: true,
-          closeDate: { gte: new Date() },
+          OR: [
+            { closeDate: { gte: new Date() } },
+            { untilFundsExhausted: true, closeDate: null },
+          ],
           ...(type && { type }),
           ...(sector && { sector }),
           ...(search && {

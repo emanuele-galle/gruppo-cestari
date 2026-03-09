@@ -2,10 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { db } from '@/lib/db';
 
+const ADMIN_ROLES = ['EDITOR', 'ADMIN', 'SUPERADMIN'];
+
 export async function POST(request: NextRequest) {
   try {
     const session = await auth();
-    if (!session?.user) {
+    if (!session?.user || !ADMIN_ROLES.includes(session.user.role as string)) {
       return NextResponse.json({ error: 'Non autorizzato' }, { status: 401 });
     }
 
@@ -39,8 +41,8 @@ export async function POST(request: NextRequest) {
 
         // Set the correct foreign key
         if (entityType === 'project') data.projectId = entityId;
-        if (entityType === 'article') data.articleId = entityId;
-        if (entityType === 'event') data.eventId = entityId;
+        if (entityType === 'news') data.newsId = entityId;
+        if (entityType === 'bando') data.bandoId = entityId;
 
         return data;
       });

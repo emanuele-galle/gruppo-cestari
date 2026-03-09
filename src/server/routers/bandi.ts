@@ -124,10 +124,14 @@ export const bandiRouter = router({
         ...(isFeatured !== undefined && { isFeatured }),
         ...(status === 'open' && {
           openDate: { lte: now },
-          closeDate: { gte: now },
+          OR: [
+            { closeDate: { gte: now } },
+            { untilFundsExhausted: true, closeDate: null },
+          ],
         }),
         ...(status === 'closed' && {
           closeDate: { lt: now },
+          untilFundsExhausted: false,
         }),
         ...(status === 'upcoming' && {
           openDate: { gt: now },
@@ -196,7 +200,10 @@ export const bandiRouter = router({
         ...(sector && { sector }),
         ...(status === 'open' && {
           openDate: { lte: now },
-          closeDate: { gte: now },
+          OR: [
+            { closeDate: { gte: now } },
+            { untilFundsExhausted: true, closeDate: null },
+          ],
         }),
         ...(status === 'upcoming' && {
           openDate: { gt: now },
