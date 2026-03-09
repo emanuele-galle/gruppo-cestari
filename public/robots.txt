@@ -6,8 +6,25 @@ Allow: /
 # Block admin pages
 Disallow: /admin/
 Disallow: /api/
-# Allow _next for proper rendering (Google needs CSS/JS)
-# Disallow: /_next/
+
+# AI Search Engines - explicitly allowed (GEO optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 # Block spam patterns (SEO attack mitigation)
 Disallow: /*?blogs/

@@ -10,7 +10,7 @@ const SectionSkeleton = ({ height = 'h-96' }: { height?: string }) => (
 // Below-the-fold sections - lazy loaded per migliorare TTI
 const StatsSection = dynamic(
   () => import('@/components/public/stats-section').then(mod => ({ default: mod.StatsSection })),
-  { loading: () => <SectionSkeleton height="h-[500px]" />, ssr: false }
+  { loading: () => <SectionSkeleton height="h-[500px]" />, ssr: true }
 );
 
 const ServicesSection = dynamic(
@@ -25,7 +25,7 @@ const VideoBackgroundSection = dynamic(
 
 const AboutSection = dynamic(
   () => import('@/components/public/about-section').then(mod => ({ default: mod.AboutSection })),
-  { loading: () => <SectionSkeleton height="h-[500px]" />, ssr: false }
+  { loading: () => <SectionSkeleton height="h-[500px]" />, ssr: true }
 );
 
 const TimelineSection = dynamic(
@@ -35,7 +35,7 @@ const TimelineSection = dynamic(
 
 const NewsSection = dynamic(
   () => import('@/components/public/news-section').then(mod => ({ default: mod.NewsSection })),
-  { loading: () => <SectionSkeleton height="h-[500px]" />, ssr: false }
+  { loading: () => <SectionSkeleton height="h-[500px]" />, ssr: true }
 );
 
 const MediaHighlightSection = dynamic(
@@ -45,7 +45,7 @@ const MediaHighlightSection = dynamic(
 
 const CtaSection = dynamic(
   () => import('@/components/public/cta-section').then(mod => ({ default: mod.CtaSection })),
-  { loading: () => <SectionSkeleton height="h-[300px]" />, ssr: false }
+  { loading: () => <SectionSkeleton height="h-[300px]" />, ssr: true }
 );
 
 export function BelowFoldSections() {

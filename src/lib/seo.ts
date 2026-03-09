@@ -58,8 +58,13 @@ function generatePageMetadata({
   const alternates = generateAlternates(pathname, locale);
   const ogImage = image || '/og-image.jpg';
 
+  // Usa absolute title per evitare che il template aggiunga "| Gruppo Cestari" alle pagine che già lo includono
+  const titleValue = title.includes('Gruppo Cestari')
+    ? { absolute: title }
+    : title;
+
   return {
-    title,
+    title: titleValue,
     description,
     keywords,
     alternates,
